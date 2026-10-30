@@ -1,0 +1,210 @@
+{
+  "case": "behavior",
+  "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+  "execution_environment": "native Windows process",
+  "format": "INDEPENDENT-NATIVE-CHECK",
+  "metrics": {
+    "max_binary_bytes": 221184,
+    "max_runtime_seconds": null,
+    "source_expansion_ratio": null
+  },
+  "results": [
+    {
+      "binary_bytes": 40448,
+      "compile_wall_seconds": 0.07715590000043449,
+      "optimization": "-O0",
+      "path": "counter.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 77824,
+      "compile_wall_seconds": 0.11895900000035908,
+      "optimization": "-O0",
+      "path": "counter.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 39424,
+      "compile_wall_seconds": 0.056462099999407656,
+      "optimization": "-O1",
+      "path": "counter.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 73728,
+      "compile_wall_seconds": 0.06601289999980509,
+      "optimization": "-O1",
+      "path": "counter.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 39424,
+      "compile_wall_seconds": 0.05452969999987545,
+      "optimization": "-O0",
+      "path": "input.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 43520,
+      "compile_wall_seconds": 0.05453459999989718,
+      "optimization": "-O0",
+      "path": "input.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 39424,
+      "compile_wall_seconds": 0.053997800000615825,
+      "optimization": "-O1",
+      "path": "input.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 43008,
+      "compile_wall_seconds": 0.054702000000361295,
+      "optimization": "-O1",
+      "path": "input.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 38912,
+      "compile_wall_seconds": 0.04394289999981993,
+      "optimization": "-O0",
+      "path": "wrap.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 47104,
+      "compile_wall_seconds": 0.054164599999239726,
+      "optimization": "-O0",
+      "path": "wrap.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 39424,
+      "compile_wall_seconds": 0.04363479999938136,
+      "optimization": "-O1",
+      "path": "wrap.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 46080,
+      "compile_wall_seconds": 0.04294620000018767,
+      "optimization": "-O1",
+      "path": "wrap.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 39424,
+      "compile_wall_seconds": 0.043902999999772874,
+      "optimization": "-O0",
+      "path": "single-cell-loop.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 55808,
+      "compile_wall_seconds": 0.06513940000058938,
+      "optimization": "-O0",
+      "path": "single-cell-loop.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 39424,
+      "compile_wall_seconds": 0.04337649999979476,
+      "optimization": "-O1",
+      "path": "single-cell-loop.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 53760,
+      "compile_wall_seconds": 0.05479710000054183,
+      "optimization": "-O1",
+      "path": "single-cell-loop.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 44032,
+      "compile_wall_seconds": 0.06463910000002215,
+      "optimization": "-O0",
+      "path": "multi-cell.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 122880,
+      "compile_wall_seconds": 0.12546419999944192,
+      "optimization": "-O0",
+      "path": "multi-cell.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 41472,
+      "compile_wall_seconds": 0.05816210000011779,
+      "optimization": "-O1",
+      "path": "multi-cell.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 113152,
+      "compile_wall_seconds": 0.0645674000006693,
+      "optimization": "-O1",
+      "path": "multi-cell.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 42496,
+      "compile_wall_seconds": 0.0558151999994152,
+      "optimization": "-O0",
+      "path": "nested.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 72704,
+      "compile_wall_seconds": 0.07421090000025288,
+      "optimization": "-O0",
+      "path": "nested.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 41984,
+      "compile_wall_seconds": 0.04369270000006509,
+      "optimization": "-O1",
+      "path": "nested.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 67072,
+      "compile_wall_seconds": 0.05382330000065849,
+      "optimization": "-O1",
+      "path": "nested.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 40960,
+      "compile_wall_seconds": 0.05339339999954973,
+      "optimization": "-O0",
+      "path": "linear-vm.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 221184,
+      "compile_wall_seconds": 0.21917349999966973,
+      "optimization": "-O0",
+      "path": "linear-vm.bf",
+      "side": "protected"
+    },
+    {
+      "binary_bytes": 41472,
+      "compile_wall_seconds": 0.04459870000027877,
+      "optimization": "-O1",
+      "path": "linear-vm.bf",
+      "side": "original"
+    },
+    {
+      "binary_bytes": 100352,
+      "compile_wall_seconds": 0.06387400000039634,
+      "optimization": "-O1",
+      "path": "linear-vm.bf",
+      "side": "protected"
+    }
+  ],
+  "status": "PASS"
+}

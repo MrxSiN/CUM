@@ -1,0 +1,45 @@
+{
+  "case": "behavior",
+  "compiler_inputs_sha256": {
+    "C:\\Program Files\\Android\\Android Studio\\plugins\\Kotlin\\kotlinc\\lib\\kotlin-compiler.jar": "205abc86c6b0a40bc1a318bb24a062c7eb9a99abb023ee276bf925e3732511c8"
+  },
+  "compiler_sha256": "7148521120f35659dc0b233358a107c67ca7ca92993391519660ee6c80a9df9a",
+  "format": "INDEPENDENT-JVM-CHECK",
+  "jdk_sha256": "7148521120f35659dc0b233358a107c67ca7ca92993391519660ee6c80a9df9a",
+  "language": "kotlin",
+  "metrics": {
+    "max_binary_bytes": 5280229,
+    "max_runtime_seconds": null,
+    "source_expansion_ratio": 1.3898305084745763
+  },
+  "records": [
+    {
+      "compile_wall_seconds": 3.5524961000000985,
+      "resources": {
+        "kernel_cpu_seconds": 0.984375,
+        "page_faults": 181293,
+        "peak_pagefile_bytes": 799817728,
+        "peak_working_set_bytes": 414302208,
+        "scope": "selected process only; excludes descendants",
+        "status": "PASS",
+        "user_cpu_seconds": 10.28125
+      },
+      "side": "original"
+    },
+    {
+      "compile_wall_seconds": 3.480435600000419,
+      "resources": {
+        "kernel_cpu_seconds": 0.96875,
+        "page_faults": 181172,
+        "peak_pagefile_bytes": 800018432,
+        "peak_working_set_bytes": 388587520,
+        "scope": "selected process only; excludes descendants",
+        "status": "PASS",
+        "user_cpu_seconds": 9.8125
+      },
+      "side": "protected"
+    }
+  ],
+  "scope": "Declared Arithmetic integer-module domain only",
+  "status": "PASS"
+}

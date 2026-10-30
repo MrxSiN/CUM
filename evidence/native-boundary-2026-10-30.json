@@ -1,0 +1,69 @@
+{
+  "case": "boundary",
+  "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+  "execution_environment": "native Windows process",
+  "format": "INDEPENDENT-NATIVE-CHECK",
+  "metrics": {
+    "max_binary_bytes": null,
+    "max_runtime_seconds": null,
+    "source_expansion_ratio": null
+  },
+  "results": [
+    {
+      "input_bytes": 0,
+      "status": "PASS",
+      "worker": "echo"
+    },
+    {
+      "input_bytes": 1,
+      "status": "PASS",
+      "worker": "echo"
+    },
+    {
+      "input_bytes": 3,
+      "status": "PASS",
+      "worker": "echo"
+    },
+    {
+      "input_bytes": 256,
+      "status": "PASS",
+      "worker": "echo"
+    },
+    {
+      "input_bytes": 0,
+      "status": "PASS",
+      "worker": "fixed"
+    },
+    {
+      "input_bytes": 1,
+      "status": "PASS",
+      "worker": "fixed"
+    },
+    {
+      "input_bytes": 3,
+      "status": "PASS",
+      "worker": "fixed"
+    },
+    {
+      "input_bytes": 256,
+      "status": "PASS",
+      "worker": "fixed"
+    },
+    {
+      "input_bytes": 0,
+      "status": "PASS",
+      "worker": "transform"
+    },
+    {
+      "input_bytes": 7,
+      "status": "PASS",
+      "worker": "transform"
+    },
+    {
+      "input_bytes": 6,
+      "status": "PASS",
+      "worker": "transform"
+    }
+  ],
+  "status": "PASS"
+}

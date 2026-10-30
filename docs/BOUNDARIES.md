@@ -46,7 +46,9 @@ Pin and inspect verifiers, and retain their actual reports independently.
    identities, command vectors and observed results; do not record a plan as PASS.
 
 The initial fixed-worker experiment alone does not prove a functioning source
-transformation or analysis resistance. Status here is NOT STARTED.
+transformation or analysis resistance. Native exchange and fixed/real machine
+checks now pass for the recorded fixtures in `VERIFICATION.md`. This does not
+accept general transformations or the full isolated release pipeline.
 
 ## Application source audit notes
 

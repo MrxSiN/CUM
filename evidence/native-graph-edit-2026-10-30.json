@@ -1,0 +1,25 @@
+{
+  "format": "CUM-NATIVE-GRAPH-RECIPE-VALIDATION",
+  "native_authority": "Pinned XAX Windows file seed; BF-generated transaction; SDK read-only query is not native authority",
+  "seed_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+  "source_sha256": "1e1f8d83277cf82591be90627e0cbc78e930d140d547c7407e327c6f2730815f",
+  "recipe_worker_sha256": "d7deba997deafdc001cc28849704bfa4b3d984457c87efd58077e39746c2ea40",
+  "transaction_sha256": "41c1f879bc5852f98b8f11084ca59623f6afc7846bbc26278287b410e4f7fce4",
+  "operations": [
+    {
+      "command": "edit",
+      "exit": 1,
+      "stdout_hex": "",
+      "stderr": ""
+    }
+  ],
+  "status": "FAIL",
+  "diagnostic_code": "XAX.WORKSPACE.DUPLICATE_MUTATION",
+  "invariant": "WORKSPACE-MUTATION-TARGET-UNIQUE",
+  "reason": "The BF recipe emits several mutations for one node, prohibited by the selected native edit contract",
+  "output_kind": "Structured diagnostic, not a canonical candidate graph",
+  "diagnostic_sha256": "dacb49def7a45dcdd8042d892fb40b1a4da9d8d24c73795b48d85f9e7970bb1e",
+  "verification": "NOT STARTED: edit was rejected",
+  "native_build": "NOT STARTED",
+  "restored_workspace": "NOT STARTED"
+}

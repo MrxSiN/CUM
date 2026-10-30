@@ -1,0 +1,34 @@
+{
+  "environment": "Windows native x86-64; no emulator",
+  "format": "NATIVE-MACHINE-BOUNDARY-CHECK",
+  "observations": [
+    {
+      "counter_status": "PASS",
+      "events": 17,
+      "input_bytes": 15,
+      "measurement_scope": "this invocation; native process counters exclude host and previous resume attempts",
+      "native_cpu_seconds": 0.265625,
+      "native_peak_working_set_bytes": 9613312,
+      "native_process_wall_seconds": 0.4438228999988496,
+      "output_bytes": 85,
+      "output_sha256": "00916642bdb68ae5010ab6fa62ea4406c08abec746f12889b5365166b361b9e2",
+      "wall_seconds": 0.4622314999996888,
+      "worker": "fixed"
+    },
+    {
+      "counter_status": "PASS",
+      "events": 17,
+      "input_bytes": 15,
+      "measurement_scope": "this invocation; native process counters exclude host and previous resume attempts",
+      "native_cpu_seconds": 0.234375,
+      "native_peak_working_set_bytes": 9793536,
+      "native_process_wall_seconds": 0.40221789999941393,
+      "output_bytes": 113,
+      "output_sha256": "964307f92bf1aaeea3ebfcb79ef3b4ae10b20c252fca88344fed8246c86620b2",
+      "wall_seconds": 0.4193362000005436,
+      "worker": "real"
+    }
+  ],
+  "scope": "native BF components through real generic host; protected source evaluated independently",
+  "status": "PASS"
+}

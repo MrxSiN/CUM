@@ -1,0 +1,42 @@
+{
+  "case": "behavior",
+  "compiler_sha256": "af9cb81e71f9b65f1841f1a5feb536e45e76b6abfdae743f7b0373ad055a9bd0",
+  "format": "INDEPENDENT-JVM-CHECK",
+  "jdk_sha256": "7148521120f35659dc0b233358a107c67ca7ca92993391519660ee6c80a9df9a",
+  "language": "java",
+  "metrics": {
+    "max_binary_bytes": 187,
+    "max_runtime_seconds": null,
+    "source_expansion_ratio": 1.2992125984251968
+  },
+  "records": [
+    {
+      "compile_wall_seconds": 0.5789100000001781,
+      "resources": {
+        "kernel_cpu_seconds": 0.171875,
+        "page_faults": 23795,
+        "peak_pagefile_bytes": 139378688,
+        "peak_working_set_bytes": 93466624,
+        "scope": "selected process only; excludes descendants",
+        "status": "PASS",
+        "user_cpu_seconds": 0.875
+      },
+      "side": "original"
+    },
+    {
+      "compile_wall_seconds": 0.5423201000003246,
+      "resources": {
+        "kernel_cpu_seconds": 0.28125,
+        "page_faults": 23764,
+        "peak_pagefile_bytes": 141045760,
+        "peak_working_set_bytes": 94167040,
+        "scope": "selected process only; excludes descendants",
+        "status": "PASS",
+        "user_cpu_seconds": 0.890625
+      },
+      "side": "protected"
+    }
+  ],
+  "scope": "Declared Arithmetic integer-module domain only",
+  "status": "PASS"
+}

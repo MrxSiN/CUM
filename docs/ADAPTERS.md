@@ -1,7 +1,7 @@
 # Adapter source contracts
 
-Every adapter is PARTIAL: source written, native compilation and acceptance
-NOT STARTED. `adapters.bf` admits IDs 1..5 to drafted routes, not to verified
+Adapter acceptance remains PARTIAL. BF/JVM fixture paths have native evidence;
+the XAX recipe fails native edit. `adapters.bf` admits IDs 1..5 to drafted routes, not to verified
 language support. `routes.bf` chooses the service/operand. The host never chooses
 an adapter from a filename. `discovery.bf` classifies paths, while `scope_policy.bf`
 requires explicit owner dispositions. Unknown IDs and unsupported syntax reject.
@@ -25,6 +25,12 @@ rejects pointer motion and uses the two-state-byte transport. It is not the
 multi-cell route. Its PERFORMANCE profile only filters and cannot satisfy
 meaningful structural protection.
 
+Native BF fixture evidence covers seven programs and both public compilation
+levels. Java/Kotlin evidence covers the declared Arithmetic fixture, CAMOUFLAGE
+native emission, 21 input pairs per language and bytecode differences. These
+results do not establish general language support, scalability or release gates.
+See `VERIFICATION.md` for exact scope.
+
 ## Graph authority
 
 XAX canonical binary graphs remain authoritative. The existing pinned SDK supplies
@@ -42,3 +48,10 @@ Every pass requires native checks, independent behavior, explicit preconditions,
 normalization comparisons, exact recovery and measured budgets. Promotion proceeds
 BF first, then XAX, then each additional language. Draft routes do not promote
 any milestone.
+
+
+The executed graph recipe was rejected with `XAX.WORKSPACE.DUPLICATE_MUTATION`
+under `WORKSPACE-MUTATION-TARGET-UNIQUE`: multiple mutations target the same node.
+This adapter is FAIL for the selected native contract. No canonical candidate,
+protected graph build or restored workspace was accepted. Its framing unit tests
+only check the binary carrier and cannot establish transaction validity.

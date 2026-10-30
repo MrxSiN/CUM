@@ -1,6 +1,9 @@
 # Measurement interfaces in the draft
 
-No measurements have been executed. These are source contracts, not results.
+Native validation recorded diagnostic wall/CPU/working-set observations with
+explicit selected-process scope. No repeated performance benchmark or production
+budget acceptance ran. See the dated native evidence and `VERIFICATION.md`.
+The remaining interfaces below describe measurement contracts.
 
 `ResourceSample` records Windows selected-process peak working set, peak pagefile
 use, page faults and user/kernel CPU using the documented native process APIs.
@@ -43,4 +46,4 @@ samples. A cheap verification result cannot stand in for any of these metrics.
 
 The collection/measurement code still needs the deferred isolation, failure and
 counter-integrity checks. No baseline, performance win, zero-overhead property or
-production budget is established by this draft.
+production budget is established by the fixture validation.

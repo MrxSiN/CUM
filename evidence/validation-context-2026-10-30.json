@@ -1,0 +1,21 @@
+{
+  "format": "CUM-VALIDATION-CONTEXT",
+  "date": "2026-10-30",
+  "timezone": "Asia/Kuala_Lumpur",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "bbc_commit": "53783953fd87cbc9308b108d187b7f3fcfedc06d",
+  "xax_checkout_commit": "f5d07d77614a9ffec17b2271a25447757cbcfd55",
+  "cum_base_commit": "532d662fb1bbe136c78f7ff450169b1e0cd0d9fe",
+  "openssl": "3.5.9",
+  "java": "OpenJDK 25.0.3 JetBrains Runtime",
+  "kotlin": "2.3.10",
+  "tools_note": "Native Windows BBC and legacy Windows XAX seed were used by pinned executable digest, not rebuilt from the updated XAX main",
+  "unavailable": [
+    "No docker or podman command found",
+    "WSL reports not installed",
+    "No reviewed/pinned build or recovery container image provisioned"
+  ],
+  "implementation_changes": "No BBC/XAX implementation edits. Test driver supports pinned Kotlin JAR invocation; new synthetic signed recovery integration test.",
+  "safety_scope": "Only repository fixtures and disposable synthetic data/keys were processed. No real original project, owner identity or private job binding is published."
+}

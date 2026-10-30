@@ -1,8 +1,9 @@
 # Draft operating procedure
 
-The native release/recovery procedures below have not been executed. Twenty-two
-focused host/workflow unit checks ran after drafting; they do not execute these
-production bindings. Example bindings deliberately contain
+Selected native components and synthetic signed-clone recovery have now run;
+see `VERIFICATION.md`. The complete isolated procedures below have not run. The
+human `app` command parser is currently blocked by a native compiler decline;
+the lower-level numeric BF workflow planner builds at O1. Example bindings contain
 invalid executable hashes, image identities, trust anchors and capacities. They
 must fail until bound to independently reviewed real materials. Never manufacture
 PASS records to advance a workflow.

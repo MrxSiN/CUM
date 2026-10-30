@@ -1,0 +1,657 @@
+{
+  "format": "CUM-NATIVE-COMPILATION-EVIDENCE",
+  "date": "2026-10-30",
+  "target": "windows-x86_64",
+  "compiler": {
+    "executable": "D:/GitHub/BBC/build/bbc.exe",
+    "sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6"
+  },
+  "XAX_REQUIRE_NATIVE": "1 in the compilation loop; not set in the reused initial echo O0 direct-native probe",
+  "pass_count": 56,
+  "attempt_count": 80,
+  "scope": "38 application BF components and two fixed-response test workers at each optimization level",
+  "backend_note": "Installed BBC binary embeds its own XAX backend. Updating the XAX checkout did not rebuild this executable.",
+  "attempts": [
+    {
+      "source": "src/adapters.bf",
+      "source_sha256": "45e1b71017d2abdeda9c667c3c1897656dadfe2dca29a762d500dad565207f40",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "ff811be73d51c139a88fb901e1e75880aa7bc8c8f89b7f419948a1d574888e81",
+      "artifact_bytes": 558592
+    },
+    {
+      "source": "src/budget_flow.bf",
+      "source_sha256": "f307b2b82964be2b64a6422d311b38758ed326e869a67b90cf15cb57cecdb7bf",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "91819055c70be10c0c20d58090c9bd5ea409226d2a2387c9c0e7f5ac1149d748",
+      "artifact_bytes": 1155584
+    },
+    {
+      "source": "src/budget_policy.bf",
+      "source_sha256": "942ba06327f282e4f6013149bc1c5f895fa97a18338c313cbf6a45ef4704ecd7",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "c63d02f9d6816085d30820ead295a21386128f5d1d767f871782cac6b26d516f",
+      "artifact_bytes": 849408
+    },
+    {
+      "source": "src/clean_recovery.bf",
+      "source_sha256": "3ce100ae0cda00333f1567bf01a21e75fcb098ee019356f95da9d86e41312520",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "b70d3a1781045b7361e9c5d0de0542cf125cffdb5a98fe7f91d83680353d5e39",
+      "artifact_bytes": 102400
+    },
+    {
+      "source": "src/command.bf",
+      "source_sha256": "5a80fac19a258ee96442f1e6f3d9d7bb01309ae02dca73e539c0b0231164918d",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/cum.bf",
+      "source_sha256": "61e11080ae7a10bae32d064ca704b36f6f6be52a0929342cba9e54a4a3b84d58",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/discovery.bf",
+      "source_sha256": "d13895e2ff5b94478a3e976c2c89e888041f5a58ee05abdc382e81406906c9d4",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/echo.bf",
+      "source_sha256": "c354d33eff6f287978dc9ae44964de16b275c6d3986a46c54a52abf07b8ce198",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "6dabef629fc703c12a104263a2e140f8d5e1a77ba1b7250130b913a363a2c5a0",
+      "artifact_bytes": 52224,
+      "scope_note": "Reused the successful initial direct-native probe with identical source/compiler/artifact identities; this probe preceded the compilation-loop environment flag"
+    },
+    {
+      "source": "src/filter.bf",
+      "source_sha256": "b661581e42425f179b1d42025bcfdaaafdc1a34e7872d87adbbc0eaa061d9b8f",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "a7b86242aacba62065c1b15db4131e9ff5c023ebe21fbf97cc19ccf5844aa228",
+      "artifact_bytes": 293888
+    },
+    {
+      "source": "src/gates.bf",
+      "source_sha256": "4f023e56cbf3493b81b1b73b7ea42a1e7b010a994c69ae31d89aa81c46e22787",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "1d3f1c1b22aedfd98c4b8736c930146a700b1e1c741656e065c16f3356db38a9",
+      "artifact_bytes": 927232
+    },
+    {
+      "source": "src/git_attributes.bf",
+      "source_sha256": "2665b952e35def092fb42a77a5ff4c7dea3fee4f72fe3d9188c81490b6be9e3e",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "513a3ee9cc2d09263a61db54954cb5bc4243838fb1a20a56aee2fbca363ec12e",
+      "artifact_bytes": 1622528
+    },
+    {
+      "source": "src/graphs/add_negate.bf",
+      "source_sha256": "80c66f291748ed982d2f3323600e524621d7ebabf110b64463b022e659cf0735",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/graphs/flow.bf",
+      "source_sha256": "9d1eb486e1c821df0c8fe5d462941c6802140f28a079d8c9cbcbffe3363a1e95",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "be9e20fd92f3998c9a596a9ea9df28430ebe10a86812192bfbd8a839376e79bc",
+      "artifact_bytes": 141824
+    },
+    {
+      "source": "src/leak_policy.bf",
+      "source_sha256": "7ac562c9b18b9c3dd7a4a4423d2bdcb66c888aca7f07e4d2737b19e2ec84b397",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "0c98096767c52939da63a5205287c46d33fea6194fd4e70a643bcb155a0dd8c3",
+      "artifact_bytes": 169984
+    },
+    {
+      "source": "src/machines/bf_layout.bf",
+      "source_sha256": "a10028c872d460d83c08461662e2f630a4185f7dddfaf5deeb4077b3dd09800f",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/bf_virtualize.bf",
+      "source_sha256": "573d22fa767af36b9576b3b8b21f548b64bebf7be50be4a8077b92d970391b00",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/java_emit.bf",
+      "source_sha256": "0c8a11842248cccaa2c35b5e895ef9294defbee659fcf0db74133924c0be39ff",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/java_int_module.bf",
+      "source_sha256": "f3300f215b2ff48fb326db976b8d12ae06da107aa5f1de61f43e94789bdb353d",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/java_match_0.bf",
+      "source_sha256": "c54e16818eda2a2f28a9d2128f44e606fcc904015eef4acc9598a551b132ba50",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/java_match_1.bf",
+      "source_sha256": "14af25bb6f5a8d024fd0deb6db529e2fcb12093954cc58efddf97cf47afe0edc",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/java_match_2.bf",
+      "source_sha256": "58d5546311d04ff2b1a010ff123b419126b92e0a1ea7fec52b2071f504f7689e",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/java_match_3.bf",
+      "source_sha256": "bb6798c47dc5ba83b246cb4ff227b4c64d85c324b69320d34b184a29751baf04",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/java_match_4.bf",
+      "source_sha256": "04c305ada4b5ad2aabaab13b4f9a7ae73988ac09b1c1265efb1cbd423c8cf81f",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/kotlin_emit.bf",
+      "source_sha256": "4511d78a9cdc799a2c2f6d45a5e10a970ab0fcbf5fb505cb8136b82e44ac4394",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/kotlin_int_module.bf",
+      "source_sha256": "6b8ca14762e159769fe5423f8537c64669a19442e05d1689f7257e6bda8ebd66",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/kotlin_match_0.bf",
+      "source_sha256": "e2ebbd9be19e53ac7e2a86acaa576668405a4e4ea7828b02ce0a80f49f816512",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/kotlin_match_1.bf",
+      "source_sha256": "8cb1b67dad2a02365fb50beb613df37d04121e63ab6e4af734785169ec9f0d78",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/kotlin_match_2.bf",
+      "source_sha256": "b55d7ea3d0b128d85645ba353cc0500a47188334d1b5a4d6e34415df15d6d154",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/kotlin_match_3.bf",
+      "source_sha256": "941061dc81614483ce31631466e3dfa80a0fb0a346e3792d9828dece8a9e8853",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/machines/kotlin_match_4.bf",
+      "source_sha256": "798ca1806d05faa83e195868080e1b2b36eece26f82e052d7969776040ccb77d",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/maintenance.bf",
+      "source_sha256": "e0dde7c0e9e741b6b6632d43d02ce34ebd0a0d18571aa485bda9a765421be927",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "398bdf4122bc5aa056ea1b82da6b2d81f69a0f62c4a609bed0ed08afa5972f05",
+      "artifact_bytes": 950272
+    },
+    {
+      "source": "src/path_policy.bf",
+      "source_sha256": "01d4305066ae079531565b8179a72427d9c4b6b64b7058e9e4c8725786f51257",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/private_select.bf",
+      "source_sha256": "bf54deb5a0fb441ffb5e4e905aabebf09c7ad54f0982e62c99ff2bb3fe48149c",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "d78b62b948f992a4c0176f7db60a18416364f096846eb20440c015d7e32e8b0e",
+      "artifact_bytes": 363520
+    },
+    {
+      "source": "src/project.bf",
+      "source_sha256": "dec5cc18b74f3d65ac152010eae1a28d9d0039f673c402b83a9f9908aed6e8cf",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "ff0b310e717c7b93d24683af10206ecfe0e06b69b2b17acb46c2b31f254a3dcd",
+      "artifact_bytes": 573952
+    },
+    {
+      "source": "src/routes.bf",
+      "source_sha256": "5f5baddd8f2b685430254375014828bee8ebe9a817cf76c235a61353ad8037f0",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "afa15e35163a61340385a2621c3c26346d5225f7836153c92aaaa17daf37fcaf",
+      "artifact_bytes": 685568
+    },
+    {
+      "source": "src/scope_policy.bf",
+      "source_sha256": "27b076ad3297bc980002d3ca9e509e5a120ade526b550165650e44c7c40131c1",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/snapshot.bf",
+      "source_sha256": "94d2e93af16a47840a06e97281add84ec4698d64034dda1b8a13872909a9445c",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "be1c57e6ef62a2d4f02b227d3e2f26d3b7b2167689c9e6d1c755db7ac511b9e6",
+      "artifact_bytes": 308736
+    },
+    {
+      "source": "src/transform.bf",
+      "source_sha256": "3c9ec7111b551fda7170cfb39cd09cfcd3ea1ed16113e46fb25f10788cf825f7",
+      "optimization": "-O0",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "tests/workers/fixed.bf",
+      "source_sha256": "9bc9dc565961bcd1b751dc967fda765df0a276adc688b1473ce81a54a99ba219",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "f44cdb5da7f4f6bd808061b83be8eb1d2c366dd026f9d8857ed9b366ac236834",
+      "artifact_bytes": 150016
+    },
+    {
+      "source": "tests/workers/fixed_machine.bf",
+      "source_sha256": "0fd24cc957a0cc5c425dcc1e296884695d1ef68d1abd54f3a39a2cb30cb23050",
+      "optimization": "-O0",
+      "status": "PASS",
+      "artifact_sha256": "b9c96571138afd37661532316ca57f1ee88d6db441046b5a7cefbbe07453287d",
+      "artifact_bytes": 616448
+    },
+    {
+      "source": "src/adapters.bf",
+      "source_sha256": "45e1b71017d2abdeda9c667c3c1897656dadfe2dca29a762d500dad565207f40",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "05f7f2d067e221395c7add93504256299900ba62bd6e8e66f969a8c92ce4ca21",
+      "artifact_bytes": 88576
+    },
+    {
+      "source": "src/budget_flow.bf",
+      "source_sha256": "f307b2b82964be2b64a6422d311b38758ed326e869a67b90cf15cb57cecdb7bf",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "7e2a5b6154d6d3d8561460ee934a75f820481e2e3f28fb2df42a1c54eb77bdcd",
+      "artifact_bytes": 124416
+    },
+    {
+      "source": "src/budget_policy.bf",
+      "source_sha256": "942ba06327f282e4f6013149bc1c5f895fa97a18338c313cbf6a45ef4704ecd7",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "2b0b3d66a540d2e3099b8beb2eae4e640926dadf2dc399d30b04430323852002",
+      "artifact_bytes": 117248
+    },
+    {
+      "source": "src/clean_recovery.bf",
+      "source_sha256": "3ce100ae0cda00333f1567bf01a21e75fcb098ee019356f95da9d86e41312520",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "1888736c178f15fe5c13284e094c0bbe8bebe05d774c4c90416de8b11fd60766",
+      "artifact_bytes": 54272
+    },
+    {
+      "source": "src/command.bf",
+      "source_sha256": "5a80fac19a258ee96442f1e6f3d9d7bb01309ae02dca73e539c0b0231164918d",
+      "optimization": "-O1",
+      "status": "BLOCKED",
+      "exit": 5,
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n"
+    },
+    {
+      "source": "src/cum.bf",
+      "source_sha256": "61e11080ae7a10bae32d064ca704b36f6f6be52a0929342cba9e54a4a3b84d58",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "53ac6992a1182d09c977159640d6bfe3976e7220bba3a27a92cfafa90bd03c7e",
+      "artifact_bytes": 549888
+    },
+    {
+      "source": "src/discovery.bf",
+      "source_sha256": "d13895e2ff5b94478a3e976c2c89e888041f5a58ee05abdc382e81406906c9d4",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "be90af8ab0f69fcc0d86adfc86f0e9225c7b6b9581735f281018995f3e2d171a",
+      "artifact_bytes": 905216
+    },
+    {
+      "source": "src/echo.bf",
+      "source_sha256": "c354d33eff6f287978dc9ae44964de16b275c6d3986a46c54a52abf07b8ce198",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "6b34682b50c0d2a91fabd59e38191631cb0b8e88c2c161828a07b4628ccd0301",
+      "artifact_bytes": 45568
+    },
+    {
+      "source": "src/filter.bf",
+      "source_sha256": "b661581e42425f179b1d42025bcfdaaafdc1a34e7872d87adbbc0eaa061d9b8f",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "d5567d7417cc1d65c866b671016d4ba4e4a2ea434a848e6fbc2a28f10ac49cc4",
+      "artifact_bytes": 124928
+    },
+    {
+      "source": "src/gates.bf",
+      "source_sha256": "4f023e56cbf3493b81b1b73b7ea42a1e7b010a994c69ae31d89aa81c46e22787",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "b40babd3bd582a351eded5e76055a6f8b02f3500d430930898655333947c7a89",
+      "artifact_bytes": 449024
+    },
+    {
+      "source": "src/git_attributes.bf",
+      "source_sha256": "2665b952e35def092fb42a77a5ff4c7dea3fee4f72fe3d9188c81490b6be9e3e",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "2366095da88f1b0446f554b8557fc2c7094e781ae55d3c2a9432fd44af4d227d",
+      "artifact_bytes": 124416
+    },
+    {
+      "source": "src/graphs/add_negate.bf",
+      "source_sha256": "80c66f291748ed982d2f3323600e524621d7ebabf110b64463b022e659cf0735",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "d7deba997deafdc001cc28849704bfa4b3d984457c87efd58077e39746c2ea40",
+      "artifact_bytes": 247808
+    },
+    {
+      "source": "src/graphs/flow.bf",
+      "source_sha256": "9d1eb486e1c821df0c8fe5d462941c6802140f28a079d8c9cbcbffe3363a1e95",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "44495ef115bc76a033efadf40042f23014b0553fd875e81e947c47d9ea6dd4d6",
+      "artifact_bytes": 63488
+    },
+    {
+      "source": "src/leak_policy.bf",
+      "source_sha256": "7ac562c9b18b9c3dd7a4a4423d2bdcb66c888aca7f07e4d2737b19e2ec84b397",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "61df68d2c7fb48311c5d9fca3cfce340dc9722d8d959812599599426bc6d0eda",
+      "artifact_bytes": 49152
+    },
+    {
+      "source": "src/machines/bf_layout.bf",
+      "source_sha256": "a10028c872d460d83c08461662e2f630a4185f7dddfaf5deeb4077b3dd09800f",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "4278d6e921f4db71b5e1d84940fd4b26382f327b934ac724d92558d961013dbd",
+      "artifact_bytes": 807424
+    },
+    {
+      "source": "src/machines/bf_virtualize.bf",
+      "source_sha256": "573d22fa767af36b9576b3b8b21f548b64bebf7be50be4a8077b92d970391b00",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "e9ed01d9345e8f14379847c68c9c2f2b6c1ab8b10dd9c494be2c89ff221166ae",
+      "artifact_bytes": 1369600
+    },
+    {
+      "source": "src/machines/java_emit.bf",
+      "source_sha256": "0c8a11842248cccaa2c35b5e895ef9294defbee659fcf0db74133924c0be39ff",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "3fd2ea6e9718c663a3e8fe3b97c25d6a872a4f48ea53b746b76f9a4d1c7f022b",
+      "artifact_bytes": 715776
+    },
+    {
+      "source": "src/machines/java_int_module.bf",
+      "source_sha256": "f3300f215b2ff48fb326db976b8d12ae06da107aa5f1de61f43e94789bdb353d",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "1075510dd56e01bca951a216336c7b90e6482f7e0a14a7e1a44fc59163d84da8",
+      "artifact_bytes": 1222144
+    },
+    {
+      "source": "src/machines/java_match_0.bf",
+      "source_sha256": "c54e16818eda2a2f28a9d2128f44e606fcc904015eef4acc9598a551b132ba50",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "3a156a45d03edea6aa3c84562161424a90b9f230339d25ec1948b3c4b924c1c2",
+      "artifact_bytes": 785920
+    },
+    {
+      "source": "src/machines/java_match_1.bf",
+      "source_sha256": "14af25bb6f5a8d024fd0deb6db529e2fcb12093954cc58efddf97cf47afe0edc",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "1b41891a296237a6c9f62c845e169580bf3ad7b81d1ca09576c31e352c495dfd",
+      "artifact_bytes": 786432
+    },
+    {
+      "source": "src/machines/java_match_2.bf",
+      "source_sha256": "58d5546311d04ff2b1a010ff123b419126b92e0a1ea7fec52b2071f504f7689e",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "215bf2c7529ed08cb69fdd3fa3c70f43f2677953342b62845c9b57e54ee84578",
+      "artifact_bytes": 786432
+    },
+    {
+      "source": "src/machines/java_match_3.bf",
+      "source_sha256": "bb6798c47dc5ba83b246cb4ff227b4c64d85c324b69320d34b184a29751baf04",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "f22ae427b3701b8f1edde4699a18339935b9792d9d9ede4db02541c9b0762cf9",
+      "artifact_bytes": 797696
+    },
+    {
+      "source": "src/machines/java_match_4.bf",
+      "source_sha256": "04c305ada4b5ad2aabaab13b4f9a7ae73988ac09b1c1265efb1cbd423c8cf81f",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "7f4d413f76fdbd1901a7627738487d613068be48e8b4253272bc97b45daf96d8",
+      "artifact_bytes": 422912
+    },
+    {
+      "source": "src/machines/kotlin_emit.bf",
+      "source_sha256": "4511d78a9cdc799a2c2f6d45a5e10a970ab0fcbf5fb505cb8136b82e44ac4394",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "eaf03bd32a06e1e2a6f1ba285d8dd9fff5f21e02630d4041eee7ff1c5dacbd9e",
+      "artifact_bytes": 749568
+    },
+    {
+      "source": "src/machines/kotlin_int_module.bf",
+      "source_sha256": "6b8ca14762e159769fe5423f8537c64669a19442e05d1689f7257e6bda8ebd66",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "fdd3a2e790f9b0ac81d8ea162cc32ec1fddfd189a4a76abd6e7ebde3370974c7",
+      "artifact_bytes": 1136128
+    },
+    {
+      "source": "src/machines/kotlin_match_0.bf",
+      "source_sha256": "e2ebbd9be19e53ac7e2a86acaa576668405a4e4ea7828b02ce0a80f49f816512",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "11e22a9ece9bdd0f717bc87d2e760575183750c99866b09dabeef2d98fe86294",
+      "artifact_bytes": 785920
+    },
+    {
+      "source": "src/machines/kotlin_match_1.bf",
+      "source_sha256": "8cb1b67dad2a02365fb50beb613df37d04121e63ab6e4af734785169ec9f0d78",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "607fb4340a2f6096bf8af3aedd280869a311ad6265a56223175b878f9ffa9332",
+      "artifact_bytes": 786432
+    },
+    {
+      "source": "src/machines/kotlin_match_2.bf",
+      "source_sha256": "b55d7ea3d0b128d85645ba353cc0500a47188334d1b5a4d6e34415df15d6d154",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "a8cbca4b8dc2c2324cdcfd5fcbf02809111f28a9305aa9acbad03abbd6c75962",
+      "artifact_bytes": 786432
+    },
+    {
+      "source": "src/machines/kotlin_match_3.bf",
+      "source_sha256": "941061dc81614483ce31631466e3dfa80a0fb0a346e3792d9828dece8a9e8853",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "812885e54542881b3a75827a403c33f5f2f9493a7cca8abdfc00d7f1c644f702",
+      "artifact_bytes": 797696
+    },
+    {
+      "source": "src/machines/kotlin_match_4.bf",
+      "source_sha256": "798ca1806d05faa83e195868080e1b2b36eece26f82e052d7969776040ccb77d",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "d2aeb38846a7fe2d2c784a9b1ac4b4a3696a5ef24a9ce3c4d49943e63f5c42b7",
+      "artifact_bytes": 226816
+    },
+    {
+      "source": "src/maintenance.bf",
+      "source_sha256": "e0dde7c0e9e741b6b6632d43d02ce34ebd0a0d18571aa485bda9a765421be927",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "6bc9702caf01185c9018fbecf2db9433ed799383064f4b32d3bdea49110dc105",
+      "artifact_bytes": 177152
+    },
+    {
+      "source": "src/path_policy.bf",
+      "source_sha256": "01d4305066ae079531565b8179a72427d9c4b6b64b7058e9e4c8725786f51257",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "eead29dc363335d1011ff94dc016e15afd69a71eba715c4e10dc945caf73f66b",
+      "artifact_bytes": 1519104
+    },
+    {
+      "source": "src/private_select.bf",
+      "source_sha256": "bf54deb5a0fb441ffb5e4e905aabebf09c7ad54f0982e62c99ff2bb3fe48149c",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "685f6ce64f5aa5a396b9341ac660868a311c154669e70ae561aea52e3e979c7a",
+      "artifact_bytes": 70144
+    },
+    {
+      "source": "src/project.bf",
+      "source_sha256": "dec5cc18b74f3d65ac152010eae1a28d9d0039f673c402b83a9f9908aed6e8cf",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "2e18e4df9dc06da0eeb6932feaa806f90b4875185f5131b7e8d04d8602dd1875",
+      "artifact_bytes": 93184
+    },
+    {
+      "source": "src/routes.bf",
+      "source_sha256": "5f5baddd8f2b685430254375014828bee8ebe9a817cf76c235a61353ad8037f0",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "693b97878422090fcb4ab0924d1a2b098aa7e31ae3be1517d2a48cd8d34afa6a",
+      "artifact_bytes": 102400
+    },
+    {
+      "source": "src/scope_policy.bf",
+      "source_sha256": "27b076ad3297bc980002d3ca9e509e5a120ade526b550165650e44c7c40131c1",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "75d5ba6ad48cddefed87f8a33bdb5bfe0833559439bfbf55391274220e91f676",
+      "artifact_bytes": 335360
+    },
+    {
+      "source": "src/snapshot.bf",
+      "source_sha256": "94d2e93af16a47840a06e97281add84ec4698d64034dda1b8a13872909a9445c",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "8dd485c196da7ef6fbd86bb9a98639c6ffb4c3ec2ca285d6815aace8810572f6",
+      "artifact_bytes": 64512
+    },
+    {
+      "source": "src/transform.bf",
+      "source_sha256": "3c9ec7111b551fda7170cfb39cd09cfcd3ea1ed16113e46fb25f10788cf825f7",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "e416c98e4796cb73b8a75a7ff1e9c7e62b7f543a14e66c8d5bd3bd1971a43aa5",
+      "artifact_bytes": 440832
+    },
+    {
+      "source": "tests/workers/fixed.bf",
+      "source_sha256": "9bc9dc565961bcd1b751dc967fda765df0a276adc688b1473ce81a54a99ba219",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "ad826ca6f2fb4d0da736509d0d20d5839032b98b144fca9706fcca2e050fabcc",
+      "artifact_bytes": 51200
+    },
+    {
+      "source": "tests/workers/fixed_machine.bf",
+      "source_sha256": "0fd24cc957a0cc5c425dcc1e296884695d1ef68d1abd54f3a39a2cb30cb23050",
+      "optimization": "-O1",
+      "status": "PASS",
+      "artifact_sha256": "9e9d5f8ab649b42b1a2d58da71f4c7688e4fa45ead347d4162bd58c8a9408ed4",
+      "artifact_bytes": 109568
+    }
+  ]
+}

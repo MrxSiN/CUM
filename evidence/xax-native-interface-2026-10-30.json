@@ -1,0 +1,18 @@
+{
+  "seed_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+  "source_sha256": "2fa5e8dee84f063191823cc06053604cda6eba5248b39444d4b6a9a0b8fb0551",
+  "operations": [
+    {
+      "command": "verify",
+      "exit": 0,
+      "stderr": "",
+      "stdout_hex": ""
+    },
+    {
+      "command": "inspect",
+      "exit": 0,
+      "stderr": "",
+      "stdout_hex": ""
+    }
+  ]
+}

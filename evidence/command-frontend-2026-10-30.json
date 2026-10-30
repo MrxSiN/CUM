@@ -1,0 +1,20 @@
+[
+  {
+    "argv": [
+      "check"
+    ],
+    "exit": 0,
+    "stderr": "",
+    "output_bytes": 0
+  },
+  {
+    "argv": [
+      "emit-bfx",
+      "-O1"
+    ],
+    "exit": 0,
+    "stderr": "",
+    "output_bytes": 11587,
+    "bfx_sha256": "0a91f274820233c41cff20e092889fd29fcce959a4c98c9cd19ad62b555543b6"
+  }
+]

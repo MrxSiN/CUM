@@ -1,9 +1,11 @@
 # Deferred test matrix
 
-The matrix is not an executed acceptance checklist. After whole-project source
-drafting, 22 focused generic host/BF workflow checks passed; their exact scope is
-`../evidence/unit-checks-2026-10-30.json`. Native and release checks remain NOT
-STARTED. Test source existence is never a passing result.
+The matrix lists acceptance areas, not blanket passing coverage. The current run
+passed all 52 discovered tests, native BF/JVM fixture checks and synthetic signed
+clone recovery. Native XAX edit failed, and final isolated release acceptance is
+blocked. Exact scope and exclusions are in `VERIFICATION.md` and
+`../evidence/validation-results-2026-10-30.json`. Earlier dated checks remain
+historical. Test source existence is never a passing result.
 
 | Area | Authored checks / required runs |
 |---|---|
@@ -46,3 +48,11 @@ forbidden-original overlap, complete runtime distributions and cold tools, and
 restricted JVM/graph behavior. The four new unit modules ran as recorded; native
 runtime/JVM/graph acceptance did not. Further allocation/disk exhaustion,
 Windows metadata, clean signed recovery and native target cases remain necessary.
+
+
+`test_signed_recovery.py` is an opt-in native Windows integration test using
+synthetic fixtures/disposable keys, real capture/crypto/Git, copied host modules
+and a BF recovery planner in a separate process. It removes original fixture trees
+and rejects signature/capsule mutation and extra release files. It does not prove
+sandbox isolation or a complete offline runtime package. The earlier statement
+about four new unit modules describes the draft checkpoint, not the current run.

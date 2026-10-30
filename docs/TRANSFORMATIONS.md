@@ -1,7 +1,8 @@
 # Transformation contracts — source draft
 
-All runtime evidence is NOT STARTED. These semantic arguments describe intended
-domains; they are not proofs of the source implementation or executed results.
+Scoped Windows native BF/JVM fixtures now pass as recorded in `VERIFICATION.md`.
+The graph recipe fails native edit. The semantic arguments below describe intended
+domains; they are not universal proofs or production release acceptance.
 
 ## Single-cell worker
 

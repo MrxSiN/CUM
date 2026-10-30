@@ -12,7 +12,7 @@ from pathlib import Path
 
 from host.bytehost.errors import require
 from host.bytehost.process import checked, pinned_executable
-from host.bytehost.storage import atomic_json, load
+from host.bytehost.storage import atomic_json, load, digest
 
 
 def verify(spec, case):
@@ -33,7 +33,10 @@ def verify(spec, case):
                     artifact_sizes.append(sum(path.stat().st_size for path in output.glob("Arithmetic*.class")))
             else:
                 jar = output / "application.jar"
-                compiled = checked([pinned_executable(spec["kotlinc"]), str(source), "-include-runtime", "-d", str(jar)],
+                for path, expected in spec["kotlinc"].get("inputs_sha256", {}).items():
+                    require(digest(path) == expected, "TOOL_IDENTITY", "Kotlin compiler input differs from pin")
+                compiled = checked([pinned_executable(spec["kotlinc"]), *spec["kotlinc"].get("argv", []),
+                                    str(source), "-include-runtime", "-d", str(jar)],
                                    timeout=spec["compile_timeout_seconds"], max_output=spec["max_log_bytes"])
                 checked([javac, "-g:none", "-cp", str(jar), "-d", str(output), spec["runner"]],
                         timeout=spec["compile_timeout_seconds"], max_output=spec["max_log_bytes"])
@@ -67,6 +70,7 @@ def verify(spec, case):
     atomic_json(spec["report"], {"format": "INDEPENDENT-JVM-CHECK", "case": case, "status": "PASS",
                 "language": spec["language"], "records": records,
                 "compiler_sha256": spec["javac"]["sha256"] if spec["language"] == "java" else spec["kotlinc"]["sha256"],
+                "compiler_inputs_sha256": spec.get("kotlinc", {}).get("inputs_sha256", {}) if spec["language"] == "kotlin" else {},
                 "jdk_sha256": spec["java"]["sha256"],
                 "metrics": {"source_expansion_ratio": Path(spec["protected"]).stat().st_size / max(1, Path(spec["original"]).stat().st_size),
                             "max_binary_bytes": max(artifact_sizes) if artifact_sizes else None,
