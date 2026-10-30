@@ -46,7 +46,7 @@ def run_native(spec, artifact, data):
 
 
 def verify(spec, case):
-    results = []
+    results, runtime_observations = [], []
     observed_expansions, observed_binaries, observed_runtimes = [], [], []
     if case == "boundary":
         require(set(spec["workers"]) == {"echo", "fixed", "transform"},
@@ -112,6 +112,11 @@ def verify(spec, case):
                             outputs = [run_native(spec, artifact, data) for artifact in artifacts]
                             require(all(result["stdout"] == expected for result in outputs),
                                     "SEMANTICS", "Native/reference output mismatch")
+                            require(outputs[0]["stdin_file_offset"] == outputs[1]["stdin_file_offset"],
+                                    "SEMANTICS", "Original and protected runtimes consumed different physical input")
+                            runtime_observations.append({"path": fixture["path"], "optimization": optimization,
+                                "input_hex": encoded, "output_hex": expected.hex(),
+                                "stdin_file_offsets": [item["stdin_file_offset"] for item in outputs]})
                             if case == "budgets":
                                 expansion = protected.stat().st_size / max(1, original.stat().st_size)
                                 observed_expansions.append(expansion)
@@ -122,7 +127,8 @@ def verify(spec, case):
                                     require(outputs[1]["wall_seconds"] <= spec["budgets"]["max_runtime_seconds"], "BUDGET", "Runtime exceeds budget")
     record = {"format": "INDEPENDENT-NATIVE-CHECK", "status": "PASS", "case": case,
               "execution_environment": "emulation" if spec.get("launcher") else "native Windows process",
-              "compiler_sha256": spec.get("compiler", {}).get("sha256"), "results": results}
+              "compiler_sha256": spec.get("compiler", {}).get("sha256"), "results": results,
+              "runtime_observations": runtime_observations}
     record["metrics"] = {"source_expansion_ratio": max(observed_expansions) if observed_expansions else None,
                          "max_binary_bytes": max(observed_binaries) if observed_binaries else None,
                          "max_runtime_seconds": max(observed_runtimes) if observed_runtimes else None}

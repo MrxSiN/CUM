@@ -53,6 +53,20 @@ class IsolatedRecoveryTests(unittest.TestCase):
                 trusted_isolated(spec)
                 execute.assert_called_once_with(spec)
 
+    def test_signed_policy_authenticates_the_actual_policy_before_capabilities(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            spec = self.binding(temporary)
+            spec.pop("policy_sha256")
+            spec["policy_signature"] = {"source": "unrelated-file", "public_key": "independent-anchor"}
+            with patch("host.bytehost.trusted_recovery.verify_signature") as verify, \
+                 patch("host.bytehost.trusted_recovery.isolated", return_value={"exit": 0}) as execute:
+                trusted_isolated(spec)
+                self.assertEqual(verify.call_args.args[0]["source"], spec["policy_file"])
+                execute.assert_called_once()
+            spec["policy_sha256"] = "0" * 64
+            with self.assertRaises(HostError):
+                trusted_isolated(spec)
+
     def test_missing_changed_or_duplicate_capability_rejected(self):
         for mutation in ("missing", "duplicate", "argv", "environment", "readonly", "source", "pin", "bytes", "forbidden"):
             with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as temporary:

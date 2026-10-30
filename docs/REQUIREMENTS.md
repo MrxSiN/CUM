@@ -1,8 +1,8 @@
 # Master-prompt traceability
 
 This map records drafted source, not passing evidence. Overall application acceptance
-is PARTIAL; current scoped PASS, graph FAIL and isolation BLOCKED results are in
-`VERIFICATION.md`. The direct request authorizes a whole-project draft
+is PARTIAL; current scoped results are in `STATUS.md` and dated evidence records.
+`VERIFICATION.md` retains the original checkpoint. The direct request authorizes a whole-project draft
 before tests/failure repair/optimization, overriding the attachment's Stage-0-only
 assignment and one-active-stage workflow. The privacy exception for implementation
 source is the owner's explicit GitHub authorization in AGENTS.md; originals and
@@ -47,7 +47,8 @@ Only then profile or optimize. Keep raw results in new dated records; historical
 evidence is immutable. No performance or release result follows from this map.
 
 
-Current validation does not promote all requirements: the XAX recipe fails native
-transaction uniqueness checks; `command.bf` is declined by native lowering; final
-container isolation, scalability stress, performance budgets, general adapters,
-real-project licensing and release acceptance remain unavailable or unexecuted.
+Current validation does not promote all requirements. The earlier command-parser,
+XAX transaction and isolation blockers were fixed for restricted fixtures. Broad
+adapters, scalability, repeated production performance budgets, different-host
+offline recovery, real-project licensing and production acceptance remain separate
+requirements. Historical failures above are not current blocker claims.

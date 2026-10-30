@@ -1,11 +1,9 @@
 # Deferred test matrix
 
-The matrix lists acceptance areas, not blanket passing coverage. The current run
-passed all 52 discovered tests, native BF/JVM fixture checks and synthetic signed
-clone recovery. Native XAX edit failed, and final isolated release acceptance is
-blocked. Exact scope and exclusions are in `VERIFICATION.md` and
-`../evidence/validation-results-2026-10-30.json`. Earlier dated checks remain
-historical. Test source existence is never a passing result.
+The matrix lists acceptance areas, not blanket passing coverage. Current outcomes
+and exclusions are in `STATUS.md` and dated evidence. The original 52-test checkpoint
+and its XAX/isolation failures remain in `VERIFICATION.md`; later restricted
+native edits and VM checks passed. Test source existence is never a passing result.
 
 | Area | Authored checks / required runs |
 |---|---|

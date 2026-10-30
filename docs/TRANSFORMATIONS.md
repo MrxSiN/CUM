@@ -75,6 +75,11 @@ still requires its separate development-ready check.
 
 ## Structural acceptance
 
+The restricted presentation pass adds non-executable BF annotations and encodes
+static document text while preserving its rendered meaning. See `PRESENTATION.md`.
+Comment changes and document encodings cannot substitute for an executable
+structural change, independent behavior checks or exact recovery.
+
 `tests/tools/normalize.py` is an independent analysis tool, never a production
 transformer. Checks compare filtered instructions, folded arithmetic/clear-loop
 representations and real BBC O1 BFX. JVM/graph checks inspect their appropriate

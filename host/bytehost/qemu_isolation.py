@@ -14,7 +14,8 @@ import time
 
 from .errors import HostError, require
 from .process import checked, pinned_executable
-from .storage import atomic_bytes, canonical, digest, no_links
+from .storage import atomic_bytes, atomic_json, canonical, digest, no_links
+from .resources import ResourceSample
 from pathlib import PurePosixPath
 
 MAGIC = b"BYTEVM\x00\x01"
@@ -112,6 +113,8 @@ def isolated(spec):
         with (directory / "stderr.log").open("wb") as error:
             child = subprocess.Popen(argv, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=error,
                                      creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
+            counters = ResourceSample(child.pid)
+            counters_finished = False
             try:
                 deadline = started + vm["boot_timeout_seconds"]
                 while True:
@@ -154,8 +157,18 @@ def isolated(spec):
                               stderr=base64.b64decode(result["stderr"], validate=True),
                               guest_wall_seconds=result["wall_seconds"], wall_seconds=time.monotonic() - started,
                               isolation="QEMU TCG, disposable disk overlay, no guest NIC or host filesystem shares")
+                result["resources"] = counters.finish()
+                counters_finished = True
+                if spec.get("measurement_report"):
+                    require(result["resources"]["status"] == "PASS", "METRIC", "VM process counters are unavailable")
+                    atomic_json(spec["measurement_report"], {"format": "QEMU-PROCESS-OBSERVATION", "status": "PASS",
+                                "scope": "Entire host QEMU process including guest and emulation overhead",
+                                "peak_memory_bytes": result["resources"]["peak_working_set_bytes"],
+                                "resources": result["resources"], "wall_seconds": result["wall_seconds"]})
                 return result
             finally:
+                if not counters_finished:
+                    counters.finish()
                 if child.poll() is None:
                     child.kill()
                 child.wait()

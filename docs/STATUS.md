@@ -1,20 +1,20 @@
 # Current validation status
 
-**PARTIAL — the three reported blockers are resolved for the verified O1/fixture
-paths. CUM is not complete or production accepted.**
+**PARTIAL — one complete synthetic BF release passed the actual prepare workflow.
+CUM is not complete or production accepted.**
 
 | Evidence | Observed result |
 |---|---|
 | Source coverage | PARTIAL — whole workflow drafted; restricted adapters |
-| Full discovered suite | PASS — 67 tests, zero failures/errors/skips; native, crypto and VM opt-ins enabled |
-| Current Windows BF compilation | PASS — 40/40 at O1, including two test workers |
+| Full discovered suite | PASS — 74 tests, zero failures/errors/skips; native, crypto and VM opt-ins enabled |
+| Current Windows BF compilation | PASS — 42/42 at O1, including two test workers |
 | Native human command parser | PASS — all eight commands, rejection cases and host-to-BF planner bridge |
 | Native XAX edit | PASS — four single-mutation edit/verify stages, native resolve/build, changed code, four behavior inputs, stale replay rejection |
 | VM isolation boundary | PASS — 256 KiB binary roundtrip, readonly inputs, UID 1000, no NIC/host shares, unsafe output rejection |
 | Isolated BF fixtures | PASS — eight Windows builds under Wine, 32 behavior runs, two normalization comparisons, eleven worker-boundary cases |
 | Synthetic signed clone recovery | PASS — direct Windows and isolated VM; exact captured scope restored after original trees were removed; signature/capsule/extra-file mutations rejected |
 | Earlier native BF/JVM fixtures | PASS within recorded scope — unchanged native artifacts retain their prior evidence |
-| Complete protected-release prepare/acceptance workflow | NOT EXECUTED |
+| Complete prepare workflow | PASS for one corrected synthetic BF fixture — 71 native instructions, 55 service receipts, sixteen evidence selections, native acceptance and atomic finalization |
 | Complete offline runtime backup and different-host cold restore | NOT ESTABLISHED |
 | Scalability/repeated performance budgets, Android, advanced resistance | NOT STARTED |
 | Production release acceptance | NOT STARTED |
@@ -22,10 +22,11 @@ paths. CUM is not complete or production accepted.**
 The parser still declines at O0; O1 is the explicit verified build configuration.
 This observation is not a permanent CUM capacity limit. Neither BBC nor XAX was
 edited to hide an unavailable compiler ability. Thirty-seven rebuilt artifacts
-are byte-identical to the prior build; only command/add_negate/flow changed.
+were byte-identical at the earlier blocker checkpoint. The current build adds
+presentation kernels and extends the BF prepare plan with late review hooks.
 
-See [blocker follow-up](BLOCKER_FIXES.md), [VM operations](BYTEVM.md), and the
-[current evidence](../evidence/blocker-validation-2026-10-30.json). The original
+See [synthetic release](SYNTHETIC_RELEASE.md), [blocker follow-up](BLOCKER_FIXES.md), [VM operations](BYTEVM.md), and the
+[current evidence](../evidence/synthetic-prepare-2026-10-31.json). The original
 [validation checkpoint](VERIFICATION.md) and its dated failure records remain
 historical and unchanged.
 

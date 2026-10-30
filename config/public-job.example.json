@@ -2890,6 +2890,30 @@
         "release_manifest": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/release.json",
         "recovered_archive": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-result/recovered.tar"
       }
+    },
+    "73": {
+      "tool": {
+        "executable": "REPLACE_WITH_INDEPENDENT_REVIEW_TOOL",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "REPLACE_WITH_APPROVED_FINAL_REVIEW_OPERANDS"
+      ],
+      "timeout_seconds": 300,
+      "max_output_bytes": 1048576,
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/final-review-receipt.json"
+    },
+    "74": {
+      "tool": {
+        "executable": "REPLACE_WITH_INDEPENDENT_REVIEW_TOOL",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "REPLACE_WITH_APPROVED_RECOVERY_POLICY_OPERANDS"
+      ],
+      "timeout_seconds": 300,
+      "max_output_bytes": 1048576,
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/recovery-policy-receipt.json"
     }
   },
   "command_worker": {

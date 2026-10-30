@@ -1,7 +1,7 @@
 # Adapter source contracts
 
-Adapter acceptance remains PARTIAL. BF/JVM fixture paths have native evidence;
-the XAX recipe fails native edit. `adapters.bf` admits IDs 1..5 to drafted routes, not to verified
+Adapter acceptance remains PARTIAL. Restricted BF/JVM and four-transaction XAX
+fixture paths have native evidence. `adapters.bf` admits IDs 1..5 to drafted routes, not to verified
 language support. `routes.bf` chooses the service/operand. The host never chooses
 an adapter from a filename. `discovery.bf` classifies paths, while `scope_policy.bf`
 requires explicit owner dispositions. Unknown IDs and unsupported syntax reject.

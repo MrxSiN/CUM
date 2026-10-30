@@ -117,6 +117,16 @@ A service receipt proves its operation completed, not general semantic/security
 truth. Review and pin actual independent checkers, retain their reports, and never
 substitute an arbitrary successful executable for a required gate.
 
+Prepare now invokes independent review operand 73 after measured checks and before
+authenticating the final review. Operand 74 provisions the recovery policy after
+the signed clone has been audited. Both are pinned external review operations;
+they cannot grant approval merely by returning zero. Final review signatures,
+scope/mapping bindings and exact recovery capabilities are independently checked.
+Script-based tools must pin their input scripts and configuration with
+`inputs_sha256`. Existing private bindings missing these operands fail closed.
+Synthetic reviewers explicitly identify their fixture subject and set
+`production_approval` to false; they are not production owner approval.
+
 ## Portable inventory, trust and recovery modes
 
 Public inventory format is `BYTE-TREE-PUBLIC-GIT`: canonical NFC relative paths,
@@ -142,6 +152,12 @@ readonly file hashes/directory inventories, image, arguments, workdir and enviro
 Fill directory inventory placeholders with independently reviewed expected records;
 do not derive trust automatically from the untrusted clone. Keep the policy outside
 all mounts. For each new release its expected clone inventory must be reviewed.
+
+A policy can be authenticated by its independently retained SHA-256 or by a
+detached signature checked against an independent signer SPKI pin. Specify exactly
+one method. Signed policies allow a reviewed policy to be issued for the actual
+new clone without predicting future artifact hashes. The policy itself cannot
+supply its trust anchor or change the prebound execution capabilities.
 
 Standalone `recover` authenticates provenance, decrypts and safely restores to a
 new destination without original files or a compiler. Bind it to downloaded release

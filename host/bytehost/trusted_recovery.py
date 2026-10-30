@@ -7,12 +7,18 @@ from pathlib import Path
 from .errors import require
 from .process import isolated
 from .storage import digest, load, no_links, verify_tree
+from .crypto import verify_signature
 
 
 def trusted_isolated(spec):
     policy_path = Path(spec["policy_file"]).absolute()
     no_links(policy_path)
-    require(digest(policy_path) == spec["policy_sha256"], "TRUST_ANCHOR", "Trusted policy differs from independent pin")
+    require(("policy_signature" in spec) != ("policy_sha256" in spec),
+            "TRUST_ANCHOR", "Exactly one independent policy authentication method is required")
+    if "policy_signature" in spec:
+        verify_signature(dict(spec["policy_signature"], source=str(policy_path)))
+    else:
+        require(digest(policy_path) == spec["policy_sha256"], "TRUST_ANCHOR", "Trusted policy differs from independent pin")
     policy = load(policy_path)
     require(policy["format"] == "PINNED-ISOLATED-CAPABILITIES", "FORMAT", "Unknown trusted execution policy")
     require(policy["image"] == spec["image"], "TRUST_ANCHOR", "Execution image was not independently approved")

@@ -40,6 +40,26 @@ class CryptoTests(unittest.TestCase):
     def call(self, *args):
         return checked([self.tool["executable"], *args], timeout=60, max_output=1048576)
 
+    def test_signed_dynamic_isolation_policy_and_tampering(self):
+        from unittest.mock import patch
+        from tests.test_isolated_recovery import IsolatedRecoveryTests
+        from host.bytehost.trusted_recovery import trusted_isolated
+        spec = IsolatedRecoveryTests().binding(self.root)
+        policy = self.root / "policy.json"
+        signature = self.root / "policy.sig"
+        sign(dict(self.common, source=str(policy), destination=str(signature), identity=str(self.root / "signer.key")))
+        spec.pop("policy_sha256")
+        spec["policy_signature"] = dict(self.common, signature=str(signature), public_key=str(self.root / "signer.pub"),
+                                        trusted_spki_sha256=digest(self.root / "signer.der"))
+        with patch("host.bytehost.trusted_recovery.isolated", return_value={"exit": 0}) as execute:
+            trusted_isolated(spec)
+            execute.assert_called_once()
+        policy.write_bytes(policy.read_bytes() + b" ")
+        with patch("host.bytehost.trusted_recovery.isolated") as execute:
+            with self.assertRaises(HostError):
+                trusted_isolated(spec)
+            execute.assert_not_called()
+
     def encrypted(self):
         capsule = self.root / "capsule.cms"
         envelope(dict(self.common, source=str(self.source), destination=str(capsule),

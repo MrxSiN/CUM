@@ -22,6 +22,14 @@ Memory/CPU budgets describe the guest allocation, not all host overhead. TCG
 timings are emulation measurements and cannot establish native runtime budgets.
 The loopback control socket assumes trusted local host processes.
 
+On Windows, optional `measurement_report` records the live QEMU process peak
+working set and CPU counters before the VM is terminated. This includes the guest
+OS, tool processes and emulation overhead; it is not application-only memory or
+a Linux cgroup measurement. Missing counters fail a requested measurement gate.
+The existing independently pinned policy hash remains supported; a detached policy
+signature with an independent SPKI trust pin is an alternative, not an unsigned
+dynamic-policy escape.
+
 ## Provision a separate tool image
 
 Use an owner-controlled private directory. Obtain an official Ubuntu cloud image,

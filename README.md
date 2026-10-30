@@ -3,13 +3,12 @@
 Brainfuck-authored source camouflage and authenticated exact recovery.
 
 **PARTIAL — drafted across the workflow, with scoped native validation.**
-All 67 discovered tests passed with native, crypto and VM checks enabled, with
-zero skips. O1 builds all 40 components. The native command parser and four-step
-XAX edit regression pass. A pinned, network-disabled QEMU VM passed isolated
-build/behavior checks and exact signed-clone recovery, including tamper rejection.
-Seven BF fixtures and restricted Java/Kotlin modules retain their earlier scoped
-native evidence. Whole-product release acceptance remains incomplete.
-See [current validation](docs/BLOCKER_FIXES.md).
+All 74 discovered tests passed with native, crypto and VM checks enabled, with
+zero skips. O1 builds all 42 components. One complete synthetic BF project passed
+the real prepare workflow: capture, protection with comments and readable rendered
+documents, independent builds, measured gates, signing, real Git clone, isolated
+exact recovery, development rebuild and native BF acceptance. Whole-product and
+production acceptance remain incomplete. See [synthetic release](docs/SYNTHETIC_RELEASE.md).
 
 All CUM application decisions and source transformations live in genuine
 Brainfuck under `src/`. `host/bytehost/` supplies separately identifiable generic
@@ -28,7 +27,8 @@ environment receives the clone export, independent identity/trust and retained r
 with no original/reference mount. Publication remains a separate owner-approved
 operation. Public-capsule and private-vault example bindings are provided. The
 synthetic signed-recovery test runs both Windows processes and a separately pinned
-QEMU VM. The complete protected-release workflow has not been executed.
+QEMU VM. The complete prepare workflow has executed for the restricted synthetic BF fixture.
+Different-host offline recovery and production release acceptance remain unverified.
 
 Current compiler ceilings are not permanent CUM design limits. Explicit verified
 capabilities and operation budgets govern each job; actual compiler/backend

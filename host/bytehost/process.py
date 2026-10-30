@@ -45,7 +45,9 @@ def run(argv, *, stdin=b"", timeout=60, max_output=1048576, cwd=None, env=None):
         output.seek(0)
         error.seek(0)
         stdout, stderr = output.read(), error.read()
+        input_offset = input_file.tell()
     return {"exit": child.returncode, "stdout": stdout, "stderr": stderr,
+            "stdin_file_offset": input_offset,
             "wall_seconds": time.perf_counter() - started, "resources": resources}
 
 

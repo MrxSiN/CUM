@@ -80,3 +80,10 @@ recovery is 70, its output receipt 72 and safe result extraction 71. The sixteen
 selected receipts include the clone history audit and isolated recovery. A service
 failure always aborts, whether or not separately selected. Standalone recovery
 retains its no-reference signature/decrypt/extract path.
+
+Prepare invokes independent final-review operand 73 before authenticating the
+scope-bound review, and recovery-policy operand 74 after clone audit. Their
+argument vectors and script/configuration inputs must be independently pinned.
+They supply real review artifacts; an exit code cannot replace review signatures
+or independently checked content bindings. Dynamic policies use detached
+signatures anchored outside the clone, or the existing independent hash method.

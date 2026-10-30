@@ -47,7 +47,9 @@
     "D:/GitHub/CUM/src/snapshot.bf",
     "D:/GitHub/CUM/src/transform.bf",
     "D:/GitHub/CUM/tests/workers/fixed.bf",
-    "D:/GitHub/CUM/tests/workers/fixed_machine.bf"
+    "D:/GitHub/CUM/tests/workers/fixed_machine.bf",
+    "D:/GitHub/CUM/src/presentation.bf",
+    "D:/GitHub/CUM/src/presentation_flow.bf"
   ],
   "timeout_seconds": 600,
   "max_log_bytes": 1048576

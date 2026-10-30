@@ -13,6 +13,9 @@ from .storage import atomic_json, digest, no_links
 
 def invoke(spec):
     executable = pinned_executable(spec["tool"])
+    for name, expected in spec.get("inputs_sha256", {}).items():
+        no_links(name)
+        require(digest(name) == expected, "TOOL_IDENTITY", "Trusted tool input differs from its independent pin", path=name)
     data = Path(spec["stdin_file"]).read_bytes() if spec.get("stdin_file") else b""
     environment = None
     if spec.get("clear_environment_prefixes") or spec.get("environment"):
@@ -24,6 +27,7 @@ def invoke(spec):
     if "expected_stdout_hex" in spec:
         require(result["stdout"] == bytes.fromhex(spec["expected_stdout_hex"]), "TOOL_RESPONSE", "Pinned tool response differs from approved bytes")
     record = {"format": "PINNED-TOOL-RECEIPT", "tool_sha256": spec["tool"]["sha256"],
+              "inputs_sha256": spec.get("inputs_sha256", {}),
               "argv": spec["argv"], "exit": result["exit"], "wall_seconds": result["wall_seconds"],
               "resources": result["resources"],
               "stdout_hex": result["stdout"].hex(), "stderr_hex": result["stderr"].hex()}

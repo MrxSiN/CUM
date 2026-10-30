@@ -26,10 +26,11 @@ class WorkflowDraftTests(unittest.TestCase):
             actual = plan("cum.bf", bytes([3, mode]))
             expected = [(11, 26), (12, 27), (13, 28), (14, 29), (15, 30),
                         (48, 64), (25, 65), (45, 66), (25, 67), (46, 68),
-                        (25, 31), (46, 69), (44, 70), (19, 72), (7, 71), (8, 36)]
+                        (25, 31), (46, 69), (25, 74), (44, 70), (19, 72), (7, 71), (8, 36)]
             start = actual.index(expected[0])
             self.assertEqual(actual[start:start + len(expected)], expected)
             self.assertLess(actual.index((14, 61)), actual.index((29, 10)))
+            self.assertLess(actual.index((25, 73)), actual.index((14, 24)))
             self.assertLess(actual.index((47, 63)), start)
             self.assertEqual(actual[-2:], [(16, 38), (17, 39)])
             self.assertEqual((23, 40) in actual, mode == 1)
