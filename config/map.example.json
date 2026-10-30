@@ -1,0 +1,16 @@
+{
+  "worker": {
+    "executable": "D:/GitHub/CUM/build/transform.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "input_capacity_bytes": 65536,
+  "output_capacity_bytes": 65536,
+  "record_payload_bytes": 512,
+  "initial_state_hex": "0200",
+  "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
+  "timeout_seconds": 60,
+  "max_output_bytes": 1073741824,
+  "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/input.bf",
+  "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/protected.bf",
+  "journal": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/mapping.json"
+}

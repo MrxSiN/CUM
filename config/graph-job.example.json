@@ -1,0 +1,453 @@
+{
+  "planner": {
+    "executable": "D:/GitHub/CUM/build/flow.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "command": 1,
+  "mode": 1,
+  "planner_timeout_seconds": 60,
+  "planner_output_bytes": 4096,
+  "journal": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-flow.json",
+  "bindings": {
+    "1": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_WITH_PREPROVISIONED_IMAGE@sha256:REPLACE_WITH_IMAGE_DIGEST",
+      "pids": 128,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 536870912,
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/host",
+          "target": "/checks/host",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/tests",
+          "target": "/checks/tests",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/check-bindings",
+          "target": "/bindings",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reference",
+          "target": "/original",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+          "target": "/protected",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports",
+          "target": "/reports",
+          "readonly": false,
+          "create": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph",
+          "target": "/graph",
+          "readonly": false,
+          "create": true
+        }
+      ],
+      "argv": [
+        "python3",
+        "-m",
+        "host.providers.xax_query",
+        "/bindings/graph-query.json"
+      ],
+      "workdir": "/checks",
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576,
+      "environment": {
+        "WINEPREFIX": "/tmp/bytehost-wine"
+      }
+    },
+    "2": {
+      "worker": {
+        "executable": "D:/GitHub/CUM/build/add_negate.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "request_fields": [
+        {
+          "literal_hex": "02"
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/operation.bin"
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/graph-kind.bin"
+        }
+      ],
+      "request_bytes": 3,
+      "timeout_seconds": 60,
+      "max_recipe_bytes": 65536,
+      "max_output_bytes": 16777216,
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/camouflage.edit",
+      "buffers": {
+        "0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/root.bin",
+        "1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/function.bin",
+        "2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/block.uleb",
+        "3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/node.uleb",
+        "4": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/operand.bin",
+        "5": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/type.bin"
+      }
+    },
+    "3": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_WITH_PREPROVISIONED_IMAGE@sha256:REPLACE_WITH_IMAGE_DIGEST",
+      "pids": 128,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 536870912,
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/host",
+          "target": "/checks/host",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/tests",
+          "target": "/checks/tests",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/check-bindings",
+          "target": "/bindings",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reference",
+          "target": "/original",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+          "target": "/protected",
+          "readonly": false
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports",
+          "target": "/reports",
+          "readonly": false,
+          "create": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph",
+          "target": "/graph",
+          "readonly": false,
+          "create": true
+        }
+      ],
+      "argv": [
+        "/tools/xaxc",
+        "edit",
+        "/original/main.xax",
+        "/graph/camouflage.edit",
+        "/protected/main.xax.candidate"
+      ],
+      "workdir": "/checks",
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576,
+      "environment": {
+        "WINEPREFIX": "/tmp/bytehost-wine"
+      }
+    },
+    "4": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_WITH_PREPROVISIONED_IMAGE@sha256:REPLACE_WITH_IMAGE_DIGEST",
+      "pids": 128,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 536870912,
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/host",
+          "target": "/checks/host",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/tests",
+          "target": "/checks/tests",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/check-bindings",
+          "target": "/bindings",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reference",
+          "target": "/original",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+          "target": "/protected",
+          "readonly": false
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports",
+          "target": "/reports",
+          "readonly": false,
+          "create": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph",
+          "target": "/graph",
+          "readonly": false,
+          "create": true
+        }
+      ],
+      "argv": [
+        "/tools/xaxc",
+        "verify",
+        "/protected/main.xax.candidate",
+        "/graph/verify.diag"
+      ],
+      "workdir": "/checks",
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576,
+      "environment": {
+        "WINEPREFIX": "/tmp/bytehost-wine"
+      }
+    },
+    "5": {
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/evolution.jsonl",
+      "fields": {
+        "format": "CUM-XAX-TRANSACTION-OBSERVATION",
+        "authority": "Native XAX edit followed by native verify; not a substitute XAX workspace format"
+      },
+      "files": {
+        "query": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/query.json",
+        "carrier": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/camouflage.edit",
+        "candidate": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate"
+      }
+    },
+    "6": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate",
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax",
+      "expected_digest_record": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/query.json",
+      "expected_digest_field": "source_sha256"
+    },
+    "7": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_WITH_PREPROVISIONED_IMAGE@sha256:REPLACE_WITH_IMAGE_DIGEST",
+      "pids": 128,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 536870912,
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/host",
+          "target": "/checks/host",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/tests",
+          "target": "/checks/tests",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/check-bindings",
+          "target": "/bindings",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reference",
+          "target": "/original",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+          "target": "/protected",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports",
+          "target": "/reports",
+          "readonly": false,
+          "create": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph",
+          "target": "/graph",
+          "readonly": false,
+          "create": true
+        }
+      ],
+      "argv": [
+        "/tools/xaxc",
+        "resolve",
+        "/protected/main.xax",
+        "/graph/build-snapshot.xax"
+      ],
+      "workdir": "/checks",
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576,
+      "environment": {
+        "WINEPREFIX": "/tmp/bytehost-wine"
+      }
+    },
+    "8": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_WITH_PREPROVISIONED_IMAGE@sha256:REPLACE_WITH_IMAGE_DIGEST",
+      "pids": 128,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 536870912,
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/host",
+          "target": "/checks/host",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/tests",
+          "target": "/checks/tests",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/check-bindings",
+          "target": "/bindings",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reference",
+          "target": "/original",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+          "target": "/protected",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports",
+          "target": "/reports",
+          "readonly": false,
+          "create": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph",
+          "target": "/graph",
+          "readonly": false,
+          "create": true
+        }
+      ],
+      "argv": [
+        "/tools/xaxc",
+        "build",
+        "/graph/build-snapshot.xax",
+        "/graph/protected.exe",
+        "/graph/provenance.bin"
+      ],
+      "workdir": "/checks",
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576,
+      "environment": {
+        "WINEPREFIX": "/tmp/bytehost-wine"
+      }
+    },
+    "9": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_WITH_PREPROVISIONED_IMAGE@sha256:REPLACE_WITH_IMAGE_DIGEST",
+      "pids": 128,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 536870912,
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/host",
+          "target": "/checks/host",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/tests",
+          "target": "/checks/tests",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/check-bindings",
+          "target": "/bindings",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reference",
+          "target": "/original",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+          "target": "/protected",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports",
+          "target": "/reports",
+          "readonly": false,
+          "create": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph",
+          "target": "/graph",
+          "readonly": false,
+          "create": true
+        }
+      ],
+      "argv": [
+        "python3",
+        "-m",
+        "tests.graph_checks",
+        "/bindings/graphs.json"
+      ],
+      "workdir": "/checks",
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576,
+      "environment": {
+        "WINEPREFIX": "/tmp/bytehost-wine"
+      }
+    },
+    "10": {
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/mapping.json",
+      "fields": {
+        "format": "BYTE-MAP-REPORT",
+        "adapter": "XAX wrapping-add negation decomposition"
+      },
+      "files": {
+        "query": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query/query.json",
+        "carrier": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/camouflage.edit",
+        "protected": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax"
+      }
+    }
+  }
+}

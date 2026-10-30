@@ -1,0 +1,50 @@
+{
+  "compiler": {
+    "executable": "/tools/bbc.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "launcher": {
+    "executable": "/usr/bin/wine",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "original": "/original",
+  "protected": "/protected",
+  "fixtures": [
+    {
+      "path": "main.bf",
+      "input_hex": [
+        "",
+        "00",
+        "01",
+        "ff00"
+      ]
+    }
+  ],
+  "compile_timeout_seconds": 120,
+  "runtime_timeout_seconds": 10,
+  "max_log_bytes": 1048576,
+  "max_runtime_output_bytes": 65536,
+  "max_bfx_bytes": 16777216,
+  "reference_steps": 50000000,
+  "report": "/reports/REPLACE_CASE.json",
+  "workers": {
+    "echo": {
+      "executable": "/tools/echo.exe",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "fixed": {
+      "executable": "/tools/fixed.exe",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "transform": {
+      "executable": "/tools/transform.exe",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    }
+  },
+  "budgets": {
+    "source_expansion_ratio": 32,
+    "max_binary_bytes": 16777216,
+    "max_runtime_seconds": 5
+  },
+  "enforce_numeric_budgets": false
+}

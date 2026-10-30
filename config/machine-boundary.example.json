@@ -1,0 +1,52 @@
+{
+  "real": {
+    "worker": {
+      "executable": "/tools/bf_layout.exe",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "kernels": {},
+    "profile": 2,
+    "selector": 0,
+    "integer_limit": 715748690,
+    "capability_source": "Must be verified against the selected runtime; example derives from BBC documented tape extent",
+    "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
+    "max_output_bytes": 1073741824,
+    "max_storage_bytes": 1073741824,
+    "max_stack_entries": 1000000,
+    "max_response_bytes": 65536,
+    "max_handoffs_per_event": 8,
+    "max_operation_seconds": 3600,
+    "checkpoint_events": 64,
+    "timeout_seconds": 60,
+    "launcher": {
+      "executable": "/usr/bin/wine",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    }
+  },
+  "fixed": {
+    "worker": {
+      "executable": "/tools/fixed_machine.exe",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "kernels": {},
+    "profile": 2,
+    "selector": 0,
+    "integer_limit": 715748690,
+    "capability_source": "Must be verified against the selected runtime; example derives from BBC documented tape extent",
+    "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
+    "max_output_bytes": 1073741824,
+    "max_storage_bytes": 1073741824,
+    "max_stack_entries": 1000000,
+    "max_response_bytes": 65536,
+    "max_handoffs_per_event": 8,
+    "max_operation_seconds": 3600,
+    "checkpoint_events": 64,
+    "timeout_seconds": 60,
+    "launcher": {
+      "executable": "/usr/bin/wine",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    }
+  },
+  "environment": "Wine in an isolated Linux container; not native Windows evidence",
+  "report": "/reports/machine-boundary.json"
+}

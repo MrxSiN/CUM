@@ -1,0 +1,12 @@
+{
+  "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/snapshot",
+  "manifest": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/scope.json",
+  "discovery": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/discovery.json",
+  "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+  "worker": {
+    "executable": "D:/GitHub/CUM/build/project.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "timeout_seconds": 60,
+  "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/projection.json"
+}

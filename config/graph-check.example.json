@@ -1,0 +1,22 @@
+{
+  "compiler": {
+    "executable": "/tools/xaxc",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "original": "/original/main.xax",
+  "protected": "/protected/main.xax",
+  "timeout_seconds": 600,
+  "runtime_timeout_seconds": 15,
+  "inputs_hex": [
+    "",
+    "00",
+    "0001",
+    "ff00"
+  ],
+  "require_native_code_change": true,
+  "report": "/reports/graphs.json",
+  "runtime_launcher": {
+    "executable": "/usr/bin/wine",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  }
+}

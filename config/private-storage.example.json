@@ -1,0 +1,9 @@
+{
+  "destination": "REPLACE_WITH_NEW_PRIVATE_ROOT_UNDER_TRUSTED_PARENT",
+  "whoami": {
+    "executable": "C:/Windows/System32/whoami.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_OS_TOOL_SHA256"
+  },
+  "owner_sid": "REPLACE_WITH_INDEPENDENTLY_OBSERVED_CURRENT_USER_SID",
+  "console_encoding": "utf-8"
+}

@@ -1,0 +1,13 @@
+{
+  "format": "OWNER-RELEASE-REVIEW",
+  "operation": "REPLACE_OPERATION",
+  "licensing": "NOT STARTED",
+  "source_confidentiality": "NOT STARTED",
+  "scope": "NOT STARTED",
+  "host_boundary_review": "NOT STARTED",
+  "compiler_semantics": "NOT STARTED",
+  "memory_budgets": "NOT STARTED",
+  "source_build_independence": "NOT STARTED",
+  "snapshot_manifest_sha256": "REPLACE_WITH_ACTUAL_PRIVATE_SCOPE_DIGEST",
+  "protected_mapping_report_sha256": "REPLACE_WITH_ACTUAL_PRIVATE_REPORT_DIGEST"
+}

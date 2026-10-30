@@ -1,0 +1,12 @@
+build/
+private/
+work/
+releases/
+__pycache__/
+*.pyc
+*.key
+*.pem
+*.pfx
+*.capsule
+*.sig
+.venv/

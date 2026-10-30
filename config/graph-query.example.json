@@ -1,0 +1,18 @@
+{
+  "sdk_directory": "D:/GitHub/XAX/compiler/src",
+  "repository": "D:/GitHub/XAX",
+  "commit": "8c9ce91351b664b927df066d4c2ef549167ae0ef",
+  "git": {
+    "executable": "C:/Program Files/Git/cmd/git.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "sdk_sha256": {
+    "xax_compiler.py": "REPLACE_WITH_VERIFIED_SHA256",
+    "xax_workspace.py": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/snapshot/main.xax",
+  "function_cid": "REPLACE_WITH_QUERIED_FUNCTION_CID",
+  "block": 0,
+  "node": 0,
+  "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query"
+}

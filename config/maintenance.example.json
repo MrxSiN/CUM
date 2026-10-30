@@ -1,0 +1,501 @@
+{
+  "planner": {
+    "executable": "D:/GitHub/CUM/build/maintenance.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "planner_timeout_seconds": 60,
+  "planner_output_bytes": 4096,
+  "journal": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/flow.json",
+  "bindings": {
+    "1": {
+      "root": "REPLACE_WITH_EXPLICIT_APPROVED_BACKUP_SCOPE",
+      "paths": [
+        "recovery-runtime",
+        "trust"
+      ],
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/captured",
+      "manifest": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/scope.json",
+      "max_bytes": 1073741824,
+      "max_entries": 100000
+    },
+    "2": {
+      "root": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/captured",
+      "manifest": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/scope.json",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/scope.tar",
+      "max_archive_bytes": 1073741824
+    },
+    "3": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 600,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/scope.tar",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.cms",
+      "recipients": [
+        "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/offline-backup-recipient.crt"
+      ]
+    },
+    "4": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 600,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.cms",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/roundtrip.tar",
+      "identity": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/offline-identity/backup.key",
+      "certificate": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/offline-backup-recipient.crt"
+    },
+    "5": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/roundtrip.tar",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/restored",
+      "limits": {
+        "bytes": 1073741824,
+        "entries": 100000,
+        "metadata_bytes": 16777216
+      }
+    },
+    "6": {
+      "left": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/captured",
+      "right": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/restored"
+    },
+    "7": {
+      "root": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/inventory.json",
+      "excludes": [
+        "inventory.json",
+        "backup.json",
+        "backup.sig"
+      ]
+    },
+    "8": {
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.json",
+      "fields": {
+        "format": "SIGNED-PRIVATE-RECOVERY-BACKUP",
+        "operation": "REPLACE_OPERATION"
+      },
+      "files": {
+        "capsule": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.cms",
+        "inventory": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/inventory.json"
+      }
+    },
+    "9": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.json",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.sig",
+      "identity": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/owner-signing.key",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576
+    },
+    "10": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.sig"
+    },
+    "11": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate",
+      "destination": "REPLACE_WITH_NEW_INDEPENDENT_PRIVATE_BACKUP_DESTINATION"
+    },
+    "12": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-approval.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-approval.sig"
+    },
+    "13": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-approval.json",
+      "fields": {
+        "format": "OWNER-PROJECT-RECIPIENT-APPROVAL",
+        "operation": "REPLACE_OPERATION",
+        "scope": "PASS",
+        "recipient_authorized": "PASS"
+      },
+      "file_digests": {
+        "recipient_certificate_sha256": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaborator.crt",
+        "captured_scope_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/scope.json"
+      }
+    },
+    "14": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 600,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/originals.tar",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/capsule.cms",
+      "recipients": [
+        "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaborator.crt",
+        "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/project-recovery.crt"
+      ]
+    },
+    "15": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 600,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/capsule.cms",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration.tar",
+      "identity": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/project-recovery.key",
+      "certificate": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/project-recovery.crt"
+    },
+    "16": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration.tar",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-restored",
+      "limits": {
+        "bytes": 1073741824,
+        "entries": 100000,
+        "metadata_bytes": 16777216
+      }
+    },
+    "17": {
+      "left": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/snapshot",
+      "right": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-restored"
+    },
+    "18": {
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/package.json",
+      "fields": {
+        "format": "SIGNED-PROJECT-RECIPIENT-PACKAGE",
+        "operation": "REPLACE_OPERATION"
+      },
+      "files": {
+        "capsule": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/capsule.cms"
+      }
+    },
+    "19": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/package.json",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/package.sig",
+      "identity": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/owner-signing.key",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576
+    },
+    "20": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/package.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate/package.sig"
+    },
+    "21": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/collaboration-candidate",
+      "destination": "REPLACE_WITH_NEW_PRIVATE_COLLABORATION_PACKAGE_DESTINATION"
+    },
+    "22": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-approval.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-approval.sig"
+    },
+    "23": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-approval.json",
+      "fields": {
+        "format": "OWNER-SIGNER-ROTATION-APPROVAL",
+        "operation": "REPLACE_OPERATION",
+        "new_anchor_verified_out_of_band": "PASS"
+      },
+      "file_digests": {
+        "old_public_key_sha256": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+        "new_public_key_sha256": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/new-owner.pub"
+      }
+    },
+    "24": {
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/rotation.json",
+      "fields": {
+        "format": "DUAL-SIGNED-SIGNER-ROTATION",
+        "operation": "REPLACE_OPERATION",
+        "old_spki_sha256": "REPLACE_OLD_SPKI",
+        "new_spki_sha256": "REPLACE_NEW_SPKI"
+      },
+      "files": {
+        "approval": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-approval.json"
+      }
+    },
+    "25": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/rotation.json",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/old.sig",
+      "identity": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/owner-signing.key",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576
+    },
+    "26": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/rotation.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/old.sig"
+    },
+    "27": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/rotation.json",
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/new.sig",
+      "identity": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/new-owner-signing.key",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576
+    },
+    "28": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/new-owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_NEW_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/rotation.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate/new.sig"
+    },
+    "29": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/rotation-candidate",
+      "destination": "REPLACE_WITH_NEW_PRIVATE_ROTATION_PACKAGE_DESTINATION"
+    },
+    "30": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/publication-approval.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/publication-approval.sig"
+    },
+    "31": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/publication-approval.json",
+      "fields": {
+        "format": "OWNER-EXPLICIT-PUBLICATION-APPROVAL",
+        "operation": "REPLACE_OPERATION",
+        "remote": "REPLACE_WITH_EXPLICITLY_APPROVED_GIT_REMOTE",
+        "branch": "main",
+        "history_and_license_review": "PASS",
+        "publication_authorized": "PASS"
+      },
+      "file_digests": {
+        "release_manifest_sha256": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json"
+      }
+    },
+    "32": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+      "signature": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.sig"
+    },
+    "33": {
+      "root": "D:/GitHub/CUM/releases/REPLACE_OPERATION",
+      "inventory": "D:/GitHub/CUM/releases/REPLACE_OPERATION/inventory.json",
+      "binding_record": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+      "files": {
+        "protected_inventory": "D:/GitHub/CUM/releases/REPLACE_OPERATION/inventory.json",
+        "recovery_capsule": "D:/GitHub/CUM/releases/REPLACE_OPERATION/capsule.cms"
+      },
+      "expected_fields": {
+        "format": "SIGNED-PROTECTED-TREE-CMS",
+        "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
+        "signature_format": "ED25519-RAW",
+        "release_identity": "REPLACE_OPERATION",
+        "recovery_mode": "public-capsule"
+      }
+    },
+    "34": {
+      "root": "D:/GitHub/CUM/releases/REPLACE_OPERATION",
+      "predicate": {
+        "worker": {
+          "executable": "D:/GitHub/CUM/build/path_policy.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        "input_capacity_bytes": 65536,
+        "output_capacity_bytes": 65536,
+        "timeout_seconds": 60
+      },
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/publication-paths.json"
+    },
+    "35": {
+      "tool": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "-C",
+        "D:/GitHub/CUM/releases/REPLACE_OPERATION",
+        "init",
+        "-b",
+        "main"
+      ],
+      "timeout_seconds": 60,
+      "max_output_bytes": 1048576,
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-init.json"
+    },
+    "36": {
+      "tool": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "-C",
+        "D:/GitHub/CUM/releases/REPLACE_OPERATION",
+        "add",
+        "--",
+        "."
+      ],
+      "timeout_seconds": 60,
+      "max_output_bytes": 1048576,
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-add.json"
+    },
+    "37": {
+      "tool": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "-C",
+        "D:/GitHub/CUM/releases/REPLACE_OPERATION",
+        "commit",
+        "-m",
+        "Publish approved protected release REPLACE_OPERATION"
+      ],
+      "timeout_seconds": 60,
+      "max_output_bytes": 1048576,
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-commit.json"
+    },
+    "38": {
+      "tool": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "-C",
+        "D:/GitHub/CUM/releases/REPLACE_OPERATION",
+        "push",
+        "REPLACE_WITH_EXPLICITLY_APPROVED_GIT_REMOTE",
+        "main:main"
+      ],
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576,
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-push.json"
+    },
+    "39": {
+      "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/runtime",
+      "manifest": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/runtime-inventory.json",
+      "max_bytes": 4294967296,
+      "files": [
+        {
+          "source": "D:/GitHub/CUM/build/cum.exe",
+          "path": "cum.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/__main__.py",
+          "path": "host/bytehost/__main__.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        }
+      ],
+      "note": "Expand to the full approved runtime, Python, OpenSSL, host modules and public dependencies; keys must be retained separately"
+    },
+    "40": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/owner.pub",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_OWNER_SPKI",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-approval.json",
+      "signature": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-approval.sig"
+    },
+    "41": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-approval.json",
+      "fields": {
+        "format": "OWNER-PRIVATE-BACKUP-APPROVAL",
+        "operation": "REPLACE_OPERATION",
+        "scope": "PASS",
+        "runtime_allowlist": "PASS",
+        "independent_identity_and_trust": "PASS"
+      }
+    },
+    "42": {
+      "root": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/runtime",
+      "predicate": {
+        "worker": {
+          "executable": "D:/GitHub/CUM/build/path_policy.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        "input_capacity_bytes": 65536,
+        "output_capacity_bytes": 65536,
+        "timeout_seconds": 60
+      },
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/runtime-paths.json"
+    },
+    "43": {
+      "root": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate",
+      "inventory": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/inventory.json",
+      "binding_record": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.json",
+      "files": {
+        "capsule": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/backup.cms",
+        "inventory": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/inventory.json"
+      },
+      "expected_fields": {
+        "format": "SIGNED-PRIVATE-RECOVERY-BACKUP",
+        "operation": "REPLACE_OPERATION"
+      }
+    }
+  }
+}

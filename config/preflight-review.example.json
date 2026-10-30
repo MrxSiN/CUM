@@ -1,0 +1,9 @@
+{
+  "format": "OWNER-CAPTURE-REVIEW",
+  "operation": "REPLACE_OPERATION",
+  "commit": "REPLACE_WITH_FULL_IMMUTABLE_COMMIT",
+  "paths": ["main.bf", "README.md", "LICENSE"],
+  "licensing": "NOT STARTED",
+  "scope": "NOT STARTED",
+  "secrets": "NOT STARTED"
+}

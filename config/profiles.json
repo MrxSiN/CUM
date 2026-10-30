@@ -1,0 +1,37 @@
+{
+  "format": "CUM-PROFILE-CONTRACT",
+  "profiles": [
+    {
+      "id": 1,
+      "name": "FAST",
+      "bf_layout_stride": 2,
+      "bf_pass": "transfer then adjust",
+      "jvm_pass": "pure integer carry decomposition"
+    },
+    {
+      "id": 2,
+      "name": "CAMOUFLAGE",
+      "bf_layout_stride": 2,
+      "bf_pass": "selector-chosen positive or negative scratch representation",
+      "jvm_pass": "pure integer carry decomposition"
+    },
+    {
+      "id": 3,
+      "name": "MAXIMUM",
+      "bf_layout_stride": 3,
+      "bf_pass": "distant scratch representation",
+      "optional_bf_adapter": 5,
+      "jvm_pass": "iterative carry state machine"
+    },
+    {
+      "id": 4,
+      "name": "PERFORMANCE",
+      "bf_layout_stride": 2,
+      "bf_pass": "layout relocation with direct arithmetic",
+      "jvm_pass": "pure integer carry decomposition"
+    }
+  ],
+  "xax_pass": "Guarded add-to-sub-negate transaction in every profile",
+  "budgets": "Explicit measured apply, skip or fail policy; no zero-overhead or resistance guarantee",
+  "runtime_evidence": "NOT STARTED"
+}

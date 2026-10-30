@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "python3",
+    "-m",
+    "tests.graph_checks",
+    "/bindings/graphs.json"
+  ],
+  "stdin_hex": "",
+  "cwd": "/checks",
+  "timeout_seconds": 600,
+  "max_output_bytes": 1048576
+}

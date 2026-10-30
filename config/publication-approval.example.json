@@ -1,0 +1,9 @@
+{
+  "format": "OWNER-EXPLICIT-PUBLICATION-APPROVAL",
+  "operation": "REPLACE_OPERATION",
+  "remote": "REPLACE_WITH_EXPLICITLY_APPROVED_GIT_REMOTE",
+  "branch": "main",
+  "history_and_license_review": "NOT STARTED",
+  "publication_authorized": "NOT STARTED",
+  "release_manifest_sha256": "REPLACE_WITH_ACTUAL_RELEASE_MANIFEST_DIGEST"
+}

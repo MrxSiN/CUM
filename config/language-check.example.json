@@ -1,0 +1,30 @@
+{
+  "language": "java",
+  "original": "/original/Arithmetic.java",
+  "protected": "/protected/Arithmetic.java",
+  "runner": "/checks/tests/projects/Runner.java",
+  "java": {
+    "executable": "/tools/java",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "javac": {
+    "executable": "/tools/javac",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "javap": {
+    "executable": "/tools/javap",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "kotlinc": {
+    "executable": "/tools/kotlinc",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "seed": 173,
+  "random_cases": 64,
+  "compile_timeout_seconds": 120,
+  "runtime_timeout_seconds": 15,
+  "max_runtime_seconds": 10,
+  "max_log_bytes": 1048576,
+  "report": "/reports/REPLACE_CASE.json",
+  "enforce_numeric_budgets": false
+}

@@ -1,0 +1,17 @@
+{
+  "worker": {
+    "executable": "D:/GitHub/CUM/build/echo.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "input_capacity_bytes": 65536,
+  "output_capacity_bytes": 65536,
+  "record_payload_bytes": 512,
+  "max_header_bytes": 4096,
+  "timeout_seconds": 60,
+  "expected": {
+    "operation": "REPLACE_OPERATION",
+    "request": "REPLACE_REQUEST",
+    "sequence": "0",
+    "state": "0000"
+  }
+}
