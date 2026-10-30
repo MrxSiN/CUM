@@ -1,9 +1,9 @@
 # Draft operating procedure
 
 Selected native components and synthetic signed-clone recovery have now run;
-see `VERIFICATION.md`. The complete isolated procedures below have not run. The
-human `app` command parser is currently blocked by a native compiler decline;
-the lower-level numeric BF workflow planner builds at O1. Example bindings contain
+see `STATUS.md`. The complete release procedure below is not production accepted.
+The human `app` command parser and numeric BF workflow planner now build at O1.
+Example bindings contain
 invalid executable hashes, image identities, trust anchors and capacities. They
 must fail until bound to independently reviewed real materials. Never manufacture
 PASS records to advance a workflow.
@@ -19,20 +19,26 @@ PASS records to advance a workflow.
    Provision keys outside build containers. Back up identities and signer SPKI
    fingerprints independently. No key generation or external upload is automatic.
 3. Review BBC/XAX source and installed executable identities. The compiler build
-   interface is `bbc.exe compile windows-x86_64 -O0 <output>` with source on binary
+   interface is `bbc.exe compile windows-x86_64 -O1 <output>` with source on binary
    stdin. The host invokes argument vectors directly; no PowerShell text pipeline
    handles application input. XAX uses its existing inspect/edit/verify/resolve/build
    file interface. No compiler fallback or invented XAX syntax is supplied.
 4. Bind an ignored copy of `config/build.example.json`, then later invoke
    `python -m host.bytehost.build private/build.json`. It lists all BF sources and
-   fixed-response workers. Compile both required optimization configurations into
-   different new output directories. Record failures without changing BBC/XAX.
+   fixed-response workers. O1 is the verified whole-component configuration.
+   Probe other required configurations into different new output directories;
+   O0 still declines the command parser. Record failures without changing BBC/XAX.
 5. Provision reviewed, digest-pinned container images and public compiler tools.
    Images are never pulled by the runner. The normal build image has no identities
    or plaintext archive. The distinct trusted recovery image has only the public
    clone, independently retained runtime, recovery identity/certificate, signer trust,
    exact recovery binding and empty output mount. Neither image is available merely
    because a JSON example describes it.
+
+   On this Windows host the alternative generic QEMU backend supplies a disposable
+   VM without a guest NIC or host shares. See `BYTEVM.md` for provisioning, pins,
+   output capabilities and the independent recovery policy. A provisioned and
+   tested VM does not itself approve the whole release procedure.
 
 `config/capabilities.example.json` separates requirements from observations. Fill
 observations only after actual native probes. Sign the independent

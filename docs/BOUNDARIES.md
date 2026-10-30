@@ -16,7 +16,7 @@
 | Numeric measurement/threshold comparisons | Generic host, thresholds are explicit operands |
 | BF compiler optimization/native emission | Existing BBC/XAX |
 | Authenticated encryption/decryption, signing | Existing pinned OpenSSL |
-| Isolation | Existing pinned container engine/image |
+| Isolation | Existing pinned container engine/image or generic pinned QEMU VM |
 | Licensing/confidentiality judgments | Independent owner review, authenticated and scope-bound |
 
 `host/bytehost` contains no BF token filter, source-language parser, pass selector,

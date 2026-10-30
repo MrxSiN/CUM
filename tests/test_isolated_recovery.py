@@ -1,5 +1,9 @@
 """Draft generic capability-policy boundary tests. No container execution."""
 import copy
+import json
+import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,6 +16,18 @@ from host.bytehost.machine import _request
 
 
 class IsolatedRecoveryTests(unittest.TestCase):
+    def test_retained_entry_preserves_structured_errors(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            runtime = Path(temporary) / "runtime"
+            runtime.mkdir()
+            shutil.copytree("host", runtime / "host", ignore=shutil.ignore_patterns("__pycache__", "runtime_entry.py"))
+            shutil.copyfile("host/runtime_entry.py", runtime / "runtime_entry.py")
+            result = subprocess.run([sys.executable, "-I", str(runtime / "runtime_entry.py"),
+                                     "flow", str(Path(temporary) / "missing.json"), "--command", "1"], capture_output=True)
+            self.assertEqual(result.returncode, 2)
+            self.assertEqual(json.loads(result.stderr)["status"], "FAIL")
+            self.assertEqual(result.stdout, b"")
+
     def binding(self, directory):
         root = Path(directory)
         source, output = root / "release", root / "output"
@@ -64,6 +80,30 @@ class IsolatedRecoveryTests(unittest.TestCase):
         spec["integer_limit"] = -1
         with self.assertRaises(HostError):
             _request(1, 0, spec, state)
+
+    def test_vm_backend_image_and_outputs_are_independently_pinned(self):
+        for mutation in (None, "backend", "vm", "outputs"):
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as temporary:
+                spec = self.binding(temporary)
+                path = Path(spec["policy_file"])
+                policy = json.loads(path.read_text())
+                additions = {"backend": "qemu", "vm": {"disk": {"sha256": "synthetic"}},
+                             "outputs": [{"guest": "/result/archive", "destination": str(Path(temporary) / "returned")}]}
+                spec.update(copy.deepcopy(additions))
+                policy.update(additions)
+                atomic_json(path, policy, replace=True)
+                spec["policy_sha256"] = digest(path)
+                if mutation == "backend": spec["backend"] = "docker"
+                elif mutation == "vm": spec["vm"]["disk"]["sha256"] = "changed"
+                elif mutation == "outputs": spec["outputs"][0]["destination"] += "-changed"
+                with patch("host.bytehost.trusted_recovery.isolated", return_value={"exit": 0}) as execute:
+                    if mutation is None:
+                        trusted_isolated(spec)
+                        execute.assert_called_once()
+                    else:
+                        with self.assertRaises(HostError):
+                            trusted_isolated(spec)
+                        execute.assert_not_called()
 
 
 if __name__ == "__main__":

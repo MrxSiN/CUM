@@ -1,7 +1,7 @@
 """Opt-in native Windows signed-clone recovery integration using synthetic data.
 
-Original trees are removed before a separate recovery process starts. This is
-not a sandbox, a production release, or a complete offline runtime backup drill.
+Original trees are removed before a separate recovery process starts. Optional
+QEMU validation repeats recovery without a guest NIC or original/reference mounts.
 """
 import json
 import os
@@ -18,6 +18,8 @@ from host.bytehost.scope import capture_directory
 from host.bytehost.storage import atomic_json, digest, inventory, verify_tree
 from host.bytehost.vm import compose_record, write_inventory
 from host.bytehost.worker import map_file
+from host.bytehost.trusted_recovery import trusted_isolated
+from host.bytehost.errors import HostError
 from tests import test_crypto
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -149,6 +151,8 @@ class SignedRecoveryTests(unittest.TestCase):
         self.assertEqual(result["exit"], 0, result["stderr"].decode("utf-8", "replace"))
         verify_tree(output / "restored", expected)
         self.assertEqual(json.loads((output / "flow.json").read_text())["status"], "PASS")
+        if os.environ.get("BYTEHOST_VM_TESTS") == "1":
+            self.check_isolated_recovery(base, clone, runtime, output, expected, limits)
         for name in ("release.sig", "capsule.cms"):
             path = clone / name
             original_bytes = path.read_bytes()
@@ -163,6 +167,79 @@ class SignedRecoveryTests(unittest.TestCase):
         rejected, result = recovery("reject-extra")
         self.assertNotEqual(result["exit"], 0)
         self.assertFalse((rejected / "restored").exists())
+
+    def check_isolated_recovery(self, base, clone, runtime, output, expected, limits):
+        vm = json.loads(Path(os.environ["BYTEHOST_VM_BINDING"]).read_text())
+        clone_export = base / "clone-export"
+        shutil.copytree(clone, clone_export, ignore=shutil.ignore_patterns(".git"))
+        identity, trust, bindings, results = (base / name for name in ("identity", "trust", "bindings", "vm-results"))
+        for directory in (identity, trust, bindings, results):
+            directory.mkdir()
+        for name in ("recipient.key", "recipient.crt"):
+            shutil.copyfile(base / name, identity / name)
+        shutil.copyfile(base / "signer.pub", trust / "signer.pub")
+        shutil.copyfile(ROOT / "tests/vm_signed_recovery.py", bindings / "check.py")
+        replacements = {str(clone): "/clone", str(runtime): "/runtime", str(output): "/results",
+                        str(base / "recipient.key"): "/identity/recipient.key",
+                        str(base / "recipient.crt"): "/identity/recipient.crt",
+                        str(base / "signer.pub"): "/trust/signer.pub"}
+
+        def guest(value):
+            if isinstance(value, dict):
+                return {key: guest(item) for key, item in value.items()}
+            if isinstance(value, list):
+                return [guest(item) for item in value]
+            if isinstance(value, str):
+                for source, target in replacements.items():
+                    if value == source or value.startswith(source + os.sep):
+                        return (target + value[len(source):]).replace("\\", "/")
+            return value
+
+        atomic_json(bindings / "recovery.json", guest(json.loads((output / "binding.json").read_text())))
+        mounts = [{"source": str(source), "target": target, "readonly": readonly}
+                  for source, target, readonly in ((clone_export, "/clone", True), (runtime, "/runtime", True),
+                      (identity, "/identity", True), (trust, "/trust", True), (bindings, "/bindings", True),
+                      (results, "/results", False))]
+        returned = base / "returned"
+        returned.mkdir()
+        outputs = [{"guest": "/results/" + name, "destination": str(returned / name)}
+                   for name in ("result.tar", "scope.json", "receipt.json", "flow.json", "tools.json", "checks.json")]
+        spec = {"backend": "qemu", "vm": vm, "image": "BYTEVM-IMAGE@sha256:" + vm["disk"]["sha256"],
+                "memory_bytes": 4294967296, "cpus": 2, "user": "1000:1000", "pids": 256,
+                "environment": {"HOME": "/results", "WINEDEBUG": "-all", "WINEPREFIX": "/results/wine"},
+                "argv": ["/usr/bin/python3.12", "/bindings/check.py"], "workdir": "/results",
+                "timeout_seconds": 600, "max_output_bytes": 1048576, "mounts": mounts, "outputs": outputs,
+                "forbidden_sources": [str(base / "original"), str(base / "snapshot"), str(output)]}
+        policy = {key: spec[key] for key in ("backend", "vm", "image", "argv", "workdir", "environment", "outputs")}
+        policy.update(format="PINNED-ISOLATED-CAPABILITIES", mounts={mount["target"]: dict(
+            source=mount["source"], readonly=mount["readonly"],
+            **({"inventory": inventory(mount["source"])} if mount["readonly"] else {}))
+            for mount in mounts})
+        policy_path = base / "vm-policy.json"
+        atomic_json(policy_path, policy)
+        spec.update(policy_file=str(policy_path), policy_sha256=digest(policy_path))
+        try:
+            result = trusted_isolated(spec)
+        except HostError as error:
+            self.fail(json.dumps(error.record()))
+        self.assertEqual(result["network_interfaces"], ["lo"])
+        self.assertEqual(json.loads((returned / "flow.json").read_text())["status"], "PASS")
+        checks = json.loads((returned / "checks.json").read_text())
+        self.assertEqual(len(checks["rejections"]), 3)
+        restored = base / "vm-restored"
+        archive.extract({"source": str(returned / "result.tar"), "destination": str(restored), "limits": limits})
+        verify_tree(restored, expected)
+        if os.environ.get("BYTEHOST_VM_EVIDENCE"):
+            atomic_json(os.environ["BYTEHOST_VM_EVIDENCE"], {
+                "format": "SYNTHETIC-ISOLATED-SIGNED-RECOVERY", "status": "PASS",
+                "image_sha256": vm["disk"]["sha256"], "original_trees_removed": True,
+                "input_from_real_clone": True, "git_metadata_mounted": False,
+                "network_interfaces": result["network_interfaces"], "uid": result["uid"],
+                "guest_wall_seconds": result["guest_wall_seconds"], "wall_seconds": result["wall_seconds"],
+                "scope": expected, "tools": json.loads((returned / "tools.json").read_text()),
+                "negative_checks": checks,
+                "flow": json.loads((returned / "flow.json").read_text()),
+                "artifacts": {item.name: digest(item) for item in returned.iterdir()}})
 
 
 if __name__ == "__main__":

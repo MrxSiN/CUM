@@ -1,7 +1,7 @@
 {
   "sdk_directory": "/tools/xax/compiler/src",
   "repository": "/tools/xax",
-  "commit": "15e939d010ed7a48705b240d849b9fe900b98739",
+  "commit": "f5d07d77614a9ffec17b2271a25447757cbcfd55",
   "git": {
     "executable": "/usr/bin/git",
     "sha256": "REPLACE_WITH_VERIFIED_SHA256"
@@ -14,5 +14,5 @@
   "function_cid": "REPLACE_WITH_QUERIED_FUNCTION_CID",
   "block": 0,
   "node": 0,
-  "destination": "/graph/query"
+  "destination": "/graph/query0"
 }

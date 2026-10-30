@@ -3,12 +3,13 @@
 Brainfuck-authored source camouflage and authenticated exact recovery.
 
 **PARTIAL — drafted across the workflow, with scoped native validation.**
-All 52 discovered tests passed with crypto and native recovery enabled. O1 builds
-39/40 components; `command.bf` is declined by the selected native backend. Seven
-BF fixtures and restricted Java/Kotlin modules passed native behavior/normalization
-checks, and a synthetic signed Git-clone recovery succeeded. The XAX recipe fails
-native edit with duplicate-node mutations. Final isolated release acceptance is
-blocked by unavailable container infrastructure. See [validation](docs/VERIFICATION.md).
+All 67 discovered tests passed with native, crypto and VM checks enabled, with
+zero skips. O1 builds all 40 components. The native command parser and four-step
+XAX edit regression pass. A pinned, network-disabled QEMU VM passed isolated
+build/behavior checks and exact signed-clone recovery, including tamper rejection.
+Seven BF fixtures and restricted Java/Kotlin modules retain their earlier scoped
+native evidence. Whole-product release acceptance remains incomplete.
+See [current validation](docs/BLOCKER_FIXES.md).
 
 All CUM application decisions and source transformations live in genuine
 Brainfuck under `src/`. `host/bytehost/` supplies separately identifiable generic
@@ -23,11 +24,11 @@ support and analysis resistance are not claimed.
 The release draft uses one immutable capture, authenticated encrypted originals,
 BF-selected transformations, independent checks, a portable signed inventory,
 exact-byte Git staging and a real local commit/clone. A separately pinned recovery
-container receives the clone, independent identity/trust and retained runtime,
+environment receives the clone export, independent identity/trust and retained runtime,
 with no original/reference mount. Publication remains a separate owner-approved
-operation. Public-capsule and private-vault example bindings are provided. The final container
-workflow is drafted and has not been executed; the signed recovery test ran as
-separate Windows processes.
+operation. Public-capsule and private-vault example bindings are provided. The
+synthetic signed-recovery test runs both Windows processes and a separately pinned
+QEMU VM. The complete protected-release workflow has not been executed.
 
 Current compiler ceilings are not permanent CUM design limits. Explicit verified
 capabilities and operation budgets govern each job; actual compiler/backend

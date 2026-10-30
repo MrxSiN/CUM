@@ -163,12 +163,12 @@
               "argv": [
                 "-m",
                 "host.providers.xax_query",
-                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query-binding.json"
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query-step0.json"
               ],
               "cwd": "D:/GitHub/CUM",
               "timeout_seconds": 600,
               "max_output_bytes": 1048576,
-              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-query-receipt.json"
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-query-0.json"
             },
             "2": {
               "worker": {
@@ -180,21 +180,28 @@
                   "literal_hex": "02"
                 },
                 {
-                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/operation.bin"
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/operation.bin"
+                },
+                {
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/graph-kind.bin"
+                },
+                {
+                  "literal_hex": "00"
                 }
               ],
-              "request_bytes": 2,
+              "request_bytes": 4,
               "timeout_seconds": 60,
               "max_recipe_bytes": 65536,
               "max_output_bytes": 16777216,
-              "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/camouflage.edit",
+              "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.edit",
               "buffers": {
-                "0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/root.bin",
-                "1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/function.bin",
-                "2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/block.uleb",
-                "3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/node.uleb",
-                "4": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/operand.bin",
-                "5": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/type.bin"
+                "0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/root.bin",
+                "1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/function.bin",
+                "2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/block.uleb",
+                "3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/node.uleb",
+                "4": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/operand.bin",
+                "5": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/type.bin",
+                "6": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/node.uleb"
               }
             },
             "3": {
@@ -205,13 +212,13 @@
               "argv": [
                 "edit",
                 "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax",
-                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/camouflage.edit",
-                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate"
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.edit",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.xax"
               ],
               "cwd": "D:/GitHub/CUM",
               "timeout_seconds": 600,
               "max_output_bytes": 1048576,
-              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-edit.json"
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-edit-0.json"
             },
             "4": {
               "tool": {
@@ -220,30 +227,36 @@
               },
               "argv": [
                 "verify",
-                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate",
-                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-verify.diag"
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.xax",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.diag"
               ],
               "cwd": "D:/GitHub/CUM",
               "timeout_seconds": 600,
               "max_output_bytes": 1048576,
-              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-verify.json"
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-verify-0.json"
             },
             "5": {
               "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/evolution.jsonl",
               "fields": {
-                "format": "CUM-XAX-TRANSACTION-OBSERVATION",
+                "format": "CUM-XAX-VERIFIED-EDIT-CHAIN",
                 "authority": "Native XAX edit followed by native verify; not a substitute XAX workspace format"
               },
               "files": {
-                "query": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/query.json",
-                "carrier": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/camouflage.edit",
+                "query0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/query.json",
+                "query1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/query.json",
+                "query2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/query.json",
+                "query3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/query.json",
+                "carrier0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.edit",
+                "carrier1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.edit",
+                "carrier2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.edit",
+                "carrier3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage3.edit",
                 "candidate": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate"
               }
             },
             "6": {
               "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate",
               "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax",
-              "expected_digest_record": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query/query.json",
+              "expected_digest_record": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/query.json",
               "expected_digest_field": "source_sha256"
             },
             "7": {
@@ -298,6 +311,267 @@
               ],
               "timeout_seconds": 600,
               "max_output_bytes": 1048576
+            },
+            "10": {
+              "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/mapping.json",
+              "fields": {
+                "format": "BYTE-MAP-REPORT",
+                "adapter": "XAX wrapping-add negation decomposition"
+              },
+              "files": {
+                "query0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/query.json",
+                "query1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/query.json",
+                "query2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/query.json",
+                "query3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/query.json",
+                "carrier0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.edit",
+                "carrier1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.edit",
+                "carrier2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.edit",
+                "carrier3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage3.edit",
+                "protected": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax"
+              }
+            },
+            "11": {
+              "tool": {
+                "executable": "REPLACE_WITH_PINNED_PYTHON_EXECUTABLE",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "-m",
+                "host.providers.xax_query",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query-step1.json"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-query-1.json"
+            },
+            "12": {
+              "worker": {
+                "executable": "D:/GitHub/CUM/build/add_negate.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "request_fields": [
+                {
+                  "literal_hex": "02"
+                },
+                {
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/operation.bin"
+                },
+                {
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/graph-kind.bin"
+                },
+                {
+                  "literal_hex": "01"
+                }
+              ],
+              "request_bytes": 4,
+              "timeout_seconds": 60,
+              "max_recipe_bytes": 65536,
+              "max_output_bytes": 16777216,
+              "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.edit",
+              "buffers": {
+                "0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/root.bin",
+                "1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/function.bin",
+                "2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/block.uleb",
+                "3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/node.uleb",
+                "4": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/operand.bin",
+                "5": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/type.bin",
+                "6": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/node.uleb",
+                "7": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/node.uleb"
+              }
+            },
+            "13": {
+              "tool": {
+                "executable": "D:/GitHub/XAX/compiler/bootstrap/windows/xaxc-windows-x86_64.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "edit",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage0.xax",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.edit",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.xax"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-edit-1.json"
+            },
+            "14": {
+              "tool": {
+                "executable": "D:/GitHub/XAX/compiler/bootstrap/windows/xaxc-windows-x86_64.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "verify",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.xax",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.diag"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-verify-1.json"
+            },
+            "15": {
+              "tool": {
+                "executable": "REPLACE_WITH_PINNED_PYTHON_EXECUTABLE",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "-m",
+                "host.providers.xax_query",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query-step2.json"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-query-2.json"
+            },
+            "16": {
+              "worker": {
+                "executable": "D:/GitHub/CUM/build/add_negate.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "request_fields": [
+                {
+                  "literal_hex": "02"
+                },
+                {
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/operation.bin"
+                },
+                {
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/graph-kind.bin"
+                },
+                {
+                  "literal_hex": "02"
+                }
+              ],
+              "request_bytes": 4,
+              "timeout_seconds": 60,
+              "max_recipe_bytes": 65536,
+              "max_output_bytes": 16777216,
+              "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.edit",
+              "buffers": {
+                "0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/root.bin",
+                "1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/function.bin",
+                "2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/block.uleb",
+                "3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/node.uleb",
+                "4": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/operand.bin",
+                "5": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query2/type.bin",
+                "6": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/node.uleb",
+                "7": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/node.uleb"
+              }
+            },
+            "17": {
+              "tool": {
+                "executable": "D:/GitHub/XAX/compiler/bootstrap/windows/xaxc-windows-x86_64.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "edit",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage1.xax",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.edit",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.xax"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-edit-2.json"
+            },
+            "18": {
+              "tool": {
+                "executable": "D:/GitHub/XAX/compiler/bootstrap/windows/xaxc-windows-x86_64.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "verify",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.xax",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.diag"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-verify-2.json"
+            },
+            "19": {
+              "tool": {
+                "executable": "REPLACE_WITH_PINNED_PYTHON_EXECUTABLE",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "-m",
+                "host.providers.xax_query",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph-query-step3.json"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-query-3.json"
+            },
+            "20": {
+              "worker": {
+                "executable": "D:/GitHub/CUM/build/add_negate.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "request_fields": [
+                {
+                  "literal_hex": "02"
+                },
+                {
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/operation.bin"
+                },
+                {
+                  "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/graph-kind.bin"
+                },
+                {
+                  "literal_hex": "03"
+                }
+              ],
+              "request_bytes": 4,
+              "timeout_seconds": 60,
+              "max_recipe_bytes": 65536,
+              "max_output_bytes": 16777216,
+              "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage3.edit",
+              "buffers": {
+                "0": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/root.bin",
+                "1": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/function.bin",
+                "2": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/block.uleb",
+                "3": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/node.uleb",
+                "4": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/operand.bin",
+                "5": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query3/type.bin",
+                "6": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query0/node.uleb",
+                "7": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/query1/node.uleb"
+              }
+            },
+            "21": {
+              "tool": {
+                "executable": "D:/GitHub/XAX/compiler/bootstrap/windows/xaxc-windows-x86_64.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "edit",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage2.xax",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage3.edit",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-edit-3.json"
+            },
+            "22": {
+              "tool": {
+                "executable": "D:/GitHub/XAX/compiler/bootstrap/windows/xaxc-windows-x86_64.exe",
+                "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+              },
+              "argv": [
+                "verify",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax.candidate",
+                "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/graph/stage3.diag"
+              ],
+              "cwd": "D:/GitHub/CUM",
+              "timeout_seconds": 600,
+              "max_output_bytes": 1048576,
+              "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/graph-verify-3.json"
             }
           },
           "planner_input_bytes": 2

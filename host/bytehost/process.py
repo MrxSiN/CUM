@@ -1,4 +1,4 @@
-"""Generic argument-vector process transport and network-disabled containers."""
+"""Generic argument-vector process transport and network-disabled isolation."""
 import os
 import subprocess
 import tempfile
@@ -94,9 +94,13 @@ def pinned_executable(spec):
 def isolated(spec):
     """No shell, image pulling, network, credentials or undeclared mounts.
 
-    Requires a previously provisioned Linux container daemon and digest-pinned
-    image. The daemon itself is trusted infrastructure, not a sandboxed process.
+    Uses either a preprovisioned pinned VM or a Linux container daemon and pinned
+    image. The isolation implementation itself remains trusted infrastructure.
     """
+    if spec.get("backend") == "qemu":
+        from .qemu_isolation import isolated as vm_isolated
+        return vm_isolated(spec)
+    require(spec.get("backend", "docker") == "docker", "ISOLATION", "Unknown isolation backend")
     require("@sha256:" in spec["image"], "IMAGE", "Container image must be digest-pinned")
     executable = pinned_executable(spec["engine"])
     container = "bytehost-" + os.urandom(12).hex()

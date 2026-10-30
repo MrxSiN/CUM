@@ -50,8 +50,10 @@ BF first, then XAX, then each additional language. Draft routes do not promote
 any milestone.
 
 
-The executed graph recipe was rejected with `XAX.WORKSPACE.DUPLICATE_MUTATION`
-under `WORKSPACE-MUTATION-TARGET-UNIQUE`: multiple mutations target the same node.
-This adapter is FAIL for the selected native contract. No canonical candidate,
-protected graph build or restored workspace was accepted. Its framing unit tests
-only check the binary carrier and cannot establish transaction validity.
+The earlier duplicate-mutation rejection is retained in historical evidence. The
+revised recipe uses four native-verified single-mutation transactions and passes
+resolve/build, native-code difference and finite behavior checks on a BBC-authored
+wrapping-byte ADD fixture. Stale carrier replay rejects. This establishes that
+restricted edit path; other integer types, arbitrary workspaces and development-ready
+workspace recovery remain unaccepted. Input must already be an editable build
+request. Framing tests alone still cannot establish transaction validity.

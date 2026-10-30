@@ -28,10 +28,31 @@ def query(spec):
     import xax_compiler as X
     reader = X.StoreReader(Path(spec["source"]).read_bytes(), proof_cache=X.ProofCache())
     X.verify_store(reader)
-    function = reader.get(bytes.fromhex(spec["function_cid"]))
+    if "previous_query" in spec:
+        previous = load(spec["previous_query"])
+        require(digest(spec["previous_source"]) == previous["source_sha256"],
+                "STALE", "Previous query belongs to different source bytes")
+        before = X.StoreReader(Path(spec["previous_source"]).read_bytes(), proof_cache=X.ProofCache())
+        old = {obj.cid for obj in before.objects() if obj.kind == X.Kind.FUNCTION}
+        current = {obj.cid for obj in reader.objects() if obj.kind == X.Kind.FUNCTION}
+        previous_cid = bytes.fromhex(previous["function_cid"])
+        require(previous_cid in old - current, "STALE", "Previously queried function was not replaced")
+        _, old_parameters, old_returns = X._decode_function_interface(before.get(previous_cid), before.get)
+        candidates = []
+        for cid in current - old:
+            candidate = reader.get(cid)
+            _, parameters, returns = X._decode_function_interface(candidate, reader.get)
+            if (parameters, returns) == (old_parameters, old_returns):
+                candidates.append(candidate)
+        require(len(candidates) == 1, "QUERY_AMBIGUOUS", "Changed function interface does not identify a unique result")
+        function = candidates[0]
+    else:
+        function = reader.get(bytes.fromhex(spec["function_cid"]))
     graph, parameters, returns = X._decode_function_interface(function, reader.get)
     parsed = X.parse_function_graph(function, reader.get)
-    block, index = spec["block"], spec["node"]
+    block = spec["block"]
+    index = (load(spec["node_from_query"])["node"] + spec["node_delta"]
+             if "node_from_query" in spec else spec["node"])
     require(0 <= block < len(parsed.blocks) and 0 <= index < len(parsed.blocks[block].nodes),
             "QUERY", "Selected node does not exist")
     node = parsed.blocks[block].nodes[index]

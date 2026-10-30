@@ -16,6 +16,10 @@ def trusted_isolated(spec):
     policy = load(policy_path)
     require(policy["format"] == "PINNED-ISOLATED-CAPABILITIES", "FORMAT", "Unknown trusted execution policy")
     require(policy["image"] == spec["image"], "TRUST_ANCHOR", "Execution image was not independently approved")
+    require(policy.get("backend", "docker") == spec.get("backend", "docker"), "ISOLATION", "Isolation backend differs from approved policy")
+    if spec.get("backend") == "qemu":
+        require(policy["vm"] == spec["vm"] and policy["outputs"] == spec.get("outputs", []),
+                "ISOLATION", "VM identity or output capabilities differ from approved policy")
     for field in ("argv", "workdir", "environment"):
         require(spec.get(field, {} if field == "environment" else None) == policy[field],
                 "ISOLATION", "Execution differs from approved capability policy", field=field)

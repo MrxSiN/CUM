@@ -53,6 +53,9 @@ Windows metadata, clean signed recovery and native target cases remain necessary
 `test_signed_recovery.py` is an opt-in native Windows integration test using
 synthetic fixtures/disposable keys, real capture/crypto/Git, copied host modules
 and a BF recovery planner in a separate process. It removes original fixture trees
-and rejects signature/capsule mutation and extra release files. It does not prove
-sandbox isolation or a complete offline runtime package. The earlier statement
+and rejects signature/capsule mutation and extra release files. With the explicit
+VM opt-in it also checks recovery under the independently pinned QEMU policy.
+`test_qemu_isolation.py` checks transport faults and real VM boundaries;
+`test_qemu_native.py` checks isolated builds/behavior without identities. None
+establishes a complete offline runtime package. The earlier statement
 about four new unit modules describes the draft checkpoint, not the current run.

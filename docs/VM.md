@@ -17,7 +17,7 @@ bindings; they do not cap files, trees, source sizes or total byte-worker record
 | 7 | Validate and safely extract an exact tree archive |
 | 8 | Compare exact inventoried trees |
 | 9 | Map an opaque native byte worker over explicit files |
-| 10 | Execute a bounded, network-disabled container process |
+| 10 | Execute a bounded process in a network-disabled container or VM |
 | 11 | Produce canonical tree inventory |
 | 12 | Bind declared record fields to explicit artifact digests |
 | 13 / 14 | Sign / independently verify an exact byte record |

@@ -47,6 +47,23 @@ class PolicyTests(unittest.TestCase):
         with self.assertRaises(HostError):
             worker_output(self.core("command.bf", worker_input(b"\x01\x00", b"prepare anything")))
 
+    def test_command_parser_rejects_prefixes_suffixes_and_changed_bytes(self):
+        names = (b"doctor", b"toolchain inspect", b"prepare", b"verify", b"recover",
+                 b"test-recovery", b"benchmark", b"audit")
+        invalid = {b"", b"doctorrecover", b"test-doctor", b"audit" + b"\x00" * 256}
+        for name in names:
+            invalid.update(name[:index] for index in range(len(name)))
+            invalid.update(name + suffix for suffix in (b"x", b"\x00", b"\xff"))
+            for index in range(len(name)):
+                invalid.add(name[:index] + bytes([name[index] ^ 128]) + name[index + 1:])
+        for request in invalid:
+            with self.subTest(request=request), self.assertRaises(HostError):
+                worker_output(self.core("command.bf", worker_input(b"\x02\xff", request)))
+        for identity, name in enumerate(names, 1):
+            payload, state = worker_output(self.core("command.bf", worker_input(b"\x02\xff", name)))
+            self.assertEqual(payload, bytes([identity, 2]))
+            self.assertEqual(state, b"\x02\xff")
+
 
 if __name__ == "__main__":
     unittest.main()

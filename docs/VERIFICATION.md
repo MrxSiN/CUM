@@ -1,5 +1,8 @@
 # Windows validation — 2026-10-30
 
+This is the original checkpoint, retained with its executed failures. Later fixes
+and results are recorded in [blocker follow-up](BLOCKER_FIXES.md) and `STATUS.md`.
+
 The whole-workflow source draft was followed by actual unit, compiler, native
 fixture, public compiler, crypto and synthetic signed-recovery runs. Overall
 status is PARTIAL. The native XAX adapter fails; the human CLI and isolated final

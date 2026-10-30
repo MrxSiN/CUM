@@ -1,0 +1,98 @@
+{
+  "backend": "qemu",
+  "vm": {
+    "qemu": {
+      "executable": "C:/Program Files/qemu/qemu-system-x86_64.exe",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "qemu_img": {
+      "executable": "C:/Program Files/qemu/qemu-img.exe",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "disk": {
+      "file": "D:/GitHub/CUM/private/images/bytevm.qcow2",
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "scratch_directory": "D:/GitHub/CUM/private/vm-scratch",
+    "max_archive_bytes": 134217728,
+    "max_packet_bytes": 536870912,
+    "max_artifact_bytes": 134217728,
+    "boot_timeout_seconds": 300
+  },
+  "image": "BYTEVM-IMAGE@sha256:REPLACE_WITH_VERIFIED_SHA256",
+  "argv": [
+    "/usr/bin/python3.12",
+    "-I",
+    "/runtime/runtime_entry.py",
+    "flow",
+    "/bindings/recovery.json",
+    "--command",
+    "1"
+  ],
+  "workdir": "/results",
+  "environment": {
+    "HOME": "/results",
+    "WINEDEBUG": "-all",
+    "WINEPREFIX": "/results/wine"
+  },
+  "outputs": [
+    {
+      "guest": "/results/result.tar",
+      "destination": "D:/GitHub/CUM/private/REPLACE_OPERATION/returned/result.tar"
+    },
+    {
+      "guest": "/results/scope.json",
+      "destination": "D:/GitHub/CUM/private/REPLACE_OPERATION/returned/scope.json"
+    },
+    {
+      "guest": "/results/receipt.json",
+      "destination": "D:/GitHub/CUM/private/REPLACE_OPERATION/returned/receipt.json"
+    },
+    {
+      "guest": "/results/flow.json",
+      "destination": "D:/GitHub/CUM/private/REPLACE_OPERATION/returned/flow.json"
+    }
+  ],
+  "format": "PINNED-ISOLATED-CAPABILITIES",
+  "mounts": {
+    "/clone": {
+      "source": "D:/GitHub/CUM/private/REPLACE_OPERATION/clone",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_REVIEWED_DIRECTORY_INVENTORY"
+      }
+    },
+    "/runtime": {
+      "source": "D:/GitHub/CUM/private/REPLACE_OPERATION/runtime",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_REVIEWED_DIRECTORY_INVENTORY"
+      }
+    },
+    "/identity": {
+      "source": "D:/GitHub/CUM/private/REPLACE_OPERATION/identity",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_REVIEWED_DIRECTORY_INVENTORY"
+      }
+    },
+    "/trust": {
+      "source": "D:/GitHub/CUM/private/REPLACE_OPERATION/trust",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_REVIEWED_DIRECTORY_INVENTORY"
+      }
+    },
+    "/bindings": {
+      "source": "D:/GitHub/CUM/private/REPLACE_OPERATION/bindings",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_REVIEWED_DIRECTORY_INVENTORY"
+      }
+    },
+    "/results": {
+      "source": "D:/GitHub/CUM/private/REPLACE_OPERATION/results",
+      "readonly": false
+    }
+  }
+}

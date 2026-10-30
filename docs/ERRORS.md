@@ -30,6 +30,7 @@ Compiler and worker exit codes are retained in structured error details.
 | BUDGET / RESOURCE_BUDGET | Explicit owner budget exceeded |
 | RECOVERY_MISMATCH | Restored captured scope differs |
 | SERVICE_FAILURE | Unexpected service exception; never a success |
+| VM_BOOT / VM_JOB / VM_TRANSPORT / VM_TRUNCATED | VM readiness, execution, transport or incomplete response failed |
 
 Diagnostic logs, absolute paths, request states and review records are private by
 default. They are not public release inputs. OS disk/allocation/address-space

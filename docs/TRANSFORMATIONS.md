@@ -1,7 +1,8 @@
 # Transformation contracts — source draft
 
 Scoped Windows native BF/JVM fixtures now pass as recorded in `VERIFICATION.md`.
-The graph recipe fails native edit. The semantic arguments below describe intended
+The four-transaction graph regression now passes native edit/verify and finite
+behavior checks. The semantic arguments below describe intended
 domains; they are not universal proofs or production release acceptance.
 
 ## Single-cell worker
@@ -59,6 +60,18 @@ BF proposes `a + b = a - (0 - b)` in the same wrapping type through a real
 expected root, native edit/verify, dependency resolve, rebuild and development-ready
 restoration are mandatory. Unsupported nodes/types/backends reject. This is
 separate from BF compiled through XAX and not universal graph protection.
+
+The recipe request is four bytes: profile, observed operation, graph kind, stage.
+Stages 0/1 insert zero and negation separately; stage 2 changes ADD_WRAP to SUB_WRAP;
+stage 3 replaces its RHS. Each carrier contains exactly one mutation, binds the
+current root, and must pass native verification before another query/edit. Queries
+refresh the changed function by a unique matching interface and fail on ambiguity.
+Opaque node indices for inserted values come from earlier query buffers. A ledger
+binds all four queries/carriers before expected-digest replacement of the original.
+Input must already be an editable canonical build request, not a resolved snapshot.
+Exporting the existing request closure is a test-fixture operation, not an adapter
+that silently converts unsupported production inputs. Workspace/dependency recovery
+still requires its separate development-ready check.
 
 ## Structural acceptance
 
