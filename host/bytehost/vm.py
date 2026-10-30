@@ -229,7 +229,7 @@ SERVICES = {
 def flow(spec, command, mode=1):
     planner = pinned_executable(spec["planner"])
     request = Path(spec["request_file"]).read_bytes() if spec.get("request_file") else bytes((command, mode))
-    require(len(request) <= spec.get("planner_input_bytes", 65536), "INPUT_CAPACITY", "Planner input exceeds declared transport")
+    require(len(request) <= spec["planner_input_bytes"], "INPUT_CAPACITY", "Planner input exceeds declared transport")
     planner_argv = [planner]
     if spec.get("planner_launcher"):
         planner_argv.insert(0, pinned_executable(spec["planner_launcher"]))

@@ -1,7 +1,9 @@
 # Deferred test matrix
 
-All rows below are NOT STARTED. Test source existence is not a passing result.
-Run only after the complete draft has been reviewed and the next phase begins.
+The matrix is not an executed acceptance checklist. After whole-project source
+drafting, 22 focused generic host/BF workflow checks passed; their exact scope is
+`../evidence/unit-checks-2026-10-30.json`. Native and release checks remain NOT
+STARTED. Test source existence is never a passing result.
 
 | Area | Authored checks / required runs |
 |---|---|
@@ -33,3 +35,14 @@ The authored unit suites cover a subset of this matrix. Crypto, native pipeline,
 restart/failure injection, isolation and actual release exercises need provisioned
 tools and further executable cases. Never claim complete test coverage from this
 table or silently treat skipped tests as passing.
+
+
+Additional deferred sources: `test_workflow_draft.py`, `test_git_transport.py`,
+`test_isolated_recovery.py`, `test_runtime_bundle.py`, and expanded native/runtime
+checks. Required cases include complete operands/order, failed/unknown evidence
+before finalization, public/vault modes, exact binary staging and real clone,
+removed private blobs in history, pinned-policy mutation/missing/duplicate mounts,
+forbidden-original overlap, complete runtime distributions and cold tools, and
+restricted JVM/graph behavior. The four new unit modules ran as recorded; native
+runtime/JVM/graph acceptance did not. Further allocation/disk exhaustion,
+Windows metadata, clean signed recovery and native target cases remain necessary.

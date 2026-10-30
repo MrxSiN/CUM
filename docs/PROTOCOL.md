@@ -73,12 +73,32 @@ monotonic ledger. No rollback-proof hardware guarantee is claimed.
 
 ## Transport versus compiler resources
 
-BBC currently documents 65,536-byte total input/output buffers per native run.
-Example record payload 512 is an owner-editable transport budget, not a maximum
-file size. Two input bytes per payload byte, two state bytes and one marker must
-fit the selected process input capacity. Expanded output plus trailer must fit
-its output capacity. The host launches a fresh native process for each record.
-It never assumes that many small frames bypass one process's total input bound.
+Per-process capacities must come from verified selected-tool observations, not a
+historic BBC constant. Example record payload 512 is an owner-editable transport
+budget, not a file-size maximum. Two input bytes per payload byte, two state bytes
+and one marker must fit the selected process input budget. Expanded output and
+trailer must fit its output budget. Fresh processes per record do not bypass a
+per-process restriction. Chunking cannot make an unsupported final build valid.
 
-Final protected compilation remains constrained by the actual BBC frontend.
-Splitting transformation requests cannot remove that compiler limit.
+## Event-machine worker ABI
+
+The multi-cell/JVM kernels use a distinct record:
+`177 | event | byte | profile | selector | five facts | sixteen opaque bytes`.
+Events are start, data and end. The host reads actual file bytes before choosing
+data versus physical end. Zero data is still a data event. Facts report integer
+zero/negative, equality to stack-top, stack-empty and explicit integer-budget
+exhaustion. Null integer budget reports no integer ceiling. BF assigns every
+fact's application meaning and chooses all effects.
+
+Response is `178 | effects | sixteen new opaque bytes | status`. Effects provide
+literal output, opaque buffer/stack operations, integer operations or a pinned
+kernel handoff. Unknown/truncated effects, rejected status, missing kernels and
+explicit storage/time/output budgets abort. This is a generic machine, not a
+host parser or camouflage service.
+
+Each physical event may use a fresh native process. Authenticated checkpoints bind
+source/config identities, opaque state, dynamically stored integers/stacks/buffers,
+input/output positions and output digest. BF end-event checks reject unfinished
+parses. Prefix output is not an accepted final file. Restart retains the local
+rollback limitation above. Fixed protocol registers/state bytes identify the
+machine ABI; they do not bound source length, project size or bracket depth.

@@ -13,9 +13,9 @@ from .storage import (atomic_json, canonical, confined, inventory, load, new_sta
                       no_links, publish_tree, relative_name, remove_stage, verify_tree)
 
 
-def _unpack_members(archive, stage, limits, manifest=None):
+def _unpack_members(archive, stage, limits, manifest=None, *, members=None):
     seen, total, count = set(), 0, 0
-    for member in archive:
+    for member in (archive if members is None else members):
         name = member.name.rstrip("/") if member.isdir() else member.name
         relative_name(name)
         key = name.casefold()
@@ -151,7 +151,7 @@ def extract(spec):
             require(canonical(record) == data, "FORMAT", "Noncanonical scope record")
             require(record.get("format") == "BYTE-TREE-SHA256-NFC" and record.get("excludes") == [],
                     "FORMAT", "Unsupported recovery scope")
-            _unpack_members(members, stage, spec["limits"], manifest=record)
+            _unpack_members(archive, stage, spec["limits"], manifest=record, members=members)
         verify_tree(stage, record)
         publish_tree(stage, destination)
         if spec.get("manifest"):

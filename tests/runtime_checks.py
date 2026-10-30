@@ -13,10 +13,10 @@ from pathlib import Path
 
 def verify(spec):
     package = Path(spec["package"])
-    prefix = [spec["launcher"]] if spec.get("launcher") else []
     environment = {key: value for key, value in os.environ.items() if key not in
                    ("PYTHONPATH", "PYTHONHOME", "PYTHONSTARTUP", "PYTHONUSERBASE")}
-    def run(command, data=b""):
+    def run(command, data=b"", launcher=None):
+        prefix = [str(package / launcher)] if launcher else []
         result = subprocess.run([*prefix, *command], input=data, stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE, cwd=package, env=environment,
                                 timeout=spec["timeout_seconds"], check=False)
@@ -28,12 +28,19 @@ def verify(spec):
         if actual != expected:
             raise RuntimeError("Packaged file differs from independently approved identity")
     run([str(package / spec["python"]), "-I", str(package / "runtime_entry.py"), "--help"])
-    actual = run([str(package / spec["planner"])], bytes.fromhex(spec["planner_request_hex"]))
+    actual = run([str(package / spec["planner"])], bytes.fromhex(spec["planner_request_hex"]),
+                 spec.get("planner_launcher"))
     if actual != bytes.fromhex(spec["planner_response_hex"]):
         raise RuntimeError("Packaged BF planner did not emit its expected recovery plan")
     run([str(package / spec["openssl"]), "version"])
-    print(json.dumps({"format": "COLD-RUNTIME-CHECK", "status": "PASS",
-                      "scope": "packaged interpreter/modules/native BF planner/OpenSSL; full signed recovery is a separate BF flow"}))
+    report = {"format": "COLD-RUNTIME-CHECK", "status": "PASS",
+              "scope": "packaged interpreter/modules/native BF planner/OpenSSL; full signed recovery is a separate BF flow"}
+    if spec.get("report"):
+        target = Path(spec["report"])
+        with target.open("x", encoding="utf-8") as output:
+            json.dump(report, output, sort_keys=True)
+            output.write("\n")
+    print(json.dumps(report))
 
 
 if __name__ == "__main__":

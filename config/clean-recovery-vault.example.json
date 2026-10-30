@@ -1,0 +1,85 @@
+{
+  "planner": {
+    "executable": "/runtime/clean_recovery.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "planner_input_bytes": 2,
+  "planner_timeout_seconds": 60,
+  "planner_output_bytes": 4096,
+  "journal": "/result/flow.json",
+  "bindings": {
+    "1": {
+      "openssl": {
+        "executable": "/runtime/openssl/bin/openssl",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "/trust/signer.pub.pem",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_SIGNER_SPKI_SHA256",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "/release/release.json",
+      "signature": "/release/release.sig"
+    },
+    "2": {
+      "root": "/release",
+      "inventory": "/release/inventory.json",
+      "binding_record": "/release/release.json",
+      "files": {
+        "protected_inventory": "/release/inventory.json",
+        "recovery_capsule": "/vault/capsule.cms"
+      },
+      "expected_fields": {
+        "format": "SIGNED-PROTECTED-TREE-CMS",
+        "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
+        "signature_format": "ED25519-RAW",
+        "release_identity": "REPLACE_OPERATION",
+        "recovery_mode": "private-vault"
+      }
+    },
+    "3": {
+      "openssl": {
+        "executable": "/runtime/openssl/bin/openssl",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 600,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "/vault/capsule.cms",
+      "destination": "/tmp/originals.tar",
+      "identity": "/identity/recovery.key.pem",
+      "certificate": "/identity/recovery.cert.pem"
+    },
+    "4": {
+      "source": "/tmp/originals.tar",
+      "destination": "/tmp/restored",
+      "limits": {
+        "bytes": 1073741824,
+        "entries": 100000,
+        "metadata_bytes": 16777216
+      },
+      "manifest": "/result/scope.json"
+    },
+    "5": {
+      "root": "/tmp/restored",
+      "manifest": "/result/scope.json",
+      "destination": "/result/recovered.tar",
+      "max_archive_bytes": 1073741824
+    },
+    "6": {
+      "destination": "/result/receipt.json",
+      "fields": {
+        "format": "SIGNED-CLEAN-RECOVERY-RECEIPT",
+        "status": "PASS"
+      },
+      "files": {
+        "release_manifest": "/release/release.json",
+        "recovered_archive": "/result/recovered.tar",
+        "recovered_scope": "/result/scope.json"
+      }
+    }
+  },
+  "planner_launcher": {
+    "executable": "/runtime/wine/bin/wine",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  }
+}

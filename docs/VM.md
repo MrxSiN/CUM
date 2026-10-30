@@ -48,3 +48,35 @@ The whole-flow journal prevents accidental reuse of the same operation file but
 does not currently support transaction resumption. Byte-worker mapping has its
 own authenticated restart protocol. Signed provenance verifies released content;
 private workflow journals are operational diagnostics, not public trust anchors.
+
+## Additional generic primitives
+
+| Opcode | Service |
+|---:|---|
+| 25 | Invoke an explicitly pinned trusted external tool |
+| 26 | Map opaque event-machine workers over declared files |
+| 27 | Assemble BF-produced literal/copy recipes with opaque buffers |
+| 28 / 29 | Nested BF workflow / BF-selected service dispatch |
+| 30 / 31 | Append bound record / expected-digest file replacement |
+| 32 | Capture explicit regular Windows paths with deny-write handles |
+| 33 / 34 | Content-addressed cache store / retrieve |
+| 35 / 36 | Collect measured fields / randomized isolated measurements |
+| 37 / 38 | BF metadata predicate / BF measured-interval policy |
+| 39 / 40 | BF-classified discovery / checked explicit file replacements |
+| 41 / 42 | Owner-only storage / BF-selected public projection |
+| 43 | Bundle pinned files and exact inventoried tool distributions |
+| 44 | Run an independently pinned isolated capability policy |
+| 45 / 46 | Stage exact Git blobs / audit committed tree and reachable blobs |
+| 47 / 48 | Apply BF-produced directory metadata / filesystem preconditions |
+
+Every planner binding supplies `planner_input_bytes`; there is no implicit BBC
+capacity default. Normal command/mode records have two bytes. The budget flow
+uses its separately validated complete request file. Unknown capacity is not
+permission to truncate or guess a compiler ability.
+
+Prepare authenticates capability operands 61/62, emits metadata 63 and creates
+and checks a fresh Git namespace using 64..69 and clone operand 31. Trusted clean
+recovery is 70, its output receipt 72 and safe result extraction 71. The sixteen
+selected receipts include the clone history audit and isolated recovery. A service
+failure always aborts, whether or not separately selected. Standalone recovery
+retains its no-reference signature/decrypt/extract path.

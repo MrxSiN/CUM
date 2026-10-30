@@ -1,55 +1,48 @@
 # CUM — Certified Useless Module
 
-Brainfuck-authored source transformation and exact-recovery system under development.
+Brainfuck-authored source camouflage and authenticated exact recovery.
 
-**Status: PARTIAL — unbuilt, untested draft checkpoint.** The whole-project drafting
-session was interrupted before final integration and documentation were finished.
-This repository is not a production release or evidence that protection, recovery,
-signatures or performance gates have passed.
+**PARTIAL — whole-project source draft; native builds unverified.** This checkout
+contains implementation and independent check sources across the workflow.
+Twenty-two focused host/workflow checks passed after drafting; native compilation,
+full signed recovery and release acceptance remain NOT STARTED. It
+is not a production release or evidence of protection, correctness or recovery.
 
-## Draft contents
+All CUM application decisions and source transformations live in genuine
+Brainfuck under `src/`. `host/bytehost/` supplies separately identifiable generic
+transport, storage, process, cryptographic-tool, measurement and workflow services.
+The host is Python; the overall dependency pipeline is not foreign-language-free.
 
-- Genuine Brainfuck workflow, command, policy and adapter sources in `src/`.
-- Multi-cell BF layout transformations for statically bounded, balanced loops.
-- Linear BF virtualization and narrow Java/Kotlin integer-module transformations.
-- A guarded XAX wrapping-add transaction recipe using the actual `XAXEDIT1` format.
-- Separately identified generic host services for binary transport, opaque state,
-  snapshots, archives, cryptographic tools, isolation, metadata and Git operations.
-- Configuration templates, independent check sources and synthetic fixtures.
+The drafted adapters cover statically bounded balanced-loop BF, linear single-cell
+BF virtualization, a guarded canonical XAX wrapping-add recipe and narrow
+Java/Kotlin integer modules. Unsupported constructs reject; universal language
+support and analysis resistance are not claimed.
 
-All CUM transformation and application decisions belong in Brainfuck. Python host
-code supplies generic services; Java/Kotlin files under `tests/projects/` are test
-subjects, not CUM implementations. XAX remains a canonical semantic-graph system.
+The release draft uses one immutable capture, authenticated encrypted originals,
+BF-selected transformations, independent checks, a portable signed inventory,
+exact-byte Git staging and a real local commit/clone. A separately pinned recovery
+container receives the clone, independent identity/trust and retained runtime,
+with no original/reference mount. Publication remains a separate owner-approved
+operation. Public-capsule and private-vault example bindings are provided.
 
-## Current limitations
-
-Adapters have explicit, restricted domains. General Java/Kotlin parsing, arbitrary
-BF pointer behavior and universal XAX project support are not established.
-The newest Git transport, portable public-inventory, trusted-recovery and runtime
-packaging components still need their final integration. Some older documents and
-example bindings describe earlier draft interfaces.
-
-No native build, unit suite, integration suite, recovery drill, signature check,
-benchmark or release acceptance test has run. Testing, fixes based on test results
-and optimization remain deferred under the owner's drafting-first workflow.
-See [the current checkpoint status](docs/STATUS.md).
-
-## Layout
+Current compiler ceilings are not permanent CUM design limits. Explicit verified
+capabilities and operation budgets govern each job; actual compiler/backend
+failures remain failures. No CUM product version scheme is introduced.
 
 | Directory | Purpose |
 |---|---|
 | `src/` | Authoritative BF application sources |
-| `host/` | Generic host and external-tool providers |
-| `tests/` | Independent verification sources and fixtures |
-| `config/` | Placeholder operand templates, not real credentials |
-| `docs/` | Draft contracts and operating notes |
-| `evidence/` | Historical source inspection and inventory records |
+| `host/` | Generic services and existing-tool providers |
+| `tests/` | Independent checks and synthetic fixtures; focused subset executed |
+| `config/` | Deliberately invalid example operands; never real identities/jobs |
+| `docs/` | Contracts, requirements, operating procedure and status |
+| `evidence/` | Dated inspection/inventory records; not test evidence |
 
-The native build driver is `python -m host.bytehost.build <binding.json>`.
-It invokes an explicitly pinned BBC executable; no production interpreter fallback
-is supplied. Provisioning a working compiler, reviewed isolation images, identities
-and independently trusted configuration remains necessary before validation.
+Read [status](docs/STATUS.md), [operating instructions](docs/OPERATIONS.md),
+[adapter domains](docs/ADAPTERS.md), [ownership](docs/BOUNDARIES.md) and
+[requirements](docs/REQUIREMENTS.md). The build entry is
+`python -m host.bytehost.build <binding.json>` and requires a pinned real BBC.
+No production interpreter fallback is supplied.
 
-The owner explicitly authorized this source push to GitHub. That authorization
-does not include publishing keys, real private job data, recovery capsules or
-captured original projects. Those paths and file types remain ignored.
+Source publication to this repository is owner-authorized. Credentials, original
+projects, private job data and recovery materials must never be published.

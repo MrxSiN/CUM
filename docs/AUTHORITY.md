@@ -14,8 +14,8 @@ Read sources:
 
 | Document | SHA-256 |
 |---|---|
-| `D:/LocalSync/BBC XAX.md` | `01ca6814bc6c9162dab9236cf9e55af65c0a9b9ab7b540a989de5b468f1fbddc` |
-| `D:/LocalSync/CUM_Engineering_Development_Prompt.md` | `65b8ed0d69fc4ad5bc3c0fe1c157d13229b4409ca6258e22671e3cbdaecbcfcd` |
+| `D:/Syncthing/Google Pixel 8 Pro/BBC XAX.md` | `01ca6814bc6c9162dab9236cf9e55af65c0a9b9ab7b540a989de5b468f1fbddc` |
+| `D:/Syncthing/Google Pixel 8 Pro/CUM_Engineering_Development_Prompt.md` | `65b8ed0d69fc4ad5bc3c0fe1c157d13229b4409ca6258e22671e3cbdaecbcfcd` |
 
 No CUM product numbering is introduced. Named artifact identifiers disambiguate
 wire/archive/signature contracts. Compiler repositories have not been modified.
@@ -29,3 +29,11 @@ The current draft does not implement every ambitious language/protection feature
 in the master document. Unsupported work is identified in `STATUS.md`; denial
 paths must not be counted as completed adapters. This distinction is necessary
 even though interfaces and transaction code have been drafted across the system.
+
+
+The renewed request to discard current BBC limits means they must not define
+permanent CUM capacities. It supplies no evidence of a missing compiler ability.
+Actual executable/backend rejections remain fail-closed, with no BBC/XAX changes
+to hide them. Source/executable inspection is separate from CUM compilation,
+execution or acceptance. The updated source draft covers the whole workflow
+with explicit restricted adapter domains; it does not promote any milestone.

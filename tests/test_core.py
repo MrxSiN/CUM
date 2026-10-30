@@ -20,7 +20,7 @@ def transform(source, profile=2, seed=0):
 
 class CoreTests(unittest.TestCase):
     def test_all_sources_are_only_eight_commands(self):
-        for path in (ROOT / "src").glob("*.bf"):
+        for path in (ROOT / "src").rglob("*.bf"):
             self.assertTrue(set(path.read_bytes()) <= set(b"><+-.,[]\r\n\t "))
 
     def test_echo_binary_zero_and_full_byte_range(self):

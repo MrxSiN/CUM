@@ -361,59 +361,11 @@
           "executable": "D:/GitHub/CUM/build/path_policy.exe",
           "sha256": "REPLACE_WITH_VERIFIED_SHA256"
         },
-        "input_capacity_bytes": 65536,
-        "output_capacity_bytes": 65536,
+        "input_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+        "output_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
         "timeout_seconds": 60
       },
       "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/publication-paths.json"
-    },
-    "35": {
-      "tool": {
-        "executable": "C:/Program Files/Git/cmd/git.exe",
-        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
-      },
-      "argv": [
-        "-C",
-        "D:/GitHub/CUM/releases/REPLACE_OPERATION",
-        "init",
-        "-b",
-        "main"
-      ],
-      "timeout_seconds": 60,
-      "max_output_bytes": 1048576,
-      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-init.json"
-    },
-    "36": {
-      "tool": {
-        "executable": "C:/Program Files/Git/cmd/git.exe",
-        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
-      },
-      "argv": [
-        "-C",
-        "D:/GitHub/CUM/releases/REPLACE_OPERATION",
-        "add",
-        "--",
-        "."
-      ],
-      "timeout_seconds": 60,
-      "max_output_bytes": 1048576,
-      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-add.json"
-    },
-    "37": {
-      "tool": {
-        "executable": "C:/Program Files/Git/cmd/git.exe",
-        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
-      },
-      "argv": [
-        "-C",
-        "D:/GitHub/CUM/releases/REPLACE_OPERATION",
-        "commit",
-        "-m",
-        "Publish approved protected release REPLACE_OPERATION"
-      ],
-      "timeout_seconds": 60,
-      "max_output_bytes": 1048576,
-      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-commit.json"
     },
     "38": {
       "tool": {
@@ -421,15 +373,25 @@
         "sha256": "REPLACE_WITH_VERIFIED_SHA256"
       },
       "argv": [
+        "-c",
+        "core.hooksPath=D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/empty-hooks",
         "-C",
         "D:/GitHub/CUM/releases/REPLACE_OPERATION",
         "push",
         "REPLACE_WITH_EXPLICITLY_APPROVED_GIT_REMOTE",
-        "main:main"
+        "HEAD:refs/heads/main"
       ],
       "timeout_seconds": 600,
       "max_output_bytes": 1048576,
-      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-push.json"
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-push.json",
+      "clear_environment_prefixes": [
+        "GIT_"
+      ],
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0"
+      }
     },
     "39": {
       "destination": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/runtime",
@@ -437,17 +399,202 @@
       "max_bytes": 4294967296,
       "files": [
         {
-          "source": "D:/GitHub/CUM/build/cum.exe",
-          "path": "cum.exe",
+          "source": "D:/GitHub/CUM/host/__init__.py",
+          "path": "host/__init__.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/__init__.py",
+          "path": "host/bytehost/__init__.py",
           "sha256": "REPLACE_WITH_VERIFIED_SHA256"
         },
         {
           "source": "D:/GitHub/CUM/host/bytehost/__main__.py",
           "path": "host/bytehost/__main__.py",
           "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/archive.py",
+          "path": "host/bytehost/archive.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/assembly.py",
+          "path": "host/bytehost/assembly.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/build.py",
+          "path": "host/bytehost/build.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/bundle.py",
+          "path": "host/bytehost/bundle.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/cache.py",
+          "path": "host/bytehost/cache.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/crypto.py",
+          "path": "host/bytehost/crypto.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/discovery.py",
+          "path": "host/bytehost/discovery.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/dispatch.py",
+          "path": "host/bytehost/dispatch.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/errors.py",
+          "path": "host/bytehost/errors.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/git_transport.py",
+          "path": "host/bytehost/git_transport.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/guards.py",
+          "path": "host/bytehost/guards.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/machine.py",
+          "path": "host/bytehost/machine.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/metadata.py",
+          "path": "host/bytehost/metadata.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/metrics.py",
+          "path": "host/bytehost/metrics.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/process.py",
+          "path": "host/bytehost/process.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/projection.py",
+          "path": "host/bytehost/projection.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/resources.py",
+          "path": "host/bytehost/resources.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/scope.py",
+          "path": "host/bytehost/scope.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/securestore.py",
+          "path": "host/bytehost/securestore.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/storage.py",
+          "path": "host/bytehost/storage.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/transport.py",
+          "path": "host/bytehost/transport.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/trusted.py",
+          "path": "host/bytehost/trusted.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/trusted_recovery.py",
+          "path": "host/bytehost/trusted_recovery.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/vm.py",
+          "path": "host/bytehost/vm.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/bytehost/worker.py",
+          "path": "host/bytehost/worker.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/providers/__init__.py",
+          "path": "host/providers/__init__.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/providers/cgroup_run.py",
+          "path": "host/providers/cgroup_run.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/providers/xax_query.py",
+          "path": "host/providers/xax_query.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/host/runtime_entry.py",
+          "path": "runtime_entry.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/tests/runtime_checks.py",
+          "path": "tests/runtime_checks.py",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/build/cum.exe",
+          "path": "cum.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/build/clean_recovery.exe",
+          "path": "clean_recovery.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
         }
       ],
-      "note": "Expand to the full approved runtime, Python, OpenSSL, host modules and public dependencies; keys must be retained separately"
+      "note": "Complete independently inventoried compatible distributions, including shared libraries and stdlib; never use system private CUM modules as a fallback",
+      "trees": [
+        {
+          "source": "REPLACE_WITH_APPROVED_PYTHON_DISTRIBUTION",
+          "path": "python",
+          "manifest": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/python-inventory.json",
+          "manifest_sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "REPLACE_WITH_APPROVED_OPENSSL_DISTRIBUTION",
+          "path": "openssl",
+          "manifest": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/openssl-inventory.json",
+          "manifest_sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "REPLACE_WITH_APPROVED_WINE_DISTRIBUTION",
+          "path": "wine",
+          "manifest": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/wine-inventory.json",
+          "manifest_sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        }
+      ]
     },
     "40": {
       "openssl": {
@@ -478,8 +625,8 @@
           "executable": "D:/GitHub/CUM/build/path_policy.exe",
           "sha256": "REPLACE_WITH_VERIFIED_SHA256"
         },
-        "input_capacity_bytes": 65536,
-        "output_capacity_bytes": 65536,
+        "input_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+        "output_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
         "timeout_seconds": 60
       },
       "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/runtime-paths.json"
@@ -496,6 +643,101 @@
         "format": "SIGNED-PRIVATE-RECOVERY-BACKUP",
         "operation": "REPLACE_OPERATION"
       }
+    },
+    "44": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_COLD_IMAGE@sha256:REPLACE_IMAGE_DIGEST",
+      "pids": 64,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 1073741824,
+      "policy_file": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/independent-trust/runtime-policy.json",
+      "policy_sha256": "REPLACE_WITH_VERIFIED_SHA256",
+      "forbidden_sources": [
+        "D:/GitHub/CUM/src",
+        "D:/GitHub/CUM/host",
+        "REPLACE_WITH_ORIGINAL_ABSOLUTE_PROJECT_ROOT"
+      ],
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/runtime",
+          "target": "/runtime",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/runtime-check-binding.json",
+          "target": "/binding.json",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/runtime-check-results",
+          "target": "/result",
+          "readonly": false
+        }
+      ],
+      "workdir": "/runtime",
+      "environment": {
+        "WINEPREFIX": "/tmp/wine-prefix",
+        "WINEDEBUG": "-all",
+        "LD_LIBRARY_PATH": "/runtime/python/lib:/runtime/openssl/lib:/runtime/wine/lib"
+      },
+      "argv": [
+        "/runtime/python/bin/python3",
+        "-I",
+        "/runtime/tests/runtime_checks.py",
+        "/binding.json"
+      ],
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576
+    },
+    "45": {
+      "git": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "repository": "D:/GitHub/CUM/releases/REPLACE_OPERATION",
+      "inventory": "D:/GitHub/CUM/releases/REPLACE_OPERATION/inventory.json",
+      "extra_paths": [
+        "inventory.json",
+        "release.json",
+        "release.sig",
+        "capsule.cms"
+      ],
+      "empty_hooks_directory": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/empty-hooks",
+      "scratch_directory": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/git-scratch",
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0"
+      },
+      "timeout_seconds": 600,
+      "max_metadata_bytes": 16777216,
+      "max_object_bytes": 1073741824,
+      "selector": {
+        "executable": "D:/GitHub/CUM/build/private_select.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "predicate": {
+        "executable": "D:/GitHub/CUM/build/leak_policy.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "private_records": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/discovery.json",
+      "record_list_field": "entries",
+      "digest_field": "sha256",
+      "selection_fields": [
+        "approval_byte",
+        "disposition_byte"
+      ],
+      "additional_private_digests": [],
+      "max_objects": 1000000,
+      "facts_per_record": 512,
+      "predicate_input_capacity": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+      "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/publication-history-audit.json"
     }
-  }
+  },
+  "planner_input_bytes": 2
 }

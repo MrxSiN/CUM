@@ -1,7 +1,7 @@
 {
   "sdk_directory": "/tools/xax/compiler/src",
   "repository": "/tools/xax",
-  "commit": "8c9ce91351b664b927df066d4c2ef549167ae0ef",
+  "commit": "15e939d010ed7a48705b240d849b9fe900b98739",
   "git": {
     "executable": "/usr/bin/git",
     "sha256": "REPLACE_WITH_VERIFIED_SHA256"

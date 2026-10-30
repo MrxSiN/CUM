@@ -43,7 +43,7 @@
       "timeout_seconds": 60,
       "max_output_bytes": 1048576,
       "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/tools/xax.json",
-      "expected_commit": "8c9ce91351b664b927df066d4c2ef549167ae0ef"
+      "expected_commit": "15e939d010ed7a48705b240d849b9fe900b98739"
     },
     "3": {
       "tool": {
@@ -207,8 +207,8 @@
                 "kernels": {},
                 "profile": 2,
                 "selector": 0,
-                "integer_limit": 715748690,
-                "capability_source": "Must be verified against the selected runtime; example derives from BBC documented tape extent",
+                "integer_limit": null,
+                "capability_source": "Bind to independently verified toolchain semantics; null integer_limit requests resource-driven storage, not a BBC tape constant",
                 "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
                 "max_output_bytes": 1073741824,
                 "max_storage_bytes": 1073741824,
@@ -261,8 +261,8 @@
                 },
                 "profile": 2,
                 "selector": 0,
-                "integer_limit": 715748690,
-                "capability_source": "Must be verified against the selected runtime; example derives from BBC documented tape extent",
+                "integer_limit": null,
+                "capability_source": "Bind to independently verified toolchain semantics; null integer_limit requests resource-driven storage, not a BBC tape constant",
                 "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
                 "max_output_bytes": 1073741824,
                 "max_storage_bytes": 1073741824,
@@ -315,8 +315,8 @@
                 },
                 "profile": 2,
                 "selector": 0,
-                "integer_limit": 715748690,
-                "capability_source": "Must be verified against the selected runtime; example derives from BBC documented tape extent",
+                "integer_limit": null,
+                "capability_source": "Bind to independently verified toolchain semantics; null integer_limit requests resource-driven storage, not a BBC tape constant",
                 "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
                 "max_output_bytes": 1073741824,
                 "max_storage_bytes": 1073741824,
@@ -782,7 +782,8 @@
                     "protected": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/main.xax"
                   }
                 }
-              }
+              },
+              "planner_input_bytes": 2
             },
             "51": {
               "root": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
@@ -797,8 +798,8 @@
                 "kernels": {},
                 "profile": 3,
                 "selector": 0,
-                "integer_limit": 715748690,
-                "capability_source": "Must be verified against the selected runtime; example derives from BBC documented tape extent",
+                "integer_limit": null,
+                "capability_source": "Bind to independently verified toolchain semantics; null integer_limit requests resource-driven storage, not a BBC tape constant",
                 "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
                 "max_output_bytes": 1073741824,
                 "max_storage_bytes": 1073741824,
@@ -1142,7 +1143,9 @@
         "release.json",
         "release.sig",
         "capsule.cms"
-      ]
+      ],
+      "public": true,
+      "executable_paths": []
     },
     "27": {
       "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/release.json",
@@ -1152,10 +1155,10 @@
         "recovery_mode": "public-capsule",
         "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
         "signature_format": "ED25519-RAW",
-        "protected_inventory_format": "BYTE-TREE-SHA256-NFC",
+        "protected_inventory_format": "BYTE-TREE-PUBLIC-GIT",
         "toolchains": {
           "bbc_commit": "53783953fd87cbc9308b108d187b7f3fcfedc06d",
-          "xax_commit": "8c9ce91351b664b927df066d4c2ef549167ae0ef",
+          "xax_commit": "15e939d010ed7a48705b240d849b9fe900b98739",
           "target": "windows-x86_64",
           "bbc_executable_sha256": "REPLACE_WITH_VERIFIED_SHA256",
           "optimization": [
@@ -1163,7 +1166,8 @@
             "-O1"
           ],
           "adapter": "xax-add-negate",
-          "compiler": "REPLACE_WITH_ACTUAL_VERIFIED_TARGET_TOOLCHAIN_IDENTITIES"
+          "compiler": "REPLACE_WITH_ACTUAL_VERIFIED_TARGET_TOOLCHAIN_IDENTITIES",
+          "xax_executable_sha256": "REPLACE_WITH_VERIFIED_SHA256"
         },
         "build_instructions": "REPLACE_WITH_PUBLIC_INDEPENDENT_BUILD_INSTRUCTIONS",
         "licensing_classification": "REPLACE_WITH_OWNER_REVIEWED_DISTRIBUTION_CLASS"
@@ -1213,8 +1217,35 @@
       }
     },
     "31": {
-      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
-      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout"
+      "tool": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "-c",
+        "core.hooksPath=D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-hooks",
+        "clone",
+        "--no-local",
+        "--no-hardlinks",
+        "--template=D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-template",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout"
+      ],
+      "timeout_seconds": 600,
+      "max_output_bytes": 16777216,
+      "clear_environment_prefixes": [
+        "GIT_"
+      ],
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0",
+        "GIT_AUTHOR_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_AUTHOR_EMAIL": "REPLACE_WITH_OWNER_EMAIL",
+        "GIT_COMMITTER_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_COMMITTER_EMAIL": "REPLACE_WITH_OWNER_EMAIL"
+      },
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/git-clone.json"
     },
     "32": {
       "openssl": {
@@ -1476,11 +1507,13 @@
           "executable": "D:/GitHub/CUM/build/path_policy.exe",
           "sha256": "REPLACE_WITH_VERIFIED_SHA256"
         },
-        "input_capacity_bytes": 65536,
-        "output_capacity_bytes": 65536,
+        "input_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+        "output_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
         "timeout_seconds": 60
       },
-      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/public-paths.json"
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/public-paths.json",
+      "public": true,
+      "executable_paths": []
     },
     "53": {
       "correctness_report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/behavior.json",
@@ -1666,8 +1699,8 @@
           "executable": "D:/GitHub/CUM/build/discovery.exe",
           "sha256": "REPLACE_WITH_VERIFIED_SHA256"
         },
-        "input_capacity_bytes": 65536,
-        "output_capacity_bytes": 65536,
+        "input_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+        "output_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
         "timeout_seconds": 60
       },
       "policy": {
@@ -1689,7 +1722,7 @@
         "sha256": "REPLACE_WITH_VERIFIED_SHA256"
       },
       "planner_timeout_seconds": 60,
-      "planner_input_bytes": 65536,
+      "planner_input_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
       "planner_output_bytes": 4096,
       "request_file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/profile-budget.bin",
       "command": 1,
@@ -1817,6 +1850,353 @@
       },
       "timeout_seconds": 60,
       "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/restored-projection.json"
+    },
+    "61": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/independent-trust/signer.pub.pem",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_SIGNER_SPKI_SHA256",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/toolchain-review.json",
+      "signature": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/toolchain-review.sig"
+    },
+    "62": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/toolchain-review.json",
+      "fields": {
+        "format": "OWNER-TOOLCHAIN-CAPABILITY-REVIEW",
+        "operation": "REPLACE_OPERATION",
+        "native_build": "PASS",
+        "transport": "PASS",
+        "semantics": "PASS",
+        "required_adapters": "PASS"
+      },
+      "file_digests": {
+        "capability_record_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/capabilities.json",
+        "bbc_executable_sha256": "D:/GitHub/BBC/build/bbc.exe",
+        "xax_executable_sha256": "D:/GitHub/XAX/compiler/bootstrap/windows/xaxc-windows-x86_64.exe"
+      }
+    },
+    "63": {
+      "worker": {
+        "executable": "D:/GitHub/CUM/build/git_attributes.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "root": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+      "timeout_seconds": 60,
+      "max_response_bytes": 4096,
+      "max_file_bytes": 1048576,
+      "executable_paths": []
+    },
+    "64": {
+      "absent": [
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/.git",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout"
+      ],
+      "empty_directories": [
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-hooks",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-template",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/git-scratch",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-result"
+      ]
+    },
+    "65": {
+      "tool": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "-c",
+        "core.hooksPath=D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-hooks",
+        "-C",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+        "init",
+        "--template=D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-template",
+        "-b",
+        "main"
+      ],
+      "timeout_seconds": 600,
+      "max_output_bytes": 16777216,
+      "clear_environment_prefixes": [
+        "GIT_"
+      ],
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0",
+        "GIT_AUTHOR_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_AUTHOR_EMAIL": "REPLACE_WITH_OWNER_EMAIL",
+        "GIT_COMMITTER_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_COMMITTER_EMAIL": "REPLACE_WITH_OWNER_EMAIL"
+      },
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/git-init.json"
+    },
+    "66": {
+      "git": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "repository": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+      "inventory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/inventory.json",
+      "extra_paths": [
+        "inventory.json",
+        "release.json",
+        "release.sig",
+        "capsule.cms"
+      ],
+      "empty_hooks_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-hooks",
+      "scratch_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/git-scratch",
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0",
+        "GIT_AUTHOR_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_AUTHOR_EMAIL": "REPLACE_WITH_OWNER_EMAIL",
+        "GIT_COMMITTER_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_COMMITTER_EMAIL": "REPLACE_WITH_OWNER_EMAIL"
+      },
+      "timeout_seconds": 600,
+      "max_metadata_bytes": 16777216,
+      "max_object_bytes": 1073741824,
+      "selector": {
+        "executable": "D:/GitHub/CUM/build/private_select.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "predicate": {
+        "executable": "D:/GitHub/CUM/build/leak_policy.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "private_records": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/discovery.json",
+      "record_list_field": "entries",
+      "digest_field": "sha256",
+      "selection_fields": [
+        "approval_byte",
+        "disposition_byte"
+      ],
+      "additional_private_digests": [],
+      "max_objects": 1000000,
+      "facts_per_record": 512,
+      "predicate_input_capacity": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/candidate-git-audit.json"
+    },
+    "67": {
+      "tool": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "-c",
+        "core.hooksPath=D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-hooks",
+        "-c",
+        "commit.gpgSign=false",
+        "-C",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+        "commit",
+        "-m",
+        "Protected release REPLACE_OPERATION"
+      ],
+      "timeout_seconds": 600,
+      "max_output_bytes": 16777216,
+      "clear_environment_prefixes": [
+        "GIT_"
+      ],
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0",
+        "GIT_AUTHOR_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_AUTHOR_EMAIL": "REPLACE_WITH_OWNER_EMAIL",
+        "GIT_COMMITTER_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_COMMITTER_EMAIL": "REPLACE_WITH_OWNER_EMAIL"
+      },
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/git-commit.json"
+    },
+    "68": {
+      "git": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "repository": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+      "inventory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/inventory.json",
+      "extra_paths": [
+        "inventory.json",
+        "release.json",
+        "release.sig",
+        "capsule.cms"
+      ],
+      "empty_hooks_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-hooks",
+      "scratch_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/git-scratch",
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0",
+        "GIT_AUTHOR_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_AUTHOR_EMAIL": "REPLACE_WITH_OWNER_EMAIL",
+        "GIT_COMMITTER_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_COMMITTER_EMAIL": "REPLACE_WITH_OWNER_EMAIL"
+      },
+      "timeout_seconds": 600,
+      "max_metadata_bytes": 16777216,
+      "max_object_bytes": 1073741824,
+      "selector": {
+        "executable": "D:/GitHub/CUM/build/private_select.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "predicate": {
+        "executable": "D:/GitHub/CUM/build/leak_policy.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "private_records": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/discovery.json",
+      "record_list_field": "entries",
+      "digest_field": "sha256",
+      "selection_fields": [
+        "approval_byte",
+        "disposition_byte"
+      ],
+      "additional_private_digests": [],
+      "max_objects": 1000000,
+      "facts_per_record": 512,
+      "predicate_input_capacity": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/candidate-git-audit.json"
+    },
+    "69": {
+      "git": {
+        "executable": "C:/Program Files/Git/cmd/git.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "repository": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout",
+      "inventory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/inventory.json",
+      "extra_paths": [
+        "inventory.json",
+        "release.json",
+        "release.sig",
+        "capsule.cms"
+      ],
+      "empty_hooks_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/empty-hooks",
+      "scratch_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/git-scratch",
+      "environment": {
+        "GIT_CONFIG_NOSYSTEM": "1",
+        "GIT_CONFIG_GLOBAL": "NUL",
+        "GIT_TERMINAL_PROMPT": "0",
+        "GIT_AUTHOR_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_AUTHOR_EMAIL": "REPLACE_WITH_OWNER_EMAIL",
+        "GIT_COMMITTER_NAME": "REPLACE_WITH_OWNER_NAME",
+        "GIT_COMMITTER_EMAIL": "REPLACE_WITH_OWNER_EMAIL"
+      },
+      "timeout_seconds": 600,
+      "max_metadata_bytes": 16777216,
+      "max_object_bytes": 1073741824,
+      "selector": {
+        "executable": "D:/GitHub/CUM/build/private_select.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "predicate": {
+        "executable": "D:/GitHub/CUM/build/leak_policy.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "private_records": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/discovery.json",
+      "record_list_field": "entries",
+      "digest_field": "sha256",
+      "selection_fields": [
+        "approval_byte",
+        "disposition_byte"
+      ],
+      "additional_private_digests": [],
+      "max_objects": 1000000,
+      "facts_per_record": 512,
+      "predicate_input_capacity": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/clone-git-audit.json"
+    },
+    "70": {
+      "engine": {
+        "executable": "REPLACE_WITH_CONTAINER_ENGINE_PATH",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "image": "REPLACE_RECOVERY_IMAGE@sha256:REPLACE_IMAGE_DIGEST",
+      "pids": 64,
+      "memory_bytes": 1073741824,
+      "cpus": 2,
+      "user": "1000:1000",
+      "tmp_bytes": 1073741824,
+      "policy_file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/independent-trust/recovery-policy.json",
+      "policy_sha256": "REPLACE_WITH_VERIFIED_SHA256",
+      "forbidden_sources": [
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/snapshot",
+        "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reference",
+        "REPLACE_WITH_ORIGINAL_ABSOLUTE_PROJECT_ROOT"
+      ],
+      "mounts": [
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout",
+          "target": "/release",
+          "readonly": true
+        },
+        {
+          "source": "REPLACE_WITH_INDEPENDENT_RECOVERY_RUNTIME",
+          "target": "/runtime",
+          "readonly": true
+        },
+        {
+          "source": "REPLACE_WITH_INDEPENDENT_RECOVERY_IDENTITY_DIRECTORY",
+          "target": "/identity",
+          "readonly": true
+        },
+        {
+          "source": "REPLACE_WITH_INDEPENDENT_SIGNER_TRUST_DIRECTORY",
+          "target": "/trust",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-recovery-binding.json",
+          "target": "/binding.json",
+          "readonly": true
+        },
+        {
+          "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-result",
+          "target": "/result",
+          "readonly": false
+        }
+      ],
+      "workdir": "/runtime",
+      "environment": {
+        "WINEPREFIX": "/tmp/wine-prefix",
+        "WINEDEBUG": "-all",
+        "LD_LIBRARY_PATH": "/runtime/python/lib:/runtime/openssl/lib:/runtime/wine/lib"
+      },
+      "argv": [
+        "/runtime/python/bin/python3",
+        "-I",
+        "/runtime/runtime_entry.py",
+        "flow",
+        "/binding.json",
+        "--command",
+        "1"
+      ],
+      "timeout_seconds": 600,
+      "max_output_bytes": 1048576
+    },
+    "71": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-result/recovered.tar",
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/restored",
+      "limits": {
+        "bytes": 1073741824,
+        "entries": 100000,
+        "metadata_bytes": 16777216
+      },
+      "manifest": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/restored-scope.json"
+    },
+    "72": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-result/receipt.json",
+      "fields": {
+        "format": "SIGNED-CLEAN-RECOVERY-RECEIPT",
+        "status": "PASS"
+      },
+      "digest_fields": {
+        "release_manifest": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/release.json",
+        "recovered_archive": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-result/recovered.tar"
+      }
     }
   },
   "command_worker": {
@@ -1824,9 +2204,10 @@
       "executable": "D:/GitHub/CUM/build/command.exe",
       "sha256": "REPLACE_WITH_VERIFIED_SHA256"
     },
-    "input_capacity_bytes": 65536,
-    "output_capacity_bytes": 65536,
+    "input_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+    "output_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
     "timeout_seconds": 60
   },
-  "receipt_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/receipts"
+  "receipt_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/receipts",
+  "planner_input_bytes": 2
 }

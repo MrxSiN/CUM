@@ -3,9 +3,9 @@
 | Decision/service | Owner |
 |---|---|
 | Command plan and release ordering | `src/cum.bf` |
-| Profile selection and pass order | `src/transform.bf` |
-| Source-byte recognition and eligibility | `src/transform.bf` |
-| All protected BF instruction emission | `src/transform.bf` |
+| Profile selection and pass order | BF planners, routes, policies and machine kernels |
+| Source-byte recognition and eligibility | BF workers, machine kernels and graph recipe |
+| All protected instruction/source emission | BF workers, machine kernels and graph recipe |
 | Meaning of the two worker-state bytes | BF worker |
 | Every mandatory-evidence acceptance decision | `src/gates.bf` |
 | Supported language admission | `src/adapters.bf` |
@@ -58,3 +58,11 @@ are not runtime dependencies. The generic reference interpreter lives in tests.
 
 The host is Python and uses platform services. Calling CUM or its dependency
 pipeline entirely foreign-language-free would be false.
+
+
+The XAX query provider invokes the existing pinned SDK for explicit observations.
+Its legacy Python inspection dependency is declared; it does not author CUM
+mutations or compile protected graphs. Exact Git bytes/modes/object enumeration
+are generic host services; private selection/rejection remain BF. Clean recovery
+ordering is `clean_recovery.bf`; backup/distribution/publication are
+`maintenance.bf`. No BBC/XAX implementation was edited for this draft.

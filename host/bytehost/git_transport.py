@@ -51,7 +51,10 @@ def _blob_digest(spec, oid, directory):
 def stage(spec):
     files = _expected(spec)
     for name, entry in files.items():
-        _git(spec, ["update-index", "--chmod=" + ("+x" if entry["executable"] else "-x"), "--", name])
+        oid = _git(spec, ["hash-object", "-w", "--no-filters", "--", name]).strip().decode("ascii")
+        require(re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", oid), "GIT", "Invalid written blob identity")
+        _git(spec, ["update-index", "--add", "--cacheinfo",
+                    "100755" if entry["executable"] else "100644", oid, name])
     rows = _git(spec, ["ls-files", "-s", "-z"]).split(b"\0")
     observed = set()
     with tempfile.TemporaryDirectory(prefix="git-objects-", dir=spec["scratch_directory"]) as scratch:

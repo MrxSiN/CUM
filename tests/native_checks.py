@@ -52,7 +52,7 @@ def verify(spec, case):
         require(set(spec["workers"]) == {"echo", "fixed", "transform"},
                 "FIXTURE", "All three independent boundary workers required")
         for name, artifact_spec in spec["workers"].items():
-            binding = {"worker": artifact_spec, "input_capacity_bytes": 65536,
+            binding = {"worker": artifact_spec, "input_capacity_bytes": spec["worker_input_capacity_bytes"],
                        "output_capacity_bytes": spec["max_runtime_output_bytes"],
                        "timeout_seconds": spec["runtime_timeout_seconds"]}
             if spec.get("launcher"):

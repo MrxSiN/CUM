@@ -1,0 +1,58 @@
+{
+  "format": "PINNED-ISOLATED-CAPABILITIES",
+  "image": "REPLACE_RECOVERY_IMAGE@sha256:REPLACE_IMAGE_DIGEST",
+  "argv": [
+    "/runtime/python/bin/python3",
+    "-I",
+    "/runtime/runtime_entry.py",
+    "flow",
+    "/binding.json",
+    "--command",
+    "1"
+  ],
+  "workdir": "/runtime",
+  "environment": {
+    "WINEPREFIX": "/tmp/wine-prefix",
+    "WINEDEBUG": "-all",
+    "LD_LIBRARY_PATH": "/runtime/python/lib:/runtime/openssl/lib:/runtime/wine/lib"
+  },
+  "mounts": {
+    "/release": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_PINNED_TREE_INVENTORY"
+      }
+    },
+    "/runtime": {
+      "source": "REPLACE_WITH_INDEPENDENT_RECOVERY_RUNTIME",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_PINNED_TREE_INVENTORY"
+      }
+    },
+    "/identity": {
+      "source": "REPLACE_WITH_INDEPENDENT_RECOVERY_IDENTITY_DIRECTORY",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_PINNED_TREE_INVENTORY"
+      }
+    },
+    "/trust": {
+      "source": "REPLACE_WITH_INDEPENDENT_SIGNER_TRUST_DIRECTORY",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_PINNED_TREE_INVENTORY"
+      }
+    },
+    "/binding.json": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-recovery-binding.json",
+      "readonly": true,
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "/result": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-result",
+      "readonly": false
+    }
+  }
+}

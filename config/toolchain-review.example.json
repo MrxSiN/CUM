@@ -1,0 +1,11 @@
+{
+  "format": "OWNER-TOOLCHAIN-CAPABILITY-REVIEW",
+  "operation": "REPLACE_OPERATION",
+  "native_build": "NOT STARTED",
+  "transport": "NOT STARTED",
+  "semantics": "NOT STARTED",
+  "required_adapters": "NOT STARTED",
+  "capability_record_sha256": "REPLACE_WITH_OBSERVED_DIGEST",
+  "bbc_executable_sha256": "REPLACE_WITH_OBSERVED_DIGEST",
+  "xax_executable_sha256": "REPLACE_WITH_OBSERVED_DIGEST"
+}

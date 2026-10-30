@@ -1,57 +1,46 @@
-# Current draft checkpoint
+# Whole-project source draft status
 
-The owner requested committing the current work to GitHub after interrupting the
-whole-project drafting turn. This checkpoint preserves that work without claiming
-that the whole-project draft or its integration is complete.
+The interrupted checkpoint has been extended through the remaining integration
+paths. Source drafting now spans capture, BF decisions and restricted adapters,
+transport/continuation, profiles/budgets, archives/crypto, signed inventories,
+Git staging/commit/clone auditing, independent recovery, offline tools and
+owner-approved publication. This is PARTIAL implementation, not a working release
+or a claim that every ambitious adapter/technique has been implemented.
 
-## Evidence states
-
-| State | Status |
+| Evidence state | Status |
 |---|---|
-| Implementation source | PARTIAL — substantial draft written |
-| Whole-project integration and documentation | PARTIAL — interrupted |
+| Source across the declared draft domains | PARTIAL — written, integration awaiting execution |
 | Native compilation | NOT STARTED |
 | Native execution | NOT STARTED |
-| Unit tests | NOT STARTED |
-| Integration tests | NOT STARTED |
-| Exact recovery demonstration | NOT STARTED |
-| Trusted signature/provenance verification | NOT STARTED |
-| Performance measurements and optimization | NOT STARTED |
+| Focused unit checks | PARTIAL — 22 selected checks PASS after archive repair; complete suite not run |
+| Native/integration tests | NOT STARTED |
+| Exact internal and clean-clone recovery | NOT STARTED |
+| Signature/provenance verification | NOT STARTED |
+| Performance measurements/optimization | NOT STARTED |
 | Production release acceptance | NOT STARTED |
 
-Source publication is an explicitly authorized repository action, not a passing
-product release gate. No execution or test results are inferred from source files.
+BBC was updated on main at `53783953fd87cbc9308b108d187b7f3fcfedc06d`.
+XAX main was fast-forwarded to `15e939d010ed7a48705b240d849b9fe900b98739`;
+its original `bbc/bfx-v2-fold` branch remains available. Local compiler binaries
+were found and hashed, not executed. Their compatibility/build provenance remains
+unverified. Historical statements that no BBC executable was found describe the
+previous session, not this inspection. COCK remains optional and unintegrated.
 
-## Written source areas
+## Remaining acceptance work
 
-- BF command parsing, routing, workflow plans, scope policies, public projection,
-  metadata production, budget decisions and private-digest predicates.
-- Multi-cell BF layout processing with balanced-loop/bounds preconditions.
-- A linear BF virtualizer and constrained Java/Kotlin integer-module adapters.
-- BF-authored guarded XAX transaction assembly plus existing-SDK query integration.
-- Generic framed transport, opaque storage, authenticated checkpoints, archives,
-  immutable capture, cryptographic-tool invocation and isolated processes.
-- Generic public-inventory, Git staging/auditing, private-directory and runtime
-  package helpers, together with independent check source and configuration data.
+1. Review and bind the placeholder tool, capability, image, trust and job operands.
+2. Build every genuine BF component through pinned BBC, recording per-source
+   artifacts and failures. Tool presence alone is not a successful build.
+3. Run the remaining unit suites and independent native host-boundary checks.
+4. Exercise each restricted adapter and all signed release/recovery gates,
+   including real local Git clone, separate recovery container, tamper rejection,
+   Windows permissions, interruption and resource-failure cases.
+5. Fix demonstrated failures, then profile and measure budgets. No optimization
+   or performance result is inferred from source inspection.
+6. Accept milestones in the master's order, BF before graph/JVM expansion.
 
-## Remaining work
-
-1. Finish connecting the latest Git transport, portable inventory, trusted clean
-   recovery and independent runtime-package components to the BF workflows.
-2. Reconcile all bindings and older documentation with the final interfaces.
-3. Complete the whole-project source draft before moving to validation.
-4. Provision and pin the real BBC compiler, compatible XAX native backend and
-   reviewed execution environments; initial inspection found no BBC executable
-   or Docker/Podman command in the inspected locations.
-5. Build and run the components, execute independent correctness/security/recovery
-   checks, then fix demonstrated failures and measure performance.
-
-The Java/Kotlin adapters target the declared `Arithmetic` integer-module grammar.
-BF layout processing requires provable static bounds and balanced pointer loops;
-virtualization targets linear single-cell programs. XAX structural-edit support
-must be demonstrated by the selected native backend. None of these is universal
-language support or verified analysis resistance.
-
-Historical inspection/inventory records describe their original authoring point;
-they are not a current source manifest or executed acceptance evidence. Older
-design notes may lag the latest code and must not override this checkpoint status.
+General Java/Kotlin projects, arbitrary BF pointer behavior, universal XAX
+workspaces, COCK integration, advanced AI resistance and other-language adapters
+remain unsupported. No native/product milestone is PASS. The focused results are recorded separately
+in `../evidence/unit-checks-2026-10-30.json`. See `REQUIREMENTS.md` for traceability,
+`OPERATIONS.md` for draft commands and `TEST_MATRIX.md` for deferred validation.

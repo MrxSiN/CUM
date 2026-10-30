@@ -1,0 +1,41 @@
+{
+  "format": "CUM-TOOLCHAIN-CAPABILITIES",
+  "source_written": "PARTIAL",
+  "native_compiled": "NOT STARTED",
+  "native_executed": "NOT STARTED",
+  "transport_tested": "NOT STARTED",
+  "semantic_tests": "NOT STARTED",
+  "bbc_commit": "53783953fd87cbc9308b108d187b7f3fcfedc06d",
+  "xax_commit": "15e939d010ed7a48705b240d849b9fe900b98739",
+  "bbc_executable_sha256": "REPLACE_WITH_VERIFIED_SHA256",
+  "xax_executable_sha256": "REPLACE_WITH_VERIFIED_SHA256",
+  "required": {
+    "target": "windows-x86_64",
+    "cell_bits": 8,
+    "cell_wrap": true,
+    "initial_cells": 0,
+    "negative_pointer": "fail",
+    "input": "binary",
+    "eof": "zero",
+    "bfx_format": "02",
+    "physical_record_completeness": "host-before-worker",
+    "transport": "fresh-process-per-record",
+    "integer_ceiling": null,
+    "per_process_input_bytes": "REPLACE_WITH_VERIFIED_BYTE_BUDGET",
+    "per_process_output_bytes": "REPLACE_WITH_VERIFIED_BYTE_BUDGET"
+  },
+  "observations": [],
+  "experimental_adapters": [
+    "bounded-balanced-bf",
+    "linear-bf-vm",
+    "xax-wrap-add",
+    "java-int-module",
+    "kotlin-int-module"
+  ],
+  "unavailable": [
+    "general-java",
+    "general-kotlin",
+    "universal-xax-workspace",
+    "cock-integration"
+  ]
+}

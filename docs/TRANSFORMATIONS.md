@@ -1,24 +1,16 @@
-# Executable BF transformation draft
+# Transformation contracts — source draft
 
-## Accepted semantic domain
+All runtime evidence is NOT STARTED. These semantic arguments describe intended
+domains; they are not proofs of the source implementation or executed results.
 
-Source consists of arithmetic, I/O and loops at logical cell zero, with any
-ignored non-command bytes. Any `>` or `<` is rejected, including inside a loop
-that might be skipped. Matched brackets are validated independently by BBC.
-Cells must be zero-initialized wrapping unsigned bytes, EOF must read zero, and
-the installed runtime must provide at least three safe physical cells.
+## Single-cell worker
 
-This excludes ordinary multi-cell BF applications. No claim of general Brainfuck
-protection is made. The restricted domain avoids silently changing tape-boundary
-failures by doubling strides or stealing live neighboring cells.
+`transform.bf` accepts arithmetic, I/O and balanced loops at cell zero. It filters
+ignored bytes and rejects pointer commands, including in skipped loops. BBC
+independently validates brackets. Zero-initialized wrapping bytes, EOF zero and
+sufficient scratch cells are required target semantics.
 
-## Pass contracts
-
-All scratch cells begin and end each replacement at zero; pointer begins and ends
-at data cell zero. I/O and original loop delimiters are copied exactly. Ignored
-bytes are removed by BF. Input/output counts and ordering remain unchanged.
-
-| Profile | Increment representative | Required scratch |
+| Profile | Representative increment | Scratch |
 |---|---|---|
 | FAST | `[->+<]>+[-<+>]<` | cell 1 |
 | CAMOUFLAGE, selector zero | `>+<[->+<]>[-<+>]<` | cell 1 |
@@ -26,38 +18,57 @@ bytes are removed by BF. Input/output counts and ordering remain unchanged.
 | MAXIMUM | `>>+<<[->>+<<]>>[-<<+>>]<<` | cell 2 |
 | PERFORMANCE | `+` | none |
 
-Decrement uses the opposite one-step adjustment to the scratch representation.
-These are separately inspectable arithmetic transfer constructions, not ignored
-comments. MAXIMUM denotes a requested profile, not measured superior protection.
+Decrement uses the opposite adjustment. Positive transfer maps `(x,0)` to `(0,x)`,
+adjusts and transfers back. Negative transfer uses `-x` and the opposite adjustment.
+Each transfer terminates in the byte domain and restores zero scratch. Original
+I/O ordering and loop tests remain. Profile names imply no measured resistance.
 
-For the positive-transfer construction, transferring x to scratch establishes
-`data=0, scratch=x`. Adjusting scratch then transferring back yields x±1 modulo
-256 with scratch zero. For the negative-transfer construction, scratch becomes
-−x, receives the opposite adjustment, and is transferred back subtractively.
-For every replacement, transfer loops terminate within the byte domain. Invariant
-composition preserves original loop zero tests, termination behavior, data,
-pointer and I/O. The scratch/tape precondition is essential.
+## Multi-cell layout
 
-These arguments are draft semantic reasoning, not executed evidence. Resource
-budgets can still reject larger protected output or longer execution. Compilation
-failure must abort preparation even if the original compiles.
+`machines/bf_layout.bf` uses the event-machine protocol. BF chooses every emitted
+instruction, register update and stack operation. Data cells are spaced by two,
+or three for MAXIMUM, with zero scratch between them. PERFORMANCE relocates data
+with direct arithmetic. Static pointer tracking requires every loop to return
+to its entry position, including nested loops. Negative movement, drifting loops
+and mismatched brackets reject; some valid BF programs are deliberately unsupported.
 
-## Mandatory resistance checks
+No historic BBC tape constant is embedded in example jobs. A nonnegative
+`integer_limit` is an explicit operation bound derived from a verified target or
+owner policy; null removes that integer bound. Null does not certify an unbounded
+target or bypass physical resource exhaustion and compiler failure. Target tape,
+scratch extent, pointer errors and finite supported domain need actual evidence.
 
-The independent checker removes ignored characters, then asks the real BBC O1
-pipeline for BFX on original and protected source. Identical filtered source or
-identical BFX fails the baseline gate. Preserve BFX hashes, compiler identity and
-reports. Later audits must add more independent simplifiers and graph inspection.
-The current checker is a minimal baseline and does not establish strong practical
-analysis resistance. Transfer loops are recognizable and may be reconstructed.
+## Virtualization and JVM modules
 
-PERFORMANCE is currently identity filtering and deliberately fails meaningful
-structural-change acceptance. No profile can bypass normalization, correctness,
-licensing, confidentiality, recovery or budget gates.
+`bf_virtualize.bf` accepts linear single-cell arithmetic and I/O and emits a public
+BF dispatcher and instruction representation. Pointer/loop inputs reject. This
+optional MAXIMUM technique needs independent structural and overhead measurements.
 
-## Deferred passes
+Java/Kotlin BF match kernels recognize only the `tests/projects/` module forms.
+BF emission replaces integer addition with carry decomposition or an iterative
+carry state machine under JVM wrapping-integer semantics. Public class/object
+and method interfaces remain. Arbitrary language/framework behavior is unsupported.
+Boundary/random arithmetic, compiler, bytecode, behavior and recovery evidence
+are required separately.
 
-General tape relocation, loop/state restructuring, graph transformations,
-virtualization and stronger diversification are NOT STARTED. They need BF-owned
-preconditions and state, compiler capability evidence, separate semantic arguments,
-native/differential checks and exact recovery before adapter admission changes.
+## Graph recipe
+
+BF proposes `a + b = a - (0 - b)` in the same wrapping type through a real
+`XAXEDIT1` carrier. Queried identities, operation/type/arity preconditions,
+expected root, native edit/verify, dependency resolve, rebuild and development-ready
+restoration are mandatory. Unsupported nodes/types/backends reject. This is
+separate from BF compiled through XAX and not universal graph protection.
+
+## Structural acceptance
+
+`tests/tools/normalize.py` is an independent analysis tool, never a production
+transformer. Checks compare filtered instructions, folded arithmetic/clear-loop
+representations and real BBC O1 BFX. JVM/graph checks inspect their appropriate
+bytecode/canonical/native structures. Identical representations fail applicable
+structural gates. A changed representation alone does not establish practical
+reconstruction difficulty. Transfer/carry/dispatcher patterns are recognizable.
+
+Each pass needs independent behavior, input consumption, termination and relevant
+error equivalence within its domain, and exact recovery from the same immutable
+capture. Finite tests do not prove universal equivalence. General dynamically
+moving BF, deeper graph rewrites and advanced AI evaluation are NOT STARTED.

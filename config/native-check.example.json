@@ -46,5 +46,6 @@
     "max_binary_bytes": 16777216,
     "max_runtime_seconds": 5
   },
-  "enforce_numeric_budgets": false
+  "enforce_numeric_budgets": false,
+  "worker_input_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET"
 }

@@ -1,0 +1,89 @@
+{
+  "format": "CUM-FOCUSED-UNIT-CHECKS",
+  "date": "2026-10-30",
+  "timezone": "Asia/Kuala_Lumpur",
+  "phase": "Executed after whole-project source drafting; no prior test-driven repair or optimization",
+  "command": "python -m unittest tests.test_workflow_draft tests.test_isolated_recovery tests.test_git_transport tests.test_runtime_bundle tests.test_transport tests.test_storage",
+  "working_directory": "D:/GitHub/CUM",
+  "attempts": [
+    {
+      "status": "FAIL",
+      "tests_run": 21,
+      "errors": 1,
+      "runner_elapsed_seconds": 3.863,
+      "failure": "test_archive_exact_scope: AttributeError: generator object has no attribute extractfile",
+      "cause": "Existing archive extraction passed the member iterator instead of retaining its TarFile reader"
+    },
+    {
+      "status": "PASS",
+      "tests_run": 21,
+      "errors": 0,
+      "runner_elapsed_seconds": 3.633,
+      "stdout_summary": "Ran 21 tests; OK"
+    }
+  ],
+  "repair": {
+    "file": "host/bytehost/archive.py",
+    "description": "Pass the archive reader and remaining member iterator separately; preserve Git capture caller behavior"
+  },
+  "verified_scope": [
+    "BF plans interpreted independently for ordering, bindings, modes and failure-before-finalization",
+    "Pinned capability policy mutation/mount/original-root rejection with container execution mocked",
+    "Real local Git byte staging/commit/clone and removed-private-blob history rejection, using interpreted BF predicates",
+    "Pinned runtime distribution/library/empty-directory copies and unapproved input rejection",
+    "Frame binary/empty/truncation/tamper/trailing/budget and arbitrary-width varint cases",
+    "Generic archive byte/empty-directory roundtrip, path safety, inventory tamper and checkpoint HMAC cases",
+    "Every application BF source recursively contains only the eight commands and whitespace"
+  ],
+  "not_established": [
+    "Native BF compilation or execution",
+    "Operational container isolation",
+    "Complete unit suite",
+    "CUM end-to-end integration",
+    "Clean signed application recovery",
+    "Signature/provenance validation",
+    "Compiler capability verification",
+    "Performance or resource budget results",
+    "Release acceptance"
+  ],
+  "overall_unit_evidence": "PARTIAL",
+  "native_compiled": "NOT STARTED",
+  "native_executed": "NOT STARTED",
+  "recovered": "NOT STARTED",
+  "signed": "NOT STARTED",
+  "measured": "NOT STARTED",
+  "release_accepted": "NOT STARTED",
+  "additional_checks": [
+    {
+      "command": "python -m unittest tests.test_core.CoreTests.test_all_sources_are_only_eight_commands",
+      "status": "PASS",
+      "tests_run": 1,
+      "runner_elapsed_seconds": 0.006
+    }
+  ],
+  "distinct_selected_tests_passed": 22,
+  "passed_checks": [
+    "tests.test_workflow_draft.WorkflowDraftTests.test_prepare_clones_and_recovers_before_finalization",
+    "tests.test_workflow_draft.WorkflowDraftTests.test_each_plan_operand_is_present",
+    "tests.test_workflow_draft.WorkflowDraftTests.test_clean_recovery_has_no_capture_or_transformation",
+    "tests.test_workflow_draft.WorkflowDraftTests.test_service_failure_never_reaches_finalize",
+    "tests.test_isolated_recovery.IsolatedRecoveryTests.test_only_exact_independent_inputs_reach_isolation",
+    "tests.test_isolated_recovery.IsolatedRecoveryTests.test_missing_changed_or_duplicate_capability_rejected",
+    "tests.test_isolated_recovery.IsolatedRecoveryTests.test_integer_storage_has_no_inherited_compiler_ceiling",
+    "tests.test_git_transport.GitTransportTests.test_binary_commit_and_real_clone_match_portable_inventory",
+    "tests.test_git_transport.GitTransportTests.test_removed_private_source_still_rejected_in_history",
+    "tests.test_runtime_bundle.RuntimeBundleTests.test_complete_distribution_and_shared_libraries_are_preserved",
+    "tests.test_transport.TransportTests.test_binary_and_empty",
+    "tests.test_transport.TransportTests.test_every_truncation_is_rejected",
+    "tests.test_transport.TransportTests.test_tampering_and_trailing",
+    "tests.test_transport.TransportTests.test_pair_encoding",
+    "tests.test_transport.TransportTests.test_varint_not_fixed_width",
+    "tests.test_transport.TransportTests.test_negotiated_budget",
+    "tests.test_storage.StorageTests.test_windows_paths_and_collisions",
+    "tests.test_storage.StorageTests.test_inventory_and_mutations",
+    "tests.test_storage.StorageTests.test_archive_exact_scope",
+    "tests.test_storage.StorageTests.test_unsafe_tar_rejected_without_escape",
+    "tests.test_storage.StorageTests.test_authenticated_state",
+    "tests.test_core.CoreTests.test_all_sources_are_only_eight_commands"
+  ]
+}

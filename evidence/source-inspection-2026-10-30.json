@@ -1,0 +1,62 @@
+{
+  "format": "CUM-SOURCE-INSPECTION",
+  "date": "2026-10-30",
+  "timezone": "Asia/Kuala_Lumpur",
+  "scope": "Repository updates and source/filesystem inspection only; no compiler or CUM execution",
+  "documents": [
+    {
+      "name": "BBC XAX.md",
+      "sha256": "01ca6814bc6c9162dab9236cf9e55af65c0a9b9ab7b540a989de5b468f1fbddc"
+    },
+    {
+      "name": "CUM_Engineering_Development_Prompt.md",
+      "sha256": "65b8ed0d69fc4ad5bc3c0fe1c157d13229b4409ca6258e22671e3cbdaecbcfcd"
+    }
+  ],
+  "repositories": {
+    "BBC": {
+      "branch": "main",
+      "commit": "53783953fd87cbc9308b108d187b7f3fcfedc06d",
+      "pull": "Already up to date"
+    },
+    "XAX": {
+      "branch": "main",
+      "commit": "15e939d010ed7a48705b240d849b9fe900b98739",
+      "pull": "Fast-forwarded local main from 054262b; original bbc/bfx-v2-fold branch preserved"
+    },
+    "COCK": {
+      "commit": "7f64eaee50e3d30062a3294c9ac2d62bb97db5d7",
+      "scope": "README inspected; optional; no integration or update requested"
+    }
+  },
+  "installed_files": [
+    {
+      "path": "D:\\GitHub\\BBC\\build\\bbc.exe",
+      "bytes": 16118784,
+      "sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+      "executed": false
+    },
+    {
+      "path": "D:\\GitHub\\XAX\\compiler\\bootstrap\\windows\\xaxc-windows-x86_64.exe",
+      "bytes": 11876864,
+      "sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+      "executed": false
+    }
+  ],
+  "evidence": {
+    "source_written": "PARTIAL",
+    "native_compiled": "NOT STARTED",
+    "native_executed": "NOT STARTED",
+    "unit_tested": "NOT STARTED",
+    "integration_tested": "NOT STARTED",
+    "recovered": "NOT STARTED",
+    "signed": "NOT STARTED",
+    "measured": "NOT STARTED",
+    "release_accepted": "NOT STARTED"
+  },
+  "limitations": [
+    "Installed file identity does not establish source provenance, working semantics or compatibility",
+    "No current compiler limit is a permanent CUM design bound; actual unavailable capabilities still reject",
+    "Restricted adapters only; general language/workspace support is not implemented"
+  ]
+}

@@ -1,36 +1,44 @@
-# Language and graph admission
+# Adapter source contracts
 
-`adapters.bf` reads a single language identifier and returns zero only for 1 (BF).
-All other identifiers return nonzero unsupported status. This executable denial
-must stay in place until an actual adapter and its evidence exist.
+Every adapter is PARTIAL: source written, native compilation and acceptance
+NOT STARTED. `adapters.bf` admits IDs 1..5 to drafted routes, not to verified
+language support. `routes.bf` chooses the service/operand. The host never chooses
+an adapter from a filename. `discovery.bf` classifies paths, while `scope_policy.bf`
+requires explicit owner dispositions. Unknown IDs and unsupported syntax reject.
 
-Current BF protection is narrower than BF language admission: `transform.bf`
-independently rejects any pointer move, and BBC must validate syntax/build output.
-Do not infer that recognizing an extension or admitting a BF request means all
-programs are transformable. Explicit selected file operands must be reviewed.
+| ID | BF source | Restricted input domain | Structural output |
+|---:|---|---|---|
+| 1 | `machines/bf_layout.bf` | Nonnegative statically bounded pointer paths; every loop returns to its entry cell | Strided data layout, zero scratch cells, arithmetic transfers |
+| 2 | `graphs/add_negate.bf`, `graphs/flow.bf` | Explicitly queried wrapping-add node and supported canonical edit interface | Guarded negate/subtract replacement using real `XAXEDIT1` mutations |
+| 3 | `machines/java_int_module.bf`, `java_match_*.bf`, `java_emit.bf` | Declared `Arithmetic.combine(int,int)` module grammar | Wrapping integer carry computation |
+| 4 | `machines/kotlin_int_module.bf`, `kotlin_match_*.bf`, `kotlin_emit.bf` | Declared `Arithmetic.combine(Int,Int)` object grammar | Wrapping integer carry computation |
+| 5 | `machines/bf_virtualize.bf` | Linear single-cell arithmetic/I/O; no pointer travel or loops | Public BF dispatcher and encoded instruction sequence |
 
-## Native XAX adapter requirements
+The Java/Kotlin fixtures in `tests/projects/` define the narrow module forms.
+Match kernels examine bytes in BF and reject text outside their grammar. This
+is not general Java/Kotlin, Android/Xposed, reflection, JNI or resource support.
+C/C++/Rust/Python adapters and COCK integration are NOT STARTED. Unsupported
+requests must reject rather than count unchanged copied source as protected.
 
-The inspected XAX commit uses canonical binary semantic graphs, not authoritative
-human-written textual syntax. Native Windows seed operations are `inspect`,
-`verify`, `edit`, `resolve` and `build`. `edit` creates a candidate that still needs
-verification; it does not itself publish a workspace atomically. Native seed
-declines/rejections are not acceptance.
+`transform.bf` remains the separate single-cell arithmetic/I/O/loop worker. It
+rejects pointer motion and uses the two-state-byte transport. It is not the
+multi-cell route. Its PERFORMANCE profile only filters and cannot satisfy
+meaningful structural protection.
 
-A future BF adapter must consume canonical schema/interface observations, retain
-base-root/generation, define real semantic changes and emit supported expected-root
-transaction carriers. Generic hashing/storage may be delegated; graph eligibility,
-mutation choice and recovery policy remain BF-owned. It must preserve evolution,
-dependency and workspace recovery data, verify candidate graphs and independently
-rebuild. The current Git regular-file scope may capture canonical graph bytes but
-does not prove development-ready workspace restoration.
+## Graph authority
 
-No graph mutation is emitted in this draft. BF compilation through XAX is a
-separate capability and must never be labeled native XAX project protection.
+XAX canonical binary graphs remain authoritative. The existing pinned SDK supplies
+the explicit node query; its Python inspection/verification dependency is visible
+in `host/providers/xax_query.py`. BF emits the transaction recipe. Native XAX
+`edit`, `verify`, `resolve` and `build` perform their normal compiler work.
 
-## Additional language requirements
+The Windows seed edit writes a candidate, followed by native verification and
+expected-source-digest replacement. This is not a general XAX workspace server.
+All required graph/workspace/evolution/dependency files must be captured explicitly.
+Generic file recovery alone does not prove development-ready workspace recovery.
+Backend declines abort; no textual XAX source or SDK build fallback is permitted.
 
-Java/Kotlin support needs BF-authored parsing/eligibility and transformation
-decisions, actual compiler checks, real project behavior, exact recovery and safe
-ABI/reflection/JNI/resource/hook preservation. No extension-only adapter is
-provided. C/C++/Rust/Python and virtualization remain unimplemented.
+Every pass requires native checks, independent behavior, explicit preconditions,
+normalization comparisons, exact recovery and measured budgets. Promotion proceeds
+BF first, then XAX, then each additional language. Draft routes do not promote
+any milestone.

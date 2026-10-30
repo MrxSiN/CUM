@@ -1,0 +1,34 @@
+{
+  "format": "PINNED-ISOLATED-CAPABILITIES",
+  "image": "REPLACE_COLD_IMAGE@sha256:REPLACE_IMAGE_DIGEST",
+  "argv": [
+    "/runtime/python/bin/python3",
+    "-I",
+    "/runtime/tests/runtime_checks.py",
+    "/binding.json"
+  ],
+  "workdir": "/runtime",
+  "environment": {
+    "WINEPREFIX": "/tmp/wine-prefix",
+    "WINEDEBUG": "-all",
+    "LD_LIBRARY_PATH": "/runtime/python/lib:/runtime/openssl/lib:/runtime/wine/lib"
+  },
+  "mounts": {
+    "/runtime": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/backup-candidate/runtime",
+      "readonly": true,
+      "inventory": {
+        "format": "REPLACE_WITH_INDEPENDENTLY_PINNED_TREE_INVENTORY"
+      }
+    },
+    "/binding.json": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/runtime-check-binding.json",
+      "readonly": true,
+      "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+    },
+    "/result": {
+      "source": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/runtime-check-results",
+      "readonly": false
+    }
+  }
+}

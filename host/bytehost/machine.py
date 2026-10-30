@@ -19,11 +19,13 @@ def _request(event, byte, spec, state):
     integers = state["integers"]
     stack = state["stacks"][0]
     current = int(integers[0])
-    limit = int(spec["integer_limit"])
+    limit = spec["integer_limit"]
+    require(limit is None or (type(limit) is int and limit >= 0),
+            "BUDGET", "Integer ceiling must be an explicit nonnegative budget or null")
     # Generic arithmetic facts, with meanings assigned solely by the byte kernel.
     facts = [int(current == 0), int(current < 0),
              int(bool(stack) and current == int(stack[-1])), int(not stack),
-             int(current >= limit)]
+             int(limit is not None and current >= limit)]
     opaque = bytes.fromhex(state["opaque"])
     require(len(opaque) == 16, "STATE", "Machine requires sixteen opaque state bytes")
     return bytes([177, event, byte, spec["profile"], spec["selector"], *facts]) + opaque

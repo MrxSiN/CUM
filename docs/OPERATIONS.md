@@ -1,146 +1,171 @@
-# Private operating procedure draft
+# Draft operating procedure
 
-This procedure has not been executed. Example JSON files contain deliberately
-invalid tool digests, image identities and review values. They must fail until
-bound to real independently verified materials. Do not replace missing evidence
-with a successful exit code or an edited PASS string.
+The native release/recovery procedures below have not been executed. Twenty-two
+focused host/workflow unit checks ran after drafting; they do not execute these
+production bindings. Example bindings deliberately contain
+invalid executable hashes, image identities, trust anchors and capacities. They
+must fail until bound to independently reviewed real materials. Never manufacture
+PASS records to advance a workflow.
 
-## Workspace and identities
+## Prepare tools and private storage
 
-Use an owner-controlled workspace with restrictive Windows ACLs. The Python host
-does not provision Windows ACLs, wipe SSD sectors or protect against a local
-administrator. Keep keys, plaintext captures and opaque checkpoints outside
-public staging and all untrusted mounts. Retain encryption and signing identities
-separately; a checkpoint HMAC key is a third, unrelated secret.
+1. Use a new owner-controlled private directory. The separate generic directory
+   service can create owner/System Windows ACLs or POSIX 0700; it does not protect
+   against administrators, repair existing permissions, or guarantee secure erasure.
+   `config/private-storage.example.json` supplies operands. Keep originals, keys,
+   journals, job bindings and reports outside public staging.
+2. Retain separate CMS recovery, Ed25519 signing and checkpoint-HMAC identities.
+   Provision keys outside build containers. Back up identities and signer SPKI
+   fingerprints independently. No key generation or external upload is automatic.
+3. Review BBC/XAX source and installed executable identities. The compiler build
+   interface is `bbc.exe compile windows-x86_64 -O0 <output>` with source on binary
+   stdin. The host invokes argument vectors directly; no PowerShell text pipeline
+   handles application input. XAX uses its existing inspect/edit/verify/resolve/build
+   file interface. No compiler fallback or invented XAX syntax is supplied.
+4. Bind an ignored copy of `config/build.example.json`, then later invoke
+   `python -m host.bytehost.build private/build.json`. It lists all BF sources and
+   fixed-response workers. Compile both required optimization configurations into
+   different new output directories. Record failures without changing BBC/XAX.
+5. Provision reviewed, digest-pinned container images and public compiler tools.
+   Images are never pulled by the runner. The normal build image has no identities
+   or plaintext archive. The distinct trusted recovery image has only the public
+   clone, independently retained runtime, recovery identity/certificate, signer trust,
+   exact recovery binding and empty output mount. Neither image is available merely
+   because a JSON example describes it.
 
-Supply existing, established OpenSSL-compatible recipient certificates/identities
-and Ed25519 signing identities. Provision keys outside untrusted build containers.
-The examples contain paths only and do not generate or transmit credentials.
-Encrypted identities may require a separately provisioned noninteractive key
-provider; unattended encrypted-key prompting is not implemented in this draft.
+`config/capabilities.example.json` separates requirements from observations. Fill
+observations only after actual native probes. Sign the independent
+`toolchain-review.json`; the BF plan verifies this review before capture. Runtime
+input/output capacities are required verified per-process byte budgets, not
+permanent BBC constants. Null `integer_limit` requests no host integer ceiling;
+it does not certify the target tape or permit accepting unsupported programs.
 
-Retain independently: recovery identities, signer SPKI trust fingerprint, recovery
-certificate, compiled BF planner, generic recovery host, Python/OpenSSL, required
-public compilers, tool digests, job operands, formats and instructions. A signer
-key copied from an untrusted release is never its own trust anchor.
+## Bind a release operation
 
-## Explicit immutable capture
+Copy `public-job.example.json`, `private-vault-job.example.json`, or the restricted
+language job into ignored private storage. Every path, disposition, source mapping,
+tool pin, independent verifier, resource budget and review must be explicit.
+CLI profiles/project paths are supplied through these operands; the proposed
+master-prompt positional/flag interface is not implemented.
 
-The implemented capture domain is a full immutable Git commit plus an explicit
-list of relative source/resource paths. Mutable/untracked worktree data, Git
-history, submodules, symlinks, junctions, ACLs and alternate data streams are not
-captured. Git export attributes apply. Review the materialized scope manifest;
-it defines exactly what can be restored, including regular bytes and directories.
+The current command surface is:
 
-Commit IDs must be full immutable identities. The host checks commit resolution,
-rejects selected gitlinks/symlinks, exports from Git objects, validates paths and
-then inventories the captured tree. Transformation and reference compilation read
-this captured tree, never the live developer worktree.
+```text
+python -m host.bytehost app private/job.json doctor
+python -m host.bytehost app private/job.json toolchain inspect
+python -m host.bytehost app private/job.json prepare --mode 1
+python -m host.bytehost app private/job.json verify
+python -m host.bytehost app private/recovery.json recover
+python -m host.bytehost app private/drill.json test-recovery
+python -m host.bytehost app private/job.json benchmark
+python -m host.bytehost app private/job.json audit
+```
 
-This is narrower than the master's eventual general development-workspace scope.
-If development depends on omitted metadata, generated files or submodules, reject
-the operation or use a future explicitly supported capture provider. Never call
-the current exporter a complete Git repository backup.
+`command.bf` parses those exact command strings. `cum.bf` chooses instructions;
+JSON supplies operands, not an alternate workflow. Use a new journal per command.
+Mode 1 prepares a public capsule; mode 2 uses private vault operands. An interrupted
+whole flow needs a new operation; only byte-worker mapping has authenticated restart.
 
-## Job operands
+## Capture and transform one authoritative scope
 
-Copy example operands into ignored `private/`. All paths are explicit. Hash and
-pin native tools before use. The selected compiler's documented capacities are
-not verified just because the example repeats them. Supply actual native transport
-and semantics evidence in the authenticated owner review.
+Git capture uses a full immutable commit plus explicit paths; export attributes
+apply. Windows directory capture uses explicit regular paths and deny-write file
+handles. Select the provider through the BF snapshot request and bind its matching
+owner scope review. Directory capture is not an atomic filesystem-wide snapshot;
+all declared files must be locked and scope consistency checked. Relevant empty
+directories and supported permission bits belong in the manifest.
 
-Map every source file that is meant to be protected. Unmapped resources/build
-inputs are copied byte-for-byte. A signed confidentiality/scope review must reject
-unintended plaintext implementation files. No host extension classifier silently
-decides whether a file is a source file.
+Links, junctions, reparse points, devices, submodules, ACLs, ADS and hardlink identity
+are unsupported, not silently preserved. Git history is outside the recovered
+source scope. XAX graph/workspace/evolution/dependency files needed for development
+must be explicitly included and independently reopened after recovery.
 
-Create report directories and an independently provisioned container image/tool
-directory. The image must contain pinned BBC, Wine if used, Python, host and
-independent checker dependencies. No image pull/network is allowed by the runner.
-The example mounts are illustrations of the declared test scopes, not proof that
-the machine has an operational container service. Supply exact check bindings
-for each case, correct tool hashes, report paths and held-out binary inputs.
+The BF prepare plan:
 
-## Prepare order owned by BF
+1. Admit the restricted adapter, inspect tools, authenticate capability and
+   scope/license/secret reviews, then capture and verify the immutable scope.
+2. Pack/encrypt the capture; internally decrypt/extract/compare before any signing.
+3. Project approved public build inputs into reference and candidate trees. Read
+   transformation inputs from the capture. Recovery-only entries remain excluded.
+4. Dispatch real BF transformations; independently build, check behavior, normalize,
+   enforce measured budgets, and authenticate the scope-bound final owner review.
+   A skip may restore original bytes but never bypass a structural acceptance gate.
+5. Copy ciphertext into public mode only. BF emits per-directory Git attributes,
+   retaining public empty directories and disabling automatic byte rewriting.
+6. Freeze a portable inventory, compose/sign the manifest, then independently
+   verify the signature, inventory and capsule digests.
+7. Require a fresh Git namespace, stage exact hash-object blobs without filters,
+   set declared executable modes, make a local commit, and audit committed bytes
+   and all reachable blob history through BF privacy predicates.
+8. Perform a real local Git clone with no shared object storage; audit it again.
+9. Execute the independently pinned clean recovery policy. The BF recovery plan
+   verifies signer/inventory, authenticates/decrypts, restores, and packs an exact
+   result archive. It has no original/reference mount. Validate the returned
+   receipt's bindings, safely extract the result outside the container, and compare
+   the captured scope. Run development checks separately with no key mount.
+10. Supply sixteen observed receipts to the BF evidence predicate. Any service
+    failure stops the plan. Only acceptance permits local atomic finalization.
 
-`cum.bf` emits the following service order for command 3:
+A service receipt proves its operation completed, not general semantic/security
+truth. Review and pin actual independent checkers, retain their reports, and never
+substitute an arbitrary successful executable for a required gate.
 
-1. Inspect pinned tools and required isolation infrastructure.
-   BF first checks language admission; authenticate and check the pre-capture
-   owner scope/license/secret review before exporting any selected source.
-2. Export the declared immutable committed scope and verify its inventory.
-3. Archive the exact scope, encrypt, decrypt internally, safely restore and compare.
-4. Copy captured public/build inputs to an isolated candidate and map explicit
-   source paths through the native BF transformer.
-5. Execute independent build, behavior, normalization, boundary and budget checks.
-6. Authenticate the owner review and bind it to the actual captured scope and
-   transformation report. Licensing, secrets, host review and memory evidence
-   cannot be invented by the host.
-7. In public mode, copy the authenticated encrypted capsule into the candidate.
-8. Freeze the protected inventory, compose a bound manifest and sign it.
-9. Independently verify signature, inventory and capsule digests.
-10. Make a public-style clean artifact checkout, verify again using independent
-    trust, decrypt/restore using retained identity and compare the captured scope.
-11. Run a restored-development build check without mounting the capture or keys.
-12. Supply 16 actual receipts to the BF evidence predicate. Only acceptance permits
-    atomic local finalization. Flow journal/readiness information stays private.
+## Portable inventory, trust and recovery modes
 
-No publication step exists. Failed preparations leave a non-ready private
-candidate/journal for diagnosis; failed temporary extraction stages are removed.
-The live developer tree is not changed. Interrupted workflow transactions must
-use a fresh operation; byte mapping alone supports authenticated restart.
+Public inventory format is `BYTE-TREE-PUBLIC-GIT`: canonical NFC relative paths,
+UTF-8-byte ordering, entry type, byte count/SHA-256 and explicit Git executable
+policy. Private recovery inventories retain supported POSIX mode bits separately.
+Git internals are nonrelease metadata. The public inventory excludes exactly itself,
+release manifest/signature and the public capsule when applicable. Inventory and
+capsule have separate digests in the signed manifest; no circular self-digests or
+public readiness marker is used. Unexpected extra release files reject.
 
-## Public capsule and private vault
+The capsule is OpenSSL CMS authEnvelopedData/AES-256-GCM. The manifest is signed
+with Ed25519 and checked against an independently retained signer SPKI fingerprint.
+A repository-supplied public key is not its own trust anchor. Public ciphertext
+can be retained indefinitely, including after a later key compromise.
 
-For public mode (1), the candidate includes `capsule.cms`. It is excluded from
-the protected-file inventory and separately bound by its digest in `release.json`.
+Public mode uses `clean-recovery.example.json` and `recovery-policy.example.json`.
+Private vault mode uses `clean-recovery-vault.example.json` and a separately pinned
+vault policy containing the explicit readonly `/vault/capsule.cms` mount. A Git
+clone alone cannot recover a vault-only archive. Retain that archive independently.
 
-For private-vault mode (2), BF omits the capsule copy instruction. Before running,
-change binding 27 recovery_mode to `private-vault`, point its recovery capsule
-digest operand to the independent vault file, remove `capsule.cms` from binding
-26 exclusions, change the expected recovery_mode in bindings 30/33, and adjust
-bindings 30/33/34 to the retained vault capsule. The
-public-style checkout must contain no plaintext originals or private vault file.
-A public clone alone cannot recover this mode. Back up the vault independently.
+Trusted policies pin the exact mount set, host source paths, readonly flags,
+readonly file hashes/directory inventories, image, arguments, workdir and environment.
+Fill directory inventory placeholders with independently reviewed expected records;
+do not derive trust automatically from the untrusted clone. Keep the policy outside
+all mounts. For each new release its expected clone inventory must be reviewed.
 
-## Inventory and signature trust
+Standalone `recover` authenticates provenance, decrypts and safely restores to a
+new destination without original files or a compiler. Bind it to downloaded release
+files and independently retained tools/identity/trust. `test-recovery` additionally
+requires the independent isolated drill plus a retained reference scope and a
+restored-development check. These are distinct from the internal encryption test.
 
-Paths are NFC POSIX relative strings, sorted by UTF-8 bytes. Records contain entry
-type, mode, file size and SHA-256. JSON is sorted-key, ASCII-escaped, compact, with
-one LF. Unknown/colliding/unsafe paths and unsupported types reject.
+## Retained runtime and explicit publication
 
-The protected inventory excludes exactly the configured manifest, detached
-signature, inventory record itself and, in public mode, capsule. The inventory
-record is separately hashed in the signed manifest, as is the capsule. The
-manifest/signature are never included in their own digest. No readiness marker
-is written into the public tree. All remaining files, including extras, must match.
+`maintenance.bf` command 1 selects encrypted backup and the offline runtime bundle.
+The bundle copies all declared host modules, BF recovery executables and complete
+independently inventoried Python/OpenSSL/Wine distributions, including libraries.
+No installed private CUM module fallback is permitted. Review `runtime-check` and
+`runtime-policy` operands and provision empty result storage. The cold check runs
+before signing the backup. Windows BF binaries use the explicitly pinned Wine
+launcher inside Linux recovery images; that is not native Windows evidence.
+Images, distributions and all required offline dependencies must also be backed up.
 
-OpenSSL signs exact manifest bytes. Verification checks the external signer SPKI
-fingerprint, signature, inventory digest and all bound artifact digests. Keys
-bundled with downloaded artifacts are not automatically accepted.
+Maintenance commands 2 and 3 cover approved project-recipient distribution and
+signer replacement records. They never give a collaborator the universal owner
+identity. Key compromise/rotation cannot erase ciphertext already distributed.
 
-## Recovery-only operation
+Maintenance command 4 authenticates explicit publication approval bound to the
+accepted manifest and target remote, re-verifies the release, then audits its
+existing commit/history before pushing `HEAD:refs/heads/main`. It does not add or
+commit new bytes after acceptance. Bind private-vault publication operands without
+a public capsule sidecar. No force push or automatic upload is performed by prepare.
+Source publication of this CUM draft is separately owner-authorized; this does not
+accept or publish any protected application release.
 
-Use command 5 with a fresh private binding/journal and an existing public release
-or independently retained vault capsule. Bind 32/33 to those public files and
-independent trust; bind 34 to the retained recovery identity and certificate;
-bind 35 to a **new** destination. This path does not call capture, transformation,
-compiler, source comparison or a mutable developer directory.
-
-Command 6 additionally uses a separately retained expected captured scope for
-byte/metadata comparison and performs the development fixture check. Distinguish
-this recovery drill from merely decrypting an unsigned archive. The internal
-pre-signing round trip and final trusted signed checkout drill are separate.
-
-An independently retained tool package is required for disaster recovery. Capsule
-exposure is permanent once public; later key compromise may disclose old source.
-No key compromise recovery or secure-erasure guarantee is implemented.
-
-## Licensing and public independence
-
-The owner review must identify actual first-/third-party obligations and preferred
-editable source requirements, plus distribution classification. The host only
-authenticates that review; it does not fabricate a legal determination. Preserve
-all required notices and independently buildable source inputs. Omitted or
-incompatible obligations prevent signing/finalization. Publication requires a
-separate explicit owner instruction, including review of existing public history.
+Legal classification, preferred-source obligations, attributions, dependency and
+reflection/ABI constraints need actual project review. The host authenticates that
+review; it does not invent legal conclusions. Missing or incompatible obligations
+prevent acceptance. No advanced resistance or zero-overhead claim is established.

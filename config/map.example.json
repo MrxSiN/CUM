@@ -3,8 +3,8 @@
     "executable": "D:/GitHub/CUM/build/transform.exe",
     "sha256": "REPLACE_WITH_VERIFIED_SHA256"
   },
-  "input_capacity_bytes": 65536,
-  "output_capacity_bytes": 65536,
+  "input_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
+  "output_capacity_bytes": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
   "record_payload_bytes": 512,
   "initial_state_hex": "0200",
   "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
