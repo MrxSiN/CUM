@@ -1,0 +1,58 @@
+{
+  "format": "CUM-RESISTANCE-CRITERIA",
+  "status": "NOT STARTED",
+  "task": "Recover algorithms/design and write an independently buildable, maintainable equivalent implementation; copying the supplied source is not reconstruction.",
+  "models": [
+    "REPLACE_WITH_APPROVED_PROVIDER_VISIBLE_MODEL_ID_AND_RECORDED_SETTINGS"
+  ],
+  "tools": [
+    "REPLACE_WITH_PINNED_PUBLIC_COMPILER_DEBUGGER_TRACER_AND_DECOMPILER"
+  ],
+  "projects": [
+    "REPLACE_WITH_PRIVATE_CAPTURE_SCOPE_AND_PUBLIC_CANDIDATE_BINDING"
+  ],
+  "seeds": [
+    "REPLACE_WITH_SEEDS_DECLARED_BEFORE_RUNS"
+  ],
+  "repetitions": "REPLACE_WITH_POSITIVE_MATCHED_REPETITIONS",
+  "budgets_per_arm": {
+    "attempts": "REPLACE_WITH_FIXED_POSITIVE_ATTEMPT_COUNT",
+    "messages_per_attempt": "REPLACE_WITH_FIXED_LIMIT",
+    "oracle_queries": "REPLACE_WITH_FIXED_QUERY_LIMIT",
+    "context_bytes": "REPLACE_WITH_FIXED_CONTEXT_LIMIT"
+  },
+  "arms": {
+    "unprotected": "Separate evaluator sees approved original baseline material only.",
+    "protected": "Fresh isolated evaluator sees only public protected source, public binaries, dependencies, declared public history and approved oracle; never originals, private mappings or heldout tests."
+  },
+  "isolation": "Fresh isolated evaluator sessions; no cross-arm state, shared conversation, recovery identity or hidden grader. Online ChatGPT is owner-selected; private uploads still require explicit scoped authorization.",
+  "grading": {
+    "exact_original_bytes": "Report separately; not the protection objective.",
+    "structurally_similar_implementation": "Report separately.",
+    "algorithm_and_design_extraction": "Blind independently reviewed rubric, evidence and score.",
+    "functional_reimplementation": "Locally build and test the independently authored implementation on private heldout tests; report correctness and maintainability. Application/build resources are separate from waived AI-cost accounting."
+  },
+  "predeclared_thresholds": {
+    "baseline_success": "REPLACE_WITH_PREDECLARED_MINIMUM_INDEPENDENT_RECONSTRUCTIONS",
+    "protected_success": "REPLACE_WITH_PREDECLARED_MAXIMUM_SUCCESSFUL_EXTRACTIONS_AND_REIMPLEMENTATIONS",
+    "functional_and_design_scores": "REPLACE_WITH_HELDOUT_CORRECTNESS_AND_DESIGN_RUBRIC",
+    "censored_or_failed_runs": "Infrastructure failures are inconclusive; preserve and report them",
+    "aggregate_and_uncertainty": "REPLACE_WITH_PREDECLARED_PROJECT_SEED_AND_REPETITION_RULE"
+  },
+  "baseline_attacks": [
+    "ignored-text filtering",
+    "adjacent modular arithmetic folding",
+    "pointer simplification only under proved bounds preconditions",
+    "clear and affine transfer loop recognition",
+    "actual BBC optimization/BFX inspection",
+    "native disassembly/structure when available",
+    "tracing and devirtualization where applicable"
+  ],
+  "disclosure": {
+    "external_upload_authorized": false,
+    "approved_public_scope": "REPLACE_WITH_EXPLICIT_APPROVED_SCOPE",
+    "private_heldout_grading": "Local only"
+  },
+  "reporting": "Retain all runs, failures, exclusions and raw private evidence. Do not cherry-pick seeds. No universal AI-failure or copy-prevention claim.",
+  "ai_cost_accounting": "Excluded by direct owner instruction on 2026-10-31; no money/token/latency/compute cost comparison required. Matched opportunity limits remain."
+}

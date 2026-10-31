@@ -12,7 +12,7 @@ from tests.reference import execute
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def transduce(name, data, profile=2, selector=0, limit=1000000):
+def transduce(name, data, profile=2, selector=0, limit=1000000, kernels=None):
     spec = {"profile": profile, "selector": selector, "integer_limit": limit,
             "max_output_bytes": 1048576, "max_storage_bytes": 1048576,
             "max_stack_entries": 1000000}
@@ -33,6 +33,9 @@ def transduce(name, data, profile=2, selector=0, limit=1000000):
             handoff = _effects(response[1:-17], state, output, spec)
             if handoff is None:
                 break
+            if kernels is not None:
+                active = kernels[handoff]
+                continue
             language = languages[name]
             active = language + ("_emit" if handoff == 100 else "_match_" + str(handoff - 1))
         else:

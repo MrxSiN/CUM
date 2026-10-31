@@ -1,0 +1,59 @@
+{
+  "app_data_changed": false,
+  "baseline_bridge": true,
+  "baseline_policy_libraries": 0,
+  "device_file_hashes_verified": true,
+  "format": "ANDROID-JOINT-PROTECTED-JNI-CHECK",
+  "installed_or_uninstalled": false,
+  "protected_apk_accepted": false,
+  "protected_libraries": 9,
+  "reference_comparisons": 196,
+  "results": [
+    {
+      "budget": 2000000,
+      "index": 196,
+      "kind": "observation",
+      "status": 3,
+      "tape": 1,
+      "used": 0
+    },
+    {
+      "budget": 2000000,
+      "index": 197,
+      "kind": "observation",
+      "status": -4,
+      "tape": 65536,
+      "used": 0
+    },
+    {
+      "budget": 0,
+      "index": 198,
+      "kind": "observation",
+      "status": 1,
+      "tape": 4096,
+      "used": 0
+    },
+    {
+      "jni_cases": 196,
+      "observations": 3,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "device": {
+    "model": "Pixel 8 Pro",
+    "sdk": 37,
+    "abi": "arm64-v8a",
+    "authorized_devices": 1
+  },
+  "scope": "Retained protected shared libraries loaded through existing JNI bridge in app_process; no APK installation",
+  "independent_expected_outputs": "196 original and 196 protected-source interpretations matched the frozen fixture",
+  "initial_attempt": {
+    "status": "FAIL",
+    "phase": "local provenance preflight",
+    "reason": "Runner initially used earlier intermediate protected.bf instead of the compiled retained candidate source; hash assertion rejected before any device operation.",
+    "device_changed": false,
+    "correction": "Use exact retained adb-verification candidate source and recompute original and candidate expected values."
+  },
+  "private_records_retained": true
+}

@@ -1,0 +1,9 @@
+test_authentication_and_openssl_key_interchange (tests.test_pq_cms.PqCmsTests.test_authentication_and_openssl_key_interchange) ... ok
+test_bidirectional_full_cms_and_fresh_envelopes (tests.test_pq_interop.PqInteropTests.test_bidirectional_full_cms_and_fresh_envelopes) ... ok
+test_cross_library_wrong_identity_and_hostile_capsules_never_publish (tests.test_pq_interop.PqInteropTests.test_cross_library_wrong_identity_and_hostile_capsules_never_publish) ... ok
+test_multiple_recipients_and_suite_rejection (tests.test_pq_interop.PqInteropTests.test_multiple_recipients_and_suite_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 24.006s
+
+OK

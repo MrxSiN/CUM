@@ -1,0 +1,298 @@
+{
+  "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
+  "clean_vm_recovery": true,
+  "different_host": {
+    "status": "NOT STARTED",
+    "reason": "Owner-deferred"
+  },
+  "format": "PROJECT-SCOPED-RECOVERY-EVIDENCE",
+  "git_metadata_mounted": false,
+  "guest_wall_seconds": 107.6475936,
+  "input_from_real_local_clone": true,
+  "negative_checks": {
+    "rejections": [
+      {
+        "error": "REVIEW",
+        "mutation": "project",
+        "rejected_before_decryption": true,
+        "status": "PASS"
+      },
+      {
+        "error": "REVIEW",
+        "mutation": "release",
+        "rejected_before_decryption": true,
+        "status": "PASS"
+      },
+      {
+        "error": "REVIEW",
+        "mutation": "identity-project",
+        "rejected_before_decryption": true,
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS"
+  },
+  "network_interfaces": [
+    "lo"
+  ],
+  "package_files": {
+    "capsule.cms": "2834aa0c1f935b335e896571798f643b721ba11286f088f7c3390bdf7e2769a3",
+    "capsule.json": "454c575da0e72d9d00d920c01b314b2b64888507f846d1ba7308830032278130",
+    "capsule.sig": "5ff28598c1adf19ed12a7e745dbe9bcef33f9fbe75404516ffe614fb312f0c30"
+  },
+  "post_quantum": "BLOCKED",
+  "preserved_documentation_license_differences": 7,
+  "private_records_retained": true,
+  "production_release_accepted": false,
+  "project_identity_scope": "Owner/System ACL, separate from working/reference trees; classical RSA-3072",
+  "reference_unchanged": true,
+  "restored_xax_verification": {
+    "compiler_sha256": "110a76a2578f5f55777e6b0438b05642013e9587cae902ef3729229af8e5420e",
+    "exit": 0,
+    "status": "PASS"
+  },
+  "scope_bytes": 2572619,
+  "scope_entries": 125,
+  "scope_files": 97,
+  "signed_context_verified": true,
+  "status": "PARTIAL",
+  "tools": {
+    "openssl": {
+      "executable": "/usr/bin/openssl",
+      "sha256": "b4f547c0f16272d1cc7f870330a6f2c243710c335e7a99c734ff7a0c6fdb2503"
+    },
+    "openssl_version": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "wine": {
+      "executable": "/usr/lib/wine/wine64",
+      "sha256": "f86e46a5fe46e92783ac42fcf03a84f0287c2fbc7d620a5521b3341b1a032e03"
+    }
+  },
+  "uid": 1000,
+  "wall_seconds": 175.15600000000268,
+  "whole_tree_comparison": "PARTIAL",
+  "working_source_matches_reference": true,
+  "engineering_status": "PARTIAL",
+  "source_written": "PASS",
+  "native_compilation": "PASS",
+  "native_execution": "PASS",
+  "unit_and_regression_tests": "PASS",
+  "signed_context_recovery": "PASS",
+  "performance_budget_acceptance": "NOT STARTED",
+  "production_acceptance": "BLOCKED",
+  "project_source_protection": {
+    "status": "FAIL",
+    "scope": "Previously tested shared-state fixtures; no new transformation in this increment"
+  },
+  "draft_completed_before_tests": true,
+  "authoritative_documents": {
+    "master_sha256": "185b3a5b03c7681a76d2ed0dba568e7fdae093b7fe55d8c8ef5e88b6f438efee",
+    "handoff_sha256": "e831e6d80113daf4bcb9da83d2d8231b677c4c3dd23cf07fc9dc9591c329ac43"
+  },
+  "toolchain": {
+    "BBC_commit": "cd67df41fd7647de2f2232602b796d5009dd3bfe",
+    "XAX_commit": "b3e22b008bb1ff9fb773dcafe05d6d6b3f92b1de",
+    "XAX_MCP_commit": "27ffb9491bfe69000b3ce9744b2b689a4d594a3e",
+    "BBC_binary_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+    "XAX_binary_sha256": "110a76a2578f5f55777e6b0438b05642013e9587cae902ef3729229af8e5420e",
+    "source_to_binary_build_provenance": {
+      "status": "NOT STARTED",
+      "scope": "Installed binaries were not rebuilt from the observed heads"
+    },
+    "host_openssl_dlls": {
+      "libcrypto-3-x64.dll": "f8839fd7d5b5e7b1763c88705538c5762a2f97df17f37092e37de3c663f30b1e",
+      "libssl-3-x64.dll": "6af55a4d522e2cc29ff0833cad4f6f7560f8ba2d107b97990d9415c590a4224a"
+    }
+  },
+  "source_sha256": {
+    "src/identity_flow.bf": "393e1941b1490ee4bceb017f8912b3868dbf411eedfd7886201350eaa7c90191",
+    "src/project_recovery.bf": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+    "host/bytehost/trusted.py": "b247115883b6a45f67050ebaa66d823fc11fa02d1841c1f0885e3fbf2fe970b1",
+    "tests/test_project_identity.py": "847f3cb2197ed0562b5d220b1f2f834a559afe1e5508d4861b2c43b0638539f0",
+    "tests/vm_project_recovery.py": "d206516e5e04600f691c7a30e828831258acacc58462189bf2d7aca529aaf313",
+    "tests/tools/crypto_probe.py": "f74d129316db5742b690bd31bf6288dfb769b6ff9bffa7ce13318f5b4075df2a",
+    "tests/tools/cms_fixture.py": "92f1a234341c24ff585901b3fce89ffa33a3898f64ae7cddc9f68407662e89ef",
+    "config/identity-flow.example.json": "67138bbff39ef5ac6a259f4a3a354fa92a6e5221811c8688f07c85c1fd5dc863",
+    "config/project-recovery.example.json": "1e3ea4e09cb9e20e1e7094273107ba230632ff9b0dbe2558e9b0fc0580b7fbff",
+    "config/build.example.json": "8de582cef5ca70d6d3216bfca90016f9fab20913bb99a365d37ae1e0c67f2a3d"
+  },
+  "tests": {
+    "new_methods": 4,
+    "new_status": "PASS",
+    "legacy_methods": 19,
+    "legacy_status": "PASS",
+    "unique_methods": 23,
+    "fresh_cek_and_nonce_samples": {
+      "status": "PASS",
+      "envelopes": 2,
+      "cek_bytes": 32,
+      "nonce_bytes": 12,
+      "keys_and_nonces_differ": true,
+      "disposable_identities_only": true,
+      "key_material_logged": false,
+      "scope": "Sample evidence, not a universal randomness/uniqueness proof"
+    },
+    "new_log": "evidence/project-recovery-native-2026-10-31.txt",
+    "legacy_log": "evidence/project-recovery-regression-2026-10-31.txt"
+  },
+  "native_plans": {
+    "records": [
+      {
+        "artifact_sha256": "dd3abb57d59941e4d0517eb06aee0df1b7243d082c8d3ad699ee351a48f6ce3c",
+        "native_vectors": 20,
+        "optimization": "O0",
+        "source": "identity_flow",
+        "status": "PASS"
+      },
+      {
+        "artifact_sha256": "496204922cb09e88aa9905daf5cc45ae4989c7fdf2a2b34f1d84fcbfa5dfb4c5",
+        "native_vectors": 20,
+        "optimization": "O0",
+        "source": "project_recovery",
+        "status": "PASS"
+      },
+      {
+        "artifact_sha256": "283fd8304afefeaf044bf8894a354e8055a25fda41af520b6d9adb4f7fe0cb83",
+        "native_vectors": 20,
+        "optimization": "O1",
+        "source": "identity_flow",
+        "status": "PASS"
+      },
+      {
+        "artifact_sha256": "e41f5909cc7514d2966a45ba22b6056bb034176e138129fbf99cda66389f0ed3",
+        "native_vectors": 20,
+        "optimization": "O1",
+        "source": "project_recovery",
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS"
+  },
+  "native_builds": [
+    {
+      "source": "identity_flow.bf",
+      "source_sha256": "393e1941b1490ee4bceb017f8912b3868dbf411eedfd7886201350eaa7c90191",
+      "artifact_sha256": "dd3abb57d59941e4d0517eb06aee0df1b7243d082c8d3ad699ee351a48f6ce3c",
+      "optimization": "-O0",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "wall_seconds": 0.16974040000059176
+    },
+    {
+      "source": "project_recovery.bf",
+      "source_sha256": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+      "artifact_sha256": "496204922cb09e88aa9905daf5cc45ae4989c7fdf2a2b34f1d84fcbfa5dfb4c5",
+      "optimization": "-O0",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "wall_seconds": 0.19309480000083568
+    },
+    {
+      "source": "identity_flow.bf",
+      "source_sha256": "393e1941b1490ee4bceb017f8912b3868dbf411eedfd7886201350eaa7c90191",
+      "artifact_sha256": "283fd8304afefeaf044bf8894a354e8055a25fda41af520b6d9adb4f7fe0cb83",
+      "optimization": "-O1",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "wall_seconds": 0.124633300001733
+    },
+    {
+      "source": "project_recovery.bf",
+      "source_sha256": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+      "artifact_sha256": "e41f5909cc7514d2966a45ba22b6056bb034176e138129fbf99cda66389f0ed3",
+      "optimization": "-O1",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "wall_seconds": 0.14686330000404269
+    }
+  ],
+  "publication_audit": {
+    "visibility": "PUBLIC",
+    "remote_main": "61aa2cb0e02dcaa1eae06fc14b09f48378e3291e",
+    "release_count_observed": 0,
+    "actions_artifact_count_observed": 0,
+    "historical_disclosure": "Implementation/history already disclosed; complete secret/cache/fork audit PARTIAL",
+    "push_or_visibility_change_performed": false
+  },
+  "attempt_failures": [
+    {
+      "stage": "initial full-tree comparison",
+      "status": "FAIL",
+      "source_differences": 0,
+      "documentation_license_differences": 7,
+      "disposition": "Preserved differences, compared source/development inputs independently; no overwrite"
+    },
+    {
+      "stage": "first VM check",
+      "status": "FAIL",
+      "error": "PROCESS_EXIT",
+      "confirmed_defect": "Signer public-key path mapped to results instead of trust",
+      "detailed_guest_stderr_retained": false,
+      "disposition": "Corrected path, retained original job, fresh local ciphertext clone, repinned approved capabilities; rerun PASS"
+    }
+  ],
+  "source_preservation": {
+    "only_new_target_output": "build/cum/project-recovery-2026-10-31",
+    "reference_unchanged_in_declared_scope": true,
+    "status": "PASS",
+    "working_tree_unchanged_in_declared_scope": true
+  },
+  "private_key_backup": {
+    "status": "NOT STARTED",
+    "scope": "independent media"
+  },
+  "signing_security": "Classical Ed25519 only",
+  "external_ai": {
+    "status": "NOT STARTED",
+    "private_data_transmitted": false
+  },
+  "licensing": {
+    "status": "BLOCKED",
+    "reason": "Preferred-source/legal review remains; seven documentation/license differences preserved"
+  },
+  "xax_mcp": {
+    "status": "PARTIAL",
+    "scope": "Host-controlled role documentation inspected; active owner-side grants not independently verified"
+  },
+  "ml_kem_cms_probes": [
+    {
+      "backend": "ucrt",
+      "executable_sha256": "77a399eadd9c2eb5fd70012cd1953b86ebca8b9fda1bdf193932dc8830985874",
+      "version": "OpenSSL 3.5.9 29 Sep 2026 (Library: OpenSSL 3.5.9 29 Sep 2026)",
+      "status": "BLOCKED",
+      "primitive": "PASS",
+      "cms_recipient": "BLOCKED",
+      "independent_interoperability": "NOT STARTED",
+      "production_pq_admitted": false,
+      "failed_operation": "CMS AES-256-GCM KEM recipient encryption",
+      "exit": 3,
+      "diagnostic": "03000096 evp_pkey_asym_cipher_init: operation not supported for this keytype"
+    },
+    {
+      "backend": "msys",
+      "executable_sha256": "6e6a931dbf6029e3033c26f40fbda7e191ed84576d50aa9c3fee0471e94fd62b",
+      "version": "OpenSSL 3.5.9 29 Sep 2026 (Library: OpenSSL 3.5.9 29 Sep 2026)",
+      "status": "BLOCKED",
+      "primitive": "PASS",
+      "cms_recipient": "BLOCKED",
+      "independent_interoperability": "NOT STARTED",
+      "production_pq_admitted": false,
+      "failed_operation": "CMS AES-256-GCM KEM recipient encryption",
+      "exit": 3,
+      "diagnostic": "03000096 evp_pkey_asym_cipher_init: operation not supported for this keytype"
+    }
+  ],
+  "disclosure_scope": "Aggregate project counts, encrypted-artifact identities and tool/CUM source identities only. No originals, per-original digests, private key material, actual job bindings or device identifiers.",
+  "recovery_check_status": "PASS",
+  "full_prepare_adoption": {
+    "status": "NOT STARTED",
+    "scope": "New project identity and signed-context contract"
+  },
+  "commands_executed": [
+    "python -m unittest tests.test_project_identity.ProjectIdentityTests -v",
+    "python -m host.bytehost.build private/project-recovery-draft/build-O0-binding.json",
+    "python -m host.bytehost.build private/project-recovery-draft/build-O1-binding.json",
+    "CUM_PROJECT_NATIVE=<fresh O1>; BYTEHOST_CRYPTO_TESTS=1; python -m unittest tests.test_project_identity -v",
+    "python -m tests.tools.crypto_probe private/project-recovery-draft/ucrt-openssl.json private/project-recovery-draft/ucrt-probe.json",
+    "python -m tests.tools.crypto_probe private/project-recovery-draft/msys-openssl.json private/project-recovery-draft/msys-probe.json",
+    "BYTEHOST_CRYPTO_TESTS=1; BYTEHOST_NATIVE_INTEGRATION=1; python -m unittest tests.test_crypto tests.test_signed_recovery tests.test_trusted_inputs tests.test_isolated_recovery tests.test_workflow_draft -v",
+    "python private/project-recovery-draft/run_experiment.py (initial comparison rejection; explicit continuation; first VM failure retained)",
+    "python private/project-recovery-draft/retry_recovery.py (corrected trust mapping and actual ciphertext-only Git clone; PASS)",
+    "xaxc.exe verify <private restored canonical store> <private diagnostic output>"
+  ]
+}

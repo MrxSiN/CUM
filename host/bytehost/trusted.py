@@ -93,6 +93,13 @@ def copy_replacements(spec):
 
 
 def assert_filesystem(spec):
+    for left, right in spec.get("disjoint_trees", []):
+        left, right = Path(left).absolute(), Path(right).absolute()
+        no_links(left)
+        no_links(right)
+        left, right = left.resolve(), right.resolve()
+        require(not left.is_relative_to(right) and not right.is_relative_to(left),
+                "SCOPE", "Required disjoint filesystem trees overlap")
     for name in spec.get("absent", []):
         path = Path(name)
         no_links(path.parent)

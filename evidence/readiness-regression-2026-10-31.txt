@@ -1,0 +1,35 @@
+test_affine_loop_attack_retains_bounds_and_rejects_unsafe_reductions (tests.test_resistance.ResistanceTests.test_affine_loop_attack_retains_bounds_and_rejects_unsafe_reductions) ... ok
+test_bf_profile_policy_unknowns_failures_and_nonclaims (tests.test_resistance.ResistanceTests.test_bf_profile_policy_unknowns_failures_and_nonclaims) ... ok
+test_comparison_and_digest_bindings_reject_stale_or_mismatched_review (tests.test_resistance.ResistanceTests.test_comparison_and_digest_bindings_reject_stale_or_mismatched_review) ... ok
+test_examples_bind_private_evidence_and_public_claims (tests.test_resistance.ResistanceTests.test_examples_bind_private_evidence_and_public_claims) ... ok
+test_failed_resistance_gate_stops_before_signing (tests.test_resistance.ResistanceTests.test_failed_resistance_gate_stops_before_signing) ... ok
+test_native_policy_and_planners (tests.test_resistance.ResistanceTests.test_native_policy_and_planners) ... ok
+test_observed_bytes_are_complete_and_strictly_typed (tests.test_resistance.ResistanceTests.test_observed_bytes_are_complete_and_strictly_typed) ... ok
+test_signed_fixture_native_admission_and_missing_evaluation (tests.test_resistance.ResistanceTests.test_signed_fixture_native_admission_and_missing_evaluation) ... skipped 'Fresh native policy and real-tool crypto opt-in required'
+test_full_optional_flow_and_encrypted_exact_snapshot_recovery (tests.test_shared_state.SharedStateNativeTests.test_full_optional_flow_and_encrypted_exact_snapshot_recovery) ... skipped 'Real-tool authenticated recovery opt-in required'
+test_generated_programs_build_and_run (tests.test_shared_state.SharedStateNativeTests.test_generated_programs_build_and_run) ... ERROR
+test_native_kernel_parity_interruption_and_resume (tests.test_shared_state.SharedStateNativeTests.test_native_kernel_parity_interruption_and_resume) ... ok
+test_example_reuses_bf_filter_machine_presentation_flow (tests.test_shared_state.SharedStateTests.test_example_reuses_bf_filter_machine_presentation_flow) ... ok
+test_malformed_event_and_lifecycle_rejected (tests.test_shared_state.SharedStateTests.test_malformed_event_and_lifecycle_rejected) ... ok
+test_outputs_state_consumption_and_seed_diversification (tests.test_shared_state.SharedStateTests.test_outputs_state_consumption_and_seed_diversification) ... ok
+test_runtime_key_is_live_and_input_dependent (tests.test_shared_state.SharedStateTests.test_runtime_key_is_live_and_input_dependent) ... ok
+test_unsupported_source_profiles_and_depth_budget_are_rejected (tests.test_shared_state.SharedStateTests.test_unsupported_source_profiles_and_depth_budget_are_rejected) ... ok
+test_clean_recovery_has_no_capture_or_transformation (tests.test_workflow_draft.WorkflowDraftTests.test_clean_recovery_has_no_capture_or_transformation) ... ok
+test_each_plan_operand_is_present (tests.test_workflow_draft.WorkflowDraftTests.test_each_plan_operand_is_present) ... ok
+test_prepare_clones_and_recovers_before_finalization (tests.test_workflow_draft.WorkflowDraftTests.test_prepare_clones_and_recovers_before_finalization) ... ok
+test_service_failure_never_reaches_finalize (tests.test_workflow_draft.WorkflowDraftTests.test_service_failure_never_reaches_finalize) ... ok
+
+======================================================================
+ERROR: test_generated_programs_build_and_run (tests.test_shared_state.SharedStateNativeTests.test_generated_programs_build_and_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GitHub\CUM\tests\test_shared_state.py", line 137, in test_generated_programs_build_and_run
+    compiler = os.environ['CUM_SHARE_BBC']
+               ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 714, in __getitem__
+KeyError: 'CUM_SHARE_BBC'
+
+----------------------------------------------------------------------
+Ran 20 tests in 99.375s
+
+FAILED (errors=1, skipped=2)

@@ -1,5 +1,11 @@
 # Operating procedure and acceptance limits
 
+For the updated plan, use the explicit [project recovery flow](PROJECT_RECOVERY.md)
+and `config/identity-flow.example.json` / `config/project-recovery.example.json`.
+The working/reference roots are now Experiment/Encrypted and Experiment/Original.
+Keep private jobs and identities outside both. Historical private jobs must not
+be silently repointed or counted as evidence for the moved source snapshot.
+
 One restricted synthetic BF project completed the actual prepare workflow;
 see [the release checkpoint](SYNTHETIC_RELEASE.md). Current annotation/native/device
 results and remaining gates are in [status](STATUS.md). The procedure below is
@@ -234,3 +240,43 @@ source-only BF candidate must not replace shipped JNI libraries. Preferred-sourc
 delivery, transitive notices and next-APK packaging remain open; see
 [Android readiness](ANDROID_READINESS.md). A neutral README changes none of these
 requirements.
+# Amended release prerequisite
+
+Before using prepare or publication, bind the new native BF resistance policy,
+signed preregistered criteria and exact candidate review described in
+[RESISTANCE.md](RESISTANCE.md). Existing private jobs/runtime bundles are not
+silently upgraded. Missing advanced evidence blocks CAMOUFLAGE/MAXIMUM even if
+all older workflow checks pass. Exact recovery of older signed releases remains
+available. New publication requires fresh owner approval under the amendment.
+
+The [readiness follow-up](READINESS_AUDIT.md) strengthens the existing BF
+normalization operand. Re-pin the full independent check kit and bind explicit
+`symbolic_analysis` limits, including a reviewed safe workspace. A recovered
+I/O projection rejects; missing configuration or incomplete analysis blocks.
+Old check bundles and old signed reports retain their historical scope.
+
+## Scoped prepare adoption
+
+New jobs require a signed project-prepare-context record bound to actual runtime
+bindings, planner and request before capture. Public identity exports have strict
+schemas; extra fields/digests and mistyped flags reject. Ship the new scoped
+decoder with the retained legacy decoder, then repin the runtime and isolation
+policy. See [prepare integration](PREPARE_INTEGRATION.md). The generic PQ tool
+example is experimental and does not authorize PQ prepare or publication.
+
+## Explicit PQ recovery foundation
+
+The separate `pq-identity-flow.example.json` and
+`pq-project-recovery.example.json` use the independently tested CMS suite and
+require pinned executable/DLL inputs. The identity planner verifies signed
+compatibility evidence before requesting any private-key creation. Pin the
+reviewed evidence, signer and runtime independently; a signed status is an
+attestation, not a substitute for its underlying execution records. Bind every
+placeholder including dictionary keys before running a real operation.
+
+Keep the new per-project vault separate from the classical vault and both source
+trees. Rebuild and independently pin the offline kit with an authenticated
+compatible CMS backend before relying on PQ disaster recovery. The retained
+OpenSSL 3.0 guest cannot recover ML-KEM capsules. Preserve independent trust
+anchors and establish independent key backup. Ordinary prepare examples remain
+classical, without automatic downgrade. See [PQ evidence and limits](PQ_INTEROPERABILITY.md).

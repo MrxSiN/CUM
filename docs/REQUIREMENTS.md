@@ -51,3 +51,12 @@ command-parser, single-fixture XAX-edit and isolation failures have later scoped
 fixes; they are not current blocker declarations. General language parsing,
 universal XAX workspaces, COCK and advanced resistance remain unsupported or
 unaccepted. No document update promotes an evidence state.
+# Amended requirement delta
+
+The adopted amendment distinguishes exact bytes, structural reconstruction,
+algorithm/design extraction and functional reimplementation. The last two need
+measured matched experiments. [RESISTANCE.md](RESISTANCE.md) specifies the BF-owned
+gate for CAMOUFLAGE/MAXIMUM and any other profile claiming AI resistance, plus
+predeclared criteria, artifact bindings, evaluator isolation and authorization.
+This is the next correction under Section 28. Broader Stage 6 acceptance remains
+BLOCKED; current source complexity or different BFX is insufficient.

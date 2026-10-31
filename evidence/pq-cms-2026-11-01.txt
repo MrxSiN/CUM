@@ -1,0 +1,6 @@
+test_authentication_and_openssl_key_interchange (tests.test_pq_cms.PqCmsTests.test_authentication_and_openssl_key_interchange) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 18.248s
+
+OK

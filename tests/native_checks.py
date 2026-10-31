@@ -21,6 +21,34 @@ from host.bytehost.transport import worker_input, worker_output
 from host.bytehost.worker import exchange
 from tests.reference import execute
 from tests.tools.normalize import normalize
+from tests.tools.symbolic import observable_projection, AnalysisUnavailable
+
+
+def projection_check(spec, original, protected):
+    """Independent reconstruction attempt; source transformations remain in BF."""
+    record = {'format': 'INDEPENDENT-NATIVE-CHECK', 'case': 'normalization',
+              'normalization_contract': 'BF-POLYNOMIAL-OBSERVABLE',
+              'source_digests': {'original': digest(original), 'protected': digest(protected)}}
+    options = spec.get('symbolic_analysis')
+    if not isinstance(options, dict):
+        record.update(status='BLOCKED', reason='Explicit symbolic analysis operands are missing')
+        atomic_json(spec['report'], record, replace=True)
+        raise HostError('ANALYSIS_CONFIGURATION', record['reason'])
+    try:
+        record['original_projection'] = observable_projection(original.read_bytes(), **options)
+        record['protected_projection'] = observable_projection(protected.read_bytes(), **options)
+    except (AnalysisUnavailable, TypeError, ValueError) as exc:
+        record.update(status='BLOCKED', reason=str(exc))
+        atomic_json(spec['report'], record, replace=True)
+        raise HostError('ANALYSIS_INCOMPLETE', 'Observable reconstruction analysis is incomplete', reason=str(exc)) from exc
+    record['same_io_projection'] = record['original_projection']['events'] == record['protected_projection']['events']
+    if record['same_io_projection']:
+        record.update(status='FAIL', reason='Independent data-flow analysis recovered the same I/O formulas')
+        atomic_json(spec['report'], record, replace=True)
+        raise HostError('NORMALIZATION', record['reason'])
+    record.update(status='BLOCKED', reason='Unequal polynomial forms are inconclusive, not evidence of resistance')
+    atomic_json(spec['report'], record, replace=True)
+    raise HostError('ANALYSIS_INCONCLUSIVE', record['reason'])
 
 
 def compiler_prefix(spec):
@@ -46,6 +74,10 @@ def run_native(spec, artifact, data):
 
 
 def verify(spec, case):
+    if case == 'normalization':
+        atomic_json(spec['report'], {'format': 'INDEPENDENT-NATIVE-CHECK', 'case': case,
+            'status': 'BLOCKED', 'reason': 'Normalization checks have not completed',
+            'normalization_contract': 'BF-POLYNOMIAL-OBSERVABLE'}, replace=True)
     results, runtime_observations = [], []
     observed_expansions, observed_binaries, observed_runtimes = [], [], []
     if case == "boundary":
@@ -86,15 +118,17 @@ def verify(spec, case):
                     protected_bf = bytes(c for c in protected.read_bytes() if c in b"><+-.,[]")
                     require(original_bf != protected_bf, "STRUCTURAL", "Ignored-text filtering removed all changes")
                     require(normalize(original.read_bytes()) != normalize(protected.read_bytes()),
-                            "NORMALIZATION", "Independent run/clear normalization erased executable changes")
+                            "NORMALIZATION", "Independent arithmetic/affine-loop normalization erased executable changes")
                     bfx = []
                     for source in (original, protected):
                         result = checked([*compiler_prefix(spec), "emit-bfx", "-O1"], stdin=source.read_bytes(),
                                          timeout=spec["compile_timeout_seconds"], max_output=spec["max_bfx_bytes"])
                         bfx.append(result["stdout"])
                     require(bfx[0] != bfx[1], "NORMALIZATION", "BBC O1 normalized both programs to identical BFX")
+                    projection = projection_check(spec, original, protected)
                     results.append({"path": fixture["path"], "original_bfx_sha256": hashlib.sha256(bfx[0]).hexdigest(),
-                                    "protected_bfx_sha256": hashlib.sha256(bfx[1]).hexdigest()})
+                                    "protected_bfx_sha256": hashlib.sha256(bfx[1]).hexdigest(),
+                                    "projection": projection})
                     continue
                 for optimization in ("-O0", "-O1"):
                     artifacts = []
@@ -129,10 +163,12 @@ def verify(spec, case):
               "execution_environment": "emulation" if spec.get("launcher") else "native Windows process",
               "compiler_sha256": spec.get("compiler", {}).get("sha256"), "results": results,
               "runtime_observations": runtime_observations}
+    if case == 'normalization':
+        record['normalization_contract'] = 'BF-POLYNOMIAL-OBSERVABLE'
     record["metrics"] = {"source_expansion_ratio": max(observed_expansions) if observed_expansions else None,
                          "max_binary_bytes": max(observed_binaries) if observed_binaries else None,
                          "max_runtime_seconds": max(observed_runtimes) if observed_runtimes else None}
-    atomic_json(spec["report"], record)
+    atomic_json(spec["report"], record, replace=case == 'normalization')
 
 
 if __name__ == "__main__":

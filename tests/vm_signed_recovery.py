@@ -13,7 +13,7 @@ def main():
 
     binding = json.loads(Path("/bindings/recovery.json").read_text())
     openssl, wine = tool("/usr/bin/openssl"), tool("/usr/lib/wine/wine64")
-    for operand in ("1", "3"):
+    for operand in ("1", "3", *(["7"] if "7" in binding["bindings"] else [])):
         binding["bindings"][operand]["openssl"] = openssl
     binding["planner_launcher"] = wine
     binding["planner_timeout_seconds"] = 120

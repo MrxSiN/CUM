@@ -51,7 +51,19 @@
     "D:/GitHub/CUM/src/presentation.bf",
     "D:/GitHub/CUM/src/presentation_flow.bf",
     "D:/GitHub/CUM/src/annotated_filter.bf",
-    "D:/GitHub/CUM/src/annotated_flow.bf"
+    "D:/GitHub/CUM/src/annotated_flow.bf",
+    "D:/GitHub/CUM/src/resistance_policy.bf",
+    "D:/GitHub/CUM/src/machines/bf_share.bf",
+    "D:/GitHub/CUM/src/machines/bf_share_start.bf",
+    "D:/GitHub/CUM/src/machines/bf_share_input.bf",
+    "D:/GitHub/CUM/src/machines/bf_share_output.bf",
+    "D:/GitHub/CUM/src/machines/bf_share_open.bf",
+    "D:/GitHub/CUM/src/machines/bf_share_close.bf",
+    "D:/GitHub/CUM/src/machines/bf_share_finish.bf",
+    "D:/GitHub/CUM/src/identity_flow.bf",
+    "D:/GitHub/CUM/src/project_recovery.bf",
+    "D:/GitHub/CUM/src/scoped_clean_recovery.bf",
+    "D:/GitHub/CUM/src/pq_identity_flow.bf"
   ],
   "timeout_seconds": 600,
   "max_log_bytes": 1048576

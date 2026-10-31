@@ -1,0 +1,184 @@
+{
+  "planner": {
+    "executable": "REPLACE_NATIVE/identity_flow.exe",
+    "sha256": "REPLACE_VERIFIED_SHA256"
+  },
+  "planner_input_bytes": 2,
+  "planner_timeout_seconds": 30,
+  "planner_output_bytes": 4096,
+  "journal": "REPLACE_JOB/identity-flow.json",
+  "bindings": {
+    "1": {
+      "absent": [
+        "REPLACE_PENDING",
+        "REPLACE_VAULT"
+      ],
+      "disjoint_trees": [
+        [
+          "REPLACE_ORIGINAL",
+          "REPLACE_TARGET"
+        ],
+        [
+          "REPLACE_PENDING",
+          "REPLACE_ORIGINAL"
+        ],
+        [
+          "REPLACE_PENDING",
+          "REPLACE_TARGET"
+        ],
+        [
+          "REPLACE_VAULT",
+          "REPLACE_ORIGINAL"
+        ],
+        [
+          "REPLACE_VAULT",
+          "REPLACE_TARGET"
+        ],
+        [
+          "REPLACE_JOB",
+          "REPLACE_ORIGINAL"
+        ],
+        [
+          "REPLACE_JOB",
+          "REPLACE_TARGET"
+        ]
+      ]
+    },
+    "2": {
+      "destination": "REPLACE_PENDING",
+      "whoami": {
+        "executable": "REPLACE_WHOAMI",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "owner_sid": "REPLACE_OWNER_SID"
+    },
+    "3": {
+      "tool": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "argv": [
+        "req",
+        "-x509",
+        "-newkey",
+        "rsa:3072",
+        "-noenc",
+        "-days",
+        "3650",
+        "-subj",
+        "/CN=ProjectRecovery",
+        "-addext",
+        "keyUsage=critical,keyEncipherment",
+        "-keyout",
+        "REPLACE_PENDING/recovery.key.pem",
+        "-out",
+        "REPLACE_PENDING/recovery.cert.pem"
+      ],
+      "timeout_seconds": 120,
+      "max_output_bytes": 1048576
+    },
+    "4": {
+      "tool": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "argv": [
+        "x509",
+        "-in",
+        "REPLACE_PENDING/recovery.cert.pem",
+        "-pubkey",
+        "-noout",
+        "-out",
+        "REPLACE_PENDING/recipient.pub.pem"
+      ],
+      "timeout_seconds": 120,
+      "max_output_bytes": 1048576
+    },
+    "5": {
+      "tool": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "argv": [
+        "pkey",
+        "-pubin",
+        "-in",
+        "REPLACE_PENDING/recipient.pub.pem",
+        "-outform",
+        "DER",
+        "-out",
+        "REPLACE_PENDING/recipient.spki.der"
+      ],
+      "timeout_seconds": 120,
+      "max_output_bytes": 1048576
+    },
+    "6": {
+      "destination": "REPLACE_PENDING/identity.json",
+      "fields": {
+        "format": "PROJECT-RECOVERY-IDENTITY",
+        "project_id": "REPLACE_PROJECT_ID",
+        "recipient_scheme": "CLASSICAL-CMS-RSA-3072",
+        "post_quantum": false
+      },
+      "files": {
+        "certificate": "REPLACE_PENDING/recovery.cert.pem",
+        "spki": "REPLACE_PENDING/recipient.spki.der"
+      }
+    },
+    "7": {
+      "openssl": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_PENDING/identity.json",
+      "destination": "REPLACE_PENDING/identity.sig",
+      "identity": "REPLACE_SIGNER"
+    },
+    "8": {
+      "openssl": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_PENDING/identity.json",
+      "signature": "REPLACE_PENDING/identity.sig",
+      "public_key": "REPLACE_SIGNER_PUBLIC",
+      "trusted_spki_sha256": "REPLACE_SIGNER_PIN"
+    },
+    "9": {
+      "fields": {
+        "format": "PROJECT-RECOVERY-IDENTITY",
+        "project_id": "REPLACE_PROJECT_ID",
+        "recipient_scheme": "CLASSICAL-CMS-RSA-3072",
+        "post_quantum": false
+      },
+      "digest_fields": {
+        "certificate": "REPLACE_PENDING/recovery.cert.pem",
+        "spki": "REPLACE_PENDING/recipient.spki.der"
+      },
+      "source": "REPLACE_PENDING/identity.json"
+    },
+    "10": {
+      "source": "REPLACE_PENDING",
+      "destination": "REPLACE_VAULT"
+    },
+    "11": {
+      "destination": "REPLACE_JOB/identity-receipt.json",
+      "fields": {
+        "format": "PROJECT-IDENTITY-INITIALIZATION",
+        "status": "PASS",
+        "project_id": "REPLACE_PROJECT_ID",
+        "production_release_accepted": false
+      },
+      "files": {
+        "identity": "REPLACE_VAULT/identity.json",
+        "recipient_spki": "REPLACE_VAULT/recipient.spki.der"
+      }
+    }
+  }
+}

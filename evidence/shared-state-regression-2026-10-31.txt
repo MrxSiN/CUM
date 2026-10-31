@@ -1,0 +1,26 @@
+test_java_and_kotlin_real_emission (tests.test_draft_adapters.AdapterDraftTests.test_java_and_kotlin_real_emission) ... ok
+test_linear_virtualization (tests.test_draft_adapters.AdapterDraftTests.test_linear_virtualization) ... ok
+test_movement_preconditions (tests.test_draft_adapters.AdapterDraftTests.test_movement_preconditions) ... ok
+test_multi_cell_balanced_loops (tests.test_draft_adapters.AdapterDraftTests.test_multi_cell_balanced_loops) ... ok
+test_full_line_comments_win_over_command_punctuation_at_every_split (tests.test_annotations.AnnotationTests.test_full_line_comments_win_over_command_punctuation_at_every_split) ... ok
+test_inline_annotations_unknown_code_and_bad_state_fail_closed (tests.test_annotations.AnnotationTests.test_inline_annotations_unknown_code_and_bad_state_fail_closed) ... ok
+test_leading_space_and_record_boundaries_preserve_the_line_state (tests.test_annotations.AnnotationTests.test_leading_space_and_record_boundaries_preserve_the_line_state) ... ok
+test_planner_orders_filter_before_layout_and_annotations (tests.test_annotations.AnnotationTests.test_planner_orders_filter_before_layout_and_annotations) ... ok
+test_native_mapping_preserves_line_state_and_does_not_publish_rejected_code (tests.test_annotations.NativeAnnotationTests.test_native_mapping_preserves_line_state_and_does_not_publish_rejected_code) ... ok
+test_clean_recovery_has_no_capture_or_transformation (tests.test_workflow_draft.WorkflowDraftTests.test_clean_recovery_has_no_capture_or_transformation) ... ok
+test_each_plan_operand_is_present (tests.test_workflow_draft.WorkflowDraftTests.test_each_plan_operand_is_present) ... ok
+test_prepare_clones_and_recovers_before_finalization (tests.test_workflow_draft.WorkflowDraftTests.test_prepare_clones_and_recovers_before_finalization) ... ok
+test_service_failure_never_reaches_finalize (tests.test_workflow_draft.WorkflowDraftTests.test_service_failure_never_reaches_finalize) ... ok
+test_affine_loop_attack_retains_bounds_and_rejects_unsafe_reductions (tests.test_resistance.ResistanceTests.test_affine_loop_attack_retains_bounds_and_rejects_unsafe_reductions) ... ok
+test_bf_profile_policy_unknowns_failures_and_nonclaims (tests.test_resistance.ResistanceTests.test_bf_profile_policy_unknowns_failures_and_nonclaims) ... ok
+test_comparison_and_digest_bindings_reject_stale_or_mismatched_review (tests.test_resistance.ResistanceTests.test_comparison_and_digest_bindings_reject_stale_or_mismatched_review) ... ok
+test_examples_bind_private_evidence_and_public_claims (tests.test_resistance.ResistanceTests.test_examples_bind_private_evidence_and_public_claims) ... ok
+test_failed_resistance_gate_stops_before_signing (tests.test_resistance.ResistanceTests.test_failed_resistance_gate_stops_before_signing) ... ok
+test_native_policy_and_planners (tests.test_resistance.ResistanceTests.test_native_policy_and_planners) ... skipped 'Explicit freshly built native artifact directory required'
+test_observed_bytes_are_complete_and_strictly_typed (tests.test_resistance.ResistanceTests.test_observed_bytes_are_complete_and_strictly_typed) ... ok
+test_signed_fixture_native_admission_and_missing_evaluation (tests.test_resistance.ResistanceTests.test_signed_fixture_native_admission_and_missing_evaluation) ... skipped 'Fresh native policy and real-tool crypto opt-in required'
+
+----------------------------------------------------------------------
+Ran 21 tests in 159.069s
+
+OK (skipped=2)

@@ -12,7 +12,7 @@ from host.bytehost.errors import HostError
 if __name__ == "__main__":
     try:
         binding = load("/bindings/recovery.json")
-        for number in ("1", "3"):
+        for number in ("1", "3", *(["7"] if "7" in binding["bindings"] else [])):
             binding["bindings"][number]["openssl"] = {"executable": "/usr/bin/openssl", "sha256": digest("/usr/bin/openssl")}
         binding["planner_launcher"] = {"executable": "/usr/lib/wine/wine64", "sha256": digest("/usr/lib/wine/wine64")}
         result = flow(binding, 1)

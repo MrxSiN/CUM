@@ -141,7 +141,7 @@
       "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/originals.tar",
       "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/originals.cms",
       "recipients": [
-        "D:/GitHub/CUM/private/identities/recovery.cert.pem"
+        "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.cert.pem"
       ]
     },
     "14": {
@@ -154,8 +154,8 @@
       "max_output_bytes": 1073741824,
       "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/originals.cms",
       "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/internal-originals.tar",
-      "identity": "D:/GitHub/CUM/private/identities/recovery.key.pem",
-      "certificate": "D:/GitHub/CUM/private/identities/recovery.cert.pem"
+      "identity": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.key.pem",
+      "certificate": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.cert.pem"
     },
     "15": {
       "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/internal-originals.tar",
@@ -1861,11 +1861,91 @@
           "xax_executable_sha256": "REPLACE_WITH_VERIFIED_SHA256"
         },
         "build_instructions": "REPLACE_WITH_PUBLIC_INDEPENDENT_BUILD_INSTRUCTIONS",
-        "licensing_classification": "REPLACE_WITH_OWNER_REVIEWED_DISTRIBUTION_CLASS"
+        "licensing_classification": "REPLACE_WITH_OWNER_REVIEWED_DISTRIBUTION_CLASS",
+        "protection_contract": "CUM-RESISTANCE-GATE",
+        "project_id": "REPLACE_PROJECT",
+        "recovery_contract": "PROJECT-SCOPED-CMS-RECOVERY",
+        "post_quantum": false
       },
       "files": {
         "protected_inventory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/inventory.json",
-        "recovery_capsule": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/capsule.cms"
+        "recovery_capsule": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/capsule.cms",
+        "project_identity": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-identity.json",
+        "recipient_certificate": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-recipient.cert.pem"
+      },
+      "observed_fields": {
+        "profile": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "profile"
+          ]
+        },
+        "claims_ai_resistance": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "claims_ai_resistance"
+          ]
+        },
+        "baseline": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "baseline"
+          ]
+        },
+        "predeclared": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "predeclared"
+          ]
+        },
+        "scope_bound": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "scope_bound"
+          ]
+        },
+        "matched_arms": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "matched_arms"
+          ]
+        },
+        "isolated": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "isolated"
+          ]
+        },
+        "evaluator_verified": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "evaluator_verified"
+          ]
+        },
+        "heldout_local": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "heldout_local"
+          ]
+        },
+        "metrics_complete": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "metrics_complete"
+          ]
+        },
+        "thresholds_met": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "thresholds_met"
+          ]
+        },
+        "upload_authorized": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "upload_authorized"
+          ]
+        }
       }
     },
     "28": {
@@ -1897,14 +1977,19 @@
       "binding_record": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/release.json",
       "files": {
         "protected_inventory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/inventory.json",
-        "recovery_capsule": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/capsule.cms"
+        "recovery_capsule": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/capsule.cms",
+        "project_identity": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-identity.json",
+        "recipient_certificate": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-recipient.cert.pem"
       },
       "expected_fields": {
         "format": "SIGNED-PROTECTED-TREE-CMS",
         "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
         "signature_format": "ED25519-RAW",
         "release_identity": "REPLACE_OPERATION",
-        "recovery_mode": "public-capsule"
+        "recovery_mode": "public-capsule",
+        "project_id": "REPLACE_PROJECT",
+        "recovery_contract": "PROJECT-SCOPED-CMS-RECOVERY",
+        "post_quantum": false
       }
     },
     "31": {
@@ -1956,14 +2041,19 @@
       "binding_record": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/release.json",
       "files": {
         "protected_inventory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/inventory.json",
-        "recovery_capsule": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/capsule.cms"
+        "recovery_capsule": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/capsule.cms",
+        "project_identity": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/recovery-identity.json",
+        "recipient_certificate": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/recovery-recipient.cert.pem"
       },
       "expected_fields": {
         "format": "SIGNED-PROTECTED-TREE-CMS",
         "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
         "signature_format": "ED25519-RAW",
         "release_identity": "REPLACE_OPERATION",
-        "recovery_mode": "public-capsule"
+        "recovery_mode": "public-capsule",
+        "project_id": "REPLACE_PROJECT",
+        "recovery_contract": "PROJECT-SCOPED-CMS-RECOVERY",
+        "post_quantum": false
       }
     },
     "34": {
@@ -1976,8 +2066,8 @@
       "max_output_bytes": 1073741824,
       "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-checkout/capsule.cms",
       "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-originals.tar",
-      "identity": "D:/GitHub/CUM/private/identities/recovery.key.pem",
-      "certificate": "D:/GitHub/CUM/private/identities/recovery.cert.pem"
+      "identity": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.key.pem",
+      "certificate": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.cert.pem"
     },
     "35": {
       "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/clean-originals.tar",
@@ -2912,6 +3002,383 @@
       "timeout_seconds": 300,
       "max_output_bytes": 1048576,
       "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/recovery-policy-receipt.json"
+    },
+    "75": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/independent-trust/signer.pub.pem",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_SIGNER_SPKI_SHA256",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-plan.json",
+      "signature": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-plan.sig"
+    },
+    "76": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-plan.json",
+      "fields": {
+        "format": "CUM-RESISTANCE-PRECOMMITMENT",
+        "operation": "REPLACE_OPERATION",
+        "status": "PASS"
+      },
+      "file_digests": {
+        "job_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+        "criteria_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-criteria.json"
+      },
+      "equal_fields": {
+        "bindings_sha256": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/flow.json",
+          "fields": [
+            "bindings_sha256"
+          ]
+        },
+        "planner_sha256": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/flow.json",
+          "fields": [
+            "planner_sha256"
+          ]
+        },
+        "request_hex": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/flow.json",
+          "fields": [
+            "request_hex"
+          ]
+        }
+      }
+    },
+    "77": {
+      "tool": {
+        "executable": "REPLACE_WITH_INDEPENDENT_RESISTANCE_REVIEWER",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "argv": [
+        "REPLACE_WITH_APPROVED_LOCAL_REVIEW_OPERANDS"
+      ],
+      "timeout_seconds": 300,
+      "max_output_bytes": 1048576,
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/resistance-review-receipt.json"
+    },
+    "78": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/independent-trust/signer.pub.pem",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_SIGNER_SPKI_SHA256",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+      "signature": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.sig"
+    },
+    "79": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+      "fields": {
+        "format": "CUM-RESISTANCE-REVIEW",
+        "operation": "REPLACE_OPERATION"
+      },
+      "file_digests": {
+        "job_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+        "plan_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-plan.json",
+        "criteria_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-criteria.json",
+        "snapshot_manifest_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/scope.json",
+        "protected_inventory_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/inventory.json",
+        "normalization_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/normalization.json"
+      },
+      "equal_fields": {
+        "profile": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-plan.json",
+          "fields": [
+            "profile"
+          ]
+        },
+        "claims_ai_resistance": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-plan.json",
+          "fields": [
+            "claims_ai_resistance"
+          ]
+        },
+        "plan_sha256": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-precommitment.json",
+          "fields": [
+            "digests",
+            "plan"
+          ]
+        },
+        "criteria_sha256": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-precommitment.json",
+          "fields": [
+            "digests",
+            "criteria"
+          ]
+        },
+        "job_sha256": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-precommitment.json",
+          "fields": [
+            "digests",
+            "job"
+          ]
+        }
+      }
+    },
+    "80": {
+      "worker": {
+        "executable": "D:/GitHub/CUM/build/resistance_policy.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "input_fields": [
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "profile"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "claims_ai_resistance"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "baseline"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "predeclared"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "scope_bound"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "matched_arms"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "isolated"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "evaluator_verified"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "heldout_local"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "metrics_complete"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "thresholds_met"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-review.json",
+          "fields": [
+            "upload_authorized"
+          ]
+        }
+      ],
+      "input_bytes": 12,
+      "expected_hex": "01",
+      "timeout_seconds": 60,
+      "max_output_bytes": 16
+    },
+    "81": {
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-precommitment.json",
+      "fields": {
+        "format": "RESISTANCE-FROZEN-INPUTS"
+      },
+      "files": {
+        "plan": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-plan.json",
+        "criteria": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/resistance-criteria.json",
+        "job": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json"
+      }
+    },
+    "82": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/independent-trust/signer.pub.pem",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_SIGNER_SPKI_SHA256",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/project-prepare-context.json",
+      "signature": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/project-prepare-context.sig"
+    },
+    "83": {
+      "source": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/project-prepare-context.json",
+      "fields": {
+        "format": "PROJECT-PREPARE-CONTEXT",
+        "project_id": "REPLACE_PROJECT",
+        "operation": "REPLACE_OPERATION",
+        "recipient_scheme": "CLASSICAL-CMS-RSA-3072",
+        "post_quantum": false,
+        "status": "PASS"
+      },
+      "file_digests": {
+        "job_sha256": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+        "project_identity_sha256": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/identity.json",
+        "recipient_certificate_sha256": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.cert.pem"
+      },
+      "equal_fields": {
+        "bindings_sha256": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/flow.json",
+          "fields": [
+            "bindings_sha256"
+          ]
+        },
+        "planner_sha256": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/flow.json",
+          "fields": [
+            "planner_sha256"
+          ]
+        },
+        "request_hex": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/flow.json",
+          "fields": [
+            "request_hex"
+          ]
+        },
+        "encryption_recipients": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+          "fields": [
+            "bindings",
+            "13",
+            "recipients"
+          ]
+        },
+        "internal_identity": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+          "fields": [
+            "bindings",
+            "14",
+            "identity"
+          ]
+        },
+        "internal_certificate": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+          "fields": [
+            "bindings",
+            "14",
+            "certificate"
+          ]
+        },
+        "clean_identity": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+          "fields": [
+            "bindings",
+            "34",
+            "identity"
+          ]
+        },
+        "clean_certificate": {
+          "file": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/job.json",
+          "fields": [
+            "bindings",
+            "34",
+            "certificate"
+          ]
+        }
+      }
+    },
+    "85": {
+      "openssl": {
+        "executable": "C:/Program Files/OpenSSL-Win64/bin/openssl.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/independent-trust/signer.pub.pem",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_SIGNER_SPKI_SHA256",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/identity.json",
+      "signature": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/identity.sig"
+    },
+    "86": {
+      "source": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/identity.json",
+      "fields": {
+        "format": "PROJECT-RECOVERY-IDENTITY",
+        "project_id": "REPLACE_PROJECT",
+        "recipient_scheme": "CLASSICAL-CMS-RSA-3072",
+        "post_quantum": false
+      },
+      "digest_fields": {
+        "certificate": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.cert.pem",
+        "spki": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recipient.spki.der"
+      },
+      "exact_keys": [
+        "format",
+        "project_id",
+        "recipient_scheme",
+        "post_quantum",
+        "digests"
+      ],
+      "exact_digest_keys": [
+        "certificate",
+        "spki"
+      ]
+    },
+    "84": {
+      "disjoint_trees": [
+        [
+          "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/",
+          "REPLACE_WITH_ORIGINAL_ABSOLUTE_PROJECT_ROOT"
+        ],
+        [
+          "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/",
+          "REPLACE_WITH_READONLY_REFERENCE_ROOT"
+        ],
+        [
+          "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/",
+          "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate"
+        ],
+        [
+          "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/",
+          "REPLACE_WITH_ORIGINAL_ABSOLUTE_PROJECT_ROOT"
+        ],
+        [
+          "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/",
+          "REPLACE_WITH_READONLY_REFERENCE_ROOT"
+        ]
+      ]
+    },
+    "87": {
+      "source": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/identity.json",
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-identity.json"
+    },
+    "88": {
+      "source": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/identity.sig",
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-identity.sig"
+    },
+    "89": {
+      "source": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recovery.cert.pem",
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-recipient.cert.pem"
+    },
+    "90": {
+      "source": "D:/GitHub/CUM/private/identities/REPLACE_PROJECT/recipient.spki.der",
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate/recovery-recipient.spki.der"
     }
   },
   "command_worker": {

@@ -47,6 +47,8 @@ class QemuNativeTests(unittest.TestCase):
                        "compile_timeout_seconds": 180, "runtime_timeout_seconds": 60,
                        "max_log_bytes": 1048576, "max_runtime_output_bytes": 65536, "max_bfx_bytes": 16777216,
                        "reference_steps": 50000000, "workers": workers, "worker_input_capacity_bytes": 4096}
+            binding['symbolic_analysis'] = {'verified_workspace_cells': 6, 'max_terms': 1024,
+                                            'max_degree': 64, 'max_operations': 1000000}
             atomic_json(root / "bindings/check.json", binding)
             spec = {"backend": "qemu", "vm": vm, "image": "BYTEVM-IMAGE@sha256:" + vm["disk"]["sha256"],
                     "memory_bytes": 4294967296, "cpus": 2, "user": "1000:1000", "pids": 256,
@@ -62,7 +64,10 @@ class QemuNativeTests(unittest.TestCase):
             except HostError as error:
                 self.fail(json.dumps(error.record()))
             records = {path.stem: json.loads(path.read_text()) for path in (root / "returned").iterdir()}
-            self.assertTrue(all(item["status"] == "PASS" for item in records.values()))
+            self.assertEqual(records['behavior']['status'], 'PASS')
+            self.assertEqual(records['boundary']['status'], 'PASS')
+            self.assertEqual(records['normalization']['status'], 'FAIL')
+            self.assertTrue(records['normalization']['same_io_projection'])
             if os.environ.get("BYTEHOST_VM_BUILD_EVIDENCE"):
                 atomic_json(os.environ["BYTEHOST_VM_BUILD_EVIDENCE"], {
                     "format": "ISOLATED-NATIVE-FIXTURE-CHECKS", "status": "PASS", "reports": records,

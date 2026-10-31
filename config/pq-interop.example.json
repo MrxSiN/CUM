@@ -1,0 +1,19 @@
+{
+  "tool": {
+    "executable": "REPLACE_WITH_AUTHENTICATED_OPENSSL_3_6_OR_NEWER/openssl.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_EXECUTABLE_SHA256"
+  },
+  "inputs_sha256": {
+    "REPLACE_WITH_PRIVATE_TOOL_BUNDLE/libcrypto-3-x64.dll": "REPLACE_WITH_VERIFIED_SHA256",
+    "REPLACE_WITH_PRIVATE_TOOL_BUNDLE/libssl-3-x64.dll": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "argv": ["version", "-a"],
+  "clear_environment_prefixes": ["OPENSSL_", "LD_"],
+  "environment": {
+    "OPENSSL_CONF": "NUL",
+    "OPENSSL_MODULES": "REPLACE_WITH_EMPTY_CONTROLLED_DIRECTORY",
+    "OPENSSL_ENGINES": "REPLACE_WITH_EMPTY_CONTROLLED_DIRECTORY"
+  },
+  "timeout_seconds": 60,
+  "max_output_bytes": 1048576
+}

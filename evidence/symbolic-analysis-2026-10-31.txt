@@ -1,0 +1,14 @@
+test_analysis_operands_and_budgets_fail_closed (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_analysis_operands_and_budgets_fail_closed) ... ok
+test_early_failure_invalidates_stale_success_record (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_early_failure_invalidates_stale_success_record) ... ok
+test_known_loops_and_conditional_bounds (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_known_loops_and_conditional_bounds) ... ok
+test_nested_product_uses_invariant_factor (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_nested_product_uses_invariant_factor) ... ok
+test_polynomial_loop_matches_every_byte_and_retains_read_order (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_polynomial_loop_matches_every_byte_and_retains_read_order) ... ok
+test_recovered_formulas_fail_and_missing_analysis_blocks (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_recovered_formulas_fail_and_missing_analysis_blocks) ... ok
+test_transfer_and_shared_state_recover_original_formulas (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_transfer_and_shared_state_recover_original_formulas) ... ok
+test_unequal_formulas_cannot_be_promoted_to_pass (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_unequal_formulas_cannot_be_promoted_to_pass) ... ok
+test_unknown_unsafe_and_invalid_programs_block (tests.test_symbolic_analysis.SymbolicAnalysisTests.test_unknown_unsafe_and_invalid_programs_block) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 7.333s
+
+OK

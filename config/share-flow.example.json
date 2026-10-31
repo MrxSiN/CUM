@@ -1,0 +1,121 @@
+{
+  "planner": {
+    "executable": "D:/GitHub/CUM/build/annotated_flow.exe",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "planner_input_bytes": 2,
+  "planner_timeout_seconds": 60,
+  "planner_output_bytes": 4096,
+  "command": 1,
+  "mode": 2,
+  "journal": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/share-flow.json",
+  "bindings": {
+    "5": {
+      "root": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+      "paths": [
+        "main.bf"
+      ],
+      "mapping": {
+        "worker": {
+          "executable": "D:/GitHub/CUM/build/annotated_filter.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        "state_key": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/checkpoint.key",
+        "initial_state_hex": "0100",
+        "record_payload_bytes": 64,
+        "input_capacity_bytes": 4096,
+        "output_capacity_bytes": 65536,
+        "max_output_bytes": 16777216,
+        "timeout_seconds": 60
+      },
+      "journal_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/annotation-state",
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/annotation.json"
+    },
+    "1": {
+      "root": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+      "input_root": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+      "paths": [
+        "main.bf"
+      ],
+      "machine": {
+        "worker": {
+          "executable": "D:/GitHub/CUM/build/bf_share.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        "kernels": {
+          "201": {
+            "executable": "D:/GitHub/CUM/build/bf_share_start.exe",
+            "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+          },
+          "202": {
+            "executable": "D:/GitHub/CUM/build/bf_share_input.exe",
+            "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+          },
+          "203": {
+            "executable": "D:/GitHub/CUM/build/bf_share_output.exe",
+            "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+          },
+          "204": {
+            "executable": "D:/GitHub/CUM/build/bf_share_open.exe",
+            "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+          },
+          "205": {
+            "executable": "D:/GitHub/CUM/build/bf_share_close.exe",
+            "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+          },
+          "206": {
+            "executable": "D:/GitHub/CUM/build/bf_share_finish.exe",
+            "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+          }
+        },
+        "profile": 2,
+        "selector": 0,
+        "integer_limit": null,
+        "capability_source": "Experimental single-cell share representation; requires verified zero-initialized wrapping-byte tape of at least six cells, EOF-zero, and admitted source domain. No AI resistance accepted.",
+        "state_key": "D:/GitHub/CUM/private/identities/continuation.hmac",
+        "max_output_bytes": 1073741824,
+        "max_storage_bytes": 1073741824,
+        "max_stack_entries": 1000000,
+        "max_response_bytes": 65536,
+        "max_handoffs_per_event": 8,
+        "max_operation_seconds": 3600,
+        "checkpoint_events": 64,
+        "timeout_seconds": 60
+      },
+      "journal_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/share-state",
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/share.json"
+    },
+    "2": {
+      "root": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/candidate",
+      "paths": [
+        "main.bf"
+      ],
+      "mapping": {
+        "worker": {
+          "executable": "D:/GitHub/CUM/build/presentation.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        "state_key": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/checkpoint.key",
+        "initial_state_hex": "0100",
+        "record_payload_bytes": 64,
+        "input_capacity_bytes": 4096,
+        "output_capacity_bytes": 65536,
+        "max_output_bytes": 16777216,
+        "timeout_seconds": 60
+      },
+      "journal_directory": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/comment-state",
+      "report": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/comments.json"
+    },
+    "4": {
+      "destination": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/mapping.json",
+      "fields": {
+        "format": "ANNOTATED-BF-SHARE-MAPPING"
+      },
+      "files": {
+        "annotations": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/annotation.json",
+        "layout": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/share.json",
+        "comments": "D:/GitHub/CUM/private/jobs/REPLACE_OPERATION/reports/comments.json"
+      }
+    }
+  }
+}

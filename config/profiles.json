@@ -6,14 +6,19 @@
       "name": "FAST",
       "bf_layout_stride": 2,
       "bf_pass": "transfer then adjust",
-      "jvm_pass": "pure integer carry decomposition"
+      "jvm_pass": "pure integer carry decomposition",
+      "requires_ai_evaluation": false,
+      "ai_resistance_status": "BLOCKED"
     },
     {
       "id": 2,
       "name": "CAMOUFLAGE",
       "bf_layout_stride": 2,
       "bf_pass": "selector-chosen positive or negative scratch representation",
-      "jvm_pass": "pure integer carry decomposition"
+      "jvm_pass": "pure integer carry decomposition",
+      "requires_ai_evaluation": true,
+      "ai_resistance_status": "BLOCKED",
+      "experimental_bf_candidate": "machines/bf_share.bf via explicit share-flow; no AI resistance accepted"
     },
     {
       "id": 3,
@@ -21,17 +26,25 @@
       "bf_layout_stride": 3,
       "bf_pass": "distant scratch representation",
       "optional_bf_adapter": 5,
-      "jvm_pass": "iterative carry state machine"
+      "jvm_pass": "iterative carry state machine",
+      "requires_ai_evaluation": true,
+      "ai_resistance_status": "BLOCKED"
     },
     {
       "id": 4,
       "name": "PERFORMANCE",
       "bf_layout_stride": 2,
       "bf_pass": "layout relocation with direct arithmetic",
-      "jvm_pass": "pure integer carry decomposition"
+      "jvm_pass": "pure integer carry decomposition",
+      "requires_ai_evaluation": false,
+      "ai_resistance_status": "BLOCKED"
     }
   ],
   "xax_pass": "Guarded add-to-sub-negate transaction in every profile",
   "budgets": "Explicit measured apply, skip or fail policy; no zero-overhead or resistance guarantee",
-  "runtime_evidence": "NOT STARTED"
+  "runtime_evidence": "NOT STARTED",
+  "resistance_contract": "CUM-RESISTANCE-GATE",
+  "baseline_normalization": "Mandatory for every profile; unequal BFX alone is insufficient",
+  "claim_policy": "Any AI-resistance claim requires matched reconstruction evaluation, including FAST/PERFORMANCE",
+  "ai_acceptance": "Owner waives AI cost; predeclare algorithm-extraction and independent functional-reimplementation outcomes under matched opportunities"
 }

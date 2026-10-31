@@ -107,3 +107,29 @@ capture. Finite tests do not prove universal equivalence. General dynamically
 moving BF, deeper graph rewrites and advanced AI evaluation are NOT STARTED.
 Current executed scopes and remaining build/release gates are in
 [status](STATUS.md) and [Android readiness](ANDROID_READINESS.md).
+# Amended acceptance boundary
+
+The [resistance contract](RESISTANCE.md) supersedes any interpretation that visual
+complexity or unequal compiler output establishes AI resistance. CAMOUFLAGE and
+MAXIMUM now require measured matched reconstruction evaluation before release;
+FAST/PERFORMANCE do too whenever that resistance is claimed. Current passes are
+not accepted against this requirement. Do not infer protection of the full XAX
+host from transformed embedded BF components.
+
+The [owner-collected source-only pilot](RECONSTRUCTION_PILOT.md) exposes the
+small `transform.bf` scratch-transfer pass: both supplied protected answers
+recover its algorithm despite different optimized BFX. This observation covers
+that fixture and pass, not full layout/virtualization or the Android/XAX project.
+
+The optional [live shared-state candidate](SHARED_STATE.md) keeps a modular mask
+live across operations and changes it at I/O through an input-dependent nonlinear
+transition. It supports restricted single-cell loops and restores physical state
+at the end. This is an experimental BF pass, not accepted AI resistance. The
+owner waived AI-cost comparisons; reconstruction outcomes and application budgets
+remain separate requirements.
+
+The [independent polynomial audit](READINESS_AUDIT.md) subsequently reconstructed
+the tested shared-state arithmetic variants. Distinct executable state and
+nonlinear mask updates did not prevent recovery in that scope. A multi-cell
+candidate and independently reviewed analysis/admission contract remain required
+before considering the real Android project.

@@ -110,3 +110,12 @@ input/output positions and output digest. BF end-event checks reject unfinished
 parses. Prefix output is not an accepted final file. Restart retains the local
 rollback limitation above. Fixed protocol registers/state bytes identify the
 machine ABI; they do not bound source length, project size or bracket depth.
+# Amended policy record
+
+`resistance_policy.bf` consumes exactly twelve numeric bytes selected from
+authenticated records. Its profile, claim, evidence-state and output codes are
+defined in [RESISTANCE.md](RESISTANCE.md). Generic opcode 24 accepts either the
+existing literal `input_hex` or explicit JSON `input_fields` observations,
+rejecting ambiguous sources, non-integer/non-byte values and physical length
+mismatch before launching BF. Opcode 19 also supports typed `equal_fields`
+comparisons between records. These operations contain no profile policy.

@@ -1,0 +1,9 @@
+test_bf_plan_rejects_unknown_commands_and_requires_compatibility_before_keys (tests.test_pq_project.PqProjectContractTests.test_bf_plan_rejects_unknown_commands_and_requires_compatibility_before_keys) ... ok
+test_changed_crypto_runtime_input_refuses_before_process_and_cleans_pending (tests.test_pq_project.PqProjectContractTests.test_changed_crypto_runtime_input_refuses_before_process_and_cleans_pending) ... ok
+test_examples_bind_pq_suite_runtime_pins_and_signed_context_without_changing_classical (tests.test_pq_project.PqProjectContractTests.test_examples_bind_pq_suite_runtime_pins_and_signed_context_without_changing_classical) ... ok
+test_native_identity_and_signed_recovery_with_independent_decryption (tests.test_pq_project.PqProjectNativeTests.test_native_identity_and_signed_recovery_with_independent_decryption) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 7.888s
+
+OK

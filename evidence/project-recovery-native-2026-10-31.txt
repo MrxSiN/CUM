@@ -1,0 +1,9 @@
+test_disjoint_storage_refuses_equal_or_nested_roots (tests.test_project_identity.ProjectIdentityTests.test_disjoint_storage_refuses_equal_or_nested_roots) ... ok
+test_examples_have_all_operands_and_separate_context_checks (tests.test_project_identity.ProjectIdentityTests.test_examples_have_all_operands_and_separate_context_checks) ... ok
+test_native_plan_contract_reference_and_invalid_requests (tests.test_project_identity.ProjectIdentityTests.test_native_plan_contract_reference_and_invalid_requests) ... ok
+test_project_identity_fresh_envelopes_recipients_and_context_rejection (tests.test_project_identity.ProjectRecoveryNativeTests.test_project_identity_fresh_envelopes_recipients_and_context_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 5.464s
+
+OK

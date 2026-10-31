@@ -42,7 +42,8 @@
     "runtime_entry.py": "REPLACE_WITH_VERIFIED_SHA256",
     "tests/runtime_checks.py": "REPLACE_WITH_VERIFIED_SHA256",
     "cum.exe": "REPLACE_WITH_VERIFIED_SHA256",
-    "clean_recovery.exe": "REPLACE_WITH_VERIFIED_SHA256"
+    "clean_recovery.exe": "REPLACE_WITH_VERIFIED_SHA256",
+    "scoped_clean_recovery.exe": "REPLACE_WITH_VERIFIED_SHA256"
   },
   "report": "/result/runtime-check.json"
 }
