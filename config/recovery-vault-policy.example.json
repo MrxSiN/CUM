@@ -1,5 +1,9 @@
 {
   "format": "PINNED-ISOLATED-CAPABILITIES",
+  "engine": {
+    "executable": "REPLACE_WITH_CONTAINER_ENGINE_ABSOLUTE_PATH",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
   "image": "REPLACE_RECOVERY_IMAGE@sha256:REPLACE_IMAGE_DIGEST",
   "argv": [
     "/runtime/python/bin/python3",

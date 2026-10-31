@@ -161,6 +161,9 @@ clone alone cannot recover a vault-only archive. Retain that archive independent
 
 Trusted policies pin the exact mount set, host source paths, readonly flags,
 readonly file hashes/directory inventories, image, arguments, workdir and environment.
+Docker policies must also pin the exact `engine` executable/hash record. Existing
+Docker policies without that independent pin reject and require a reviewed,
+reauthenticated policy. QEMU retains its complete `vm` identity check.
 Fill directory inventory placeholders with independently reviewed expected records;
 do not derive trust automatically from the untrusted clone. Keep the policy outside
 all mounts. For each new release its expected clone inventory must be reviewed.

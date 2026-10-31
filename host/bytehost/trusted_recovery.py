@@ -26,6 +26,9 @@ def trusted_isolated(spec):
     if spec.get("backend") == "qemu":
         require(policy["vm"] == spec["vm"] and policy["outputs"] == spec.get("outputs", []),
                 "ISOLATION", "VM identity or output capabilities differ from approved policy")
+    else:
+        require(bool(policy.get("engine")) and spec.get("engine") == policy["engine"],
+                "ISOLATION", "Container engine differs from its independent policy pin")
     for field in ("argv", "workdir", "environment"):
         require(spec.get(field, {} if field == "environment" else None) == policy[field],
                 "ISOLATION", "Execution differs from approved capability policy", field=field)

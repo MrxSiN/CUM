@@ -34,11 +34,12 @@ class IsolatedRecoveryTests(unittest.TestCase):
         source.mkdir()
         (source / "release.json").write_bytes(b"synthetic")
         spec = {"image": "synthetic@sha256:pin", "argv": ["/runtime/entry"], "environment": {},
+                "engine": {"executable": sys.executable, "sha256": digest(sys.executable)},
                 "workdir": "/runtime", "forbidden_sources": [str(root / "original")],
                 "mounts": [{"source": str(source), "target": "/release", "readonly": True},
                            {"source": str(output), "target": "/result", "readonly": False}]}
         policy = {"format": "PINNED-ISOLATED-CAPABILITIES",
-                  **{key: spec[key] for key in ("image", "argv", "environment", "workdir")},
+                  **{key: spec[key] for key in ("image", "argv", "environment", "workdir", "engine")},
                   "mounts": {mount["target"]: dict(mount) for mount in spec["mounts"]}}
         policy["mounts"]["/release"]["inventory"] = inventory(source)
         path = root / "policy.json"
@@ -84,6 +85,30 @@ class IsolatedRecoveryTests(unittest.TestCase):
                     with self.assertRaises(HostError):
                         trusted_isolated(spec)
                     execute.assert_not_called()
+
+    def test_docker_engine_requires_an_independent_policy_pin(self):
+        for mutation in (None, "executable", "sha256", "missing_policy_pin", "missing_engine"):
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as temporary:
+                spec = self.binding(temporary)
+                if mutation in ("executable", "sha256"):
+                    spec["engine"][mutation] = "unapproved"
+                elif mutation == "missing_policy_pin":
+                    path = Path(spec["policy_file"])
+                    policy = json.loads(path.read_text())
+                    policy.pop("engine")
+                    atomic_json(path, policy, replace=True)
+                    spec["policy_sha256"] = digest(path)
+                elif mutation == "missing_engine":
+                    spec.pop("engine")
+                with patch("host.bytehost.trusted_recovery.isolated", return_value={"exit": 0}) as execute:
+                    if mutation is None:
+                        trusted_isolated(spec)
+                        execute.assert_called_once()
+                    else:
+                        with self.assertRaises(HostError) as rejected:
+                            trusted_isolated(spec)
+                        self.assertEqual(rejected.exception.code, "ISOLATION")
+                        execute.assert_not_called()
 
     def test_integer_storage_has_no_inherited_compiler_ceiling(self):
         state = {"integers": [str(2 ** 128)], "stacks": [[]], "opaque": "00" * 16}
