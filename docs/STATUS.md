@@ -27,9 +27,9 @@ evidence remain explicit here; README wording grants no additional acceptance.
 | Retained offline runtime and relocated cold restore | PASS within same-host scope — synthetic release and 91-file real-project source snapshot; exact BF recovery and restored native XAX verification |
 | Independent-media backup and different-host cold restore | NOT ESTABLISHED — owner deferred the different-host drill |
 | Repeated measurements and scale | Scoped PASS — 15 paired samples per O0/O1 arm, 15 BF transformations, binary-text mapping through 1,049,600 bytes, exact 1,024-file archive roundtrip |
-| Android execution | Scoped PASS — 196 existing-JNI comparisons, 372 standalone cases, ten explicit PERFORMANCE cases and eleven existing-APK startup checks |
+| Latest ADB Android execution | Scoped PASS — 196 existing-JNI comparisons, 394 standalone cases across 18 fresh O1 executables, nine current BFX differences and eleven baseline startup checks |
 | Isolated unsigned baseline APK | NOT ESTABLISHED — source verification passed; unsigned lowering exceeded controlled 900/600-second budgets |
-| Protected Android shared libraries / APK | UNACCEPTED — tested adapter rejected the recorded bind; tape/budget compatibility and integrated protected APK remain closed |
+| Protected Android shared libraries / APK | UNACCEPTED — fresh shared-adapter probe rejected the current BBC bind; tape/budget compatibility and integrated protected APK remain closed |
 | Advanced resistance | UNACCEPTED |
 | Production release acceptance | NOT ACCEPTED |
 
@@ -41,8 +41,9 @@ presentation/review hooks and the explicit annotated filter/flow. The complete
 synthetic prepare result belongs to its recorded source snapshot, not an implicit
 rerun of every subsequent source change.
 
-See [audit remediation](AUDIT_FIXES.md), [annotated BF and Android](ANDROID_READINESS.md), [production readiness](PRODUCTION_READINESS.md), [synthetic release](SYNTHETIC_RELEASE.md), [blocker follow-up](BLOCKER_FIXES.md), [VM operations](BYTEVM.md), and the
-[current evidence](../evidence/audit-fixes-2026-10-31.json). The original
+See [fresh ADB verification](ADB_VERIFICATION.md), [audit remediation](AUDIT_FIXES.md), [annotated BF and Android](ANDROID_READINESS.md), [production readiness](PRODUCTION_READINESS.md), [synthetic release](SYNTHETIC_RELEASE.md), [blocker follow-up](BLOCKER_FIXES.md), [VM operations](BYTEVM.md), and the
+[ADB evidence](../evidence/adb-verification-2026-10-31.json) and
+[audit evidence](../evidence/audit-fixes-2026-10-31.json). The original
 [validation checkpoint](VERIFICATION.md) and its dated failure records remain
 historical and unchanged.
 

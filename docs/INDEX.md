@@ -43,6 +43,7 @@ fixture never promotes a broader language, platform or release claim.
 | [Recovery and measurement checkpoint](PRODUCTION_READINESS.md) | Historical 77-test run, same-host restores and finite scale probes |
 | [Annotated BF and Android](ANDROID_READINESS.md) | 81-test broad checkpoint, separate five-test run, actual device checks and failed APK builds |
 | [Audit remediation](AUDIT_FIXES.md) | Seven host fixes, Windows regression, native build smoke and separate 25-test Linux VM run |
+| [Fresh ADB verification](ADB_VERIFICATION.md) | Current-tool Android builds, 196 JNI comparisons, 394 standalone cases, eleven startup checks and rejected shared bind |
 
 Read [status](STATUS.md) for current conclusions. Dated checkpoint results keep
 their original source/tool scope; later fixes do not rewrite failed evidence.

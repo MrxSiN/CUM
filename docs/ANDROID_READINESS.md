@@ -1,5 +1,10 @@
 # Annotated BF and Android checkpoint — 2026-10-31
 
+This earlier checkpoint is followed by [fresh ADB verification](ADB_VERIFICATION.md)
+using the updated BBC and explicit `D:/Android/platform-tools/adb.exe`. Its results
+are historical: the follow-up passed 196 JNI comparisons, 394 standalone cases
+and eleven startup checks, while the shared adapter still rejected the bind.
+
 **PARTIAL. No protected Android release is accepted.** The annotation issue is
 resolved for the declared grammar; shared-library integration and source-provision
 approval remain closed. The owner deferred the different-host drill.

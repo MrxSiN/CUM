@@ -1,0 +1,139 @@
+{
+  "format": "ACTUAL-ADB-ANDROID-VERIFICATION",
+  "date": "2026-10-31",
+  "baseline_cum_commit": "07008625f42c22ac7978671649e7119e3d17f612",
+  "status": "SCOPED_DEVICE_CHECKS_PASS",
+  "production_accepted": false,
+  "adb": {
+    "executable": "D:/Android/platform-tools/adb.exe",
+    "sha256": "b4a6b455702684652cccf7b46258b29e653538904359a58fd4931cf3ef286b3f",
+    "observed_version": "37.0.1-15733141"
+  },
+  "device": {
+    "model": "Pixel 8 Pro",
+    "sdk": 37,
+    "abi": "arm64-v8a",
+    "actual_hardware_execution": true
+  },
+  "sources": {
+    "original_files": 9,
+    "all_current_raw_input_hashes_match_prior_verified_scope": true,
+    "all_candidate_hashes_match_prior_verified_outputs": true,
+    "application_sources_changed": false,
+    "CUM_product_code_changed": false,
+    "BF_transform_repeated": false
+  },
+  "build": {
+    "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+    "target": "android-arm64",
+    "optimization": "-O1",
+    "attempts": 19,
+    "fresh_successes": 18,
+    "elf_class": 64,
+    "elf_machine": 183,
+    "additional_probe": {
+      "profile": 2,
+      "program_scope": "time-window policy",
+      "exit": 5,
+      "native_backend_declined": true
+    },
+    "candidate_profiles": {
+      "explicit_profile_2": 8,
+      "explicit_profile_4": 1
+    },
+    "implicit_fallback": false,
+    "current_O0_probed": false
+  },
+  "jni": {
+    "status": "PASS",
+    "reference_comparisons": 196,
+    "actual_shipped_policy_libraries": 9,
+    "output_tail_and_Java_tape_unchanged": true,
+    "observations": [
+      {
+        "budget": 2000000,
+        "status": 3,
+        "tape": 1,
+        "used": 0
+      },
+      {
+        "budget": 2000000,
+        "status": -4,
+        "tape": 65536,
+        "used": 0
+      },
+      {
+        "budget": 0,
+        "status": 1,
+        "tape": 4096,
+        "used": 0
+      }
+    ],
+    "replacement_shared_library_admission": false
+  },
+  "standalone": {
+    "status": "PASS",
+    "fresh_programs": 18,
+    "passed_cases": 394,
+    "original_cases": 196,
+    "candidate_cases": 198,
+    "includes_additional_signed_long_boundary_cases": 2,
+    "finite_file_stdin": true,
+    "all_uploaded_artifacts_and_input_files_sha256_checked": true
+  },
+  "structural": {
+    "current_BBC_O1_BFX_compared": true,
+    "candidate_files": 9,
+    "all_differ": true,
+    "advanced_resistance_established": false
+  },
+  "startup": {
+    "status": "PASS",
+    "passing_self_check_lines": 11,
+    "root_readonly_log_access": true,
+    "candidate_installed": false,
+    "settings_changed": false,
+    "application_data_cleared": false,
+    "existing_application_opened": true,
+    "running_youtube_restarted": false,
+    "scope": "Existing baseline startup only; no integrated protected APK"
+  },
+  "baseline": {
+    "installed_apk_matches_retained_baseline": true,
+    "private_apk_identity_retained": true
+  },
+  "shared_adapter": {
+    "bind_record_emitted": true,
+    "adapter_exit": 1,
+    "reason": "expected one graph referencing the decision, found 0",
+    "shared_library_produced": false,
+    "installed_bridge_tape_budget_compatibility_with_replacement": "NOT ESTABLISHED"
+  },
+  "command_shapes": [
+    "adb devices -l",
+    "adb shell getprop ro.build.version.sdk",
+    "adb shell getprop ro.product.cpu.abilist",
+    "adb shell pm path APP_PACKAGE",
+    "adb pull INSTALLED_APK PRIVATE_DESTINATION",
+    "adb push TEST_INPUTS CONTROLLED_DEVICE_DIRECTORY",
+    "adb exec-out env CLASSPATH=DRIVER toybox timeout 120 /system/bin/app_process /system/bin AbiProbe DIRECTORY CASES",
+    "adb exec-out \"exec toybox timeout 15 PROGRAM < FINITE_INPUT_FILE\"",
+    "adb shell monkey -p EXISTING_YOUTUBE_PACKAGE -c android.intent.category.LAUNCHER 1",
+    "adb shell \"su -c logcat CURRENT_PID_FILTER\""
+  ],
+  "limits": {
+    "protected_integrated_apk_built": false,
+    "protected_candidate_installed": false,
+    "all_live_features_certified": false,
+    "licensing_gates_promoted": false,
+    "different_host_recovery": "DEFERRED_BY_OWNER"
+  },
+  "privacy": {
+    "device_serial_published": false,
+    "real_project_sources_or_per_file_original_digests_published": false,
+    "actual_job_bindings_or_raw_app_logs_published": false,
+    "credentials_published": false
+  },
+  "summary_log": "adb-verification-2026-10-31.txt",
+  "summary_git_lf_sha256": "1822c5016418d49de8d7e64515a4611904a73205797adf159af5b03cea6ca694"
+}

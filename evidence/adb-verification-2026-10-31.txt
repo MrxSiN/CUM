@@ -1,0 +1,11 @@
+ADB verification — 2026-10-31
+Device: Pixel 8 Pro; Android API 37; arm64-v8a
+Installed APK exactly matches retained baseline
+Fresh O1 Android builds: 19 attempted, 18 succeeded, 1 additional CAMOUFLAGE time-window probe declined (exit 5)
+Baseline JNI: 196 comparisons passed; 3 tape/budget observations recorded
+Standalone ARM64: 18 fresh executables; 394 cases passed using digest-checked finite input files
+Current BBC O1 BFX: all 9 candidates differ from their originals
+Baseline startup: 11 self-check lines passed; current-PID root read-only log access
+Shared bind: record emitted; existing adapter rejected it; no shared library produced
+No candidate installed; no application-data clearing or settings changes
+Production release acceptance: false

@@ -86,10 +86,12 @@ Android shared-library tape/budget compatibility, isolated APK production and
 restored development closure remain unaccepted. Controlled unsigned baseline
 builds passed source verification but expired in lowering and produced no APK.
 
-The existing library checks passed 196 JNI comparisons; seventeen standalone
-programs passed 372 cases, with ten further explicit PERFORMANCE cases and eleven
-existing-APK startup check lines. These finite observations and the compile
-rejections are detailed in [Android readiness](ANDROID_READINESS.md).
+The latest ADB check passed 196 existing-JNI comparisons and 394 standalone cases
+across eighteen freshly compiled O1 programs, including two additional signed-long
+boundaries. Eleven baseline startup lines and all nine current O1 BFX differences
+passed. One additional CAMOUFLAGE time-window build declined, and the shared
+adapter still rejected the current bind. See [fresh ADB verification](ADB_VERIFICATION.md);
+the earlier counts remain in [Android readiness](ANDROID_READINESS.md).
 
 Independent-media backup, different-host recovery (owner-deferred), source/notice
 provision and final production approval remain separate gates. Use fresh ignored
