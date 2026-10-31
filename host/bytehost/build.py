@@ -21,11 +21,14 @@ def build(spec):
         source = Path(source_name).absolute()
         artifact = output / (source.stem + (".exe" if spec["target"] == "windows-x86_64" else ""))
         require(not artifact.exists(), "EXISTS", "Native artifact destination exists")
+        data = source.read_bytes()
+        source_sha256 = hashlib.sha256(data).hexdigest()
         result = checked([executable, "compile", spec["target"], spec["optimization"], str(artifact)],
-                         stdin=source.read_bytes(), timeout=spec["timeout_seconds"],
+                         stdin=data, timeout=spec["timeout_seconds"],
                          max_output=spec["max_log_bytes"])
         require(artifact.is_file(), "COMPILER_OUTPUT", "Compiler succeeded without native artifact")
-        records.append({"source": str(source), "source_sha256": digest(source),
+        require(digest(source) == source_sha256, "CHANGED", "Source changed during compilation")
+        records.append({"source": str(source), "source_sha256": source_sha256,
                         "artifact": str(artifact), "artifact_sha256": digest(artifact),
                         "compiler_sha256": digest(executable), "target": spec["target"],
                         "optimization": spec["optimization"], "wall_seconds": result["wall_seconds"],
