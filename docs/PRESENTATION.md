@@ -8,7 +8,8 @@ introduce an accidental BF instruction.
 Mode 1 emits the command-free annotations `Stream input staging`, `Accumulator
 transition` and `Result staging`, once per file, then copies the already protected
 instruction stream. The opaque continuation byte records whether the header was
-emitted. This operation does not count as executable camouflage: independent
+emitted. Each line now starts with `# ` so it is also a whole-line comment in the
+explicit annotated dialect. This operation does not count as executable camouflage: independent
 normalization must still distinguish the underlying BF instructions.
 
 Mode 2 encodes ASCII text outside angle-delimited markup with hexadecimal HTML
@@ -27,6 +28,8 @@ presentation flow, not a filename-based host dispatcher. Paths and tool identiti
 are explicit operands. The generic host never authors the replacement text.
 
 Public prose describes the real program's behavior and build dependencies.
+Annotated source must first use the [annotation-aware flow](ANNOTATED_BF.md);
+ordinary ignored-byte filtering does not implement whole-line comment precedence.
 License terms remain intact. The immutable capture retains the original source,
 comments, documentation and recovery-only notes, independently of the public
 presentation. Exact recovery restores those captured bytes rather than attempting

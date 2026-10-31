@@ -1,0 +1,658 @@
+{
+  "format": "ANNOTATED-ANDROID-READINESS-EVIDENCE",
+  "date": "2026-10-31",
+  "status": "PARTIAL",
+  "release_accepted": false,
+  "implementation": {
+    "application_logic": "genuine eight-command BF under src",
+    "generic_host_changed": false,
+    "compiler_dependencies_modified": false,
+    "native_inventory": {
+      "count": 44,
+      "fresh_compilations": 3,
+      "retained_matching_compilations": 41,
+      "records": [
+        {
+          "source_sha256": "45e1b71017d2abdeda9c667c3c1897656dadfe2dca29a762d500dad565207f40",
+          "artifact_sha256": "05f7f2d067e221395c7add93504256299900ba62bd6e8e66f969a8c92ce4ca21",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/adapters.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/adapters.exe"
+        },
+        {
+          "source_sha256": "f307b2b82964be2b64a6422d311b38758ed326e869a67b90cf15cb57cecdb7bf",
+          "artifact_sha256": "7e2a5b6154d6d3d8561460ee934a75f820481e2e3f28fb2df42a1c54eb77bdcd",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/budget_flow.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/budget_flow.exe"
+        },
+        {
+          "source_sha256": "942ba06327f282e4f6013149bc1c5f895fa97a18338c313cbf6a45ef4704ecd7",
+          "artifact_sha256": "2b0b3d66a540d2e3099b8beb2eae4e640926dadf2dc399d30b04430323852002",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/budget_policy.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/budget_policy.exe"
+        },
+        {
+          "source_sha256": "3ce100ae0cda00333f1567bf01a21e75fcb098ee019356f95da9d86e41312520",
+          "artifact_sha256": "1888736c178f15fe5c13284e094c0bbe8bebe05d774c4c90416de8b11fd60766",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/clean_recovery.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/clean_recovery.exe"
+        },
+        {
+          "source_sha256": "c613d834cc64bad2579a8862391b6c7a11e6101e2dfbdec016c3eae83d0300cf",
+          "artifact_sha256": "d3dc7f4abff87b5f8710901536f516e14c36a3c6d9e7570ad67f0134a2d5a0d3",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/command.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/command.exe"
+        },
+        {
+          "source_sha256": "aa162a3e174044c5b2461e914b2725b7cf048c902e7a62210d03a8e7c30af177",
+          "artifact_sha256": "a701ce3ea33d6cc6bb1b19d8324f5426c771c2180b5189923d76d9278b54ef87",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/cum.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/cum.exe"
+        },
+        {
+          "source_sha256": "d13895e2ff5b94478a3e976c2c89e888041f5a58ee05abdc382e81406906c9d4",
+          "artifact_sha256": "be90af8ab0f69fcc0d86adfc86f0e9225c7b6b9581735f281018995f3e2d171a",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/discovery.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/discovery.exe"
+        },
+        {
+          "source_sha256": "c354d33eff6f287978dc9ae44964de16b275c6d3986a46c54a52abf07b8ce198",
+          "artifact_sha256": "6b34682b50c0d2a91fabd59e38191631cb0b8e88c2c161828a07b4628ccd0301",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/echo.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/echo.exe"
+        },
+        {
+          "source_sha256": "b661581e42425f179b1d42025bcfdaaafdc1a34e7872d87adbbc0eaa061d9b8f",
+          "artifact_sha256": "d5567d7417cc1d65c866b671016d4ba4e4a2ea434a848e6fbc2a28f10ac49cc4",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/filter.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/filter.exe"
+        },
+        {
+          "source_sha256": "4f023e56cbf3493b81b1b73b7ea42a1e7b010a994c69ae31d89aa81c46e22787",
+          "artifact_sha256": "b40babd3bd582a351eded5e76055a6f8b02f3500d430930898655333947c7a89",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/gates.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/gates.exe"
+        },
+        {
+          "source_sha256": "2665b952e35def092fb42a77a5ff4c7dea3fee4f72fe3d9188c81490b6be9e3e",
+          "artifact_sha256": "2366095da88f1b0446f554b8557fc2c7094e781ae55d3c2a9432fd44af4d227d",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/git_attributes.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/git_attributes.exe"
+        },
+        {
+          "source_sha256": "86072b28688c2b61ee423143839d846b31bbee6c46a0467d09e63d8819e8ee33",
+          "artifact_sha256": "9fdcad091def7a42030b88678722aff89ed0ca1026cc47f1203bd7bbfa17f1ee",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/graphs/add_negate.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/add_negate.exe"
+        },
+        {
+          "source_sha256": "0799ad58f01ca7abe69d8a2a5b01b12925cf242b0d4b1181da386fb11f95c026",
+          "artifact_sha256": "ea3c2692562a299f98f361000d2e5c972e0761499ff34328a0f09bc3b73e6985",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/graphs/flow.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/flow.exe"
+        },
+        {
+          "source_sha256": "7ac562c9b18b9c3dd7a4a4423d2bdcb66c888aca7f07e4d2737b19e2ec84b397",
+          "artifact_sha256": "61df68d2c7fb48311c5d9fca3cfce340dc9722d8d959812599599426bc6d0eda",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/leak_policy.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/leak_policy.exe"
+        },
+        {
+          "source_sha256": "a10028c872d460d83c08461662e2f630a4185f7dddfaf5deeb4077b3dd09800f",
+          "artifact_sha256": "4278d6e921f4db71b5e1d84940fd4b26382f327b934ac724d92558d961013dbd",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/bf_layout.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/bf_layout.exe"
+        },
+        {
+          "source_sha256": "573d22fa767af36b9576b3b8b21f548b64bebf7be50be4a8077b92d970391b00",
+          "artifact_sha256": "e9ed01d9345e8f14379847c68c9c2f2b6c1ab8b10dd9c494be2c89ff221166ae",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/bf_virtualize.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/bf_virtualize.exe"
+        },
+        {
+          "source_sha256": "0c8a11842248cccaa2c35b5e895ef9294defbee659fcf0db74133924c0be39ff",
+          "artifact_sha256": "3fd2ea6e9718c663a3e8fe3b97c25d6a872a4f48ea53b746b76f9a4d1c7f022b",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/java_emit.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/java_emit.exe"
+        },
+        {
+          "source_sha256": "f3300f215b2ff48fb326db976b8d12ae06da107aa5f1de61f43e94789bdb353d",
+          "artifact_sha256": "1075510dd56e01bca951a216336c7b90e6482f7e0a14a7e1a44fc59163d84da8",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/java_int_module.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/java_int_module.exe"
+        },
+        {
+          "source_sha256": "c54e16818eda2a2f28a9d2128f44e606fcc904015eef4acc9598a551b132ba50",
+          "artifact_sha256": "3a156a45d03edea6aa3c84562161424a90b9f230339d25ec1948b3c4b924c1c2",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/java_match_0.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/java_match_0.exe"
+        },
+        {
+          "source_sha256": "14af25bb6f5a8d024fd0deb6db529e2fcb12093954cc58efddf97cf47afe0edc",
+          "artifact_sha256": "1b41891a296237a6c9f62c845e169580bf3ad7b81d1ca09576c31e352c495dfd",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/java_match_1.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/java_match_1.exe"
+        },
+        {
+          "source_sha256": "58d5546311d04ff2b1a010ff123b419126b92e0a1ea7fec52b2071f504f7689e",
+          "artifact_sha256": "215bf2c7529ed08cb69fdd3fa3c70f43f2677953342b62845c9b57e54ee84578",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/java_match_2.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/java_match_2.exe"
+        },
+        {
+          "source_sha256": "bb6798c47dc5ba83b246cb4ff227b4c64d85c324b69320d34b184a29751baf04",
+          "artifact_sha256": "f22ae427b3701b8f1edde4699a18339935b9792d9d9ede4db02541c9b0762cf9",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/java_match_3.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/java_match_3.exe"
+        },
+        {
+          "source_sha256": "04c305ada4b5ad2aabaab13b4f9a7ae73988ac09b1c1265efb1cbd423c8cf81f",
+          "artifact_sha256": "7f4d413f76fdbd1901a7627738487d613068be48e8b4253272bc97b45daf96d8",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/java_match_4.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/java_match_4.exe"
+        },
+        {
+          "source_sha256": "4511d78a9cdc799a2c2f6d45a5e10a970ab0fcbf5fb505cb8136b82e44ac4394",
+          "artifact_sha256": "eaf03bd32a06e1e2a6f1ba285d8dd9fff5f21e02630d4041eee7ff1c5dacbd9e",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/kotlin_emit.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/kotlin_emit.exe"
+        },
+        {
+          "source_sha256": "6b8ca14762e159769fe5423f8537c64669a19442e05d1689f7257e6bda8ebd66",
+          "artifact_sha256": "fdd3a2e790f9b0ac81d8ea162cc32ec1fddfd189a4a76abd6e7ebde3370974c7",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/kotlin_int_module.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/kotlin_int_module.exe"
+        },
+        {
+          "source_sha256": "e2ebbd9be19e53ac7e2a86acaa576668405a4e4ea7828b02ce0a80f49f816512",
+          "artifact_sha256": "11e22a9ece9bdd0f717bc87d2e760575183750c99866b09dabeef2d98fe86294",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/kotlin_match_0.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/kotlin_match_0.exe"
+        },
+        {
+          "source_sha256": "8cb1b67dad2a02365fb50beb613df37d04121e63ab6e4af734785169ec9f0d78",
+          "artifact_sha256": "607fb4340a2f6096bf8af3aedd280869a311ad6265a56223175b878f9ffa9332",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/kotlin_match_1.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/kotlin_match_1.exe"
+        },
+        {
+          "source_sha256": "b55d7ea3d0b128d85645ba353cc0500a47188334d1b5a4d6e34415df15d6d154",
+          "artifact_sha256": "a8cbca4b8dc2c2324cdcfd5fcbf02809111f28a9305aa9acbad03abbd6c75962",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/kotlin_match_2.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/kotlin_match_2.exe"
+        },
+        {
+          "source_sha256": "941061dc81614483ce31631466e3dfa80a0fb0a346e3792d9828dece8a9e8853",
+          "artifact_sha256": "812885e54542881b3a75827a403c33f5f2f9493a7cca8abdfc00d7f1c644f702",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/kotlin_match_3.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/kotlin_match_3.exe"
+        },
+        {
+          "source_sha256": "798ca1806d05faa83e195868080e1b2b36eece26f82e052d7969776040ccb77d",
+          "artifact_sha256": "d2aeb38846a7fe2d2c784a9b1ac4b4a3696a5ef24a9ce3c4d49943e63f5c42b7",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/machines/kotlin_match_4.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/kotlin_match_4.exe"
+        },
+        {
+          "source_sha256": "e0dde7c0e9e741b6b6632d43d02ce34ebd0a0d18571aa485bda9a765421be927",
+          "artifact_sha256": "6bc9702caf01185c9018fbecf2db9433ed799383064f4b32d3bdea49110dc105",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/maintenance.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/maintenance.exe"
+        },
+        {
+          "source_sha256": "01d4305066ae079531565b8179a72427d9c4b6b64b7058e9e4c8725786f51257",
+          "artifact_sha256": "eead29dc363335d1011ff94dc016e15afd69a71eba715c4e10dc945caf73f66b",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/path_policy.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/path_policy.exe"
+        },
+        {
+          "source_sha256": "bf54deb5a0fb441ffb5e4e905aabebf09c7ad54f0982e62c99ff2bb3fe48149c",
+          "artifact_sha256": "685f6ce64f5aa5a396b9341ac660868a311c154669e70ae561aea52e3e979c7a",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/private_select.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/private_select.exe"
+        },
+        {
+          "source_sha256": "dec5cc18b74f3d65ac152010eae1a28d9d0039f673c402b83a9f9908aed6e8cf",
+          "artifact_sha256": "2e18e4df9dc06da0eeb6932feaa806f90b4875185f5131b7e8d04d8602dd1875",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/project.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/project.exe"
+        },
+        {
+          "source_sha256": "5f5baddd8f2b685430254375014828bee8ebe9a817cf76c235a61353ad8037f0",
+          "artifact_sha256": "693b97878422090fcb4ab0924d1a2b098aa7e31ae3be1517d2a48cd8d34afa6a",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/routes.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/routes.exe"
+        },
+        {
+          "source_sha256": "27b076ad3297bc980002d3ca9e509e5a120ade526b550165650e44c7c40131c1",
+          "artifact_sha256": "75d5ba6ad48cddefed87f8a33bdb5bfe0833559439bfbf55391274220e91f676",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/scope_policy.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/scope_policy.exe"
+        },
+        {
+          "source_sha256": "94d2e93af16a47840a06e97281add84ec4698d64034dda1b8a13872909a9445c",
+          "artifact_sha256": "8dd485c196da7ef6fbd86bb9a98639c6ffb4c3ec2ca285d6815aace8810572f6",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/snapshot.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/snapshot.exe"
+        },
+        {
+          "source_sha256": "3c9ec7111b551fda7170cfb39cd09cfcd3ea1ed16113e46fb25f10788cf825f7",
+          "artifact_sha256": "e416c98e4796cb73b8a75a7ff1e9c7e62b7f543a14e66c8d5bd3bd1971a43aa5",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/transform.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/transform.exe"
+        },
+        {
+          "source_sha256": "9bc9dc565961bcd1b751dc967fda765df0a276adc688b1473ce81a54a99ba219",
+          "artifact_sha256": "ad826ca6f2fb4d0da736509d0d20d5839032b98b144fca9706fcca2e050fabcc",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "tests/workers/fixed.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/fixed.exe"
+        },
+        {
+          "source_sha256": "0fd24cc957a0cc5c425dcc1e296884695d1ef68d1abd54f3a39a2cb30cb23050",
+          "artifact_sha256": "9e9d5f8ab649b42b1a2d58da71f4c7688e4fa45ead347d4162bd58c8a9408ed4",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "tests/workers/fixed_machine.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/fixed_machine.exe"
+        },
+        {
+          "source_sha256": "958ee844f1b9f428433bc45dbcaabcba654c297dd62b5d6e6ce5fd1277520c62",
+          "artifact_sha256": "713cf9be56a93bc4969cf892c9838d1c4e653e26508abfb7794a5e3f2d57962d",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": false,
+          "source": "src/presentation_flow.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/presentation_flow.exe"
+        },
+        {
+          "source_sha256": "bc3caa545f27fac052041a61b1d6f03d41326a613fd604a16a60304fea7eb83b",
+          "artifact_sha256": "010482edbecf9209485cbe199b08dfa5b352cf18218eb59df60b75140cf87d1d",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": true,
+          "source": "src/annotated_filter.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/annotated_filter.exe"
+        },
+        {
+          "source_sha256": "43cc58944f86b98b8029441a807e269f979157776e27259e7e925c69c677a6f5",
+          "artifact_sha256": "5a67a7ef5eebb07e11d14372ccf03a7b5b832de6f425d765521282643ce5c4ba",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": true,
+          "source": "src/annotated_flow.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/annotated_flow.exe"
+        },
+        {
+          "source_sha256": "09bf8c32693fbab583bf5a4b446cb58c63b790295862c42fb6fe896f9d745d5f",
+          "artifact_sha256": "347955ceb113fc1f6102d18311cf84fd0f488f3f0db4f27495774c089df71832",
+          "compiler_sha256": "733433ebbc8d688c2715f92861dd735349eb5ca3d620ac59ee6223903c73b6e6",
+          "target": "windows-x86_64",
+          "optimization": "-O1",
+          "recompiled_this_checkpoint": true,
+          "source": "src/presentation.bf",
+          "artifact": "build/android-readiness-2026-10-31/O1/presentation.exe"
+        }
+      ]
+    },
+    "checkout_observations": {
+      "initial_bbc": "53783953fd87cbc9308b108d187b7f3fcfedc06d",
+      "initial_xax": "f5d07d77614a9ffec17b2271a25447757cbcfd55",
+      "later_bbc": "520db418b73fe751d002790323b20643f28a1538",
+      "later_xax": "40db64ca742eaf462b894bd3077243f45f4a3087",
+      "updated_by_this_work": false,
+      "tested_executable_hashes_unchanged": true,
+      "isolated_jobs_use_retained_checked_sdk_inventories": true
+    }
+  },
+  "tests": {
+    "broad": {
+      "ran": 81,
+      "passed": 79,
+      "failed": 0,
+      "skipped": 2,
+      "skips": "VM opt-ins not rerun",
+      "native_crypto_graph_enabled": true,
+      "log": "annotated-android-regression-2026-10-31.txt"
+    },
+    "subsequent_annotation": {
+      "ran": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "includes_new_native_regression": true,
+      "log": "annotated-native-regression-2026-10-31.txt"
+    },
+    "single_all_enabled_82_test_run": false
+  },
+  "annotation": {
+    "fixture_native_comparisons": 512,
+    "fixture_optimizations": [
+      "O0",
+      "O1"
+    ],
+    "explicit_plan_hex": "09051a0109020c0400",
+    "fixed_worker_boundary": "PASS",
+    "real_source_files_filter_and_layout": 9,
+    "native_record_payload_widths": [
+      1,
+      7,
+      31
+    ],
+    "rejected_mapping_publishes_no_output": true,
+    "comment_bytes_opaque": true
+  },
+  "android": {
+    "device": "Pixel 8 Pro",
+    "architecture": "arm64",
+    "jni": {
+      "reference_comparisons": 196,
+      "actual_shipped_policy_libraries": 9,
+      "output_tail_and_java_tape_unchanged": true,
+      "observations": [
+        {
+          "tape_cells": 1,
+          "budget": 2000000,
+          "status": 3
+        },
+        {
+          "tape_cells": 65536,
+          "budget": 2000000,
+          "status": -4
+        },
+        {
+          "tape_cells": 4096,
+          "budget": 0,
+          "status": 1
+        }
+      ]
+    },
+    "standalone": {
+      "programs": 17,
+      "passed_cases": 372,
+      "finite_digest_checked_input_files": true,
+      "initial_adb_stream": "TIMEOUT; not behavioral evidence"
+    },
+    "explicit_profile_4": {
+      "additional_device_cases": 10,
+      "optimization": "O1",
+      "windows_and_android_compile": "PASS",
+      "O0_windows_and_android": "DECLINED, exit 5",
+      "implicit_fallback": false
+    },
+    "profile_2": {
+      "one_protected_time_window_build": "DECLINED, native backend exit 5"
+    },
+    "baseline_startup": {
+      "installed_bytes_match_retained_apk": true,
+      "passing_self_check_lines": 11,
+      "log_access": "read-only root; unprivileged attempt yielded no evidence",
+      "candidate_installed": false,
+      "data_cleared": false,
+      "settings_changed": false
+    },
+    "shared_adapter": {
+      "bind_record_emitted": true,
+      "xax_adapter": "REJECTED: expected one graph referencing the decision, found 0",
+      "existing_tape_budget_compatibility": "NOT ESTABLISHED",
+      "protected_apk_accepted": false,
+      "adapter_source_unchanged_between_checkout_observations": true
+    }
+  },
+  "candidate": {
+    "scope": "source-only, local, not an Android module/release",
+    "commented_transformed_files": 9,
+    "profile_2_files": 8,
+    "explicit_profile_4_files": 1,
+    "all_9_O1_BFX_differ_from_original": true,
+    "license_and_notice_preserved": true,
+    "canonical_application_sources_modified": false
+  },
+  "licensing": {
+    "review": "PARTIAL; source-provision and transitive notice/source inventory gates remain open",
+    "dexkit_aar_matches_retained_java_input_and_packaged_native_library": true,
+    "dexkit_terms": "Core LGPL-3.0, other components Apache-2.0; preserve vendor notices",
+    "dependency_dex_exact_D8_rebuild": true,
+    "morphe_packaged_notice_matches": true,
+    "source_only_license_additions_shipped_in_apk": false,
+    "preferred_source_delivery_approved": false
+  },
+  "recovery": {
+    "different_host": "DEFERRED_BY_OWNER",
+    "same_host": "historical scoped source recovery retained separately",
+    "new_docs_and_license_additions_in_prior_snapshot": false
+  },
+  "build": {
+    "unsigned_isolated_baseline": "NOT ESTABLISHED",
+    "attempts": [
+      {
+        "status": "FAIL",
+        "error": "TIMEOUT",
+        "artifact_produced": false,
+        "phase": "unknown at VM response timeout"
+      },
+      {
+        "status": "FAIL",
+        "error": "TIMEOUT",
+        "artifact_produced": false,
+        "phase": "unknown at VM response timeout"
+      },
+      {
+        "status": "FAIL",
+        "error": "TIMEOUT",
+        "artifact_produced": false,
+        "phase": "unknown at VM response timeout"
+      },
+      {
+        "status": "FAIL",
+        "error": "TIMEOUT",
+        "artifact_produced": false,
+        "phase": "unknown at VM response timeout"
+      },
+      {
+        "status": "FAIL",
+        "error": "TIMEOUT",
+        "artifact_produced": false,
+        "phase": "unknown at VM response timeout"
+      },
+      {
+        "status": "FAIL",
+        "error": "PROCESS_EXIT",
+        "artifact_produced": false,
+        "exit": 124,
+        "phase": "source verified; unsigned lowering",
+        "compiler_budget_seconds": 900,
+        "initially_empty_proof_cache": false
+      },
+      {
+        "status": "FAIL",
+        "error": "PROCESS_EXIT",
+        "artifact_produced": false,
+        "exit": 124,
+        "phase": "source verified; unsigned lowering",
+        "compiler_budget_seconds": 600,
+        "initially_empty_proof_cache": true
+      }
+    ],
+    "existing_explicit_python_bootstrap_paths_used": true,
+    "native_self_hosted_apk_build_established": false,
+    "signing_credentials_mounted": false,
+    "original_working_directory_mounted": false,
+    "private_cum_runtime_mounted": false,
+    "declared_external_input_files": 13,
+    "guest_network_interfaces": [
+      "lo"
+    ],
+    "guest_uid": 1000,
+    "guest_memory_bytes": 3221225472,
+    "guest_cpus": 2,
+    "guest_image_sha256": "e6dbfd61712e1360235f2cf51504242385461363ec26d0af20cade76a9b31434",
+    "signed_protected_build": false,
+    "apk_payload_comparison": "NOT RUN: no produced APK",
+    "different_host_build_claim": false
+  },
+  "privacy": {
+    "real_source_paths_digests_and_code_published": false,
+    "raw_device_logs_published": false,
+    "credentials_or_real_job_bindings_published": false
+  }
+}

@@ -29,7 +29,9 @@ native edits and VM checks passed. Test source existence is never a passing resu
 
 Reference interpreter and host-only runs are separate from native Windows runs.
 Wine/container runs are emulation/isolation evidence, not real Windows device
-evidence. Android target execution is not implemented by this draft.
+evidence. Actual Android execution is recorded separately in
+`ANDROID_READINESS.md`; its standalone and existing-JNI checks do not accept an
+integrated protected APK.
 
 The authored unit suites cover a subset of this matrix. Crypto, native pipeline,
 restart/failure injection, isolation and actual release exercises need provisioned
@@ -61,10 +63,17 @@ runtime now passed separate same-host relocation drills; see
 The earlier statement
 about four new unit modules describes the draft checkpoint, not the current run.
 
-The current regression discovered 77 tests, passed 75 and skipped two VM opt-ins.
+The previous regression discovered 77 tests, passed 75 and skipped two VM opt-ins.
 `test_service_output.py` reproduces and guards binary JSON service output and
 ambiguous-field rejection. `test_offline_bootstrap.py` uses Windows PowerShell to
 verify a complete tree and reject wrong pins, changed, extra and missing files.
 Two actual retained-runtime VM calls independently recovered the synthetic release
 and a real-project declared snapshot after the CLI fix. These executed drills do
 not relabel the two skipped regression tests as passes.
+
+The annotation/Android follow-up ran 81 tests: 79 passed and two VM opt-ins were
+not rerun. A separate five-test annotation run includes the subsequently added
+native record-boundary and rejected-output test. `test_annotations.py` covers
+whole-line precedence at every split, binary comment bytes, unsupported code and
+state rejection, explicit planner ordering, native continuation and atomic failure.
+See `ANDROID_READINESS.md` for device counts and dependency build declines.

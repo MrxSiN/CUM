@@ -1,5 +1,9 @@
 # Production readiness checkpoint — 2026-10-31
 
+This earlier checkpoint precedes [annotation-aware BF and Android follow-up](ANDROID_READINESS.md).
+Its failed raw-dialect probe remains historical; the explicit annotation flow now
+handles the declared grammar. Android shared-library and release gates remain closed.
+
 **PARTIAL. Production acceptance remains false.** A relocated offline recovery
 kit and a real project's declared source snapshot now have executed recovery
 evidence. This does not admit an unsupported protection adapter or approve a

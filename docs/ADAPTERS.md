@@ -20,6 +20,11 @@ is not general Java/Kotlin, Android/Xposed, reflection, JNI or resource support.
 C/C++/Rust/Python adapters and COCK integration are NOT STARTED. Unsupported
 requests must reject rather than count unchanged copied source as protected.
 
+Annotated BF uses the explicit `annotated_flow.bf` entry point before adapter 1's
+layout kernel. `annotated_filter.bf` gives whole-line `#` comments precedence over
+embedded BF punctuation and rejects unsupported code. It does not expand layout
+eligibility or Android shared-library support. See [its contract](ANNOTATED_BF.md).
+
 `transform.bf` remains the separate single-cell arithmetic/I/O/loop worker. It
 rejects pointer motion and uses the two-state-byte transport. It is not the
 multi-cell route. Its PERFORMANCE profile only filters and cannot satisfy

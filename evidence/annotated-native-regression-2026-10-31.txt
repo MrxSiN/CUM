@@ -1,0 +1,10 @@
+test_full_line_comments_win_over_command_punctuation_at_every_split (tests.test_annotations.AnnotationTests.test_full_line_comments_win_over_command_punctuation_at_every_split) ... ok
+test_inline_annotations_unknown_code_and_bad_state_fail_closed (tests.test_annotations.AnnotationTests.test_inline_annotations_unknown_code_and_bad_state_fail_closed) ... ok
+test_leading_space_and_record_boundaries_preserve_the_line_state (tests.test_annotations.AnnotationTests.test_leading_space_and_record_boundaries_preserve_the_line_state) ... ok
+test_planner_orders_filter_before_layout_and_annotations (tests.test_annotations.AnnotationTests.test_planner_orders_filter_before_layout_and_annotations) ... ok
+test_native_mapping_preserves_line_state_and_does_not_publish_rejected_code (tests.test_annotations.NativeAnnotationTests.test_native_mapping_preserves_line_state_and_does_not_publish_rejected_code) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 4.584s
+
+OK

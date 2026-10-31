@@ -19,6 +19,7 @@ class PresentationTests(unittest.TestCase):
         first, state = self.apply(1, b",+")
         second, state = self.apply(1, b".", state[1])
         comments = first[:-2]
+        self.assertTrue(all(line.startswith(b'# ') for line in comments.splitlines()))
         self.assertTrue(set(comments).isdisjoint(b"><+-.,[]"))
         self.assertIn(b"Accumulator transition", comments)
         self.assertEqual(second, b".")
