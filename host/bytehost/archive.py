@@ -174,6 +174,9 @@ def copy_tree(spec):
             else:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(confined(source, entry["path"]), target)
+        for entry in reversed(before["entries"]):
+            if entry["type"] == "directory":
+                os.chmod(confined(stage, entry["path"]), entry["mode"])
         verify_tree(source, before)
         verify_tree(stage, before)
         publish_tree(stage, spec["destination"])

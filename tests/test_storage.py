@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from host.bytehost.archive import extract, pack
+from host.bytehost.archive import extract, pack, copy_tree
 from host.bytehost.errors import HostError
 from host.bytehost.storage import atomic_json, inventory, relative_name, verify_tree, new_stage, remove_stage
 from host.bytehost.worker import seal, unseal
@@ -51,6 +51,23 @@ class StorageTests(unittest.TestCase):
             extract({"source": str(capsule), "destination": str(restored),
                      "limits": {"bytes": 1048576, "entries": 100, "metadata_bytes": 65536}})
             self.assertEqual(inventory(source), inventory(restored))
+
+    def test_copy_tree_preserves_nested_directory_modes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source"
+            nested = source / "restricted" / "empty"
+            nested.mkdir(parents=True)
+            (nested.parent / "file").write_bytes(b"synthetic")
+            os.chmod(nested, 0o555)
+            os.chmod(nested.parent, 0o555)
+            try:
+                copy_tree({"source": str(source), "destination": str(root / "copied")})
+                self.assertEqual(inventory(source), inventory(root / "copied"))
+                self.assertTrue((root / "copied/restricted/empty").is_dir())
+            finally:
+                os.chmod(nested.parent, 0o755)
+                os.chmod(nested, 0o755)
 
     def test_unsafe_tar_rejected_without_escape(self):
         with tempfile.TemporaryDirectory() as temp:
