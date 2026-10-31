@@ -91,6 +91,11 @@ def _effects(actions, state, output, spec):
 
 def transduce(spec):
     started = time.perf_counter()
+    deadline = started + spec["max_operation_seconds"]
+    def remaining_seconds():
+        remaining = deadline - time.perf_counter()
+        require(remaining > 0, "RESOURCE_BUDGET", "Machine operation exceeded explicit time budget")
+        return remaining
     native_wall_seconds = 0.0
     native_cpu_seconds = 0.0
     native_peak_bytes = 0
@@ -136,8 +141,7 @@ def transduce(spec):
         input_file.seek(int(state["input_offset"]))
         output.seek(int(state["output_offset"]))
         while int(state["event"]) != 3:
-            require(time.perf_counter() - started <= spec["max_operation_seconds"],
-                    "RESOURCE_BUDGET", "Machine operation exceeded explicit time budget")
+            remaining_seconds()
             event = int(state["event"])
             data = b"" if event == 0 else input_file.read(1)
             if event != 0:
@@ -147,7 +151,10 @@ def transduce(spec):
             handoffs = 0
             while True:
                 request = _request(event, data[0] if data else 0, spec, state)
-                result = checked(active_argv, stdin=request, timeout=spec["timeout_seconds"], max_output=spec["max_response_bytes"])
+                result = checked(active_argv, stdin=request,
+                                 timeout=min(spec["timeout_seconds"], remaining_seconds()),
+                                 max_output=spec["max_response_bytes"])
+                remaining_seconds()
                 native_wall_seconds += result["wall_seconds"]
                 counters = result["resources"]
                 if counters["status"] == "PASS":
@@ -183,6 +190,7 @@ def transduce(spec):
                 os.fsync(output.fileno())
                 atomic_json(journal, seal(state, key), replace=True)
     require(digest(source) == identity["input_sha256"], "CHANGED", "Machine input changed")
+    remaining_seconds()
     os.link(pending, destination)
     pending.unlink()
     state["complete"] = True
