@@ -216,6 +216,13 @@ reflection/ABI constraints need actual project review. The host authenticates th
 review; it does not invent legal conclusions. Missing or incompatible obligations
 prevent acceptance. No advanced resistance or zero-overhead claim is established.
 
+Generic trusted-tool wrappers own a process tree for each invocation. Windows
+children start suspended, enter a kill-on-close Job Object, then resume; POSIX
+children start in a new session/process group. Timeout, output rejection and
+normal parent completion stop the owned descendants before returning. These
+wrappers are not a sandbox for hostile tools; project code still belongs in the
+separate isolation service.
+
 The real-project follow-up recorded existing-JNI and standalone ARM64 checks, but
 the shared adapter rejected the tested bind record. Isolated unsigned baseline
 lowering exceeded controlled 900/600-second budgets and produced no APK. The

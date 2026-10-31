@@ -1,5 +1,6 @@
 """Generic argument-vector process transport and network-disabled isolation."""
 import os
+import signal
 import subprocess
 import tempfile
 import time
@@ -8,6 +9,126 @@ from pathlib import Path
 from .errors import HostError, require
 from .storage import digest, no_links
 from .resources import ResourceSample
+
+
+class _WindowsJob:
+    def __init__(self):
+        import ctypes as c
+        from ctypes import wintypes as w
+        self.c = c
+        self.kernel = k = c.WinDLL("kernel32", use_last_error=True)
+        class Basic(c.Structure):
+            _fields_ = [("process_time", c.c_longlong), ("job_time", c.c_longlong),
+                        ("flags", w.DWORD), ("minimum_working_set", c.c_size_t),
+                        ("maximum_working_set", c.c_size_t), ("process_limit", w.DWORD),
+                        ("affinity", c.c_size_t), ("priority", w.DWORD), ("scheduling", w.DWORD)]
+        class Extended(c.Structure):
+            _fields_ = [("basic", Basic), ("io", c.c_ulonglong * 6),
+                        ("memory", c.c_size_t * 4)]
+        class Thread(c.Structure):
+            _fields_ = [("size", w.DWORD), ("usage", w.DWORD), ("tid", w.DWORD),
+                        ("pid", w.DWORD), ("priority", w.LONG), ("delta", w.LONG), ("flags", w.DWORD)]
+        class Accounting(c.Structure):
+            _fields_ = [("times", c.c_longlong * 4), ("faults", w.DWORD),
+                        ("total", w.DWORD), ("active", w.DWORD), ("terminated", w.DWORD)]
+        self.Thread, self.Accounting = Thread, Accounting
+        for name, result, arguments in (
+            ("CreateJobObjectW", w.HANDLE, [c.c_void_p, w.LPCWSTR]),
+            ("SetInformationJobObject", w.BOOL, [w.HANDLE, c.c_int, c.c_void_p, w.DWORD]),
+            ("AssignProcessToJobObject", w.BOOL, [w.HANDLE, w.HANDLE]),
+            ("TerminateJobObject", w.BOOL, [w.HANDLE, w.UINT]),
+            ("QueryInformationJobObject", w.BOOL, [w.HANDLE, c.c_int, c.c_void_p, w.DWORD, c.c_void_p]),
+            ("CreateToolhelp32Snapshot", w.HANDLE, [w.DWORD, w.DWORD]),
+            ("Thread32First", w.BOOL, [w.HANDLE, c.POINTER(Thread)]),
+            ("Thread32Next", w.BOOL, [w.HANDLE, c.POINTER(Thread)]),
+            ("OpenThread", w.HANDLE, [w.DWORD, w.BOOL, w.DWORD]),
+            ("ResumeThread", w.DWORD, [w.HANDLE]),
+            ("CloseHandle", w.BOOL, [w.HANDLE]),
+        ):
+            function = getattr(k, name)
+            function.restype, function.argtypes = result, arguments
+        self.handle = k.CreateJobObjectW(None, None)
+        self.check(self.handle)
+        limits = Extended()
+        limits.basic.flags = 0x2000  # JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE; no breakaway.
+        if not k.SetInformationJobObject(self.handle, 9, c.byref(limits), c.sizeof(limits)):
+            error = c.get_last_error()
+            k.CloseHandle(self.handle)
+            raise c.WinError(error)
+
+    def check(self, success):
+        if not success:
+            raise self.c.WinError(self.c.get_last_error())
+
+    def attach_and_resume(self, child):
+        c, k = self.c, self.kernel
+        self.check(k.AssignProcessToJobObject(self.handle, int(child._handle)))
+        # Popen closes the primary thread handle; find it while the child is suspended.
+        snapshot = k.CreateToolhelp32Snapshot(4, 0)
+        self.check(snapshot != c.c_void_p(-1).value)
+        try:
+            entry = self.Thread()
+            entry.size = c.sizeof(entry)
+            found = k.Thread32First(snapshot, c.byref(entry))
+            while found:
+                if entry.pid == child.pid:
+                    thread = k.OpenThread(2, False, entry.tid)
+                    self.check(thread)
+                    try:
+                        self.check(k.ResumeThread(thread) != 0xffffffff)
+                    finally:
+                        k.CloseHandle(thread)
+                    return
+                found = k.Thread32Next(snapshot, c.byref(entry))
+            raise HostError("PROCESS_TREE", "Suspended process thread was not found")
+        finally:
+            k.CloseHandle(snapshot)
+
+    def close(self):
+        c, k = self.c, self.kernel
+        try:
+            self.check(k.TerminateJobObject(self.handle, 1))
+            deadline = time.monotonic() + 5
+            counts = self.Accounting()
+            while True:
+                self.check(k.QueryInformationJobObject(self.handle, 1, c.byref(counts), c.sizeof(counts), None))
+                if counts.active == 0:
+                    break
+                require(time.monotonic() < deadline, "PROCESS_TREE", "Process tree did not terminate")
+                time.sleep(0.001)
+        finally:
+            k.CloseHandle(self.handle)
+
+
+def _spawn(argv, **kwargs):
+    if os.name != "nt":
+        return subprocess.Popen(argv, start_new_session=True, **kwargs)
+    job = _WindowsJob()
+    child = None
+    try:
+        child = subprocess.Popen(argv, creationflags=0x4 | subprocess.CREATE_NO_WINDOW, **kwargs)
+        job.attach_and_resume(child)
+        child._bytehost_job = job
+        return child
+    except BaseException:
+        if child is not None:
+            child.kill()
+            child.wait()
+        job.close()
+        raise
+
+
+def _stop_tree(child):
+    try:
+        if os.name == "nt":
+            child._bytehost_job.close()
+        else:
+            try:
+                os.killpg(child.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+    finally:
+        child.wait()
 
 
 def run(argv, *, stdin=b"", timeout=60, max_output=1048576, cwd=None, env=None):
@@ -20,7 +141,7 @@ def run(argv, *, stdin=b"", timeout=60, max_output=1048576, cwd=None, env=None):
         input_file.write(stdin)
         input_file.seek(0)
         try:
-            child = subprocess.Popen(argv, stdin=input_file, stdout=output, stderr=error,
+            child = _spawn(argv, stdin=input_file, stdout=output, stderr=error,
                                      cwd=cwd, env=env, shell=False)
             counters = ResourceSample(child.pid)
         except OSError as exc:
@@ -28,17 +149,15 @@ def run(argv, *, stdin=b"", timeout=60, max_output=1048576, cwd=None, env=None):
         try:
             while child.poll() is None:
                 if time.perf_counter() - started > timeout:
-                    child.kill()
                     raise HostError("TIMEOUT", "Process exceeded time budget")
                 if os.fstat(output.fileno()).st_size > max_output or os.fstat(error.fileno()).st_size > max_output:
-                    child.kill()
                     raise HostError("OUTPUT_BUDGET", "Process exceeded output budget")
                 time.sleep(0.01)
         finally:
-            if child.poll() is None:
-                child.kill()
-            child.wait()
-            resources = counters.finish()
+            try:
+                _stop_tree(child)
+            finally:
+                resources = counters.finish()
         require(os.fstat(output.fileno()).st_size <= max_output and
                 os.fstat(error.fileno()).st_size <= max_output,
                 "OUTPUT_BUDGET", "Process exceeded output budget")
@@ -63,7 +182,7 @@ def to_file(argv, destination, *, timeout, max_bytes, cwd=None, env=None):
     destination = Path(destination)
     started = time.perf_counter()
     with destination.open("xb") as output, tempfile.TemporaryFile() as error:
-        child = subprocess.Popen(argv, stdin=subprocess.DEVNULL, stdout=output,
+        child = _spawn(argv, stdin=subprocess.DEVNULL, stdout=output,
                                  stderr=error, cwd=cwd, env=env, shell=False)
         try:
             while child.poll() is None:
@@ -73,9 +192,7 @@ def to_file(argv, destination, *, timeout, max_bytes, cwd=None, env=None):
                         "OUTPUT_BUDGET", "Process exceeded output budget")
                 time.sleep(0.01)
         finally:
-            if child.poll() is None:
-                child.kill()
-            child.wait()
+            _stop_tree(child)
         require(os.fstat(output.fileno()).st_size <= max_bytes, "OUTPUT_BUDGET", "Process exceeded output budget")
         error.seek(0)
         require(child.returncode == 0, "PROCESS_EXIT", "External file producer failed",
