@@ -1,4 +1,4 @@
-# Complete synthetic release — 2026-10-31
+# Complete synthetic release checkpoint — 2026-10-31
 
 The corrected Byte Relay fixture completed the actual `app ... prepare --mode 1`
 entry point. The native BF command parser selected prepare; the real `cum.bf`
@@ -22,7 +22,7 @@ strong confidentiality or advanced resistance.
 
 ## Executed evidence
 
-- 42 current components compiled natively at O1 with source/artifact identities.
+- 42 components at this checkpoint compiled natively at O1 with source/artifact identities.
 - 74 discovered regression tests passed in one all-enabled run, with zero skips.
 - Original/protected native builds and finite output comparisons passed at O0/O1.
   Their observed stdin file offsets also matched, including trailing input.
@@ -76,3 +76,12 @@ journals cannot be replayed. No protected-project remote publication occurred.
 General adapters, private-vault and maintenance drills, different-host offline
 backup recovery, scalability, repeated native performance budgets and advanced
 resistance remain outside this fixture acceptance.
+
+Later work adds the explicit annotated-input flow and `# ` presentation headers.
+The latest inventory has 44 matched artifacts, with three freshly compiled and
+41 retained matching identities. Its regression and device scopes are recorded
+in [Android readiness](ANDROID_READINESS.md). Those later checks do not imply a
+fresh rerun of this complete prepare transaction with every updated source.
+Repeated finite runtime/transport/archive probes and same-host cold restores are
+recorded separately in [production readiness](PRODUCTION_READINESS.md). The
+different-host drill is owner-deferred; production acceptance remains false.

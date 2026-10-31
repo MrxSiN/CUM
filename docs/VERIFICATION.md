@@ -1,12 +1,16 @@
 # Windows validation — 2026-10-30
 
 This is the original checkpoint, retained with its executed failures. Later fixes
-and results are recorded in [blocker follow-up](BLOCKER_FIXES.md) and `STATUS.md`.
+and results are recorded in [blocker follow-up](BLOCKER_FIXES.md) and
+[current status](STATUS.md). [The engineering index](INDEX.md) orders the later
+synthetic, recovery/measurement and annotation/Android checkpoints. The failures
+below describe this original run; they are not current blocker declarations.
 
 The whole-workflow source draft was followed by actual unit, compiler, native
 fixture, public compiler, crypto and synthetic signed-recovery runs. Overall
-status is PARTIAL. The native XAX adapter fails; the human CLI and isolated final
-release workflow are blocked. A passing unit suite is not whole-product acceptance.
+status at this checkpoint was PARTIAL. The native XAX adapter failed; the human
+CLI and isolated final release workflow were blocked. Later restricted fixes and
+one synthetic prepare flow passed. A passing suite is not whole-product acceptance.
 
 ## Executed checks
 

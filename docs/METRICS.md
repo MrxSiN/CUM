@@ -1,9 +1,20 @@
-# Measurement interfaces in the draft
+# Measurements and interpretation
 
-Native validation recorded diagnostic wall/CPU/working-set observations with
-explicit selected-process scope. No repeated performance benchmark or production
-budget acceptance ran. See the dated native evidence and `VERIFICATION.md`.
-The remaining interfaces below describe measurement contracts.
+The latest measurement checkpoint includes finite correctness-first O0/O1 process
+samples, repeated BF transformations and transport/archive scale probes. See
+[production-readiness measurements](PRODUCTION_READINESS.md) and
+[their dated record](../evidence/production-readiness-2026-10-31.json). Earlier
+single-process observations in `VERIFICATION.md` remain historical. No general
+performance win or production budget acceptance follows from either checkpoint.
+
+The fixture passed 258 behavior vectors per arm/optimization before fifteen
+randomized paired process samples per optimization, after an untimed warmup.
+Approximately 23 ms medians include process startup and the host's 10 ms polling;
+they cannot establish zero overhead. Fifteen actual BF transforms had identical
+output identities and a median operation time of 1.823 seconds. Mapping through
+1,049,600 bytes tested binary ignored text with three commands, not a million
+instructions. Exact 1,024-file archive recovery was a storage probe, not a full
+release at that scale. The interfaces below retain their explicit counter scopes.
 
 `ResourceSample` records Windows selected-process peak working set, peak pagefile
 use, page faults and user/kernel CPU using the documented native process APIs.
@@ -44,6 +55,7 @@ The workflow receipts record each primitive's elapsed cost. Application startup,
 runtime, CPU, memory and binary/source sizes require their own explicitly scoped
 samples. A cheap verification result cannot stand in for any of these metrics.
 
-The collection/measurement code still needs the deferred isolation, failure and
-counter-integrity checks. No baseline, performance win, zero-overhead property or
-production budget is established by the fixture validation.
+Further resource-exhaustion, counter-integrity and representative repeated
+compilation/full-release checks remain open. The Android compiler budget failures
+are failed build attempts, not successful build-time samples or comparative
+performance results. Production budgets and advanced resistance remain unaccepted.

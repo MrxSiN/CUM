@@ -4,6 +4,10 @@ The generic CLI writes canonical JSON. A successful primitive is PASS only for
 that primitive, not a product/release claim. Rejection exits 1 with a HostError
 record; malformed operand, OS/resource or unexpected service failure exits 2.
 Compiler and worker exit codes are retained in structured error details.
+Binary primitive stdout/stderr are returned as `stdout_hex`/`stderr_hex` in the
+success JSON. Conflicting pre-existing hex fields reject as FORMAT; no lossy text
+decoding substitutes for the bytes. Diagnostics remain separate from a successful
+artifact or release claim.
 
 | Error | Meaning |
 |---|---|
@@ -35,3 +39,9 @@ Compiler and worker exit codes are retained in structured error details.
 Diagnostic logs, absolute paths, request states and review records are private by
 default. They are not public release inputs. OS disk/allocation/address-space
 failures must remain failures; no truncation/fallback may produce a ready marker.
+
+The Android checkpoint distinguishes native-backend exit 5 from VM transport
+TIMEOUT and a compiler controller's exit 124. The controlled 900/600-second runs
+passed source verification and expired during unsigned lowering. They produced no
+APK; neither a semantic rejection nor a permanent compiler capacity follows from
+that timeout. See [the executed record](ANDROID_READINESS.md).

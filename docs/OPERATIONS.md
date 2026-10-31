@@ -1,7 +1,9 @@
-# Draft operating procedure
+# Operating procedure and acceptance limits
 
-Selected native components and synthetic signed-clone recovery have now run;
-see `STATUS.md`. The complete release procedure below is not production accepted.
+One restricted synthetic BF project completed the actual prepare workflow;
+see [the release checkpoint](SYNTHETIC_RELEASE.md). Current annotation/native/device
+results and remaining gates are in [status](STATUS.md). The procedure below is
+not production accepted for arbitrary projects or an integrated protected APK.
 The human `app` command parser and numeric BF workflow planner now build at O1.
 Example bindings contain
 invalid executable hashes, image identities, trust anchors and capacities. They
@@ -25,7 +27,9 @@ PASS records to advance a workflow.
    file interface. No compiler fallback or invented XAX syntax is supplied.
 4. Bind an ignored copy of `config/build.example.json`, then later invoke
    `python -m host.bytehost.build private/build.json`. It lists all BF sources and
-   fixed-response workers. O1 is the verified whole-component configuration.
+   fixed-response workers. The current inventory has 44 matched O1 components:
+   three fresh builds and 41 retained matching source/artifact identities at the
+   latest checkpoint. This is not a claim that all 44 were rebuilt in that run.
    Probe other required configurations into different new output directories;
    O0 still declines the command parser. Record failures without changing BBC/XAX.
 5. Provision reviewed, digest-pinned container images and public compiler tools.
@@ -117,6 +121,14 @@ A service receipt proves its operation completed, not general semantic/security
 truth. Review and pin actual independent checkers, retain their reports, and never
 substitute an arbitrary successful executable for a required gate.
 
+For whole-line annotated BF, explicitly bind the nested annotation flow described
+in [ANNOTATED_BF.md](ANNOTATED_BF.md). Its input projection comes from the immutable
+capture. The BF filter rewrites only that candidate, then layout reads the filtered
+candidate through its `input_root`. Preserve the untouched annotated capture for
+exact recovery. Directly running the nested flow does not execute prepare or grant
+release acceptance. Ordinary BF filtering is not an interchangeable preprocessing
+step, and the host never detects the dialect from extensions.
+
 Prepare now invokes independent review operand 73 after measured checks and before
 authenticating the final review. Operand 74 provisions the recovery policy after
 the signed clone has been audited. Both are pinned external review operations;
@@ -178,7 +190,11 @@ Images, distributions and all required offline dependencies must also be backed 
 The retained runtime has now passed same-host relocation drills, including a real
 project's declared source scope. See `PRODUCTION_READINESS.md` for the independently
 pinned Windows bootstrap, explicit `-I -B` invocation, failed attempts and limits.
-A different physical host and independent backup medium remain unverified.
+A different physical host and independent backup medium remain unverified. The
+owner deferred the different-host drill. The 91-file source snapshot predates
+later annotation-readiness and license additions; those files are outside that
+older recovered scope. A restored APK build and full external-input closure have
+not been established.
 
 Maintenance commands 2 and 3 cover approved project-recipient distribution and
 signer replacement records. They never give a collaborator the universal owner
@@ -196,3 +212,11 @@ Legal classification, preferred-source obligations, attributions, dependency and
 reflection/ABI constraints need actual project review. The host authenticates that
 review; it does not invent legal conclusions. Missing or incompatible obligations
 prevent acceptance. No advanced resistance or zero-overhead claim is established.
+
+The real-project follow-up recorded existing-JNI and standalone ARM64 checks, but
+the shared adapter rejected the tested bind record. Isolated unsigned baseline
+lowering exceeded controlled 900/600-second budgets and produced no APK. The
+source-only BF candidate must not replace shipped JNI libraries. Preferred-source
+delivery, transitive notices and next-APK packaging remain open; see
+[Android readiness](ANDROID_READINESS.md). A neutral README changes none of these
+requirements.

@@ -5,6 +5,14 @@ The four-transaction graph regression now passes native edit/verify and finite
 behavior checks. The semantic arguments below describe intended
 domains; they are not universal proofs or production release acceptance.
 
+## Annotated input and emitted comments
+
+Whole-line `#` comments require `annotated_filter.bf` before layout; ordinary BF
+ignored-byte filtering has different semantics when comments contain commands.
+The explicit annotated flow filters, lays out, adds command-free headers and
+binds the reports. It does not select a language from a filename. See
+[ANNOTATED_BF.md](ANNOTATED_BF.md) for grammar, state and rejection rules.
+
 ## Single-cell worker
 
 `transform.bf` accepts arithmetic, I/O and balanced loops at cell zero. It filters
@@ -39,6 +47,12 @@ No historic BBC tape constant is embedded in example jobs. A nonnegative
 owner policy; null removes that integer bound. Null does not certify an unbounded
 target or bypass physical resource exhaustion and compiler failure. Target tape,
 scratch extent, pointer errors and finite supported domain need actual evidence.
+
+The Android follow-up passed finite cases for nine filtered originals and eight
+CAMOUFLAGE outputs. One protected time-window CAMOUFLAGE build declined. Explicit
+PERFORMANCE at O1 compiled on Windows/Android, retained a different optimized BFX
+and passed ten more device cases; its O0 builds declined. This is a recorded
+profile choice for that candidate, not an automatic fallback or an ABI guarantee.
 
 ## Virtualization and JVM modules
 
@@ -91,3 +105,5 @@ Each pass needs independent behavior, input consumption, termination and relevan
 error equivalence within its domain, and exact recovery from the same immutable
 capture. Finite tests do not prove universal equivalence. General dynamically
 moving BF, deeper graph rewrites and advanced AI evaluation are NOT STARTED.
+Current executed scopes and remaining build/release gates are in
+[status](STATUS.md) and [Android readiness](ANDROID_READINESS.md).

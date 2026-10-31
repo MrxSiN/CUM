@@ -96,3 +96,19 @@ receives no identities; recovery receives no original or reference trees.
 Complete offline runtime backup, dependency provenance review and a cold restore
 on a different host are separate requirements. A locally retained VM disk alone
 does not prove those requirements.
+
+## Latest executed scope
+
+Same-host relocation of the retained runtime restored the synthetic release and
+a 91-file real-project source scope in fresh VMs. This is separate from the two
+VM opt-in tests skipped in the latest broad regression. The different-host drill
+is owner-deferred; independent media remains unverified.
+
+The Android baseline probes mounted no signing credentials, original working
+directory or private CUM runtime. They used thirteen exact external inputs and
+retained SDK inventories with existing explicit Python bootstrap paths. Five cold
+attempts reached a VM response deadline. Two controlled attempts passed source
+verification but expired in unsigned lowering at 900/600 seconds; neither returned
+an APK. All disposable VMs were stopped by their runners. See
+[Android readiness](ANDROID_READINESS.md) for the build evidence and
+[production readiness](PRODUCTION_READINESS.md) for recovery/bootstrap details.

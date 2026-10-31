@@ -97,3 +97,18 @@ No protected application, credentials or real job configuration was published.
 See [dated implementation evidence](../evidence/annotated-android-2026-10-31.json).
 Actual project sources, per-file source digests, raw device logs, dependencies and
 operational bindings remain private.
+
+## Next acceptance evidence
+
+The nine-file local BF candidate is source-only: eight explicit CAMOUFLAGE outputs
+and one explicit PERFORMANCE output. An integrated candidate needs a supported
+shared-library bind, independently matched JNI/tape/budget behavior, a completed
+isolated APK build and device checks of that actual artifact. A restored development
+build also needs the full external-input closure; native XAX verification alone
+does not provide it.
+
+Source-provision, transitive vendor notices and next-APK notice packaging require
+their own final review. Different-host recovery remains owner-deferred and
+independent-media backup remains unverified. The root README's neutral wording
+does not change these gates. [Status](STATUS.md) and [the index](INDEX.md) separate
+this checkpoint from the earlier synthetic and recovery results.

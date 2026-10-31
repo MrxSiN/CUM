@@ -36,6 +36,12 @@ native emission, 21 input pairs per language and bytecode differences. These
 results do not establish general language support, scalability or release gates.
 See `VERIFICATION.md` for exact scope.
 
+Later annotation checks covered nine real BF inputs, 512 synthetic native Windows
+comparisons, and finite ARM64 standalone cases. These are additional scoped
+results, not admission of the enclosing Android application. The shared-library
+adapter rejected the tested bind record, and isolated unsigned APK lowering did
+not finish within its budgets. See [Android readiness](ANDROID_READINESS.md).
+
 ## Graph authority
 
 XAX canonical binary graphs remain authoritative. The existing pinned SDK supplies

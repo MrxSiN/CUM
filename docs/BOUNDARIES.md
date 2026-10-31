@@ -5,6 +5,8 @@
 | Command plan and release ordering | `src/cum.bf` |
 | Profile selection and pass order | BF planners, routes, policies and machine kernels |
 | Source-byte recognition and eligibility | BF workers, machine kernels and graph recipe |
+| Whole-line annotated-BF recognition and line state | `src/annotated_filter.bf` |
+| Explicit annotation filtering/layout/presentation order | `src/annotated_flow.bf` |
 | All protected instruction/source emission | BF workers, machine kernels and graph recipe |
 | Meaning of the two worker-state bytes | BF worker |
 | Every mandatory-evidence acceptance decision | `src/gates.bf` |
@@ -32,7 +34,7 @@ has power to choose a dishonest verifier. Code cannot establish trust in an
 arbitrary owner-configured executable merely because that executable exits zero.
 Pin and inspect verifiers, and retain their actual reports independently.
 
-## Compliance experiment to execute after drafting
+## Repeatable ownership check
 
 1. Build `echo.bf`, `transform.bf` and `tests/workers/fixed.bf` natively.
 2. Run the exact same generic exchange/map host with each pinned component.
@@ -48,12 +50,18 @@ Pin and inspect verifiers, and retain their actual reports independently.
 The initial fixed-worker experiment alone does not prove a functioning source
 transformation or analysis resistance. Native exchange and fixed/real machine
 checks now pass for the recorded fixtures in `VERIFICATION.md`. This does not
-accept general transformations or the full isolated release pipeline.
+accept general transformations. The complete synthetic prepare transaction and
+annotation-specific fixed-worker check have since passed within their recorded
+scopes; see [synthetic release](SYNTHETIC_RELEASE.md) and
+[annotation/Android evidence](ANDROID_READINESS.md). Production acceptance remains
+separate.
 
 ## Application source audit notes
 
-The `.bf` files contain only executable BF characters and whitespace. Human
-annotations are separate documents so punctuation cannot accidentally execute.
+The implementation `.bf` files under `src/` contain only the eight executable BF
+characters and formatting whitespace. Delivered fixture comments are emitted data
+from `presentation.bf`, with command-free `# ` headers. Annotated input first uses
+the explicit BF filter so comment punctuation does not become instructions.
 There is no committed foreign-language generator for the BF implementation.
 Source files were placed by editing tools, like other source files; those tools
 are not runtime dependencies. The generic reference interpreter lives in tests.

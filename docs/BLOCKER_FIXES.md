@@ -1,13 +1,15 @@
 # Blocker follow-up — 2026-10-30
 
-The prior validation remains immutable. This follow-up changes CUM application
-BF and its generic infrastructure; BBC and XAX worktrees remain unchanged.
+This historical checkpoint preserves its executed 67-test scope. This follow-up
+changed CUM application BF and generic infrastructure without editing BBC or XAX.
+Later synthetic, recovery and annotation/Android results are indexed in
+[INDEX.md](INDEX.md); use [STATUS.md](STATUS.md) for current conclusions.
 
 ## Command parser
 
 The genuine BF parser now shares command prefixes and rejects missing/changed bytes,
 prefixes and suffixes while preserving opaque state. The selected BBC builds it
-at O1. All 40 current BF components (including two test workers) built in a fresh
+at O1. All 40 BF components at this checkpoint (including two test workers) built in a fresh
 directory. O0 still declines the parser; O1 is the explicit verified build binding.
 Native tests exercise all eight command strings, binary suffix rejection and the
 real host app-to-BF planner bridge. That bridge test uses a synthetic planner
@@ -57,16 +59,16 @@ packing. The returned archive restores the exact captured bytes and metadata.
 Altered signature, altered capsule and extra files all reject before restoration.
 OpenSSL 3.0.13 and Wine 9.0 in this image are independently identified in the result.
 
-A complete protected-release flow,
-independent offline runtime backup drill, real project review, scalability and
-performance budgets, Android execution and production acceptance remain separate
-requirements.
+At this checkpoint, a complete protected-release flow, independent offline runtime
+backup drill, real-project review, scalability/performance budgets, Android
+execution and production acceptance remained separate requirements. Later scoped
+results do not retrospectively expand this run's evidence.
 
 ## Final executed gate
 
 The full discovered suite passed **67 tests**, zero failures/errors/skips, in
 798.552 seconds. Native graph, crypto, native integration and real VM opt-ins
-were all enabled. The current build record binds all 40 source/artifact identities;
+were all enabled. The checkpoint build record binds all 40 source/artifact identities;
 37 artifacts are byte-identical to their prior build. Prior failed attempts remain
 private diagnostics and are not promoted into passing results.
 

@@ -25,8 +25,10 @@ mount. Signed policy validation, native BF signature/inventory/decrypt/extract/
 pack/receipt operations and exact archive comparison passed. Both the synthetic
 release and the selected real-project snapshot recovered successfully. The latter
 contains 91 files and 119 entries, totaling 2,534,412 file bytes. Its recovered
-canonical XAX store passed native verification. An APK build and device behavior
-have not been verified by this work.
+canonical XAX store passed native verification. APK builds and device behavior
+were unverified at this checkpoint. Later existing-JNI, standalone and baseline
+startup checks are in [Android readiness](ANDROID_READINESS.md); isolated unsigned
+APK lowering still produced no artifact, and protected integration remains closed.
 
 These were **same-physical-host relocation drills**, using a fresh disposable VM
 without guest networking or filesystem shares. They do not establish a backup on
@@ -87,29 +89,35 @@ QEMU process counters include the guest OS and software emulation. They are not
 protected-application memory measurements. Compilation and whole-release repeated
 budgets still need representative projects and raw repeated samples.
 
-## Production gates still closed
+## Historical dialect rejection and current gates
 
 The selected project's BF dialect ignores whole lines starting with `#`, including
-BF punctuation inside those annotations. The current standard-BF adapter treats
+BF punctuation inside those annotations. The standard-BF adapter treats
 that punctuation as commands. An independent native probe passed syntax handling
 but failed all eight expected AND3 behavior vectors. Its protection request is
 therefore **rejected**, despite native XAX verification and matching recorded SDK
 file identities. Reference-only annotation stripping in this test is not an
-implemented production adapter.
+implemented production adapter at this checkpoint. The later BF-owned explicit
+annotation flow resolves the declared grammar; it does not change the semantics
+of the raw standard-BF route or admit an enclosing Android application.
 
-Before this target can be accepted, implement/admit its annotation dialect in BF,
-verify the Android shared-library tape/budget ABI and full dependency closure,
-independently build and test the protected APK, and demonstrate usable restored
-development. Retain the external dependencies needed for that build, complete a
-different-host recovery drill, and obtain project-specific source-provision,
-license/attribution and final owner reviews. Existing fixture signers explicitly
-do not grant production approval. No protected application was published.
+Before this target can be accepted, verify the Android shared-library tape/budget
+ABI and full dependency closure, independently build and test the protected APK,
+and demonstrate usable restored development. Retain the external dependencies
+needed for that build, complete a different-host recovery drill when the owner
+resumes it, and obtain project-specific source-provision, license/attribution and
+final owner reviews. Existing fixture signers explicitly do not grant production
+approval. No protected application was published.
 
 See the [dated evidence](../evidence/production-readiness-2026-10-31.json). Original
 source, per-file original digests, real operation bindings and identities remain
 private. Earlier dated checkpoints are unchanged.
 
-The current regression discovered 77 tests: 75 passed, zero failed, and two VM
+This checkpoint's regression discovered 77 tests: 75 passed, zero failed, and two VM
 opt-in tests were not rerun. Native, crypto and graph checks were enabled. The two
 fresh cold VM drills are separate executed evidence, not replacement labels for
 those skipped tests. The prior 74-test all-enabled checkpoint remains historical.
+The later broad run passed 79/81 with two VM opt-ins skipped, followed by a separate
+five-test annotation pass. Use [status](STATUS.md) for current inventory and gates;
+the dated [evidence here](../evidence/production-readiness-2026-10-31.json) remains
+the original recovery/measurement record.

@@ -3,6 +3,10 @@
 **PARTIAL — one complete synthetic BF release passed the actual prepare workflow.
 CUM is not complete or production accepted.**
 
+Use the [engineering index](INDEX.md) to navigate contracts and dated checkpoints.
+The root README is intentionally neutral. Engineering details, limitations and
+evidence remain explicit here; README wording grants no additional acceptance.
+
 | Evidence | Observed result |
 |---|---|
 | Source coverage | PARTIAL — whole workflow drafted; restricted adapters |
@@ -30,8 +34,10 @@ CUM is not complete or production accepted.**
 The parser still declines at O0; O1 is the explicit verified build configuration.
 This observation is not a permanent CUM capacity limit. Neither BBC nor XAX was
 edited to hide an unavailable compiler ability. Thirty-seven rebuilt artifacts
-were byte-identical at the earlier blocker checkpoint. The current build adds
-presentation kernels and extends the BF prepare plan with late review hooks.
+were byte-identical at the earlier blocker checkpoint. Later checkpoints added
+presentation/review hooks and the explicit annotated filter/flow. The complete
+synthetic prepare result belongs to its recorded source snapshot, not an implicit
+rerun of every subsequent source change.
 
 See [annotated BF and Android](ANDROID_READINESS.md), [production readiness](PRODUCTION_READINESS.md), [synthetic release](SYNTHETIC_RELEASE.md), [blocker follow-up](BLOCKER_FIXES.md), [VM operations](BYTEVM.md), and the
 [current evidence](../evidence/annotated-android-2026-10-31.json). The original

@@ -18,7 +18,9 @@ Read sources:
 | `D:/Syncthing/Google Pixel 8 Pro/CUM_Engineering_Development_Prompt.md` | `65b8ed0d69fc4ad5bc3c0fe1c157d13229b4409ca6258e22671e3cbdaecbcfcd` |
 
 No CUM product numbering is introduced. Named artifact identifiers disambiguate
-wire/archive/signature contracts. Compiler repositories have not been modified.
+wire/archive/signature contracts. This implementation did not modify BBC or XAX.
+Their checkouts advanced externally during verification; observed commits and
+unchanged tested executable hashes are recorded in [status](STATUS.md).
 At the original inspection point no Git remote or source publication was configured.
 The owner's later explicit request authorizes committing and pushing the current
 draft to `https://github.com/MrxSiN/CUM`. This overrides the original private-only
@@ -37,3 +39,9 @@ Actual executable/backend rejections remain fail-closed, with no BBC/XAX changes
 to hide them. Source/executable inspection is separate from CUM compilation,
 execution or acceptance. The updated source draft covers the whole workflow
 with explicit restricted adapter domains; it does not promote any milestone.
+
+The whole-project draft was followed by separately authorized fixes and validation.
+The latest documentation pass changes prose only. The root README uses a neutral
+overview; the [engineering index](INDEX.md), contracts and evidence remain explicit.
+This does not waive privacy, source-provision or production acceptance gates.
+The owner deferred the different-host recovery drill; no result is inferred for it.

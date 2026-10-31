@@ -9,8 +9,9 @@ Mode 1 emits the command-free annotations `Stream input staging`, `Accumulator
 transition` and `Result staging`, once per file, then copies the already protected
 instruction stream. The opaque continuation byte records whether the header was
 emitted. Each line now starts with `# ` so it is also a whole-line comment in the
-explicit annotated dialect. This operation does not count as executable camouflage: independent
-normalization must still distinguish the underlying BF instructions.
+explicit annotated dialect. This operation does not count as executable
+camouflage: independent normalization must still distinguish the underlying BF
+instructions.
 
 Mode 2 encodes ASCII text outside angle-delimited markup with hexadecimal HTML
 numeric references. Markup and whitespace remain intact. The fixture domain is
@@ -27,13 +28,18 @@ is `(0, 2)`; its nested flow request is `(1, 2)`. It is a restricted BF-project
 presentation flow, not a filename-based host dispatcher. Paths and tool identities
 are explicit operands. The generic host never authors the replacement text.
 
-Public prose describes the real program's behavior and build dependencies.
+Delivered fixture guides describe the real program's behavior and build dependencies.
 Annotated source must first use the [annotation-aware flow](ANNOTATED_BF.md);
 ordinary ignored-byte filtering does not implement whole-line comment precedence.
 License terms remain intact. The immutable capture retains the original source,
 comments, documentation and recovery-only notes, independently of the public
 presentation. Exact recovery restores those captured bytes rather than attempting
 to reverse the presentation encoding.
+
+The CUM repository's root README uses neutral wording. The engineering documents
+remain readable and explicit through [the index](INDEX.md). This editorial choice
+does not run the HTML byte-worker pass, change executable behavior, conceal Git
+history or remove license/source-delivery requirements.
 
 Input contracts distinguish the octets used by the algorithm from compiler-runtime
 read-ahead. The native check records the final cursor position of the supplied

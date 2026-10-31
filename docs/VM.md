@@ -87,3 +87,10 @@ argument vectors and script/configuration inputs must be independently pinned.
 They supply real review artifacts; an exit code cannot replace review signatures
 or independently checked content bindings. Dynamic policies use detached
 signatures anchored outside the clone, or the existing independent hash method.
+
+The explicit annotation planner emits `9/5, 26/1, 9/2, 12/4`: generic byte mapping,
+event-machine mapping, byte mapping and digest-bound reporting. Its route request
+emits `28/47`. BF owns the filter/layout/comment choices; the host merely executes
+the pinned plan. The nested flow omits prepare's capture/review/sign/recovery
+gates and cannot independently finalize a release. See
+[annotated BF](ANNOTATED_BF.md) and the [operations guide](OPERATIONS.md).

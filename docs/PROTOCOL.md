@@ -48,10 +48,18 @@ domain, and 2 unknown profile. Native process failures remain separate host erro
 selector. Zero chooses one transfer representation; nonzero chooses the other in
 the CAMOUFLAGE profile. State is returned unchanged. There is no claimed PRNG.
 
-The current pass is byte-local and preserves loop punctuation. Therefore it needs
+The `transform.bf` pass is byte-local and preserves loop punctuation. It needs
 no open-bracket parse stack across records: BBC validates the final concatenated
 source. A loop may span any record boundary. This property must not be assumed
-for future context-sensitive passes; those require a richer, new worker format.
+for other passes. Any continuation facts must fit their declared state format;
+otherwise a separately specified format is required.
+
+`annotated_filter.bf` uses state A = 1 and state B = 0/1/2 for leading whitespace,
+code or whole-line comment. Line state crosses records, including CR/LF boundaries;
+arbitrary bytes, including zero, are accepted inside comments. Unsupported code
+or mode/state rejects. `presentation.bf` instead uses state A as mode and state B
+to retain header/markup context. These workers share framing, not state meanings.
+See [annotated BF](ANNOTATED_BF.md) and [presentation](PRESENTATION.md).
 
 ## Restart checkpoints
 

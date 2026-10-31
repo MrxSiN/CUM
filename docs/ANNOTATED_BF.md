@@ -34,3 +34,24 @@ missing licensing approval and failed checks stop acceptance. Passing this filte
 does not admit arbitrary BF programs, general Android applications or a protected
 shared-library release. See the dated Android readiness record for actual builds,
 device cases, declined configurations and the selected profile of each probe.
+
+## Binding and executed scope
+
+Bind an ignored copy of [the example](../config/annotated-flow.example.json),
+replace every identity and path, and use a fresh journal:
+
+```text
+python -m host.bytehost flow private/annotated-flow.json --command 1 --mode 2
+```
+
+This executes the nested filter/layout/comment/report sequence directly. It does
+not invoke capture, licensing review, signing, clone recovery or release
+acceptance. A prepare job must separately bind its BF-selected nested operand to
+this flow; the default standard-BF route is not changed automatically.
+
+The latest checkpoint passed every reference split, native mapping widths 1/7/31,
+rejected-output atomicity and 512 full-fixture O0/O1 behavior comparisons. Nine
+real-project sources passed filtering/layout; their local test candidate contains
+eight explicit profile-2 outputs and one explicit profile-4 output. No protected
+Android shared library or APK was accepted. Exact results are in
+[the dated record](../evidence/annotated-android-2026-10-31.json).
