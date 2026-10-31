@@ -8,7 +8,8 @@ import os
 from pathlib import Path
 
 from .errors import require
-from .storage import atomic_bytes, atomic_json, canonical, digest, load, no_links
+from .storage import (atomic_json, canonical, digest, load, no_links,
+                      new_stage, publish_tree, remove_stage)
 from .worker import seal, unseal
 
 
@@ -19,19 +20,30 @@ def store(spec):
     name = hashlib.sha256(canonical(identity)).hexdigest()
     root = Path(spec["root"]) / name
     no_links(root.parent)
-    root.mkdir(parents=True, exist_ok=False)
     source = Path(spec["source"])
+    no_links(source)
+    require(source.is_file(), "TYPE", "Cache source must be a regular file")
     total = source.stat().st_size
     require(total <= spec["max_bytes"], "RESOURCE_BUDGET", "Cache entry exceeds explicit budget")
     record = {"format": "OPAQUE-CACHE-HMAC-SHA256", "identity": identity,
               "bytes": total, "sha256": digest(source)}
-    with source.open("rb") as input_file, (root / "payload").open("xb") as output:
-        for block in iter(lambda: input_file.read(1024 * 1024), b""):
-            output.write(block)
-        output.flush()
-        os.fsync(output.fileno())
-    require(digest(root / "payload") == record["sha256"], "INTEGRITY", "Cache payload changed")
-    atomic_json(root / "record.json", seal(record, key))
+    stage = new_stage(root)
+    try:
+        copied = 0
+        with source.open("rb") as input_file, (stage / "payload").open("xb") as output:
+            for block in iter(lambda: input_file.read(1024 * 1024), b""):
+                copied += len(block)
+                require(copied <= spec["max_bytes"], "RESOURCE_BUDGET", "Cache entry exceeds explicit budget")
+                output.write(block)
+            output.flush()
+            os.fsync(output.fileno())
+        require(copied == total and digest(stage / "payload") == record["sha256"] and
+                digest(source) == record["sha256"], "INTEGRITY", "Cache payload changed")
+        atomic_json(stage / "record.json", seal(record, key))
+        publish_tree(stage, root)
+    finally:
+        if stage.exists():
+            remove_stage(stage)
     return {"identity_sha256": name}
 
 
