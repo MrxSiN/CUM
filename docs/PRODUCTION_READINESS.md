@@ -1,5 +1,20 @@
 # Production readiness checkpoint — 2026-10-31
 
+The later [prepare/PQ checkpoint](PREPARE_INTEGRATION.md) records scoped prepare
+integration, experimental PQ recovery and 196 joint JNI comparisons using all
+nine retained protected libraries on the connected device. Full APK source-build,
+AI resistance and production acceptance remain unestablished. The rest of this
+page preserves the earlier checkpoint.
+
+The subsequent [independent PQ foundation](PQ_INTEROPERABILITY.md) passed
+bidirectional CMS interoperability and exact same-host recovery of the retained
+97-file snapshot with a separate ML-KEM project identity. Independent key backup,
+PQ offline-kit deployment and overall release acceptance remain unestablished.
+
+The [amended resistance/readiness follow-up](READINESS_AUDIT.md) tracks the newer
+candidate and check-kit changes. Historical recovery below is not resistance
+acceptance and does not admit an integrated protected APK.
+
 This earlier checkpoint precedes [annotation-aware BF and Android follow-up](ANDROID_READINESS.md).
 Its failed raw-dialect probe remains historical; the explicit annotation flow now
 handles the declared grammar. Android shared-library and release gates remain closed.
@@ -121,3 +136,10 @@ The later broad run passed 79/81 with two VM opt-ins skipped, followed by a sepa
 five-test annotation pass. Use [status](STATUS.md) for current inventory and gates;
 the dated [evidence here](../evidence/production-readiness-2026-10-31.json) remains
 the original recovery/measurement record.
+# Amended release status
+
+BLOCKED for production AI-resistance claims. The amended design requires
+predeclared, matched protected/unprotected reconstruction experiments and private
+heldout grading. The BF-owned enforcement and evidence binding are documented in
+[RESISTANCE.md](RESISTANCE.md). Historical successful recovery, native tests and
+normalization differences below do not satisfy that new gate.

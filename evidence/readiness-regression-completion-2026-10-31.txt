@@ -1,0 +1,8 @@
+test_signed_fixture_native_admission_and_missing_evaluation (tests.test_resistance.ResistanceTests.test_signed_fixture_native_admission_and_missing_evaluation) ... ok
+test_generated_programs_build_and_run (tests.test_shared_state.SharedStateNativeTests.test_generated_programs_build_and_run) ... ok
+test_full_optional_flow_and_encrypted_exact_snapshot_recovery (tests.test_shared_state.SharedStateNativeTests.test_full_optional_flow_and_encrypted_exact_snapshot_recovery) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 24.512s
+
+OK

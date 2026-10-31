@@ -26,6 +26,12 @@
   "max_runtime_output_bytes": 65536,
   "max_bfx_bytes": 16777216,
   "reference_steps": 50000000,
+  "symbolic_analysis": {
+    "verified_workspace_cells": "REPLACE_WITH_REVIEWED_SAFE_CELL_COUNT",
+    "max_terms": 1024,
+    "max_degree": 64,
+    "max_operations": 1000000
+  },
   "report": "/reports/REPLACE_CASE.json",
   "workers": {
     "echo": {

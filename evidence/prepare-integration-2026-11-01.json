@@ -1,0 +1,297 @@
+{
+  "format": "PREPARE-SCOPING-PQ-CMS-INCREMENT-EVIDENCE",
+  "date": "2026-11-01",
+  "status": "PARTIAL",
+  "production_release_accepted": false,
+  "drafted_before_tests": true,
+  "scope": "Project preflight/public identity export/scoped decoder; experimental standards-library PQ CMS; Android joint JNI",
+  "implementation_sha256": {
+    "src/cum.bf": "728091d77c1cfc810182bc80917cbf06b2435410df697a4a0e082fea4de2c69a",
+    "src/scoped_clean_recovery.bf": "bc1fa05fa16c5f6580087a15c88249eb75d4bba7ad57f4799bcdb584e3929bcc",
+    "host/bytehost/vm.py": "612116b36464f6223021dcef00f70537eb28b9ab8ad99f279155fff42523c073",
+    "host/tools/StandardCms.java": "42443a21c90ce066b11ee82999accc2292ef484f5c1ddbe72f8e55cf3cb380bc",
+    "host/tools/README.md": "cc38138c94dbb4d2950f115bab945f67b180eb700aa0f32395deb61a2c40d33b",
+    "config/project-prepare-context.example.json": "b344dd369e3b264e12207d9446406e136f5a6531b2407d8e6cc9ec99aedb67e7",
+    "config/pq-cms-tool.example.json": "66db1b665393fcbe30308eb71b39690e074b1e9d933d26141272b17ffaf97dd2",
+    "config/public-job.example.json": "7b2284594c8c6840abc39cb81eabc878b4cd9bba9b74f34c7a002c4ad09db2ff",
+    "config/private-vault-job.example.json": "e89787767358cf2978af9f175617b02861f19cf95445199ca23b399e0991a50c",
+    "config/java-job.example.json": "dd44baf03aa318e24a5b1b6efa5b8da1dbbe857e60d0f8ccc04e877a2d997fb5",
+    "config/kotlin-job.example.json": "cef519824bf5c902c15f4f6f6025d9aa29aee19bed6955ff42b577f73646e43a",
+    "config/xax-job.example.json": "1e7e8d367ae70176a105948805cbb1c681c9a32bbcdd9f9b5a2c6f470344ea74",
+    "config/clean-recovery.example.json": "1d46a1180d6e194bc1c46ffdded0bb3ceaf6db20f00c72d7fa0c94f095af3e97",
+    "config/clean-recovery-vault.example.json": "114f9fa86d7b498a71d36fe10ad41a12827c4e13adc5cd961e65c772ee331b55",
+    "config/maintenance.example.json": "983edb99996ae6d25f82fa70f77b089e97f06056824d5d7b03314d838e7a22e5",
+    "config/runtime-check.example.json": "f436bed5c4dc038ac204a647273acb96c3d4242a684d410b31706796171ac915",
+    "config/build.example.json": "7ee29550a7efba433b80cc465b4a722913e5419aac1f8f43ebbf85791d7e0138",
+    "tests/test_prepare_scope.py": "c4a42769cf7161466c677f4541cef7094f08d8681e9bebfbb9a85e8ddc236c5a",
+    "tests/test_pq_cms.py": "b17d3cc11d216ec50b4fdd52f4f0420b66f8e1ff956efdc74d64ba1863ff9e4f",
+    "tests/prepare_recovery.py": "1f93f31b6e88b071953ec557046386faffdc9eaac417b346aa4dede98165c7b2",
+    "tests/vm_signed_recovery.py": "bb07065b1f537be34757ed9e37cf3edfb83bf40e4dbb60cab676ce1dbaed77f5"
+  },
+  "native_builds": [
+    {
+      "source_sha256": "728091d77c1cfc810182bc80917cbf06b2435410df697a4a0e082fea4de2c69a",
+      "artifact_sha256": "0b51443087329a5ad335e9b2c0aab824d89daa7f8ef38b29f86da565c6cf75bf",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "optimization": "-O1",
+      "target": "windows-x86_64",
+      "wall_seconds": 0.9314297000018996,
+      "source": "src/cum.bf",
+      "compiled": "PASS",
+      "executed": "PASS",
+      "tested": "PASS"
+    },
+    {
+      "source_sha256": "bc1fa05fa16c5f6580087a15c88249eb75d4bba7ad57f4799bcdb584e3929bcc",
+      "artifact_sha256": "94fa723f11c639e029b05bb1948d22b6d0b81e0e2af57225a66414f8636f7a6b",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "optimization": "-O1",
+      "target": "windows-x86_64",
+      "wall_seconds": 0.14432929999748012,
+      "source": "src/scoped_clean_recovery.bf",
+      "compiled": "PASS",
+      "executed": "PASS",
+      "tested": "PASS"
+    },
+    {
+      "source_sha256": "bc1fa05fa16c5f6580087a15c88249eb75d4bba7ad57f4799bcdb584e3929bcc",
+      "artifact_sha256": "095d3847657a4d57262019fcfe65eda5c87b2849ca119848a987bc1a358fb31a",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "optimization": "-O0",
+      "target": "windows-x86_64",
+      "wall_seconds": 0.21829479999723844,
+      "source": "src/scoped_clean_recovery.bf",
+      "compiled": "PASS",
+      "executed": "PASS",
+      "tested": "PASS"
+    }
+  ],
+  "native_vectors": {
+    "status": "PASS",
+    "cum_O1": 44,
+    "scoped_decoder_O1": 16,
+    "scoped_decoder_O0": 16,
+    "total": 76
+  },
+  "cum_O0": {
+    "status": "BLOCKED",
+    "backend_exit": 5,
+    "pre_change_source_same_rejection": true,
+    "compiler_changed": false
+  },
+  "focused_checks": {
+    "status": "PASS",
+    "methods": 23,
+    "skipped": 0,
+    "wall_seconds": 37.9,
+    "log": "prepare-focused-2026-11-01.txt",
+    "modules": [
+      "test_prepare_scope",
+      "test_crypto",
+      "test_signed_recovery",
+      "test_trusted_inputs",
+      "test_isolated_recovery",
+      "test_runtime_bundle",
+      "test_offline_bootstrap"
+    ],
+    "native_prepare_scope": "Real signatures and planner; unrelated services stubbed; deliberate stop before capture",
+    "scoped_decoder_scope": "Native exact synthetic fixture recovery and wrong-project rejection; not a new VM full-project restore"
+  },
+  "earlier_regression": {
+    "status": "PARTIAL",
+    "methods": 18,
+    "passed": 17,
+    "skipped": 1,
+    "scope": "Workflow/resistance/project identity/runtime/offline checks before final schema guards",
+    "skipped_signed_recovery_later_passed": true
+  },
+  "full_amended_prepare": {
+    "status": "BLOCKED",
+    "reason": "No resistant candidate or complete acceptance evidence; no fabricated passing gate records"
+  },
+  "pq": {
+    "status": "PARTIAL",
+    "production_admitted": false,
+    "helper_source": "host/tools/StandardCms.java",
+    "suite": "ML-KEM-1024 / HKDF-SHA256 / AES-256-Wrap / AES-256-GCM authEnvelopedData",
+    "provider": "Bouncy Castle Java 1.86",
+    "java_sha256": "7148521120f35659dc0b233358a107c67ca7ca92993391519660ee6c80a9df9a",
+    "classpath_sha256": {
+      "bcpkix-jdk18on.jar": "8d8b41a4b149bdae8d331f059a578870954d1e3ff29f8269a9eb3ee19a7e4ef7",
+      "bcprov-jdk18on.jar": "2af190b300cbb0b35e248ccf5f4a06b6072030aeb3da7a98ec73abe5b4cb371f",
+      "bcutil-jdk18on.jar": "1c268e15f785aafb1e4670d8d6e5f856f69475e96c162dadcd1ff9b350e9139f",
+      "standard-cms.jar": "8744297b219d1c8aa80c445cc77a5649012c5fde854c9a8aca91ffdbbcf298d6"
+    },
+    "dependency_publisher_signatures": {
+      "status": "PASS",
+      "publisher_key_source": "Official Bouncy Castle HTTPS download page key link",
+      "publisher_key_sha256": "83f4a7e72c153de0bc37c151ab4e0437190a33ad73e7bbccdac6026d330704a0",
+      "gpg_sha256": "14953ed8b4549020e185c0f7ab600bb9d0384457ea74da9d574e8d31139aff4f",
+      "records": [
+        {
+          "artifact": "bcprov-jdk18on",
+          "exit": 0,
+          "status": "PASS",
+          "valid_signature": [
+            "[GNUPG:] VALIDSIG 7B121B76A7ED6CE6E60AD51784E913A8E3A748C0 2026-09-11 1789093152 0 4 0 1 10 00 7B121B76A7ED6CE6E60AD51784E913A8E3A748C0"
+          ]
+        },
+        {
+          "artifact": "bcpkix-jdk18on",
+          "exit": 0,
+          "status": "PASS",
+          "valid_signature": [
+            "[GNUPG:] VALIDSIG 7B121B76A7ED6CE6E60AD51784E913A8E3A748C0 2026-09-11 1789093155 0 4 0 1 10 00 7B121B76A7ED6CE6E60AD51784E913A8E3A748C0"
+          ]
+        },
+        {
+          "artifact": "bcutil-jdk18on",
+          "exit": 0,
+          "status": "PASS",
+          "valid_signature": [
+            "[GNUPG:] VALIDSIG 7B121B76A7ED6CE6E60AD51784E913A8E3A748C0 2026-09-11 1789093154 0 4 0 1 10 00 7B121B76A7ED6CE6E60AD51784E913A8E3A748C0"
+          ]
+        }
+      ],
+      "trust_scope": "Publisher key fetched separately from official HTTPS site; isolated public-key GPG home; no user trust database changed.",
+      "prior_attempt": "BLOCKED by Git MSYS path interpretation; corrected to /d paths"
+    },
+    "test": {
+      "status": "PASS",
+      "methods": 1,
+      "wall_seconds": 18.248,
+      "log": "pq-cms-2026-11-01.txt",
+      "checks": [
+        "Empty and binary inputs",
+        "OpenSSL-generated key/certificate interchange",
+        "Wrong key rejection",
+        "Corrupt and truncated messages rejected without output",
+        "Existing output retained"
+      ]
+    },
+    "retained_real_archive": {
+      "archive_bytes": 2682880,
+      "scope_files": 97,
+      "scope_entries": 125,
+      "plaintext_byte_exact": true,
+      "captured_scope_exact": true,
+      "same_backend_recovery": "PASS",
+      "key_role": "Disposable experiment, not accepted project identity",
+      "receipts": [
+        {
+          "operation": "encrypt",
+          "resources": {
+            "kernel_cpu_seconds": 0.546875,
+            "page_faults": 54113,
+            "peak_pagefile_bytes": 412594176,
+            "peak_working_set_bytes": 174530560,
+            "scope": "selected process only; excludes descendants",
+            "status": "PASS",
+            "user_cpu_seconds": 3.09375
+          },
+          "status": "PASS",
+          "wall_seconds": 1.5000061000027927
+        },
+        {
+          "operation": "decrypt",
+          "resources": {
+            "kernel_cpu_seconds": 0.59375,
+            "page_faults": 52896,
+            "peak_pagefile_bytes": 413777920,
+            "peak_working_set_bytes": 169476096,
+            "scope": "selected process only; excludes descendants",
+            "status": "PASS",
+            "user_cpu_seconds": 3.234375
+          },
+          "status": "PASS",
+          "wall_seconds": 1.662660699992557
+        }
+      ]
+    },
+    "independent_full_cms_interoperability": {
+      "status": "BLOCKED",
+      "openssl": "Both installed 3.5.9 CMS paths reject KEM recipients; primitive/key support is narrower",
+      "csharp": "2.7 CMS dispatcher source inspection found no KEM handler; no C# execution claimed"
+    },
+    "limits": [
+      "Content buffering; large-archive scale unaccepted",
+      "Disposable experiment identity only",
+      "No quantum-safe signature claim",
+      "Classical prepare remains the only admitted recipient scheme"
+    ]
+  },
+  "ai_resistance": {
+    "status": "FAIL",
+    "scope": "Known attacked variants, unchanged fixture identities",
+    "representative_replacement_candidate": "NOT STARTED",
+    "new_external_trial": "NOT STARTED",
+    "reason": "Independent attack already recovered the arithmetic; nine real BF components and XAX host are outside that pass domain",
+    "ai_cost_accounting": "Owner-waived; matched extraction/reimplementation outcomes still required"
+  },
+  "android": {
+    "status": "PARTIAL",
+    "device": {
+      "status": "PASS",
+      "authorized_devices": 1,
+      "model": "Pixel 8 Pro",
+      "sdk": 37,
+      "abi": "arm64-v8a"
+    },
+    "adb_sha256": "b4a6b455702684652cccf7b46258b29e653538904359a58fd4931cf3ef286b3f",
+    "local_inventory": {
+      "apks": 89,
+      "retained_protected_libraries": 9,
+      "max_matching_retained_libraries": 0
+    },
+    "installed_module": {
+      "present": true,
+      "native_libraries": 11,
+      "matching_retained_protected_libraries": 0,
+      "classification_limit": "Does not classify other/rebuilt payloads as unprotected"
+    },
+    "joint_jni": {
+      "status": "PASS",
+      "libraries": 9,
+      "comparisons": 196,
+      "record": "joint-protected-jni-2026-11-01.json"
+    },
+    "independent_source_build": {
+      "status": "BLOCKED",
+      "prior_timeouts_seconds": [
+        900,
+        600
+      ],
+      "whpx_probe": {
+        "format": "HOST-ACCELERATION-PROBE",
+        "status": "BLOCKED",
+        "qemu_sha256": "47d57a6072e0bb3bd98f87926eb129eb1736dfe818c67b3b81ef7ce4edd0b3cd",
+        "exit": 1,
+        "stdout": "",
+        "stderr": "qemu-system-x86_64.exe: -accel whpx: WHPX: No accelerator found, hr=00000000\r\nqemu-system-x86_64.exe: -accel whpx: failed to initialize whpx: No space left on device\r\n",
+        "guest_workload": "None; paused machine, no disk, no NIC or host shares",
+        "host_configuration_changed": false
+      },
+      "new_full_apk_build": "NOT STARTED"
+    },
+    "protected_apk_signed_installed_accepted": false,
+    "licensing_preferred_source_approval": "BLOCKED",
+    "production_performance_acceptance": "NOT STARTED",
+    "installed_or_uninstalled": false,
+    "app_data_changed": false
+  },
+  "retained_initial_failures": [
+    "CUM O0 backend rejection; exact pre-change source rejected identically",
+    "Initial Git/MSYS GPG path failure; corrected to /d paths and three publisher signatures passed",
+    "Intermediate javac duplicate variable; stale-class test excluded; separate corrected compilation and packaging preceded final PASS",
+    "Initial signed-recovery opt-in skip; later enabled and passed",
+    "Initial JNI runner intermediate-source mismatch rejected locally; corrected exact compiled candidate inputs passed"
+  ],
+  "different_host_recovery": {
+    "status": "NOT STARTED",
+    "reason": "Owner-deferred"
+  },
+  "independent_media_key_backup": "NOT STARTED",
+  "private_records_retained": true,
+  "original_or_reference_modified": false,
+  "pushed_or_published": false
+}

@@ -572,6 +572,11 @@
           "source": "D:/GitHub/CUM/build/clean_recovery.exe",
           "path": "clean_recovery.exe",
           "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+        },
+        {
+          "source": "D:/GitHub/CUM/build/scoped_clean_recovery.exe",
+          "path": "scoped_clean_recovery.exe",
+          "sha256": "REPLACE_WITH_VERIFIED_SHA256"
         }
       ],
       "note": "Complete independently inventoried compatible distributions, including shared libraries and stdlib; never use system private CUM modules as a fallback",
@@ -737,6 +742,97 @@
       "facts_per_record": 512,
       "predicate_input_capacity": "REPLACE_WITH_VERIFIED_PER_PROCESS_BYTE_BUDGET",
       "report": "D:/GitHub/CUM/private/maintenance/REPLACE_OPERATION/publication-history-audit.json"
+    },
+    "46": {
+      "source": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+      "fields": {
+        "protection_contract": "CUM-RESISTANCE-GATE",
+        "recovery_contract": "PROJECT-SCOPED-CMS-RECOVERY"
+      }
+    },
+    "47": {
+      "worker": {
+        "executable": "D:/GitHub/CUM/build/resistance_policy.exe",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "input_fields": [
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "profile"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "claims_ai_resistance"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "baseline"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "predeclared"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "scope_bound"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "matched_arms"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "isolated"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "evaluator_verified"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "heldout_local"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "metrics_complete"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "thresholds_met"
+          ]
+        },
+        {
+          "file": "D:/GitHub/CUM/releases/REPLACE_OPERATION/release.json",
+          "fields": [
+            "upload_authorized"
+          ]
+        }
+      ],
+      "input_bytes": 12,
+      "expected_hex": "01",
+      "timeout_seconds": 60,
+      "max_output_bytes": 16
     }
   },
   "planner_input_bytes": 2

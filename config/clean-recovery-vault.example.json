@@ -1,6 +1,6 @@
 {
   "planner": {
-    "executable": "/runtime/clean_recovery.exe",
+    "executable": "/runtime/scoped_clean_recovery.exe",
     "sha256": "REPLACE_WITH_VERIFIED_SHA256"
   },
   "planner_input_bytes": 2,
@@ -26,14 +26,19 @@
       "binding_record": "/release/release.json",
       "files": {
         "protected_inventory": "/release/inventory.json",
-        "recovery_capsule": "/vault/capsule.cms"
+        "recovery_capsule": "/vault/capsule.cms",
+        "project_identity": "/release/recovery-identity.json",
+        "recipient_certificate": "/release/recovery-recipient.cert.pem"
       },
       "expected_fields": {
         "format": "SIGNED-PROTECTED-TREE-CMS",
         "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
         "signature_format": "ED25519-RAW",
         "release_identity": "REPLACE_OPERATION",
-        "recovery_mode": "private-vault"
+        "recovery_mode": "private-vault",
+        "project_id": "REPLACE_PROJECT",
+        "recovery_contract": "PROJECT-SCOPED-CMS-RECOVERY",
+        "post_quantum": false
       }
     },
     "3": {
@@ -47,7 +52,7 @@
       "source": "/vault/capsule.cms",
       "destination": "/tmp/originals.tar",
       "identity": "/identity/recovery.key.pem",
-      "certificate": "/identity/recovery.cert.pem"
+      "certificate": "/release/recovery-recipient.cert.pem"
     },
     "4": {
       "source": "/tmp/originals.tar",
@@ -75,6 +80,55 @@
         "release_manifest": "/release/release.json",
         "recovered_archive": "/result/recovered.tar",
         "recovered_scope": "/result/scope.json"
+      }
+    },
+    "7": {
+      "openssl": {
+        "executable": "/runtime/openssl/bin/openssl",
+        "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+      },
+      "public_key": "/trust/signer.pub.pem",
+      "trusted_spki_sha256": "REPLACE_WITH_INDEPENDENT_SIGNER_SPKI_SHA256",
+      "timeout_seconds": 60,
+      "max_log_bytes": 1048576,
+      "source": "/release/recovery-identity.json",
+      "signature": "/release/recovery-identity.sig"
+    },
+    "8": {
+      "source": "/release/recovery-identity.json",
+      "fields": {
+        "format": "PROJECT-RECOVERY-IDENTITY",
+        "project_id": "REPLACE_PROJECT",
+        "recipient_scheme": "CLASSICAL-CMS-RSA-3072",
+        "post_quantum": false
+      },
+      "digest_fields": {
+        "certificate": "/release/recovery-recipient.cert.pem",
+        "spki": "/release/recovery-recipient.spki.der"
+      },
+      "exact_keys": [
+        "format",
+        "project_id",
+        "recipient_scheme",
+        "post_quantum",
+        "digests"
+      ],
+      "exact_digest_keys": [
+        "certificate",
+        "spki"
+      ]
+    },
+    "9": {
+      "source": "/release/release.json",
+      "fields": {
+        "project_id": "REPLACE_PROJECT",
+        "release_identity": "REPLACE_OPERATION",
+        "recovery_contract": "PROJECT-SCOPED-CMS-RECOVERY",
+        "post_quantum": false
+      },
+      "digest_fields": {
+        "project_identity": "/release/recovery-identity.json",
+        "recipient_certificate": "/release/recovery-recipient.cert.pem"
       }
     }
   },

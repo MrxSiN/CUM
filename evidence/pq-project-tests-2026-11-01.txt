@@ -1,0 +1,20 @@
+test_bf_plan_rejects_unknown_commands_and_requires_compatibility_before_keys (tests.test_pq_project.PqProjectContractTests.test_bf_plan_rejects_unknown_commands_and_requires_compatibility_before_keys) ... ok
+test_changed_crypto_runtime_input_refuses_before_process_and_cleans_pending (tests.test_pq_project.PqProjectContractTests.test_changed_crypto_runtime_input_refuses_before_process_and_cleans_pending) ... ok
+test_examples_bind_pq_suite_runtime_pins_and_signed_context_without_changing_classical (tests.test_pq_project.PqProjectContractTests.test_examples_bind_pq_suite_runtime_pins_and_signed_context_without_changing_classical) ... ok
+test_native_identity_and_signed_recovery_with_independent_decryption (tests.test_pq_project.PqProjectNativeTests.test_native_identity_and_signed_recovery_with_independent_decryption) ... ok
+test_corrupt_envelope (tests.test_crypto.CryptoTests.test_corrupt_envelope) ... ok
+test_exact_and_wrong_key (tests.test_crypto.CryptoTests.test_exact_and_wrong_key) ... ok
+test_non_authenticated_format (tests.test_crypto.CryptoTests.test_non_authenticated_format) ... ok
+test_signatures_and_independent_anchor (tests.test_crypto.CryptoTests.test_signatures_and_independent_anchor) ... ok
+test_signed_dynamic_isolation_policy_and_tampering (tests.test_crypto.CryptoTests.test_signed_dynamic_isolation_policy_and_tampering) ... ok
+test_disjoint_storage_refuses_equal_or_nested_roots (tests.test_project_identity.ProjectIdentityTests.test_disjoint_storage_refuses_equal_or_nested_roots) ... ok
+test_examples_have_all_operands_and_separate_context_checks (tests.test_project_identity.ProjectIdentityTests.test_examples_have_all_operands_and_separate_context_checks) ... ok
+test_native_plan_contract_reference_and_invalid_requests (tests.test_project_identity.ProjectIdentityTests.test_native_plan_contract_reference_and_invalid_requests) ... ok
+test_project_identity_fresh_envelopes_recipients_and_context_rejection (tests.test_project_identity.ProjectRecoveryNativeTests.test_project_identity_fresh_envelopes_recipients_and_context_rejection) ... ok
+test_changed_reviewer_script_is_rejected_before_execution (tests.test_trusted_inputs.TrustedInputTests.test_changed_reviewer_script_is_rejected_before_execution) ... ok
+test_observed_stdin_cursor_is_physical_and_binary_safe (tests.test_trusted_inputs.TrustedInputTests.test_observed_stdin_cursor_is_physical_and_binary_safe) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 19.722s
+
+OK

@@ -1,0 +1,781 @@
+{
+  "analysis": {
+    "options": {
+      "max_degree": 64,
+      "max_operations": 1000000,
+      "max_terms": 1024,
+      "verified_workspace_cells": 6
+    },
+    "reason": "Independent source-only attack recovers identical ordered I/O formulas",
+    "records": [
+      {
+        "grading_cases": 65809,
+        "grading_oracle": "Independent reference execution of public baseline BF",
+        "projection": {
+          "events": [
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ]
+              ]
+            ],
+            [
+              "read",
+              0
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  255
+                ],
+                [
+                  [
+                    "input_0"
+                  ],
+                  1
+                ]
+              ]
+            ],
+            [
+              "read",
+              1
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ],
+                [
+                  [
+                    "input_1"
+                  ],
+                  1
+                ]
+              ]
+            ]
+          ],
+          "final_cells": {
+            "0": [
+              [
+                [],
+                1
+              ],
+              [
+                [
+                  "input_1"
+                ],
+                1
+              ]
+            ]
+          },
+          "final_pointer": 0,
+          "format": "WRAPPING-BYTE-OBSERVABLE-PROJECTION",
+          "operations": 22,
+          "reads": 2,
+          "scope": "Zero-initialized wrapping 8-bit cells, EOF-zero reads, declared verified workspace; only fully summarized finite operations.",
+          "status": "PASS"
+        },
+        "reconstruction_sha256": "7c6259aa7235708731fc304baf33537343f1e4b16451402363a7f05da1f4981c",
+        "source": "baseline",
+        "source_sha256": "cba332a168a7ff4b0271b71faf3c515a7400c47fe37aa7de62ad65dcd42aa0ca"
+      },
+      {
+        "grading_cases": 65809,
+        "grading_oracle": "Independent reference execution of public baseline BF",
+        "projection": {
+          "events": [
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ]
+              ]
+            ],
+            [
+              "read",
+              0
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  255
+                ],
+                [
+                  [
+                    "input_0"
+                  ],
+                  1
+                ]
+              ]
+            ],
+            [
+              "read",
+              1
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ],
+                [
+                  [
+                    "input_1"
+                  ],
+                  1
+                ]
+              ]
+            ]
+          ],
+          "final_cells": {
+            "0": [
+              [
+                [],
+                1
+              ],
+              [
+                [
+                  "input_1"
+                ],
+                1
+              ]
+            ]
+          },
+          "final_pointer": 0,
+          "format": "WRAPPING-BYTE-OBSERVABLE-PROJECTION",
+          "operations": 3630,
+          "reads": 2,
+          "scope": "Zero-initialized wrapping 8-bit cells, EOF-zero reads, declared verified workspace; only fully summarized finite operations.",
+          "status": "PASS"
+        },
+        "reconstruction_sha256": "7c6259aa7235708731fc304baf33537343f1e4b16451402363a7f05da1f4981c",
+        "source": "A17",
+        "source_sha256": "0094bddc6f2150c8c1430271e7dd7ba70ea0ddf4386a050f90f7035cc8cd368f"
+      },
+      {
+        "grading_cases": 65809,
+        "grading_oracle": "Independent reference execution of public baseline BF",
+        "projection": {
+          "events": [
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ]
+              ]
+            ],
+            [
+              "read",
+              0
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  255
+                ],
+                [
+                  [
+                    "input_0"
+                  ],
+                  1
+                ]
+              ]
+            ],
+            [
+              "read",
+              1
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ],
+                [
+                  [
+                    "input_1"
+                  ],
+                  1
+                ]
+              ]
+            ]
+          ],
+          "final_cells": {
+            "0": [
+              [
+                [],
+                1
+              ],
+              [
+                [
+                  "input_1"
+                ],
+                1
+              ]
+            ]
+          },
+          "final_pointer": 0,
+          "format": "WRAPPING-BYTE-OBSERVABLE-PROJECTION",
+          "operations": 7402,
+          "reads": 2,
+          "scope": "Zero-initialized wrapping 8-bit cells, EOF-zero reads, declared verified workspace; only fully summarized finite operations.",
+          "status": "PASS"
+        },
+        "reconstruction_sha256": "7c6259aa7235708731fc304baf33537343f1e4b16451402363a7f05da1f4981c",
+        "source": "A255",
+        "source_sha256": "0a28a61ac87e9c0163d0ce0e32b6cfd95fddd76ab16cecc7cf5ee97cef3f6c7a"
+      }
+    ],
+    "status": "FAIL"
+  },
+  "different_host_recovery": "OWNER DEFERRED",
+  "draft_completed_before_execution": true,
+  "format": "RESISTANCE-READINESS-AUDIT",
+  "integrated_protected_apk": "NOT VERIFIED",
+  "native_normalization_rejections": [
+    {
+      "bbc_o1_bfx_difference_checked": true,
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "error": "NORMALIZATION",
+      "report_sha256": "531f180c8b88e9879e80ef3b2eddf4a9319b32436d640c0ce07d071e75d4b628",
+      "status": "FAIL",
+      "variant": "A17"
+    },
+    {
+      "bbc_o1_bfx_difference_checked": true,
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "error": "NORMALIZATION",
+      "report_sha256": "0293cf80d5adbd9bdb177170d05a54fc4c7b8ad41e2d26ad88fe482227144879",
+      "status": "FAIL",
+      "variant": "A255"
+    }
+  ],
+  "native_resistance_gate": {
+    "input_hex": "020100000000000000000200",
+    "output_hex": "02",
+    "scope": "Known failed criterion, remaining facts unknown",
+    "worker_sha256": "ef9c1c73e6ccb1c6a382e8c3af9f5eb2b04ead29a7a06b93c03613402b0da211"
+  },
+  "outside_ai": "Not run; deterministic reconstruction already rejects these variants",
+  "production_accepted": false,
+  "real_target": {
+    "candidate_supported_components": 0,
+    "components": 9,
+    "current_raw_sources_match": true,
+    "filtered_sources_match": true,
+    "multi_cell_components": 9,
+    "pointer_rejections": [
+      {
+        "instruction": "<",
+        "response_hex": "b20100000000000000000000000000000003"
+      },
+      {
+        "instruction": ">",
+        "response_hex": "b20100000000000000000000000000000003"
+      }
+    ],
+    "worker_sha256": "da58f284866275b295fadf92613f3392ce6451e423d08289aaab7cd37b3ffd1c"
+  },
+  "date": "2026-10-31",
+  "engineering_status": "PARTIAL",
+  "resistance_status": "FAIL within tested public arithmetic scope",
+  "source_written": true,
+  "new_production_transformation": false,
+  "current_check_source_sha256": {
+    "tests/tools/symbolic.py": "b027e940a3cc443c619347dee1f94aaede59fdc7fac98302026634c72517fcff",
+    "tests/native_checks.py": "d515bd188ba00f4626e38ed930dcb47da3a8fa88b07128574628705bbad5e5f9",
+    "tests/test_symbolic_analysis.py": "39c5cbd40987fafe965377c58d21dc669fd3efd3245e5f94b7dc48e61119ece1",
+    "tests/test_qemu_native.py": "d91781080c64f899d4ceaa53539678de5d7ba6260c00a16de6b8a2e94035a167",
+    "tests/vm_native_check.py": "7ff1fdc8a9804abc67de89e9de913b4383bfd484bb39d54b5c5f0ca6073ed8eb",
+    "config/native-check.example.json": "a863eb05f96871dc5f640bbfbe197604a866179e230444ccccca5b4fe2746ed4"
+  },
+  "example_budget_policy": {
+    "artifact_sha256": "b56f4b37c70f90a7ab0f22bde1c3a2f17eaa65716c0b2c2c64cf967b60785594",
+    "build_wall_seconds": 0.3929340999966371,
+    "ceiling": 32,
+    "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+    "format": "EXAMPLE-POLICY-REPLAY",
+    "meaning": "All three known excessive ratios rejected",
+    "measurements_repeated": false,
+    "previous_measurements_sha256": "1643bc25be291b018f6791d1ca5ea86a066bde391fac03f382e3cef96a5c4380",
+    "production_budget_approved": false,
+    "results": [
+      {
+        "error": "BUDGET",
+        "selector": 0,
+        "source_expansion_ratio": 195.6,
+        "status": "FAIL"
+      },
+      {
+        "error": "BUDGET",
+        "selector": 17,
+        "source_expansion_ratio": 202.4,
+        "status": "FAIL"
+      },
+      {
+        "error": "BUDGET",
+        "selector": 255,
+        "source_expansion_ratio": 297.6,
+        "status": "FAIL"
+      }
+    ],
+    "source_sha256": "942ba06327f282e4f6013149bc1c5f895fa97a18338c313cbf6a45ef4704ecd7",
+    "status": "PASS"
+  },
+  "isolated_native_fixture": {
+    "format": "ISOLATED-NATIVE-FIXTURE-CHECKS",
+    "guest_wall_seconds": 724.109266,
+    "identity_mounts": [],
+    "image_sha256": "e6dbfd61712e1360235f2cf51504242385461363ec26d0af20cade76a9b31434",
+    "network_interfaces": [
+      "lo"
+    ],
+    "reports": {
+      "behavior": {
+        "case": "behavior",
+        "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+        "execution_environment": "emulation",
+        "format": "INDEPENDENT-NATIVE-CHECK",
+        "metrics": {
+          "max_binary_bytes": 11264,
+          "max_runtime_seconds": null,
+          "source_expansion_ratio": null
+        },
+        "results": [
+          {
+            "binary_bytes": 7680,
+            "compile_wall_seconds": 146.3493739,
+            "optimization": "-O0",
+            "path": "input.bf",
+            "side": "original"
+          },
+          {
+            "binary_bytes": 9216,
+            "compile_wall_seconds": 30.054169400000035,
+            "optimization": "-O0",
+            "path": "input.bf",
+            "side": "protected"
+          },
+          {
+            "binary_bytes": 7680,
+            "compile_wall_seconds": 20.849120099999993,
+            "optimization": "-O1",
+            "path": "input.bf",
+            "side": "original"
+          },
+          {
+            "binary_bytes": 9216,
+            "compile_wall_seconds": 21.90873830000004,
+            "optimization": "-O1",
+            "path": "input.bf",
+            "side": "protected"
+          },
+          {
+            "binary_bytes": 7680,
+            "compile_wall_seconds": 6.699248099999977,
+            "optimization": "-O0",
+            "path": "loop.bf",
+            "side": "original"
+          },
+          {
+            "binary_bytes": 10752,
+            "compile_wall_seconds": 23.25145759999998,
+            "optimization": "-O0",
+            "path": "loop.bf",
+            "side": "protected"
+          },
+          {
+            "binary_bytes": 8192,
+            "compile_wall_seconds": 21.584172199999898,
+            "optimization": "-O1",
+            "path": "loop.bf",
+            "side": "original"
+          },
+          {
+            "binary_bytes": 11264,
+            "compile_wall_seconds": 24.22772889999999,
+            "optimization": "-O1",
+            "path": "loop.bf",
+            "side": "protected"
+          }
+        ],
+        "runtime_observations": [
+          {
+            "input_hex": "",
+            "optimization": "-O0",
+            "output_hex": "0100",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              0,
+              0
+            ]
+          },
+          {
+            "input_hex": "00",
+            "optimization": "-O0",
+            "output_hex": "0100",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "01",
+            "optimization": "-O0",
+            "output_hex": "0200",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "ff00",
+            "optimization": "-O0",
+            "output_hex": "0000",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              2,
+              2
+            ]
+          },
+          {
+            "input_hex": "",
+            "optimization": "-O1",
+            "output_hex": "0100",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              0,
+              0
+            ]
+          },
+          {
+            "input_hex": "00",
+            "optimization": "-O1",
+            "output_hex": "0100",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "01",
+            "optimization": "-O1",
+            "output_hex": "0200",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "ff00",
+            "optimization": "-O1",
+            "output_hex": "0000",
+            "path": "input.bf",
+            "stdin_file_offsets": [
+              2,
+              2
+            ]
+          },
+          {
+            "input_hex": "",
+            "optimization": "-O0",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              0,
+              0
+            ]
+          },
+          {
+            "input_hex": "00",
+            "optimization": "-O0",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "01",
+            "optimization": "-O0",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "ff00",
+            "optimization": "-O0",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              2,
+              2
+            ]
+          },
+          {
+            "input_hex": "",
+            "optimization": "-O1",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              0,
+              0
+            ]
+          },
+          {
+            "input_hex": "00",
+            "optimization": "-O1",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "01",
+            "optimization": "-O1",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              1,
+              1
+            ]
+          },
+          {
+            "input_hex": "ff00",
+            "optimization": "-O1",
+            "output_hex": "030201",
+            "path": "loop.bf",
+            "stdin_file_offsets": [
+              2,
+              2
+            ]
+          }
+        ],
+        "status": "PASS"
+      },
+      "boundary": {
+        "case": "boundary",
+        "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+        "execution_environment": "emulation",
+        "format": "INDEPENDENT-NATIVE-CHECK",
+        "metrics": {
+          "max_binary_bytes": null,
+          "max_runtime_seconds": null,
+          "source_expansion_ratio": null
+        },
+        "results": [
+          {
+            "input_bytes": 0,
+            "status": "PASS",
+            "worker": "echo"
+          },
+          {
+            "input_bytes": 1,
+            "status": "PASS",
+            "worker": "echo"
+          },
+          {
+            "input_bytes": 3,
+            "status": "PASS",
+            "worker": "echo"
+          },
+          {
+            "input_bytes": 256,
+            "status": "PASS",
+            "worker": "echo"
+          },
+          {
+            "input_bytes": 0,
+            "status": "PASS",
+            "worker": "fixed"
+          },
+          {
+            "input_bytes": 1,
+            "status": "PASS",
+            "worker": "fixed"
+          },
+          {
+            "input_bytes": 3,
+            "status": "PASS",
+            "worker": "fixed"
+          },
+          {
+            "input_bytes": 256,
+            "status": "PASS",
+            "worker": "fixed"
+          },
+          {
+            "input_bytes": 0,
+            "status": "PASS",
+            "worker": "transform"
+          },
+          {
+            "input_bytes": 7,
+            "status": "PASS",
+            "worker": "transform"
+          },
+          {
+            "input_bytes": 6,
+            "status": "PASS",
+            "worker": "transform"
+          }
+        ],
+        "runtime_observations": [],
+        "status": "PASS"
+      },
+      "normalization": {
+        "case": "normalization",
+        "format": "INDEPENDENT-NATIVE-CHECK",
+        "normalization_contract": "BF-POLYNOMIAL-OBSERVABLE",
+        "original_projection": {
+          "events": [
+            [
+              "read",
+              0
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ],
+                [
+                  [
+                    "input_0"
+                  ],
+                  1
+                ]
+              ]
+            ],
+            [
+              "write",
+              []
+            ]
+          ],
+          "final_cells": {},
+          "final_pointer": 0,
+          "format": "WRAPPING-BYTE-OBSERVABLE-PROJECTION",
+          "operations": 14,
+          "reads": 1,
+          "scope": "Zero-initialized wrapping 8-bit cells, EOF-zero reads, declared verified workspace; only fully summarized finite operations.",
+          "status": "PASS"
+        },
+        "protected_projection": {
+          "events": [
+            [
+              "read",
+              0
+            ],
+            [
+              "write",
+              [
+                [
+                  [],
+                  1
+                ],
+                [
+                  [
+                    "input_0"
+                  ],
+                  1
+                ]
+              ]
+            ],
+            [
+              "write",
+              []
+            ]
+          ],
+          "final_cells": {},
+          "final_pointer": 0,
+          "format": "WRAPPING-BYTE-OBSERVABLE-PROJECTION",
+          "operations": 85,
+          "reads": 1,
+          "scope": "Zero-initialized wrapping 8-bit cells, EOF-zero reads, declared verified workspace; only fully summarized finite operations.",
+          "status": "PASS"
+        },
+        "reason": "Independent data-flow analysis recovered the same I/O formulas",
+        "same_io_projection": true,
+        "source_digests": {
+          "original": "2d51bd6128312882557dc353672b826abd7e61b72d176c22b46bfa65395de79a",
+          "protected": "82031e6524a192ada72724a530137f4669ea0d078b26f1ac7fb7fbd2c63be8fe"
+        },
+        "status": "FAIL"
+      }
+    },
+    "status": "PASS",
+    "uid": 1000,
+    "wall_seconds": 948.9069999999992
+  },
+  "isolated_snapshot_scope": "Copied before the final unequal-projection BLOCKED branch was added. Equal-projection rejection and analyzer were executed in the VM; final unequal-branch enforcement is locally tested, not rerun there.",
+  "tests": {
+    "focused": {
+      "methods": 9,
+      "status": "PASS",
+      "log": "evidence/symbolic-analysis-2026-10-31.txt"
+    },
+    "affected_initial": {
+      "methods": 20,
+      "passed": 17,
+      "errors": 1,
+      "skipped": 2,
+      "reason": "CUM_SHARE_BBC omitted from invocation; crypto opt-ins disabled",
+      "log": "evidence/readiness-regression-2026-10-31.txt"
+    },
+    "affected_completion": {
+      "methods": 3,
+      "status": "PASS",
+      "log": "evidence/readiness-regression-completion-2026-10-31.txt"
+    },
+    "isolated": {
+      "methods": 1,
+      "status": "PASS",
+      "log": "evidence/readiness-vm-2026-10-31.txt"
+    },
+    "unique_completed_methods": 30,
+    "initial_focused_failure": {
+      "failed_methods": 1,
+      "reason": "Overly restrictive negative fixture; supported terminating loop. Fixture corrected, no analyzer correction needed.",
+      "retained_privately": true
+    }
+  },
+  "no_bf_release_admission_path": true,
+  "constraints": {
+    "ai_cost_accounting": "OWNER WAIVED",
+    "real_project_budgets": "NOT APPROVED",
+    "application_performance": "NOT ACCEPTED",
+    "licensing_and_preferred_source": "NOT CLOSED",
+    "device_verification_of_new_candidate": "NOT RUN",
+    "signed_release": "NOT RUN",
+    "publication": "NOT PERFORMED"
+  },
+  "disclosure": "Only public synthetic-fixture source identities and aggregate real-target facts; no original-project bytes, per-original hashes, jobs, credentials or device identifiers."
+}

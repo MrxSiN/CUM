@@ -1,0 +1,32 @@
+{
+  "tool": {
+    "executable": "REPLACE_WITH_PINNED_JAVA_EXECUTABLE",
+    "sha256": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "argv": [
+    "-Xmx256m",
+    "-cp",
+    "REPLACE_STANDARD_CMS_JAR;REPLACE_BCPROV_JAR;REPLACE_BCPKIX_JAR;REPLACE_BCUTIL_JAR",
+    "StandardCms",
+    "encrypt",
+    "REPLACE_WITH_MLKEM1024_CERTIFICATE",
+    "REPLACE_WITH_PRIVATE_INPUT",
+    "REPLACE_WITH_NEW_PRIVATE_OUTPUT"
+  ],
+  "inputs_sha256": {
+    "REPLACE_STANDARD_CMS_JAR": "REPLACE_WITH_VERIFIED_SHA256",
+    "REPLACE_BCPROV_JAR": "REPLACE_WITH_VERIFIED_SHA256",
+    "REPLACE_BCPKIX_JAR": "REPLACE_WITH_VERIFIED_SHA256",
+    "REPLACE_BCUTIL_JAR": "REPLACE_WITH_VERIFIED_SHA256"
+  },
+  "clear_environment_prefixes": [
+    "JAVA_TOOL_OPTIONS",
+    "JDK_JAVA_OPTIONS",
+    "_JAVA_OPTIONS",
+    "CLASSPATH"
+  ],
+  "timeout_seconds": 120,
+  "max_output_bytes": 1048576,
+  "expected_stdout_hex": "",
+  "report": "REPLACE_WITH_PRIVATE_CRYPTO_RECEIPT"
+}

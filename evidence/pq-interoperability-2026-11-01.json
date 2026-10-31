@@ -1,0 +1,60 @@
+{
+  "format": "CMS-INTEROPERABILITY-EVIDENCE",
+  "status": "PASS",
+  "date": "2026-11-01",
+  "recipient_scheme": "CMS-ML-KEM-1024-HKDF-SHA256-AES256-WRAP",
+  "content_cipher": "AES-256-GCM",
+  "container": "CMS authEnvelopedData DER",
+  "digests": {
+    "openssl_executable": "293276fdf436b889044ff167eb6dbd9d7629910864fb5e32f22dd1892435422a",
+    "libcrypto": "97308feea369b305e562c0098638a1b02a06f52ee9fcc4b8cf3da362ff563cf4",
+    "libssl": "8b71cd694f8edfbddc76674111278db6bcdcde0dcd63b99238420193848e6dbf",
+    "java_helper": "8744297b219d1c8aa80c445cc77a5649012c5fde854c9a8aca91ffdbbcf298d6",
+    "bcprov-jdk18on": "2af190b300cbb0b35e248ccf5f4a06b6072030aeb3da7a98ec73abe5b4cb371f",
+    "bcpkix-jdk18on": "8d8b41a4b149bdae8d331f059a578870954d1e3ff29f8269a9eb3ee19a7e4ef7",
+    "bcutil-jdk18on": "1c268e15f785aafb1e4670d8d6e5f856f69475e96c162dadcd1ff9b350e9139f"
+  },
+  "openssl_version": "3.6.5",
+  "bouncy_castle_java": "1.86",
+  "package_provenance": {
+    "url": "https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-openssl-3.6.5-1-any.pkg.tar.zst",
+    "sha256": "773e021ebad83f14b5c103db467411e8ff064663e1c7e7f730e2be72f4117064",
+    "detached_signature": "PASS",
+    "signer_fingerprint": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+    "preinstalled_public_keyring_sha256": "79cc43bd8b8a4e8c952340adc0ae93d3ff8e50c40f244321cf58fa014282f4ea",
+    "global_install_changed": false
+  },
+  "directions": [
+    "BC encrypt / OpenSSL decrypt",
+    "OpenSSL encrypt / BC decrypt"
+  ],
+  "payload_bytes": [
+    0,
+    259,
+    1048576
+  ],
+  "checks": [
+    "Two independent CMS implementations",
+    "Empty/binary/1 MiB content",
+    "Fresh ciphertexts differ",
+    "Wrong key, corrupt and truncated rejection without plaintext destination",
+    "Two ML-KEM-1024 recipients",
+    "Existing destination preserved",
+    "Java rejects AES128 GCM and ML-KEM-768"
+  ],
+  "test_methods": 4,
+  "skipped": 0,
+  "log": "pq-interoperability-2026-11-01.txt",
+  "implementation_sha256": {
+    "tests/test_pq_cms.py": "0f4f328c0f232bd6f763e14234256078f33204b113d21fb1521f3af85504405e",
+    "tests/test_pq_interop.py": "07c8ab413d4260851eceadd706957eae783c7efe44ccb3224481076f31de3e14",
+    "host/tools/StandardCms.java": "42443a21c90ce066b11ee82999accc2292ef484f5c1ddbe72f8e55cf3cb380bc"
+  },
+  "initial_attempts": [
+    "gpgv rejected ASCII-armored installed keyring; dearmored copy verified successfully",
+    "Initial receipt reported 258 for the actual 259-byte fixture; corrected from actual input lengths, all four tests reran and passed"
+  ],
+  "production_release_accepted": false,
+  "quantum_safe_signature": false,
+  "scope": "Synthetic exchange; no original-source material, operational identity or full prepare acceptance"
+}

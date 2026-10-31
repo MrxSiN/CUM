@@ -1,0 +1,24 @@
+test_corrupt_envelope (tests.test_crypto.CryptoTests.test_corrupt_envelope) ... ok
+test_exact_and_wrong_key (tests.test_crypto.CryptoTests.test_exact_and_wrong_key) ... ok
+test_non_authenticated_format (tests.test_crypto.CryptoTests.test_non_authenticated_format) ... ok
+test_signatures_and_independent_anchor (tests.test_crypto.CryptoTests.test_signatures_and_independent_anchor) ... ok
+test_signed_dynamic_isolation_policy_and_tampering (tests.test_crypto.CryptoTests.test_signed_dynamic_isolation_policy_and_tampering) ... ok
+test_signed_clone_restores_scope_and_rejects_tampering (tests.test_signed_recovery.SignedRecoveryTests.test_signed_clone_restores_scope_and_rejects_tampering) ... ok
+test_changed_reviewer_script_is_rejected_before_execution (tests.test_trusted_inputs.TrustedInputTests.test_changed_reviewer_script_is_rejected_before_execution) ... ok
+test_observed_stdin_cursor_is_physical_and_binary_safe (tests.test_trusted_inputs.TrustedInputTests.test_observed_stdin_cursor_is_physical_and_binary_safe) ... ok
+test_docker_engine_requires_an_independent_policy_pin (tests.test_isolated_recovery.IsolatedRecoveryTests.test_docker_engine_requires_an_independent_policy_pin) ... ok
+test_integer_storage_has_no_inherited_compiler_ceiling (tests.test_isolated_recovery.IsolatedRecoveryTests.test_integer_storage_has_no_inherited_compiler_ceiling) ... ok
+test_missing_changed_or_duplicate_capability_rejected (tests.test_isolated_recovery.IsolatedRecoveryTests.test_missing_changed_or_duplicate_capability_rejected) ... ok
+test_only_exact_independent_inputs_reach_isolation (tests.test_isolated_recovery.IsolatedRecoveryTests.test_only_exact_independent_inputs_reach_isolation) ... ok
+test_retained_entry_preserves_structured_errors (tests.test_isolated_recovery.IsolatedRecoveryTests.test_retained_entry_preserves_structured_errors) ... ok
+test_signed_policy_authenticates_the_actual_policy_before_capabilities (tests.test_isolated_recovery.IsolatedRecoveryTests.test_signed_policy_authenticates_the_actual_policy_before_capabilities) ... ok
+test_vm_backend_image_and_outputs_are_independently_pinned (tests.test_isolated_recovery.IsolatedRecoveryTests.test_vm_backend_image_and_outputs_are_independently_pinned) ... ok
+test_clean_recovery_has_no_capture_or_transformation (tests.test_workflow_draft.WorkflowDraftTests.test_clean_recovery_has_no_capture_or_transformation) ... ok
+test_each_plan_operand_is_present (tests.test_workflow_draft.WorkflowDraftTests.test_each_plan_operand_is_present) ... ok
+test_prepare_clones_and_recovers_before_finalization (tests.test_workflow_draft.WorkflowDraftTests.test_prepare_clones_and_recovers_before_finalization) ... ok
+test_service_failure_never_reaches_finalize (tests.test_workflow_draft.WorkflowDraftTests.test_service_failure_never_reaches_finalize) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 17.599s
+
+OK

@@ -1,0 +1,344 @@
+{
+  "planner": {
+    "executable": "REPLACE_NATIVE/project_recovery.exe",
+    "sha256": "REPLACE_VERIFIED_SHA256"
+  },
+  "planner_input_bytes": 2,
+  "planner_timeout_seconds": 30,
+  "planner_output_bytes": 4096,
+  "journal": "REPLACE_JOB/seal-flow.json",
+  "bindings": {
+    "1": {
+      "absent": [
+        "REPLACE_JOB/package",
+        "REPLACE_JOB/originals.tar",
+        "REPLACE_JOB/internal",
+        "REPLACE_JOB/internal.tar"
+      ],
+      "disjoint_trees": [
+        [
+          "REPLACE_ORIGINAL",
+          "REPLACE_TARGET"
+        ],
+        [
+          "REPLACE_PENDING",
+          "REPLACE_ORIGINAL"
+        ],
+        [
+          "REPLACE_PENDING",
+          "REPLACE_TARGET"
+        ],
+        [
+          "REPLACE_VAULT",
+          "REPLACE_ORIGINAL"
+        ],
+        [
+          "REPLACE_VAULT",
+          "REPLACE_TARGET"
+        ],
+        [
+          "REPLACE_JOB",
+          "REPLACE_ORIGINAL"
+        ],
+        [
+          "REPLACE_JOB",
+          "REPLACE_TARGET"
+        ]
+      ]
+    },
+    "2": {
+      "openssl": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_VAULT/identity.json",
+      "signature": "REPLACE_VAULT/identity.sig",
+      "public_key": "REPLACE_SIGNER_PUBLIC",
+      "trusted_spki_sha256": "REPLACE_SIGNER_PIN"
+    },
+    "3": {
+      "fields": {
+        "format": "PROJECT-RECOVERY-IDENTITY",
+        "project_id": "REPLACE_PROJECT_ID",
+        "recipient_scheme": "CMS-ML-KEM-1024-HKDF-SHA256-AES256-WRAP",
+        "post_quantum": true
+      },
+      "digest_fields": {
+        "certificate": "REPLACE_VAULT/recovery.cert.pem",
+        "spki": "REPLACE_VAULT/recipient.spki.der"
+      },
+      "source": "REPLACE_VAULT/identity.json",
+      "exact_keys": [
+        "format",
+        "project_id",
+        "recipient_scheme",
+        "post_quantum",
+        "digests"
+      ],
+      "exact_digest_keys": [
+        "certificate",
+        "spki"
+      ]
+    },
+    "4": {
+      "root": "REPLACE_JOB/snapshot",
+      "manifest": "REPLACE_JOB/scope.json"
+    },
+    "5": {
+      "root": "REPLACE_JOB/snapshot",
+      "manifest": "REPLACE_JOB/scope.json",
+      "destination": "REPLACE_JOB/originals.tar",
+      "max_archive_bytes": 1073741824
+    },
+    "6": {
+      "openssl": {
+        "executable": "REPLACE_PQ_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_JOB/originals.tar",
+      "destination": "REPLACE_JOB/package/capsule.cms",
+      "recipients": [
+        "REPLACE_VAULT/recovery.cert.pem"
+      ],
+      "inputs_sha256": {
+        "REPLACE_PQ_CRYPTO_DLL": "REPLACE_PQ_CRYPTO_PIN",
+        "REPLACE_PQ_SSL_DLL": "REPLACE_PQ_SSL_PIN"
+      },
+      "clear_environment_prefixes": [
+        "OPENSSL_",
+        "LD_"
+      ],
+      "environment": {
+        "OPENSSL_CONF": "NUL",
+        "OPENSSL_MODULES": "REPLACE_EMPTY_MODULES",
+        "OPENSSL_ENGINES": "REPLACE_EMPTY_MODULES"
+      },
+      "key_wrap_cipher": "AES-256-WRAP",
+      "recipient_kdf": "HKDF-SHA256"
+    },
+    "7": {
+      "destination": "REPLACE_JOB/package/capsule.json",
+      "fields": {
+        "format": "SIGNED-PROJECT-CMS-RECOVERY",
+        "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
+        "signature_format": "ED25519-RAW",
+        "project_id": "REPLACE_PROJECT_ID",
+        "release_identity": "REPLACE_RELEASE_ID",
+        "post_quantum": true,
+        "purpose": "recovery-foundation-check",
+        "protected_release_accepted": false,
+        "recipient_scheme": "CMS-ML-KEM-1024-HKDF-SHA256-AES256-WRAP"
+      },
+      "files": {
+        "capsule": "REPLACE_JOB/package/capsule.cms",
+        "recipient_certificate": "REPLACE_VAULT/recovery.cert.pem",
+        "project_identity": "REPLACE_VAULT/identity.json"
+      }
+    },
+    "8": {
+      "openssl": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_JOB/package/capsule.json",
+      "destination": "REPLACE_JOB/package/capsule.sig",
+      "identity": "REPLACE_SIGNER"
+    },
+    "9": {
+      "openssl": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_JOB/package/capsule.json",
+      "signature": "REPLACE_JOB/package/capsule.sig",
+      "public_key": "REPLACE_SIGNER_PUBLIC",
+      "trusted_spki_sha256": "REPLACE_SIGNER_PIN"
+    },
+    "10": {
+      "openssl": {
+        "executable": "REPLACE_PQ_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_JOB/package/capsule.cms",
+      "destination": "REPLACE_JOB/internal.tar",
+      "identity": "REPLACE_VAULT/recovery.key.pem",
+      "certificate": "REPLACE_VAULT/recovery.cert.pem",
+      "inputs_sha256": {
+        "REPLACE_PQ_CRYPTO_DLL": "REPLACE_PQ_CRYPTO_PIN",
+        "REPLACE_PQ_SSL_DLL": "REPLACE_PQ_SSL_PIN"
+      },
+      "clear_environment_prefixes": [
+        "OPENSSL_",
+        "LD_"
+      ],
+      "environment": {
+        "OPENSSL_CONF": "NUL",
+        "OPENSSL_MODULES": "REPLACE_EMPTY_MODULES",
+        "OPENSSL_ENGINES": "REPLACE_EMPTY_MODULES"
+      }
+    },
+    "11": {
+      "source": "REPLACE_JOB/internal.tar",
+      "destination": "REPLACE_JOB/internal",
+      "limits": {
+        "bytes": 1073741824,
+        "entries": 100000,
+        "metadata_bytes": 16777216
+      }
+    },
+    "12": {
+      "root": "REPLACE_JOB/internal",
+      "manifest": "REPLACE_JOB/scope.json"
+    },
+    "13": {
+      "destination": "REPLACE_JOB/seal-receipt.json",
+      "fields": {
+        "format": "PROJECT-RECOVERY-INTERNAL-CHECK",
+        "status": "PASS",
+        "production_release_accepted": false
+      },
+      "files": {
+        "signed_capsule_manifest": "REPLACE_JOB/package/capsule.json"
+      }
+    },
+    "21": {
+      "openssl": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_JOB/package/capsule.json",
+      "signature": "REPLACE_JOB/package/capsule.sig",
+      "public_key": "REPLACE_SIGNER_PUBLIC",
+      "trusted_spki_sha256": "REPLACE_SIGNER_PIN"
+    },
+    "22": {
+      "source": "REPLACE_JOB/package/capsule.json",
+      "fields": {
+        "format": "SIGNED-PROJECT-CMS-RECOVERY",
+        "capsule_format": "CMS-AUTHENVELOPED-AES256-GCM-BYTE-TAR",
+        "signature_format": "ED25519-RAW",
+        "project_id": "REPLACE_PROJECT_ID",
+        "release_identity": "REPLACE_RELEASE_ID",
+        "post_quantum": true,
+        "purpose": "recovery-foundation-check",
+        "protected_release_accepted": false,
+        "recipient_scheme": "CMS-ML-KEM-1024-HKDF-SHA256-AES256-WRAP"
+      },
+      "digest_fields": {
+        "capsule": "REPLACE_JOB/package/capsule.cms",
+        "recipient_certificate": "REPLACE_VAULT/recovery.cert.pem",
+        "project_identity": "REPLACE_VAULT/identity.json"
+      }
+    },
+    "23": {
+      "openssl": {
+        "executable": "REPLACE_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_VAULT/identity.json",
+      "signature": "REPLACE_VAULT/identity.sig",
+      "public_key": "REPLACE_SIGNER_PUBLIC",
+      "trusted_spki_sha256": "REPLACE_SIGNER_PIN"
+    },
+    "24": {
+      "fields": {
+        "format": "PROJECT-RECOVERY-IDENTITY",
+        "project_id": "REPLACE_PROJECT_ID",
+        "recipient_scheme": "CMS-ML-KEM-1024-HKDF-SHA256-AES256-WRAP",
+        "post_quantum": true
+      },
+      "digest_fields": {
+        "certificate": "REPLACE_VAULT/recovery.cert.pem",
+        "spki": "REPLACE_VAULT/recipient.spki.der"
+      },
+      "source": "REPLACE_VAULT/identity.json",
+      "exact_keys": [
+        "format",
+        "project_id",
+        "recipient_scheme",
+        "post_quantum",
+        "digests"
+      ],
+      "exact_digest_keys": [
+        "certificate",
+        "spki"
+      ]
+    },
+    "25": {
+      "openssl": {
+        "executable": "REPLACE_PQ_OPENSSL",
+        "sha256": "REPLACE_VERIFIED_SHA256"
+      },
+      "timeout_seconds": 120,
+      "max_log_bytes": 1048576,
+      "max_output_bytes": 1073741824,
+      "source": "REPLACE_JOB/package/capsule.cms",
+      "destination": "REPLACE_JOB/recovered.tar",
+      "identity": "REPLACE_VAULT/recovery.key.pem",
+      "certificate": "REPLACE_VAULT/recovery.cert.pem",
+      "inputs_sha256": {
+        "REPLACE_PQ_CRYPTO_DLL": "REPLACE_PQ_CRYPTO_PIN",
+        "REPLACE_PQ_SSL_DLL": "REPLACE_PQ_SSL_PIN"
+      },
+      "clear_environment_prefixes": [
+        "OPENSSL_",
+        "LD_"
+      ],
+      "environment": {
+        "OPENSSL_CONF": "NUL",
+        "OPENSSL_MODULES": "REPLACE_EMPTY_MODULES",
+        "OPENSSL_ENGINES": "REPLACE_EMPTY_MODULES"
+      }
+    },
+    "26": {
+      "source": "REPLACE_JOB/recovered.tar",
+      "destination": "REPLACE_JOB/recovered",
+      "manifest": "REPLACE_JOB/recovered-scope.json",
+      "limits": {
+        "bytes": 1073741824,
+        "entries": 100000,
+        "metadata_bytes": 16777216
+      }
+    },
+    "27": {
+      "root": "REPLACE_JOB/recovered",
+      "manifest": "REPLACE_JOB/recovered-scope.json",
+      "destination": "REPLACE_JOB/repacked.tar",
+      "max_archive_bytes": 1073741824
+    },
+    "28": {
+      "destination": "REPLACE_JOB/recovery-receipt.json",
+      "fields": {
+        "format": "PROJECT-CMS-RECOVERY-CHECK",
+        "status": "PASS",
+        "production_release_accepted": false
+      },
+      "files": {
+        "signed_capsule_manifest": "REPLACE_JOB/package/capsule.json",
+        "recovered_scope": "REPLACE_JOB/recovered-scope.json",
+        "recovered_archive": "REPLACE_JOB/repacked.tar"
+      }
+    }
+  }
+}

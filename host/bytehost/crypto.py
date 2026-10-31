@@ -11,6 +11,7 @@ from pathlib import Path
 from .errors import require
 from .process import checked, pinned_executable
 from .storage import atomic_bytes, digest, no_links
+from .trusted import invoke
 
 
 def authenticated_cms(path):
@@ -65,8 +66,20 @@ def envelope(spec, decrypt=False):
         else:
             require(spec["recipients"], "RECIPIENT", "At least one recipient certificate required")
             argv = [executable, "cms", "-encrypt", "-binary", "-aes-256-gcm",
-                    "-outform", "DER", "-in", source, "-out", output, *spec["recipients"]]
-        checked(argv, timeout=spec["timeout_seconds"], max_output=spec["max_log_bytes"])
+                    "-outform", "DER", "-in", source, "-out", output]
+            if "key_wrap_cipher" in spec:
+                argv.extend(["-wrap", spec["key_wrap_cipher"]])
+            if "recipient_kdf" in spec:
+                for recipient in spec["recipients"]:
+                    argv.extend(["-recip", recipient])
+                    argv.extend(["-recip_kdf", spec["recipient_kdf"]])
+            else:
+                argv.extend(spec["recipients"])
+        invoke({"tool": spec["openssl"], "argv": argv[1:],
+                "inputs_sha256": spec.get("inputs_sha256", {}),
+                "clear_environment_prefixes": spec.get("clear_environment_prefixes", []),
+                "environment": spec.get("environment", {}),
+                "timeout_seconds": spec["timeout_seconds"], "max_output_bytes": spec["max_log_bytes"]})
         if not decrypt:
             authenticated_cms(output)
         require(Path(output).stat().st_size <= spec["max_output_bytes"], "RESOURCE_BUDGET", "Cryptographic output exceeds budget")

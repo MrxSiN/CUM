@@ -1,0 +1,23 @@
+{
+  "format": "CUM-RESISTANCE-REVIEW",
+  "operation": "REPLACE_OPERATION",
+  "profile": 2,
+  "claims_ai_resistance": 0,
+  "baseline": 0,
+  "predeclared": 0,
+  "scope_bound": 0,
+  "matched_arms": 0,
+  "isolated": 0,
+  "evaluator_verified": 0,
+  "heldout_local": 0,
+  "metrics_complete": 0,
+  "thresholds_met": 0,
+  "upload_authorized": 0,
+  "job_sha256": "REPLACE_WITH_MEASURED_BOUND_SHA256",
+  "plan_sha256": "REPLACE_WITH_MEASURED_BOUND_SHA256",
+  "criteria_sha256": "REPLACE_WITH_MEASURED_BOUND_SHA256",
+  "snapshot_manifest_sha256": "REPLACE_WITH_MEASURED_BOUND_SHA256",
+  "protected_inventory_sha256": "REPLACE_WITH_MEASURED_BOUND_SHA256",
+  "normalization_sha256": "REPLACE_WITH_MEASURED_BOUND_SHA256",
+  "private_evidence": "REPLACE_WITH_REVIEWED_RUN_RECORDS_AND_SIGNATURES; these notes and private hashes are never copied into the public manifest"
+}

@@ -1,0 +1,13 @@
+{
+  "format": "CUM-RESISTANCE-PRECOMMITMENT",
+  "operation": "REPLACE_OPERATION",
+  "status": "NOT STARTED",
+  "profile": 2,
+  "claims_ai_resistance": 0,
+  "job_sha256": "REPLACE_WITH_EXACT_FINAL_JOB_SHA256",
+  "criteria_sha256": "REPLACE_WITH_FROZEN_CRITERIA_SHA256",
+  "review_notes": "Independent reviewer signs PASS only after scope, tool/model identities, seeds, budgets, thresholds, authorization and local isolation are declared. Freeze before capture or attack execution.",
+  "bindings_sha256": "REPLACE_WITH_CANONICAL_BINDINGS_SHA256",
+  "planner_sha256": "REPLACE_WITH_VERIFIED_PLANNER_SHA256",
+  "request_hex": "0301"
+}

@@ -1,0 +1,206 @@
+{
+  "format": "PROJECT-PQ-FOUNDATION-EVIDENCE",
+  "date": "2026-11-01",
+  "status": "PARTIAL",
+  "source_written": "PASS",
+  "native_compilation": "PASS",
+  "native_execution": "PASS",
+  "scoped_tests": "PASS",
+  "project_identity_and_context_signed": "PASS",
+  "same_host_scoped_recovery": "PASS",
+  "performance_budget_acceptance": "NOT STARTED",
+  "production_release_accepted": false,
+  "implementation_sha256": {
+    "src/pq_identity_flow.bf": "c79083388b5603543079dc0c0002c500904318e6acdea0b85cf412cb574a5ae6",
+    "src/project_recovery.bf": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+    "host/bytehost/crypto.py": "59f3bbc0fe44e363d84ab4254ec3c54944a173e08411de1af227759d09efe5a1",
+    "config/pq-identity-flow.example.json": "63aab684253085abc963497bafa141fd89e464ce014260926c2f42a8d61c2a3c",
+    "config/pq-project-recovery.example.json": "095ce1f1920715fe559aa761f2b781c66fb1432c5db27992dcea25100f44ae98",
+    "config/pq-interop.example.json": "3f801f37a666a5f0c145a61669963043dfe61114fa21459ab6254eb469159d0c",
+    "config/build.example.json": "684ecd70d76364d4288b35763eff4c1ba0359aebfe7e1744ce2495767396f805",
+    "tests/test_pq_cms.py": "0f4f328c0f232bd6f763e14234256078f33204b113d21fb1521f3af85504405e",
+    "tests/test_pq_interop.py": "07c8ab413d4260851eceadd706957eae783c7efe44ccb3224481076f31de3e14",
+    "tests/test_pq_project.py": "addd7dbae5fe5c6b4a26867189c956facbc6d478903004e1f56f868fe42df49c",
+    "tests/test_project_identity.py": "dfa757b19558fc52984a636a4a7b4938738bb1b73d138c25712a96eaa0fcb2bb"
+  },
+  "builds": [
+    {
+      "source_sha256": "c79083388b5603543079dc0c0002c500904318e6acdea0b85cf412cb574a5ae6",
+      "artifact_sha256": "885baad38c964c1d32bc82c2667606cedba9603db273e68d3597a1c0d2b1c055",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "optimization": "-O0",
+      "target": "windows-x86_64",
+      "wall_seconds": 0.27978969999821857,
+      "source": "src/pq_identity_flow.bf",
+      "compiled": "PASS",
+      "executed": "PASS",
+      "tested": "PASS"
+    },
+    {
+      "source_sha256": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+      "artifact_sha256": "496204922cb09e88aa9905daf5cc45ae4989c7fdf2a2b34f1d84fcbfa5dfb4c5",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "optimization": "-O0",
+      "target": "windows-x86_64",
+      "wall_seconds": 0.2509373000066262,
+      "source": "src/project_recovery.bf",
+      "compiled": "PASS",
+      "executed": "PASS",
+      "tested": "PASS"
+    },
+    {
+      "source_sha256": "c79083388b5603543079dc0c0002c500904318e6acdea0b85cf412cb574a5ae6",
+      "artifact_sha256": "79e6dab45bb85830730d71406fe852a3b69bb228f56fa69f0bc8d5fd7afe255d",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "optimization": "-O1",
+      "target": "windows-x86_64",
+      "wall_seconds": 0.14677849999861792,
+      "source": "src/pq_identity_flow.bf",
+      "compiled": "PASS",
+      "executed": "PASS",
+      "tested": "PASS"
+    },
+    {
+      "source_sha256": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+      "artifact_sha256": "e41f5909cc7514d2966a45ba22b6056bb034176e138129fbf99cda66389f0ed3",
+      "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+      "optimization": "-O1",
+      "target": "windows-x86_64",
+      "wall_seconds": 0.1718033000070136,
+      "source": "src/project_recovery.bf",
+      "compiled": "PASS",
+      "executed": "PASS",
+      "tested": "PASS"
+    }
+  ],
+  "native_vectors": {
+    "records": [
+      {
+        "artifact_sha256": "885baad38c964c1d32bc82c2667606cedba9603db273e68d3597a1c0d2b1c055",
+        "native_vectors": 20,
+        "optimization": "O0",
+        "source": "src/pq_identity_flow.bf",
+        "source_sha256": "c79083388b5603543079dc0c0002c500904318e6acdea0b85cf412cb574a5ae6",
+        "status": "PASS"
+      },
+      {
+        "artifact_sha256": "496204922cb09e88aa9905daf5cc45ae4989c7fdf2a2b34f1d84fcbfa5dfb4c5",
+        "native_vectors": 20,
+        "optimization": "O0",
+        "source": "src/project_recovery.bf",
+        "source_sha256": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+        "status": "PASS"
+      },
+      {
+        "artifact_sha256": "79e6dab45bb85830730d71406fe852a3b69bb228f56fa69f0bc8d5fd7afe255d",
+        "native_vectors": 20,
+        "optimization": "O1",
+        "source": "src/pq_identity_flow.bf",
+        "source_sha256": "c79083388b5603543079dc0c0002c500904318e6acdea0b85cf412cb574a5ae6",
+        "status": "PASS"
+      },
+      {
+        "artifact_sha256": "e41f5909cc7514d2966a45ba22b6056bb034176e138129fbf99cda66389f0ed3",
+        "native_vectors": 20,
+        "optimization": "O1",
+        "source": "src/project_recovery.bf",
+        "source_sha256": "6699f17d7044ffaecd595393173ccc71053bf7a1e50c0fb8fcded702255eea5d",
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS",
+    "total": 80
+  },
+  "tests": {
+    "distinct_methods": 35,
+    "unittest_skips": 0,
+    "additional_O0_repeats": 4,
+    "interoperability": {
+      "methods": 4,
+      "wall_seconds": 24.006,
+      "log": "pq-interoperability-2026-11-01.txt"
+    },
+    "project_classical_crypto_and_trusted_inputs": {
+      "methods": 15,
+      "wall_seconds": 19.722,
+      "log": "pq-project-tests-2026-11-01.txt"
+    },
+    "affected_prepare_recovery_isolation_runtime": {
+      "methods": 16,
+      "wall_seconds": 28.11,
+      "log": "pq-affected-tests-2026-11-01.txt"
+    },
+    "O0_project": {
+      "methods": 4,
+      "wall_seconds": 7.888,
+      "log": "pq-project-O0-tests-2026-11-01.txt"
+    },
+    "new_guest_vm_execution": false
+  },
+  "real_retained_snapshot_drill": {
+    "byte_exact": true,
+    "different_host": false,
+    "format": "PROJECT-PQ-FOUNDATION-DRILL",
+    "independent_bc_decryption": "PASS",
+    "independent_key_backup": "NOT STARTED",
+    "isolated_vm": false,
+    "local_git_clone_recovery": "PASS",
+    "old_classical_vault_changed": false,
+    "ordinary_prepare_pq_admitted": false,
+    "originals_elsewhere_on_trusted_host": true,
+    "production_release_accepted": false,
+    "project_identity_created": "PASS",
+    "retained_archive_bytes": 2682880,
+    "scope_entries": 125,
+    "scope_files": 97,
+    "signature_post_quantum": false,
+    "signed_context_seal_and_internal_restore": "PASS",
+    "snapshot_origin": "Retained immutable 2026-10-31 capture; not a fresh capture of current live roots",
+    "status": "PARTIAL",
+    "target_or_reference_written": false
+  },
+  "interoperability_record": "pq-interoperability-2026-11-01.json",
+  "initial_failures": [
+    {
+      "attempt": "First project run",
+      "methods": 15,
+      "errors": 4,
+      "reason": "Unbound DLL dictionary-key placeholders, duplicated executable in generic CMS invocation, incorrect retained classical fixture directory"
+    },
+    {
+      "attempt": "Second project run",
+      "methods": 15,
+      "errors": 4,
+      "reason": "Duplicated executable remained in CMS invocation; legacy recipient argument form had already been restored"
+    },
+    {
+      "attempt": "Final project run",
+      "methods": 15,
+      "errors": 0,
+      "status": "PASS"
+    }
+  ],
+  "ordinary_full_prepare_pq_admitted": false,
+  "quantum_safe_signature": false,
+  "offline_kit_updated_for_pq": false,
+  "independent_key_backup": "NOT STARTED",
+  "different_host_recovery": {
+    "status": "NOT STARTED",
+    "reason": "Owner-deferred"
+  },
+  "ai_resistance": {
+    "status": "FAIL",
+    "scope": "Previously attacked unchanged candidates; no new AI-resistant transform or trial"
+  },
+  "protected_apk_acceptance": "BLOCKED",
+  "licensing_preferred_source_acceptance": "BLOCKED",
+  "apk_build_host_observation": {
+    "wsl": "Not installed, confirmed by read-only wsl --list --verbose exit 1",
+    "whpx": "Prior initialization probe failed",
+    "system_configuration_changed": false
+  },
+  "private_records_retained": true,
+  "original_or_reference_written": false,
+  "prior_classical_identity_replaced": false,
+  "pushed_or_published": false
+}

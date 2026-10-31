@@ -10,6 +10,7 @@
 | All protected instruction/source emission | BF workers, machine kernels and graph recipe |
 | Meaning of the two worker-state bytes | BF worker |
 | Every mandatory-evidence acceptance decision | `src/gates.bf` |
+| Profile-specific reconstruction-evidence admission | `src/resistance_policy.bf` |
 | Supported language admission | `src/adapters.bf` |
 | Path validation, bytes, trees, atomic storage | Generic host |
 | Physical record completeness and process transport | Generic host |
@@ -25,7 +26,11 @@
 camouflage emitter, XAX mutation generator, or extension-based adapter selector.
 It can map any pure native byte worker over explicit owner-supplied file operands.
 The owner declares project paths and required tools; these are not secretly
-discovered by a non-BF language adapter. All source analysis remains in BF.
+discovered by a non-BF language adapter. Production source analysis remains in BF.
+Independent test/attack tools may analyze source, but never emit CUM protected
+source or decide production profile admission. Generic observed-field byte
+transport and typed record comparisons contain no CUM policy; see
+[the amended resistance contract](RESISTANCE.md).
 
 The workflow VM's instructions come only from a pinned native BF planner. A job
 binding supplies paths, budgets, compiler argument vectors and independent trust
@@ -76,3 +81,14 @@ mutations or compile protected graphs. Exact Git bytes/modes/object enumeration
 are generic host services; private selection/rejection remain BF. Clean recovery
 ordering is `clean_recovery.bf`; backup/distribution/publication are
 `maintenance.bf`. No BBC/XAX implementation was edited for this draft.
+
+The scoped recovery order also belongs to scoped_clean_recovery.bf. The optional
+host/tools/StandardCms.java wrapper supplies generic standards-library encryption;
+it does not inspect source or choose CUM passes/profiles. Strict record-key/type
+checks in the host compare explicit data operands without interpreting a source
+language. See [prepare/PQ integration](PREPARE_INTEGRATION.md).
+
+PQ identity initialization belongs to pq_identity_flow.bf. The generic CMS host
+forwards explicit standard KDF/wrap parameters and trusted-tool runtime pins;
+it performs no project-specific mode selection, source parsing or camouflage.
+Independent cross-library tests remain outside the production decision engine.

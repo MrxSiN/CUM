@@ -1,0 +1,11 @@
+test_example_reuses_bf_filter_machine_presentation_flow (tests.test_shared_state.SharedStateTests.test_example_reuses_bf_filter_machine_presentation_flow) ... ok
+test_malformed_event_and_lifecycle_rejected (tests.test_shared_state.SharedStateTests.test_malformed_event_and_lifecycle_rejected) ... ok
+test_outputs_state_consumption_and_seed_diversification (tests.test_shared_state.SharedStateTests.test_outputs_state_consumption_and_seed_diversification) ... ok
+test_runtime_key_is_live_and_input_dependent (tests.test_shared_state.SharedStateTests.test_runtime_key_is_live_and_input_dependent) ... ok
+test_unsupported_source_profiles_and_depth_budget_are_rejected (tests.test_shared_state.SharedStateTests.test_unsupported_source_profiles_and_depth_budget_are_rejected) ... ok
+test_all_sources_are_only_eight_commands (tests.test_core.CoreTests.test_all_sources_are_only_eight_commands) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 12.644s
+
+OK

@@ -1,0 +1,6 @@
+test_isolated_build_behavior_normalization_and_worker_boundary (tests.test_qemu_native.QemuNativeTests.test_isolated_build_behavior_normalization_and_worker_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 956.975s
+
+OK

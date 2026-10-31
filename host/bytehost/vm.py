@@ -117,12 +117,25 @@ def assert_record(spec):
     byte program's responsibility. This service does not make legal judgments.
     """
     record = load(spec["source"])
+    require(isinstance(record, dict), "REVIEW", "Expected a record object")
+    if "exact_keys" in spec:
+        require(set(record) == set(spec["exact_keys"]), "REVIEW", "Unexpected record fields")
+    if "exact_digest_keys" in spec:
+        require(isinstance(record.get("digests"), dict) and set(record["digests"]) == set(spec["exact_digest_keys"]),
+                "REVIEW", "Unexpected digest fields")
     for key, expected in spec["fields"].items():
-        require(record.get(key) == expected, "REVIEW", "Required review evidence is absent", field=key)
+        require(key in record and type(record[key]) is type(expected) and record[key] == expected,
+                "REVIEW", "Required review evidence is absent or mistyped", field=key)
     for field, path in spec.get("file_digests", {}).items():
         require(record.get(field) == digest(path), "REVIEW_BINDING", "Review is bound to different input", field=field)
     for field, path in spec.get("digest_fields", {}).items():
         require(record["digests"].get(field) == digest(path), "INTEGRITY", "Bound record digest differs", field=field)
+    for field, observation in spec.get("equal_fields", {}).items():
+        value = load(observation["file"])
+        for key in observation["fields"]:
+            value = value[key]
+        require(field in record and record[field] == value and type(record[field]) is type(value),
+                "REVIEW_BINDING", "Observed records disagree", field=field)
 
 
 def copy_file(spec):
@@ -168,7 +181,18 @@ def numeric_budget(spec):
 
 def byte_assertion(spec):
     executable = pinned_executable(spec["worker"])
-    payload = bytes.fromhex(spec["input_hex"])
+    require(("input_hex" in spec) != ("input_fields" in spec), "RECORD", "Choose one byte input source")
+    if "input_fields" in spec:
+        values = []
+        for observation in spec["input_fields"]:
+            value = load(observation["file"])
+            for key in observation["fields"]:
+                value = value[key]
+            require(type(value) is int and 0 <= value <= 255, "RECORD", "Observed value is not a byte")
+            values.append(value)
+        payload = bytes(values)
+    else:
+        payload = bytes.fromhex(spec["input_hex"])
     require(len(payload) == spec["input_bytes"], "RECORD_LENGTH", "Incomplete byte-program request")
     result = checked([executable], stdin=payload,
                      timeout=spec["timeout_seconds"], max_output=spec["max_output_bytes"])

@@ -24,12 +24,16 @@ class WorkflowDraftTests(unittest.TestCase):
     def test_prepare_clones_and_recovers_before_finalization(self):
         for mode in (1, 2):
             actual = plan("cum.bf", bytes([3, mode]))
-            expected = [(11, 26), (12, 27), (13, 28), (14, 29), (15, 30),
+            expected = [(11, 26), (25, 77), (14, 78), (19, 79), (24, 80),
+                        (12, 27), (13, 28), (14, 29), (15, 30),
                         (48, 64), (25, 65), (45, 66), (25, 67), (46, 68),
                         (25, 31), (46, 69), (25, 74), (44, 70), (19, 72), (7, 71), (8, 36)]
             start = actual.index(expected[0])
             self.assertEqual(actual[start:start + len(expected)], expected)
             self.assertLess(actual.index((14, 61)), actual.index((29, 10)))
+            self.assertLess(actual.index((14, 75)), actual.index((19, 76)))
+            self.assertLess(actual.index((19, 76)), actual.index((12, 81)))
+            self.assertLess(actual.index((12, 81)), actual.index((29, 10)))
             self.assertLess(actual.index((25, 73)), actual.index((14, 24)))
             self.assertLess(actual.index((47, 63)), start)
             self.assertEqual(actual[-2:], [(16, 38), (17, 39)])
@@ -49,7 +53,7 @@ class WorkflowDraftTests(unittest.TestCase):
         self.assertEqual(plan("clean_recovery.bf", b"\x01\x01"),
                          [(14, 1), (15, 2), (6, 3), (7, 4), (4, 5), (12, 6)])
         publication = plan("maintenance.bf", b"\x04\x01")
-        self.assertEqual(publication[-2:], [(46, 45), (25, 38)])
+        self.assertEqual(publication[-4:], [(46, 45), (19, 46), (24, 47), (25, 38)])
         backup = plan("maintenance.bf", b"\x01\x01")
         self.assertLess(backup.index((44, 44)), backup.index((13, 9)))
 

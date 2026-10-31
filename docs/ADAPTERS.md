@@ -30,6 +30,11 @@ rejects pointer motion and uses the two-state-byte transport. It is not the
 multi-cell route. Its PERFORMANCE profile only filters and cannot satisfy
 meaningful structural protection.
 
+The explicit `share-flow.example.json` uses the existing BF annotation planner
+with experimental `machines/bf_share.bf`. It is CAMOUFLAGE-only, single-cell,
+balanced-loop input with verified six-cell runtime workspace. It does not add a
+discovery ID or silently replace the multi-cell adapter. See [SHARED_STATE.md](SHARED_STATE.md).
+
 Native BF fixture evidence covers seven programs and both public compilation
 levels. Java/Kotlin evidence covers the declared Arithmetic fixture, CAMOUFLAGE
 native emission, 21 input pairs per language and bytecode differences. These
