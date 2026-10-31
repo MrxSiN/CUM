@@ -175,6 +175,10 @@ No installed private CUM module fallback is permitted. Review `runtime-check` an
 before signing the backup. Windows BF binaries use the explicitly pinned Wine
 launcher inside Linux recovery images; that is not native Windows evidence.
 Images, distributions and all required offline dependencies must also be backed up.
+The retained runtime has now passed same-host relocation drills, including a real
+project's declared source scope. See `PRODUCTION_READINESS.md` for the independently
+pinned Windows bootstrap, explicit `-I -B` invocation, failed attempts and limits.
+A different physical host and independent backup medium remain unverified.
 
 Maintenance commands 2 and 3 cover approved project-recipient distribution and
 signer replacement records. They never give a collaborator the universal owner

@@ -63,6 +63,12 @@ def main():
                     "sequence": str(int(header["sequence"]) + 1), "state": state.hex()}
         atomic_bytes(args.output, frame(response, output))
         result = {"worker_wall_seconds": wall, "output_bytes": len(output)}
+    if isinstance(result, dict):
+        result = dict(result)
+        for field in ("stdout", "stderr"):
+            if isinstance(result.get(field), bytes):
+                require(field + "_hex" not in result, "FORMAT", "Ambiguous binary service output")
+                result[field + "_hex"] = result.pop(field).hex()
     sys.stdout.buffer.write(canonical({"status": "PASS", "result": result}))
 
 

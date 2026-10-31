@@ -55,5 +55,16 @@ and rejects signature/capsule mutation and extra release files. With the explici
 VM opt-in it also checks recovery under the independently pinned QEMU policy.
 `test_qemu_isolation.py` checks transport faults and real VM boundaries;
 `test_qemu_native.py` checks isolated builds/behavior without identities. None
-establishes a complete offline runtime package. The earlier statement
+established a complete offline runtime package at that checkpoint. A retained
+runtime now passed separate same-host relocation drills; see
+`PRODUCTION_READINESS.md` for its scope and remaining different-host requirement.
+The earlier statement
 about four new unit modules describes the draft checkpoint, not the current run.
+
+The current regression discovered 77 tests, passed 75 and skipped two VM opt-ins.
+`test_service_output.py` reproduces and guards binary JSON service output and
+ambiguous-field rejection. `test_offline_bootstrap.py` uses Windows PowerShell to
+verify a complete tree and reject wrong pins, changed, extra and missing files.
+Two actual retained-runtime VM calls independently recovered the synthetic release
+and a real-project declared snapshot after the CLI fix. These executed drills do
+not relabel the two skipped regression tests as passes.

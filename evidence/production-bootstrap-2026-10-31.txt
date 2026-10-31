@@ -1,0 +1,8 @@
+test_independent_pin_and_exact_tree_are_required (tests.test_offline_bootstrap.OfflineBootstrapTests.test_independent_pin_and_exact_tree_are_required) ... ok
+test_binary_service_streams_are_explicit_hex (tests.test_service_output.ServiceOutputTests.test_binary_service_streams_are_explicit_hex) ... ok
+test_conflicting_hex_field_is_rejected (tests.test_service_output.ServiceOutputTests.test_conflicting_hex_field_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 11.488s
+
+OK

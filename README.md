@@ -3,12 +3,16 @@
 Brainfuck-authored source camouflage and authenticated exact recovery.
 
 **PARTIAL — drafted across the workflow, with scoped native validation.**
-All 74 discovered tests passed with native, crypto and VM checks enabled, with
-zero skips. O1 builds all 42 components. One complete synthetic BF project passed
+The earlier all-enabled checkpoint passed 74 tests with zero skips. The current
+regression passed 75 of 77 discovered tests; two VM opt-in tests were not rerun.
+Fresh relocated-kit VM recoveries passed separately for the synthetic release
+and a real project's declared source snapshot. O1 previously built all 42 unchanged
+BF components. One complete synthetic BF project passed
 the real prepare workflow: capture, protection with comments and readable rendered
 documents, independent builds, measured gates, signing, real Git clone, isolated
 exact recovery, development rebuild and native BF acceptance. Whole-product and
-production acceptance remain incomplete. See [synthetic release](docs/SYNTHETIC_RELEASE.md).
+production acceptance remain incomplete. See [production readiness](docs/PRODUCTION_READINESS.md)
+and [synthetic release](docs/SYNTHETIC_RELEASE.md).
 
 All CUM application decisions and source transformations live in genuine
 Brainfuck under `src/`. `host/bytehost/` supplies separately identifiable generic
