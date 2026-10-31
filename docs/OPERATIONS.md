@@ -221,7 +221,11 @@ children start suspended, enter a kill-on-close Job Object, then resume; POSIX
 children start in a new session/process group. Timeout, output rejection and
 normal parent completion stop the owned descendants before returning. These
 wrappers are not a sandbox for hostile tools; project code still belongs in the
-separate isolation service.
+separate isolation service. The Windows mechanism uses
+[Job Objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects).
+Existing retained bundles must be rebuilt and independently re-pinned to deploy
+host fixes; their frozen inventories are not upgraded automatically. See
+[the audit checkpoint](AUDIT_FIXES.md).
 
 The real-project follow-up recorded existing-JNI and standalone ARM64 checks, but
 the shared adapter rejected the tested bind record. Isolated unsigned baseline

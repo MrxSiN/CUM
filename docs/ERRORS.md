@@ -19,7 +19,7 @@ artifact or release claim.
 | WORKER_REJECT | BF rejected eligibility/profile; discard all emitted prefix bytes |
 | WORKER_RESPONSE | Missing or malformed native response trailer |
 | RECORD_LENGTH | Physical request does not match the byte-program ABI |
-| PROCESS_START / PROCESS_EXIT / TIMEOUT | Launch, process-status or execution-time failure |
+| PROCESS_START / PROCESS_EXIT / PROCESS_TREE / TIMEOUT | Launch, process-status, tree-cleanup or execution-time failure |
 | TOOL_IDENTITY / TOOLCHAIN_COMMIT | Pinned native executable or repository changed |
 | INTEGRITY / CHANGED | Bytes/tree differ or input changed during work |
 | REQUEST_BINDING / STATE_BINDING | Wrong operation, sequence, source, worker or configuration |
@@ -39,6 +39,9 @@ artifact or release claim.
 Diagnostic logs, absolute paths, request states and review records are private by
 default. They are not public release inputs. OS disk/allocation/address-space
 failures must remain failures; no truncation/fallback may produce a ready marker.
+If stage cleanup also fails while handling a HostError, its original code remains
+and `details.cleanup_failure` identifies the remaining stage and cleanup reason.
+This is private diagnostic material, not a successful restoration receipt.
 
 The Android checkpoint distinguishes native-backend exit 5 from VM transport
 TIMEOUT and a compiler controller's exit 124. The controlled 900/600-second runs

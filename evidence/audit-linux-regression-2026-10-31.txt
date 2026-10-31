@@ -1,0 +1,30 @@
+test_descendants_stop_on_timeout_output_rejection_and_parent_exit (tests.test_process.ProcessTreeTests.test_descendants_stop_on_timeout_output_rejection_and_parent_exit) ... ok
+test_missing_executable_still_reports_a_launch_failure (tests.test_process.ProcessTreeTests.test_missing_executable_still_reports_a_launch_failure) ... ok
+test_archive_exact_scope (tests.test_storage.StorageTests.test_archive_exact_scope) ... ok
+test_authenticated_state (tests.test_storage.StorageTests.test_authenticated_state) ... ok
+test_cleanup_can_remove_restrictive_stage_directories (tests.test_storage.StorageTests.test_cleanup_can_remove_restrictive_stage_directories) ... ok
+test_cleanup_failure_preserves_original_error_and_identifies_stage (tests.test_storage.StorageTests.test_cleanup_failure_preserves_original_error_and_identifies_stage) ... ok
+test_copy_tree_preserves_nested_directory_modes (tests.test_storage.StorageTests.test_copy_tree_preserves_nested_directory_modes) ... ok
+test_failed_restore_removes_readonly_plaintext_and_retains_budget_error (tests.test_storage.StorageTests.test_failed_restore_removes_readonly_plaintext_and_retains_budget_error) ... ok
+test_inventory_and_mutations (tests.test_storage.StorageTests.test_inventory_and_mutations) ... ok
+test_unsafe_tar_rejected_without_escape (tests.test_storage.StorageTests.test_unsafe_tar_rejected_without_escape) ... ok
+test_windows_paths_and_collisions (tests.test_storage.StorageTests.test_windows_paths_and_collisions) ... ok
+test_existing_entry_is_not_replaced (tests.test_cache.CacheTests.test_existing_entry_is_not_replaced) ... ok
+test_failed_stores_leave_no_visible_entry_and_allow_a_valid_retry (tests.test_cache.CacheTests.test_failed_stores_leave_no_visible_entry_and_allow_a_valid_retry) ... ok
+test_report_binds_compiler_input_and_rejects_a_concurrent_source_edit (tests.test_build.BuildTests.test_report_binds_compiler_input_and_rejects_a_concurrent_source_edit) ... ok
+test_remaining_deadline_bounds_handoffs_and_final_publication (tests.test_machine_host.MachineDeadlineTests.test_remaining_deadline_bounds_handoffs_and_final_publication) ... ok
+test_docker_engine_requires_an_independent_policy_pin (tests.test_isolated_recovery.IsolatedRecoveryTests.test_docker_engine_requires_an_independent_policy_pin) ... ok
+test_integer_storage_has_no_inherited_compiler_ceiling (tests.test_isolated_recovery.IsolatedRecoveryTests.test_integer_storage_has_no_inherited_compiler_ceiling) ... ok
+test_missing_changed_or_duplicate_capability_rejected (tests.test_isolated_recovery.IsolatedRecoveryTests.test_missing_changed_or_duplicate_capability_rejected) ... ok
+test_only_exact_independent_inputs_reach_isolation (tests.test_isolated_recovery.IsolatedRecoveryTests.test_only_exact_independent_inputs_reach_isolation) ... ok
+test_retained_entry_preserves_structured_errors (tests.test_isolated_recovery.IsolatedRecoveryTests.test_retained_entry_preserves_structured_errors) ... ok
+test_signed_policy_authenticates_the_actual_policy_before_capabilities (tests.test_isolated_recovery.IsolatedRecoveryTests.test_signed_policy_authenticates_the_actual_policy_before_capabilities) ... ok
+test_vm_backend_image_and_outputs_are_independently_pinned (tests.test_isolated_recovery.IsolatedRecoveryTests.test_vm_backend_image_and_outputs_are_independently_pinned) ... ok
+test_changed_reviewer_script_is_rejected_before_execution (tests.test_trusted_inputs.TrustedInputTests.test_changed_reviewer_script_is_rejected_before_execution) ... ok
+test_observed_stdin_cursor_is_physical_and_binary_safe (tests.test_trusted_inputs.TrustedInputTests.test_observed_stdin_cursor_is_physical_and_binary_safe) ... ok
+test_complete_distribution_and_shared_libraries_are_preserved (tests.test_runtime_bundle.RuntimeBundleTests.test_complete_distribution_and_shared_libraries_are_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 26.792s
+
+OK

@@ -38,8 +38,11 @@ reference, native, isolated, recovered, signed, measured and accepted states.
 | Recovery/measurement checkpoint | 75/77 passed; two VM opt-ins skipped; actual same-host cold VM calls recorded separately |
 | Latest broad annotation run | 79/81 passed, zero failures, two VM opt-ins not rerun; native/crypto/graph enabled |
 | Subsequent annotation run | Five passed, including the newly added native boundary/rejected-output case |
+| Audit-fix Windows run | 91/93 passed, zero failures, two VM opt-ins not rerun; native/crypto/graph enabled |
+| Audit-fix Linux VM run | 25 passed with zero skips after removing the descendant test's startup-timing assumption |
 
-The last two runs are separate; no single all-enabled 82-test run is claimed.
+The annotation runs are separate; no single all-enabled 82-test run is claimed.
+The audit's separate Linux VM run does not relabel skipped Windows opt-ins.
 Reference-interpreter checks are distinct from native Windows runs. Wine/TCG
 results are emulation/isolation evidence. Existing-JNI and standalone ARM64 device
 checks do not accept an integrated protected APK.
@@ -70,6 +73,12 @@ checks do not accept an integrated protected APK.
   or cover the later-added readiness and license files.
 
 ## Outstanding acceptance
+
+`test_build.py`, `test_process.py`, `test_machine_host.py`, `test_cache.py` and
+the extended storage/recovery tests cover all seven audit fixes. The process
+tests use actual descendants with a readiness-triggered timeout clock; compiler
+mutation and deadline fault tests use mocked tools/clocks. The separate smoke
+check used the real BBC and native BF workers. See [audit remediation](AUDIT_FIXES.md).
 
 Broader disk/allocation exhaustion, failure injection, Windows metadata scope,
 representative program complexity and repeated full-release budgets remain open.

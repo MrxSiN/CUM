@@ -1,0 +1,167 @@
+{
+  "format": "AUDIT-REMEDIATION-CHECKPOINT",
+  "date": "2026-10-31",
+  "status": "SEVEN_RECORDED_FINDINGS_FIXED",
+  "production_accepted": false,
+  "baseline_commit": "0cfb9174538cd1821ee1df0a522c161f2c97ec84",
+  "fixes": [
+    {
+      "finding": 1,
+      "commit": "37ffa956f44dd1a375fb47e6a621297870335026",
+      "change": "Independent Docker engine policy pin",
+      "reproduced_before_fix": true,
+      "focused_regression_passed": true
+    },
+    {
+      "finding": 2,
+      "commit": "a192452253851bab064cb0a33b9ad27c8ad1dc4c",
+      "change": "Read-only restoration-stage cleanup and original error preservation",
+      "reproduced_before_fix": true,
+      "focused_regression_passed": true
+    },
+    {
+      "finding": 3,
+      "commit": "87e908e1a192c5d67be4c4f8ac6bb34f9dcdaf57",
+      "change": "Compiler-input source identity",
+      "reproduced_before_fix": true,
+      "focused_regression_passed": true
+    },
+    {
+      "finding": 4,
+      "commit": "9dc02ea55db4cc47b3d46e7cae89b9c8d1f84ed1",
+      "change": "Owned process-tree termination",
+      "reproduced_before_fix": true,
+      "focused_regression_passed": true
+    },
+    {
+      "finding": 5,
+      "commit": "4e94dbc89b2489e99fd84e64efc31371032801c5",
+      "change": "Byte-machine operation deadline",
+      "reproduced_before_fix": true,
+      "focused_regression_passed": true
+    },
+    {
+      "finding": 6,
+      "commit": "ef92e4b6de8d31bd70a8db2d6b45b9f1402832d9",
+      "change": "Exact directory-mode copying",
+      "reproduced_before_fix": true,
+      "focused_regression_passed": true
+    },
+    {
+      "finding": 7,
+      "commit": "d591bb8633f6faf00abcc467769b2c43286a1672",
+      "change": "Atomic cache publication and retry",
+      "reproduced_before_fix": true,
+      "focused_regression_passed": true
+    }
+  ],
+  "test_timing_followup_commit": "251edf4c43c97c78aef17aa366d880a0d49a5e7b",
+  "windows": {
+    "tests": 93,
+    "passed": 91,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "elapsed_seconds": 246.42,
+    "enabled": [
+      "native Windows integration",
+      "OpenSSL cryptography",
+      "native XAX graph"
+    ],
+    "not_rerun": [
+      "QEMU isolation opt-in",
+      "QEMU native fixture opt-in"
+    ],
+    "log": "audit-regression-2026-10-31.txt",
+    "log_git_lf_sha256": "cff6dac71a0be9611d662bb56743a7373107a7802ef04fd8779ec0dad84cd2e8"
+  },
+  "linux": {
+    "format": "AUDIT-FIX-LINUX-VM-REGRESSION",
+    "status": "PASS",
+    "tests": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "uid": 1000,
+    "network_interfaces": [
+      "lo"
+    ],
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "image_sha256": "e6dbfd61712e1360235f2cf51504242385461363ec26d0af20cade76a9b31434",
+    "isolation": "Same-host QEMU TCG, disposable overlay, no NIC/host shares; UID 1000",
+    "credentials_mounted": false,
+    "log": "audit-linux-regression-2026-10-31.txt",
+    "log_git_lf_sha256": "99dbe1beabdc769e90d0d05ae7a159a2bc61a7a85c9a94ea2a8bbf66e27c4424",
+    "different_host": false,
+    "initial_attempt": {
+      "status": "FAIL",
+      "tests": 25,
+      "failing_subcases": 4,
+      "cause": "Test startup timeout before descendants were ready under emulation",
+      "product_timeout_relaxed": false,
+      "replaced_by_ready_triggered_test_clock": true
+    }
+  },
+  "native_smoke": {
+    "format": "AUDIT-FIX-NATIVE-SMOKE",
+    "status": "PASS",
+    "compiler_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+    "fresh_builds": 2,
+    "echo_all_256_bytes": true,
+    "native_layout_events": 5,
+    "native_layout_within_deadline": true,
+    "protected_native_behavior_cases": 4,
+    "source_report_matches_compiler_input": true
+  },
+  "source_identities": {
+    "host/bytehost/trusted_recovery.py": {
+      "raw_sha256": "d8b1a17f43ab9269083b5178c678cc049c7fb4905683ff92506dde8715bc1be7",
+      "git_lf_sha256": "d8b1a17f43ab9269083b5178c678cc049c7fb4905683ff92506dde8715bc1be7"
+    },
+    "host/bytehost/storage.py": {
+      "raw_sha256": "21d38f2e800233dcc14f1c5aca6455b1a3750374ae7d506312768ea7fb7eaf23",
+      "git_lf_sha256": "21d38f2e800233dcc14f1c5aca6455b1a3750374ae7d506312768ea7fb7eaf23"
+    },
+    "host/bytehost/build.py": {
+      "raw_sha256": "d0e100d9a4e8c3baba020253e186dcea5aff44606bde10aef848b84ef4b9421d",
+      "git_lf_sha256": "d0e100d9a4e8c3baba020253e186dcea5aff44606bde10aef848b84ef4b9421d"
+    },
+    "host/bytehost/process.py": {
+      "raw_sha256": "4db4850154b3ba604940b834c74d997a062feb46eaed4034a20dd9b1ecd63ee8",
+      "git_lf_sha256": "4db4850154b3ba604940b834c74d997a062feb46eaed4034a20dd9b1ecd63ee8"
+    },
+    "host/bytehost/machine.py": {
+      "raw_sha256": "8e4a4f43e5f34777726f0a67e46eca666383073ba2a1e86eec66d26fbed7ac0a",
+      "git_lf_sha256": "8e4a4f43e5f34777726f0a67e46eca666383073ba2a1e86eec66d26fbed7ac0a"
+    },
+    "host/bytehost/archive.py": {
+      "raw_sha256": "d4fffc17c3458bc088c2e5000373c2e6ed98df3ddfd51001f9c150fffe140966",
+      "git_lf_sha256": "d4fffc17c3458bc088c2e5000373c2e6ed98df3ddfd51001f9c150fffe140966"
+    },
+    "host/bytehost/cache.py": {
+      "raw_sha256": "3b6c21d76342c1e4db4382f70ac6e506d8ad840b22f1f59c044c5acf28cbe966",
+      "git_lf_sha256": "3b6c21d76342c1e4db4382f70ac6e506d8ad840b22f1f59c044c5acf28cbe966"
+    }
+  },
+  "scope": {
+    "BF_application_sources_changed": false,
+    "compiler_repositories_edited_by_this_work": false,
+    "new_third_party_dependencies": false,
+    "actual_Docker_engine_launch_tested": false,
+    "Android_build_device_repeated": false,
+    "different_host_drill": "DEFERRED_BY_OWNER",
+    "retained_runtime_bundles_updated_or_resigned": false,
+    "production_release_accepted": false
+  },
+  "compatibility": [
+    "Docker capability policies now require an independently authenticated engine record",
+    "Deploying host fixes requires a newly reviewed/inventoried runtime bundle; frozen historical kits were not modified"
+  ],
+  "remaining_gates": [
+    "Accepted Android shared-library ABI and protected APK",
+    "Restored development and full external-input closure",
+    "Preferred-source delivery and transitive notice/source inventory",
+    "Independent-media backup and deferred different-host drill",
+    "Representative production budgets and final owner acceptance"
+  ]
+}
