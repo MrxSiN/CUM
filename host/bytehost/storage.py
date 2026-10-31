@@ -10,6 +10,7 @@ import os
 import re
 import shutil
 import stat
+import sys
 import tempfile
 import unicodedata
 from pathlib import Path, PurePosixPath
@@ -180,4 +181,28 @@ def remove_stage(path):
     path = Path(path).absolute()
     require(path.name.startswith(".stage-"), "CLEANUP", "Refusing non-stage cleanup")
     no_links(path)
-    shutil.rmtree(path)
+    original = sys.exc_info()[1]
+    def retry_readonly(function, name, error):
+        if not isinstance(error[1], PermissionError):
+            raise error[1]
+        target = Path(name).absolute()
+        require(target.is_relative_to(path), "CLEANUP", "Cleanup escaped its stage")
+        no_links(target)
+        os.chmod(target, stat.S_IMODE(target.stat().st_mode) | stat.S_IWUSR)
+        function(target)
+    try:
+        # Restored directory modes must not prevent removal of our own stage.
+        os.chmod(path, stat.S_IMODE(path.stat().st_mode) | stat.S_IRWXU)
+        for base, directories, _ in os.walk(path):
+            for name in directories:
+                directory = Path(base) / name
+                no_links(directory)
+                os.chmod(directory, stat.S_IMODE(directory.stat().st_mode) | stat.S_IRWXU)
+        shutil.rmtree(path, onerror=retry_readonly)
+    except Exception as error:
+        if original is not None:
+            original.add_note("Temporary stage cleanup failed: " + str(path) + ": " + str(error))
+            if isinstance(original, HostError):
+                original.details["cleanup_failure"] = {"stage": str(path), "reason": str(error)}
+            raise original from error
+        raise
