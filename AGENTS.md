@@ -10,11 +10,23 @@ Keep operational identities and original-source records outside both trees.
 The owner's direct instruction is to draft the whole project before running tests,
 fixing failures, or optimizing. Do not report drafted checks as executed evidence.
 
-All CUM application decisions belong in genuine eight-command Brainfuck under
-`src/`. `host/bytehost/` is separately identifiable generic infrastructure. It may
+All CUM-owned executable implementation, tests and development scripts must be
+genuine eight-command Brainfuck by default. Use canonical XAX semantic graphs
+only where BF cannot provide the required capability. This replaces the former
+Python generic-host exception and applies to existing Python, Java and shell
+sources too. Do not hide foreign code in binaries, generated wrappers, data
+files or renamed extensions and call that conversion. Configurations, protocols,
+fixtures containing data and engineering documentation are not executable code.
+
+`host/bytehost/` is legacy migration debt, not an allowed Python runtime. Its
+replacement remains separately identifiable generic infrastructure. It may
 implement binary transport, storage, standard cryptographic tool invocation,
 process isolation, measurements and a generic workflow virtual machine. It must
 never parse a source language, select a CUM transformation, or perform one.
+Retire legacy sources only after replacement parity is verified; until then the
+language-compliance and production gates remain closed. Existing compiler and
+standard system utilities remain explicit external dependencies, not CUM-owned
+implementations. Do not write new foreign-language helpers in this repository.
 
 The amended engineering prompt supersedes the previous standing push permission.
 Keep new implementation work local; publishing, pushing or changing repository

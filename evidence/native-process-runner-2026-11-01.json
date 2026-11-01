@@ -1,0 +1,1010 @@
+{
+  "format": "NATIVE-TRUSTED-PROCESS-RUNNER-CHECKPOINT",
+  "date": "2026-11-01",
+  "status": "PARTIAL",
+  "source_written": "PASS",
+  "native_verified": "PASS",
+  "compiled": "PASS",
+  "executed": "PASS",
+  "scoped_tested": "PASS",
+  "source_sha256": {
+    "host/native/trusted_byte_runner.xax": "a13b33b3c16e8bc7d640d6b8ff32f44d5075130282a2ca6bfab5f1cc84eb5f41",
+    "host/native/construction/trusted-byte-runner.json": "59f5a9b11de5c791ce5d354fc2a1539233ca0d1529bf2a41674846dc6191bd1c",
+    "host/native/transactions/trusted-byte-runner-base.xax": "f3557711a8f265405928c9f9513ff5df06ef4a7f695dad2707bf9a2924247022",
+    "host/native/transactions/trusted-byte-runner-cpu.edit": "9940a2ca7059feebb924c2e0dfb6ee67c9b996a69fd3467610dd3287d471facf",
+    "host/native/transactions/trusted-byte-runner-cpu-functions.json": "f161cca5b08c7c6eca0a6ea6775aec216abe54914fcbe85d3114b7acca96de94",
+    "tests/fixtures/native-process-runner.json": "9d188dbeec85b591b2dc0731a48f9ed8f245118047f9796535b8452b4369bc1e",
+    "tests/fixtures/runner-spin.bf": "6dedefd37bcaacfe1e15abf76fd5833bbfecafefa398b548658078e58fcde862",
+    "tests/fixtures/runner-flood.bf": "655174516e0b19a82936c3d935ae93ce1c3be1de670e58031618e73902f03d6b",
+    "tests/fixtures/runner_probe.xax": "3551c5b08b5650790db8a216cd8b948a8372c092e64b445df5239aaab04279b7",
+    "tests/fixtures/runner_io_probe.xax": "d53066b5103883bb529beb048e6c86954c4e243970c1a13f11fd414006684b31",
+    "tests/fixtures/runner_memory_probe.xax": "34a887039cd8e2b029561a628856be9a5e48230c1d965188b8a125e4019d33e8",
+    "tests/fixtures/construction/runner-probe.json": "d82919979f78d7610d6c7126e107e1bc6f1002cdb34f4798de63db3799959487",
+    "tests/fixtures/construction/runner-io-probe.json": "91e607342182a51b02b2775064c96cea2db275ed9ce22046dd6ce25ba108ce49",
+    "tests/fixtures/construction/runner-memory-probe.json": "d495ab0981f0f61cf1637737f88d87dadd2dfb6c49cb928d8c14a23420adc0f2"
+  },
+  "artifact_sha256": {
+    "runner-cpu.exe": "405e16fc1647d43f43e0052ebccd863ef745a47fae06156cc4c30c38f3f4116f",
+    "probe.exe": "7035719d3e25b3c49d3ca8a107dcedbaecac2128d8f9beb77e8ba3c09a9bbf1a",
+    "io-probe.exe": "11ab3493aedc367204565ac5825f9b469ee1a2ec85fd05d882eed9be2e0aaefa",
+    "memory-probe.exe": "ed12924cc58b3d7d42736fca7d3519ab7be44e0f7179eacf9c7dcb5bea90db31",
+    "spin.exe": "4764b550397f242f6fcb1e042f8973c682805ef3c8553fd07cad5352a2b09bbe",
+    "finite-flood.exe": "f4b9fb3efd21e8b336a5ac22fe2518157d6a139c8ce01c01bd0d3a1b0c7eb7ac"
+  },
+  "toolchain": {
+    "native_xax_seed_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+    "tests": "Data fixtures and native BF/XAX executables operated with transient PowerShell/.NET commands; no foreign script file added; complete native test-driver migration is outstanding",
+    "authoring": "Official external XAX SDK constructor/transaction authoring only; canonical XAX stores authoritative",
+    "compiler_modified": false,
+    "bbc_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405"
+  },
+  "native_cases": 93,
+  "all_header_truncations": 64,
+  "results": [
+    {
+      "name": "codec-all-bytes",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 585,
+      "operator_wall_ms": 73,
+      "stderr": "",
+      "child_exit": 0,
+      "flags": 0,
+      "wall_ms": 31,
+      "user_cpu_100ns": 156250,
+      "kernel_cpu_100ns": 0,
+      "peak_process_bytes": 2314240,
+      "stdin_offset": 516,
+      "stdout_bytes": 513,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "codec-empty",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 73,
+      "operator_wall_ms": 69,
+      "stderr": "",
+      "child_exit": 0,
+      "flags": 0,
+      "wall_ms": 47,
+      "user_cpu_100ns": 156250,
+      "kernel_cpu_100ns": 156250,
+      "peak_process_bytes": 2314240,
+      "stdin_offset": 4,
+      "stdout_bytes": 1,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "exact-output-budget",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 75,
+      "operator_wall_ms": 54,
+      "stderr": "",
+      "child_exit": 0,
+      "flags": 0,
+      "wall_ms": 32,
+      "user_cpu_100ns": 0,
+      "kernel_cpu_100ns": 312500,
+      "peak_process_bytes": 2314240,
+      "stdin_offset": 6,
+      "stdout_bytes": 3,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "zero-output-budget",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 51,
+      "stderr": "",
+      "child_exit": 7,
+      "flags": 0,
+      "wall_ms": 47,
+      "user_cpu_100ns": 156250,
+      "kernel_cpu_100ns": 156250,
+      "peak_process_bytes": 1708032,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "empty-environment",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 55,
+      "stderr": "",
+      "child_exit": 7,
+      "flags": 0,
+      "wall_ms": 31,
+      "user_cpu_100ns": 0,
+      "kernel_cpu_100ns": 156250,
+      "peak_process_bytes": 1695744,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "wall-timeout",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 134,
+      "stderr": "",
+      "child_exit": 1,
+      "flags": 1,
+      "wall_ms": 109,
+      "user_cpu_100ns": 625000,
+      "kernel_cpu_100ns": 312500,
+      "peak_process_bytes": 2326528,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "output-flood",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 52,
+      "stderr": "",
+      "child_exit": 0,
+      "flags": 2,
+      "wall_ms": 31,
+      "user_cpu_100ns": 156250,
+      "kernel_cpu_100ns": 0,
+      "peak_process_bytes": 2318336,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "missing-input",
+      "status": "PASS",
+      "runner_exit": 9,
+      "response_bytes": 0,
+      "operator_wall_ms": 15,
+      "stderr": ""
+    },
+    {
+      "name": "missing-executable",
+      "status": "PASS",
+      "runner_exit": 9,
+      "response_bytes": 0,
+      "operator_wall_ms": 23,
+      "stderr": ""
+    },
+    {
+      "name": "existing-output-preserved",
+      "status": "PASS",
+      "runner_exit": 9,
+      "response_bytes": 0,
+      "operator_wall_ms": 34,
+      "stderr": ""
+    },
+    {
+      "name": "existing-error-preserved",
+      "status": "PASS",
+      "runner_exit": 9,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "trailing-byte",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "embedded-nul",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 33,
+      "stderr": ""
+    },
+    {
+      "name": "relative-path",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 21,
+      "stderr": ""
+    },
+    {
+      "name": "quote-in-path",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 23,
+      "stderr": ""
+    },
+    {
+      "name": "additional-colon",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 19,
+      "stderr": ""
+    },
+    {
+      "name": "unsupported-header",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 23,
+      "stderr": ""
+    },
+    {
+      "name": "reserved-byte",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "zero-wall",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 22,
+      "stderr": ""
+    },
+    {
+      "name": "zero-cpu",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 21,
+      "stderr": ""
+    },
+    {
+      "name": "small-memory",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 19,
+      "stderr": ""
+    },
+    {
+      "name": "path-length-overflow",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "truncated-path",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 38,
+      "stderr": ""
+    },
+    {
+      "name": "split-binary-output",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 85,
+      "operator_wall_ms": 86,
+      "stderr": "",
+      "child_exit": 7,
+      "flags": 0,
+      "wall_ms": 62,
+      "user_cpu_100ns": 156250,
+      "kernel_cpu_100ns": 0,
+      "peak_process_bytes": 1703936,
+      "stdin_offset": 0,
+      "stdout_bytes": 7,
+      "stderr_bytes": 6
+    },
+    {
+      "name": "combined-output-exact",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 85,
+      "operator_wall_ms": 80,
+      "stderr": "",
+      "child_exit": 7,
+      "flags": 0,
+      "wall_ms": 63,
+      "user_cpu_100ns": 156250,
+      "kernel_cpu_100ns": 0,
+      "peak_process_bytes": 1703936,
+      "stdin_offset": 0,
+      "stdout_bytes": 7,
+      "stderr_bytes": 6
+    },
+    {
+      "name": "combined-output-exceeded",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 73,
+      "stderr": "",
+      "child_exit": 7,
+      "flags": 2,
+      "wall_ms": 46,
+      "user_cpu_100ns": 0,
+      "kernel_cpu_100ns": 156250,
+      "peak_process_bytes": 1703936,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "cpu-job-limit",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 205,
+      "stderr": "",
+      "child_exit": 1,
+      "flags": 4,
+      "wall_ms": 172,
+      "user_cpu_100ns": 1093750,
+      "kernel_cpu_100ns": 781250,
+      "peak_process_bytes": 2314240,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "memory-job-limit",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 592,
+      "stderr": "",
+      "child_exit": 3221225501,
+      "flags": 0,
+      "wall_ms": 579,
+      "user_cpu_100ns": 0,
+      "kernel_cpu_100ns": 156250,
+      "peak_process_bytes": 1708032,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "memory-positive-control",
+      "status": "PASS",
+      "runner_exit": 0,
+      "response_bytes": 72,
+      "operator_wall_ms": 70,
+      "stderr": "",
+      "child_exit": 99,
+      "flags": 0,
+      "wall_ms": 47,
+      "user_cpu_100ns": 156250,
+      "kernel_cpu_100ns": 0,
+      "peak_process_bytes": 136175616,
+      "stdin_offset": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "header-truncated-0",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 19,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-1",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 39,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-2",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 21,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-3",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-4",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-5",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 19,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-6",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 22,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-7",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-8",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 7,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-9",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-10",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-11",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 15,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-12",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-13",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 31,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-14",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-15",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-16",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 21,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-17",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-18",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-19",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 17,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-20",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 17,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-21",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 23,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-22",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-23",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-24",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 15,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-25",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 30,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-26",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 17,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-27",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 16,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-28",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-29",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-30",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-31",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 20,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-32",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 17,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-33",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 25,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-34",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-35",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 16,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-36",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 16,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-37",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 28,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-38",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 17,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-39",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 15,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-40",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 16,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-41",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 16,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-42",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 15,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-43",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 16,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-44",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 15,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-45",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-46",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 27,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-47",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-48",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-49",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 15,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-50",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 27,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-51",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 14,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-52",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 13,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-53",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-54",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-55",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-56",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-57",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 19,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-58",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 16,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-59",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 26,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-60",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 17,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-61",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 18,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-62",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 17,
+      "stderr": ""
+    },
+    {
+      "name": "header-truncated-63",
+      "status": "PASS",
+      "runner_exit": 3,
+      "response_bytes": 0,
+      "operator_wall_ms": 26,
+      "stderr": ""
+    }
+  ],
+  "supervisor_cancellation": {
+    "status": "PASS",
+    "scope": "Kill supervisor only after observing its controlled child; no process-tree kill used for acceptance",
+    "child_terminated": true,
+    "temp_files_removed": true,
+    "response_bytes": 0,
+    "stderr": "",
+    "during_process_creation": "NOT TESTED",
+    "host_crash": "NOT TESTED",
+    "initial_operator_check": "Read-only PowerShell Error variable collision; repeated without source changes"
+  },
+  "rebuild": {
+    "status": "PASS",
+    "source_sha256": "a13b33b3c16e8bc7d640d6b8ff32f44d5075130282a2ca6bfab5f1cc84eb5f41",
+    "artifact_sha256": "405e16fc1647d43f43e0052ebccd863ef745a47fae06156cc4c30c38f3f4116f",
+    "native_verify_exit": 0,
+    "native_resolve_exit": 0,
+    "native_build_exit": 0,
+    "byte_identical": true
+  },
+  "transaction": {
+    "unchanged_helpers": {
+      "read_one": "516e04bb8c94f47941556a040e9d7a547e4b2f5023d292b5711b44a26fa4483f",
+      "write_one": "b13fcb9e918f41fdfc3357f52b0fab4f5d5c13c5a5eb2c0abd53d9d430da21b2",
+      "read_exact": "68d9024f7bd99e39482752233ccb918a551daed5e034e630c047db045a12fe60",
+      "emit_bytes": "f99d9dbb428ebf557540ec1ddc87919ea312dccaf7e005cb459f2d20b4304151"
+    },
+    "reference_replacements": 2,
+    "expected_root": "e19b47ebedaee05a6fd603eb8cb4af2e507983b6f82cc00441301d3f9f4fc29d",
+    "native_steps": [
+      "verify base",
+      "edit",
+      "verify candidate",
+      "resolve",
+      "build"
+    ],
+    "changed_functions": 1,
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "failed_observations": [
+    {
+      "status": "FAIL",
+      "stage": "first infinite BF output probe",
+      "resolution": "Finite BF output fixture emits 2048 bytes; no compiler change",
+      "captured_bytes": 0,
+      "child_exit": 2
+    },
+    {
+      "followup": "Test attempted unavailable worker path; runner setup rejected with exit 9; no probe executed",
+      "reason": "No artifact or diagnostic; no compiler modification or unsupported capability claim",
+      "status": "FAIL",
+      "native_build_exit": 1,
+      "stage": "unused infinite XAX output probe",
+      "executed": false,
+      "artifact_produced": false,
+      "native_verify_exit": 0
+    },
+    {
+      "observed_user_cpu_100ns": 28593750,
+      "status": "FAIL",
+      "requested_user_cpu_100ns": 1000000,
+      "resolution": "Native transaction adds sampled CPU flag 4 and final CPU/wall checks",
+      "wall_budget_ms": 3000,
+      "stage": "OS job CPU limit alone",
+      "flags": 1
+    },
+    {
+      "status": "FAIL",
+      "stage": "memory probe graceful-denial expectation",
+      "resolution": "Retained failure and paired generous-budget control; repeated host-specific trap observation recorded separately; graceful handling remains unaccepted",
+      "observed_exit": 3221225501,
+      "expected_exit": 23
+    }
+  ],
+  "operator_failures": [
+    "Wrong BBC command syntax returned usage/4, corrected without source changes",
+    "Empty-array comparator returned null, corrected operator comparison",
+    "Cancellation verifier collided with read-only Error variable, repeated",
+    "Final result filename lookup corrected; full 93-case set verified before naming"
+  ],
+  "memory_denial_handling": "PARTIAL: limited-budget trap, successful larger-budget control; not graceful handling acceptance",
+  "trusted_no_argument_byte_workers": "PARTIAL",
+  "untrusted_isolation": "NOT STARTED for this runner",
+  "legacy_process_module_replaced": false,
+  "workflow_vm_replaced": false,
+  "tracked_foreign_files_remaining": 94,
+  "tracked_foreign_files_retired": 0,
+  "application_performance_accepted": false,
+  "ai_resistance_accepted": false,
+  "full_prepare_accepted": false,
+  "protected_apk_accepted": false,
+  "licensing_and_relinking_accepted": false,
+  "new_recovery": false,
+  "signed": false,
+  "production_release_accepted": false,
+  "working_target_modified": false,
+  "reference_modified": false,
+  "published": false
+}

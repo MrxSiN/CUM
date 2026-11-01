@@ -1,0 +1,33 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "PASS",
+  "compiler_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+  "base": "host/native/transactions/byte-framer-base.xax",
+  "base_sha256": "c8e478644596c29464d76088878df607c9e2fe61334aa5d9404533f13de99c57",
+  "expected_root": "2c86f96bc342fac59356ff1c6845ecc7478129e79e0eebb8a9a33717482ac5e8",
+  "record": "host/native/transactions/byte-framer-abi.edit",
+  "record_sha256": "abe7729307c804f754f70413767a0294cd98e18a6b22e556f14b30802477cb27",
+  "result": "host/native/byte_framer.xax",
+  "result_sha256": "e1cdfde70282ed7b4eb765b83dc4cb3e0a0fae885a469563740b953bc5d66ffc",
+  "changed_functions": 2,
+  "unchanged_write_function": "fc5cc85d4dbd03ae27bce88f592e3ea7e760e15e35d7bc1056ec86bd08bd9e69",
+  "reference_replacements": 3,
+  "scope": "read/main module references and package build entry; canonical build request closure",
+  "native_steps": [
+    "verify base diagnostic",
+    "edit base record candidate",
+    "verify candidate diagnostic",
+    "resolve candidate snapshot",
+    "build snapshot executable provenance"
+  ],
+  "successful_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "result_executable_sha256": "b1e48d367cd47c1e8280fb1679a074b805c89a308fc8a832e021a86710bafe85",
+  "initial_construction_record": "Historical initial source only; has ABI build rejection, not a regeneration authority",
+  "evidence": "evidence/native-byte-host-2026-11-01.json"
+}

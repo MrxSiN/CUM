@@ -1,5 +1,35 @@
 # Current validation status
 
+The new [native trusted byte-worker runner](NATIVE_PROCESS_RUNNER.md) passes 93
+scoped cases and a separate supervisor-only cancellation drill. A verified native
+transaction adds sampled CPU enforcement after an executed job-limit failure;
+the current executable rebuilds byte-identically. Binary stdout/stderr, file
+preservation and measured resource fields passed scoped checks. The memory-denial
+probe traps; a larger-budget control succeeds, so graceful failure remains
+unaccepted. This is a trusted no-argument service, not a sandbox, full process.py
+port or workflow VM. No tracked migration is retired and no production gate is
+promoted. See [evidence](../evidence/native-process-runner-2026-11-01.json).
+
+The owner now requires a [BF/XAX-only implementation](LANGUAGE_MIGRATION.md),
+including the generic host and tests. The Python exception is revoked. Ninety-four
+tracked foreign-language files remain migration debt; language compliance and
+production acceptance are closed. The BF hex codec compiled at O1 and passed all
+24 native data vectors; O0 declined with backend exit 5. Two canonical XAX byte
+transport components now pass 43 direct cases, 20 BF codec compositions and one
+historical transform composition; both rebuild byte-identically. The multi-cell
+share controller compiled and passed 24 protocol vectors, with complete helper
+semantics still unverified. No tracked foreign file is retired. One ignored
+one-time authoring generator was retired after its BF output passed those checks.
+The native host/VM/CLI migration is incomplete. See
+[native scope](NATIVE_BYTE_HOST.md) and [evidence](../evidence/native-byte-host-2026-11-01.json).
+
+The owner-selected [private corresponding-source draft](SOURCE_DELIVERY.md) is
+assembled: 97 preferred files, nine protected-library candidates, retained
+compiler/build inputs and verified DexKit source. Its 50 delivery members and
+owner/System ACL passed checks. Whole-APK rebuild, notice completeness, relinking,
+licensing and publication remain unaccepted. No source was published or target
+modified. See [source-delivery evidence](../evidence/source-delivery-2026-11-01.json).
+
 The latest [PQ interoperability/project foundation](PQ_INTEROPERABILITY.md)
 passed independent OpenSSL 3.6.5 / Bouncy Castle 1.86 full CMS exchange, new
 project-specific ML-KEM identity creation and exact retained 97-file recovery

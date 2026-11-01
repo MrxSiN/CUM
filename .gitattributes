@@ -3,3 +3,8 @@
 *.md text eol=lf
 *.json text eol=lf
 *.bin binary
+# Preserve canonical stores, transaction records and byte-pinned executed inputs.
+*.xax binary
+*.edit binary
+src/machines/bf_share_tape.bf -text -eol whitespace=trailing-space,space-before-tab,cr-at-eol
+tests/fixtures/native-process-runner.json -text -eol whitespace=trailing-space,space-before-tab,cr-at-eol

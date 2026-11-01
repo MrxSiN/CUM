@@ -1,0 +1,236 @@
+{
+  "format": "BF-XAX-LANGUAGE-MIGRATION-CHECKPOINT",
+  "date": "2026-11-01",
+  "status": "PARTIAL",
+  "language_compliance": "NOT ACCEPTED",
+  "production_release_accepted": false,
+  "source_written": "PASS",
+  "codec_compiled": "PASS at O1; BLOCKED at O0",
+  "codec_executed": "PASS",
+  "codec_tested": "PASS",
+  "source_sha256": {
+    "src/hex_codec.bf": "7f98cbf13ec3ee8e934b72e294ca3ad3a10e954e2ea53a2c7ec93ab621cf4577",
+    "tests/fixtures/hex-codec.json": "57633da874dcd43883743da80d9936ee2b9a650fa4487155bae7b9ae988166f8"
+  },
+  "compiler": {
+    "name": "BBC native Windows executable",
+    "sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+    "modified": false
+  },
+  "build_attempts": [
+    {
+      "optimization": "O0",
+      "exit": 5,
+      "stdout": "",
+      "stderr": "BBC: the native XAX backend does not support this program on the selected target\r\n",
+      "source_sha256": "7f98cbf13ec3ee8e934b72e294ca3ad3a10e954e2ea53a2c7ec93ab621cf4577",
+      "compiled": false,
+      "executed": false,
+      "tested": false
+    },
+    {
+      "optimization": "O1",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "source_sha256": "7f98cbf13ec3ee8e934b72e294ca3ad3a10e954e2ea53a2c7ec93ab621cf4577",
+      "compiled": true,
+      "executed": false,
+      "tested": false,
+      "artifact_sha256": "1b8191e12d7c714e3c61fe100ddd349d81444a26fcb5f32e2c482aa688ac7772"
+    }
+  ],
+  "native_cases": [
+    {
+      "name": "encode-empty",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0609403
+    },
+    {
+      "name": "encode-all-bytes",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0341982
+    },
+    {
+      "name": "encode-4096-bytes",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0489049
+    },
+    {
+      "name": "decode-empty",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0469719
+    },
+    {
+      "name": "decode-all-lower",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0342129
+    },
+    {
+      "name": "decode-all-upper",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0364003
+    },
+    {
+      "name": "decode-whitespace",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0371039
+    },
+    {
+      "name": "decode-mixed-case",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 0,
+      "wall_seconds": 0.0345907
+    },
+    {
+      "name": "reject-\"a\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0357335
+    },
+    {
+      "name": "reject-\"abc\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0348911
+    },
+    {
+      "name": "reject-\"a b\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0386764
+    },
+    {
+      "name": "reject-\"0\\n0\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0385985
+    },
+    {
+      "name": "reject-\"gg\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0374862
+    },
+    {
+      "name": "reject-\"-1\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0379945
+    },
+    {
+      "name": "reject-\"0x12\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0577089
+    },
+    {
+      "name": "reject-\"12g4\"",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0387576
+    },
+    {
+      "name": "reject-NUL",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0347726
+    },
+    {
+      "name": "reject-nonascii",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0399697
+    },
+    {
+      "name": "reject-mode",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 2,
+      "wall_seconds": 0.032411
+    },
+    {
+      "name": "bad-magic",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0350489
+    },
+    {
+      "name": "truncated-header",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0335994
+    },
+    {
+      "name": "truncated-data",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0329028
+    },
+    {
+      "name": "missing-terminal",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.03472
+    },
+    {
+      "name": "bad-marker",
+      "status": "PASS",
+      "exit": 0,
+      "response_status": 1,
+      "wall_seconds": 0.0357113
+    }
+  ],
+  "test_execution": "Native BBC outputs invoked by standard operator commands; no CUM Python/Java/test-script execution for this checkpoint",
+  "native_contract": "b8 mode (01 byte)* 02 fe -> transformed bytes and final status; exact single-request framing is a caller obligation",
+  "legacy_host_replaced": false,
+  "retired_foreign_files": 0,
+  "tracked_foreign_files_remaining": 94,
+  "ignored_owned_helpers": "Additional migration debt; not included in the tracked count; no renamed/relocated implementation claimed",
+  "multi_cell_share": {
+    "source_written": true,
+    "compiled": false,
+    "executed": false,
+    "tested": false,
+    "release_accepted": false
+  },
+  "full_prepare": "BLOCKED",
+  "ai_resistance": "FAIL for previously tested unchanged variants",
+  "protected_apk": "BLOCKED",
+  "licensing": "BLOCKED",
+  "application_performance": "NOT ACCEPTED",
+  "new_isolated_recovery": "NOT STARTED",
+  "new_signing": "NOT STARTED",
+  "external_AI_upload": false,
+  "original_or_reference_written": false,
+  "pushed_or_published": false
+}

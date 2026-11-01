@@ -1,0 +1,196 @@
+{
+  "format": "NATIVE-TRUSTED-RUNNER-VECTORS",
+  "status": "PARTIAL",
+  "request": "NRQ1; 64-byte header and five UTF-16LE paths; physical EOF",
+  "scope": "Trusted no-argument byte workers; no untrusted sandbox or complete process.py replacement",
+  "default_wall_ms": 2000,
+  "default_output_bytes": 65536,
+  "default_user_cpu_100ns": 10000000,
+  "default_memory_bytes": 67108864,
+  "cases": [
+    {
+      "name": "codec-all-bytes",
+      "worker": "hex_codec",
+      "mode": 1,
+      "payload_hex": "ALL_256_BYTE_VALUES",
+      "expected_child_exit": 0,
+      "expected_flags": 0
+    },
+    {
+      "name": "codec-empty",
+      "worker": "hex_codec",
+      "mode": 1,
+      "payload_hex": "",
+      "expected_child_exit": 0,
+      "expected_flags": 0
+    },
+    {
+      "name": "exact-output-budget",
+      "worker": "hex_codec",
+      "mode": 1,
+      "payload_hex": "00",
+      "output_limit": 3,
+      "expected_child_exit": 0,
+      "expected_flags": 0
+    },
+    {
+      "name": "zero-output-budget",
+      "worker": "probe",
+      "output_limit": 0,
+      "expected_child_exit": 7,
+      "expected_flags": 0
+    },
+    {
+      "name": "empty-environment",
+      "worker": "probe",
+      "expected_child_exit": 7,
+      "expected_flags": 0
+    },
+    {
+      "name": "wall-timeout",
+      "worker": "runner-spin",
+      "wall_ms": 100,
+      "expected_flags": 1
+    },
+    {
+      "name": "output-flood",
+      "worker": "runner-flood",
+      "output_limit": 1024,
+      "expected_flags": 2
+    },
+    {
+      "name": "missing-input",
+      "mutation": "missing-input",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "missing-executable",
+      "mutation": "missing-executable",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "existing-output-preserved",
+      "mutation": "existing-output",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "existing-error-preserved",
+      "mutation": "existing-error",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "trailing-byte",
+      "mutation": "trailing-byte",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "embedded-nul",
+      "mutation": "embedded-nul",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "relative-path",
+      "mutation": "relative-path",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "quote-in-path",
+      "mutation": "quote-in-path",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "additional-colon",
+      "mutation": "additional-colon",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "unsupported-header",
+      "mutation": "unsupported-header",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "reserved-byte",
+      "mutation": "reserved-byte",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "zero-wall",
+      "mutation": "zero-wall",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "zero-cpu",
+      "mutation": "zero-cpu",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "small-memory",
+      "mutation": "small-memory",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "path-length-overflow",
+      "mutation": "path-length-overflow",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "truncated-path",
+      "mutation": "truncated-path",
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "all-header-truncations",
+      "prefix_lengths_inclusive": [
+        0,
+        63
+      ],
+      "expected_runner_nonzero": true
+    },
+    {
+      "name": "split-binary-output",
+      "worker": "io-probe",
+      "expected_child_exit": 7,
+      "expected_flags": 0,
+      "expected_stdout_hex": "6f7574000d0aff",
+      "expected_stderr_hex": "657272000afe"
+    },
+    {
+      "name": "combined-output-exact",
+      "worker": "io-probe",
+      "output_limit": 13,
+      "expected_child_exit": 7,
+      "expected_flags": 0,
+      "expected_stdout_hex": "6f7574000d0aff",
+      "expected_stderr_hex": "657272000afe"
+    },
+    {
+      "name": "combined-output-exceeded",
+      "worker": "io-probe",
+      "output_limit": 12,
+      "expected_flags": 2
+    },
+    {
+      "name": "cpu-job-limit",
+      "worker": "runner-spin",
+      "wall_ms": 3000,
+      "user_cpu_100ns": 1000000,
+      "expected_child_nonzero": true,
+      "expected_flags": 4
+    },
+    {
+      "name": "memory-job-limit",
+      "worker": "memory-probe",
+      "expected_child_exit": 3221225501,
+      "expected_flags": 0,
+      "observation": "Known failed initial expectation 23 retained; repeated host-specific observation is allocation-denial trap 0xC000001D. Generous-budget control returns 99. No graceful failure acceptance."
+    },
+    {
+      "name": "memory-positive-control",
+      "worker": "memory-probe",
+      "memory_bytes": 268435456,
+      "expected_child_exit": 99,
+      "expected_flags": 0
+    }
+  ],
+  "probe_contract": "io-probe stdout 6f7574000d0aff; stderr 657272000afe; XAX needed for stderr and allocation API probes"
+}

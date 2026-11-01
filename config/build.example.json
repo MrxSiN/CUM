@@ -63,7 +63,9 @@
     "D:/GitHub/CUM/src/identity_flow.bf",
     "D:/GitHub/CUM/src/project_recovery.bf",
     "D:/GitHub/CUM/src/scoped_clean_recovery.bf",
-    "D:/GitHub/CUM/src/pq_identity_flow.bf"
+    "D:/GitHub/CUM/src/pq_identity_flow.bf",
+    "D:/GitHub/CUM/src/machines/bf_share_tape.bf",
+    "D:/GitHub/CUM/src/hex_codec.bf"
   ],
   "timeout_seconds": 600,
   "max_log_bytes": 1048576

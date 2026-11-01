@@ -1,0 +1,39 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "PASS",
+  "base": "host/native/transactions/trusted-byte-runner-base.xax",
+  "base_sha256": "f3557711a8f265405928c9f9513ff5df06ef4a7f695dad2707bf9a2924247022",
+  "expected_root": "e19b47ebedaee05a6fd603eb8cb4af2e507983b6f82cc00441301d3f9f4fc29d",
+  "record": "host/native/transactions/trusted-byte-runner-cpu.edit",
+  "record_sha256": "9940a2ca7059feebb924c2e0dfb6ee67c9b996a69fd3467610dd3287d471facf",
+  "changed_function_transport": "host/native/transactions/trusted-byte-runner-cpu-functions.json",
+  "changed_function_transport_scope": "Supplies main for existing unchanged helper bindings; not a standalone program or a textual XAX language",
+  "result": "host/native/trusted_byte_runner.xax",
+  "result_sha256": "a13b33b3c16e8bc7d640d6b8ff32f44d5075130282a2ca6bfab5f1cc84eb5f41",
+  "changed_functions": 1,
+  "unchanged_helpers": {
+    "read_one": "516e04bb8c94f47941556a040e9d7a547e4b2f5023d292b5711b44a26fa4483f",
+    "write_one": "b13fcb9e918f41fdfc3357f52b0fab4f5d5c13c5a5eb2c0abd53d9d430da21b2",
+    "read_exact": "68d9024f7bd99e39482752233ccb918a551daed5e034e630c047db045a12fe60",
+    "emit_bytes": "f99d9dbb428ebf557540ec1ddc87919ea312dccaf7e005cb459f2d20b4304151"
+  },
+  "reference_replacements": 2,
+  "native_steps": [
+    "verify BASE DIAG",
+    "edit BASE RECORD CANDIDATE",
+    "verify CANDIDATE DIAG",
+    "resolve CANDIDATE SNAPSHOT",
+    "build SNAPSHOT EXE PROVENANCE"
+  ],
+  "exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "compiler_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+  "artifact_sha256": "405e16fc1647d43f43e0052ebccd863ef745a47fae06156cc4c30c38f3f4116f",
+  "initial_construction": "Historical initial source, lacks sampled CPU correction",
+  "evidence": "evidence/native-process-runner-2026-11-01.json"
+}

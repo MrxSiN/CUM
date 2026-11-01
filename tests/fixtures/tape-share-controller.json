@@ -1,0 +1,150 @@
+{
+  "format": "TAPE-SHARE-CONTROLLER-VECTORS",
+  "scope": "Controller protocol only; helper handoffs and transformed application semantics remain unverified",
+  "cases": [
+    {
+      "name": "start",
+      "input_hex": "b100000211010000010000000000000000000000000000000000",
+      "expected_output_hex": "b20bc90101000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "increment",
+      "input_hex": "b1012b0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b2012b0100000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "decrement",
+      "input_hex": "b1012d0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b2012d0100000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "right",
+      "input_hex": "b1013e0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b2070001013e013e013e013e013e013e0100000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "left",
+      "input_hex": "b1013c0211000000010001000000000000000000000000000000",
+      "expected_output_hex": "b20700ff013c013c013c013c013c013c0100000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "left-underflow",
+      "input_hex": "b1013c0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000003",
+      "expected_status": 3
+    },
+    {
+      "name": "right-budget",
+      "input_hex": "b1013e0211010000010101000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000002",
+      "expected_status": 2
+    },
+    {
+      "name": "input-handoff",
+      "input_hex": "b1012c0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20bca0102000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "output-handoff",
+      "input_hex": "b1012e0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20bcb0103000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "open",
+      "input_hex": "b1015b0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20500000bcc0104000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "close",
+      "input_hex": "b1015d0211010001000001000000000000000000000000000000",
+      "expected_output_hex": "b206000bcd0105000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "close-drift",
+      "input_hex": "b1015d0211010000000001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000004",
+      "expected_status": 4
+    },
+    {
+      "name": "close-without-open",
+      "input_hex": "b1015d0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000004",
+      "expected_status": 4
+    },
+    {
+      "name": "finish",
+      "input_hex": "b102000211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20bce0106000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "finish-open-stack",
+      "input_hex": "b102000211010000000001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000005",
+      "expected_status": 5
+    },
+    {
+      "name": "not-started-data",
+      "input_hex": "b1012b0211010000010000000000000000000000000000000000",
+      "expected_output_hex": "b20000000000000000000000000000000001",
+      "expected_status": 1
+    },
+    {
+      "name": "already-finished-data",
+      "input_hex": "b1012b0211010000010002000000000000000000000000000000",
+      "expected_output_hex": "b20200000000000000000000000000000001",
+      "expected_status": 1
+    },
+    {
+      "name": "reserved-opaque",
+      "input_hex": "b1012b0211010000010001000100000000000000000000000000",
+      "expected_output_hex": "b20100010000000000000000000000000001",
+      "expected_status": 1
+    },
+    {
+      "name": "pending-handoff",
+      "input_hex": "b1012b0211010000010001010000000000000000000000000000",
+      "expected_output_hex": "b20101000000000000000000000000000001",
+      "expected_status": 1
+    },
+    {
+      "name": "wrong-profile",
+      "input_hex": "b1012b0111010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000001",
+      "expected_status": 1
+    },
+    {
+      "name": "negative-register",
+      "input_hex": "b1012b0211010100010001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000001",
+      "expected_status": 1
+    },
+    {
+      "name": "wrong-magic",
+      "input_hex": "00012b0211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000001",
+      "expected_status": 1
+    },
+    {
+      "name": "ignored-NUL",
+      "input_hex": "b101000211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000000",
+      "expected_status": 0
+    },
+    {
+      "name": "ignored-text",
+      "input_hex": "b101410211010000010001000000000000000000000000000000",
+      "expected_output_hex": "b20100000000000000000000000000000000",
+      "expected_status": 0
+    }
+  ]
+}

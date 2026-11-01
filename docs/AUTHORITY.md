@@ -1,5 +1,11 @@
 # Engineering authority and scope
 
+The latest language instruction requires all owned executable sources, including
+the generic host and tests, to migrate to Brainfuck or canonical XAX. It overrides
+the earlier Python-host allowance. Legacy evidence stays scoped to its original
+implementation; it cannot certify the new language policy. See
+[the migration contract](LANGUAGE_MIGRATION.md).
+
 The latest direct request adopts the updated master
 `D:/Downloads/CUM_Engineering_Development_Prompt.md` (SHA-256
 `185b3a5b03c7681a76d2ed0dba568e7fdae093b7fe55d8c8ef5e88b6f438efee`)
