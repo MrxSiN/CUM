@@ -1,0 +1,40 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "PASS",
+  "base": "host/native/transactions/trusted-byte-runner-arguments-base.xax",
+  "base_sha256": "a13b33b3c16e8bc7d640d6b8ff32f44d5075130282a2ca6bfab5f1cc84eb5f41",
+  "expected_root": "a6778ac9886bfbd98a1ce4fad267da5b9a35520ce8bf3c0d30db4725ce082b3c",
+  "record": "host/native/transactions/trusted-byte-runner-arguments.edit",
+  "record_sha256": "dbcf9556773bf8bae986b0356aedad9d89ffeed00f44fd984692f1584e2848a3",
+  "changed_function_transport": "host/native/transactions/trusted-byte-runner-arguments-functions.json",
+  "result": "host/native/trusted_byte_runner.xax",
+  "result_sha256": "be94559c62ed7336258d1bd92615f98aeb9aea7cbe877481eecfbe0fafea1b1e",
+  "changed_functions": 1,
+  "unchanged_helpers": {
+    "read_one": "516e04bb8c94f47941556a040e9d7a547e4b2f5023d292b5711b44a26fa4483f",
+    "write_one": "b13fcb9e918f41fdfc3357f52b0fab4f5d5c13c5a5eb2c0abd53d9d430da21b2",
+    "read_exact": "68d9024f7bd99e39482752233ccb918a551daed5e034e630c047db045a12fe60",
+    "emit_bytes": "f99d9dbb428ebf557540ec1ddc87919ea312dccaf7e005cb459f2d20b4304151"
+  },
+  "reference_replacements": 2,
+  "native_steps": [
+    "verify BASE DIAG",
+    "edit BASE RECORD CANDIDATE",
+    "verify CANDIDATE DIAG",
+    "resolve CANDIDATE SNAPSHOT",
+    "build SNAPSHOT EXE PROVENANCE"
+  ],
+  "exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "compiler_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+  "artifact_sha256": "3211617f23a9b19264ab859ddd5b24826ce1698c231946f553078db5668f17d1",
+  "byte_identical_rebuild": true,
+  "stale_root_rejected": true,
+  "historical_source": "CPU-corrected NRQ1 source retained byte-identically as this base; earlier checkpoint pins identify that historical store",
+  "evidence": "evidence/native-arguments-2026-11-01.json"
+}

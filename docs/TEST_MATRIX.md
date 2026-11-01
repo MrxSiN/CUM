@@ -15,6 +15,12 @@ cases and a supervisor-only cancellation drill. Its CPU-limit correction, initia
 probe/build failures and limited-versus-generous memory observations are retained.
 No complete host, sandbox or application performance acceptance follows from it.
 
+The [argument increment](NATIVE_ARGUMENTS.md) adds 32 native BF vectors,
+19 independent CRT roundtrips, seven new rejection cases, exact command-boundary
+and supervisor-cancellation checks, plus all 93 NRQ1 regressions. Real pinned
+compiler/OpenSSL invocations executed. The compiler failed at 2 GiB and passed a
+separate 4 GiB capacity probe; neither promotes application performance acceptance.
+
 | Area | Authored checks / required runs |
 |---|---|
 | BF source | Eight-command-only bytes, exact bracket acceptance, native O0/O1 builds |

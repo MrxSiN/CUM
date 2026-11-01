@@ -8,3 +8,4 @@
 *.edit binary
 src/machines/bf_share_tape.bf -text -eol whitespace=trailing-space,space-before-tab,cr-at-eol
 tests/fixtures/native-process-runner.json -text -eol whitespace=trailing-space,space-before-tab,cr-at-eol
+tests/fixtures/native-argument-runner.json -text -eol whitespace=trailing-space,space-before-tab,cr-at-eol

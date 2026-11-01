@@ -1,5 +1,17 @@
 # Current validation status
 
+The [native argument increment](NATIVE_ARGUMENTS.md) passed 32 BF vectors,
+19 independent wide-CRT roundtrips, all 93 NRQ1 regressions, seven NRQ2 rejection
+cases, the exact command boundary and NRQ2 supervisor cancellation. BF-produced
+arguments now invoke the pinned XAX verifier and OpenSSL through the native runner.
+The XAX verifier failed at 2 GiB; a separate 4 GiB capacity probe passed and reported
+about 3.56 GB peak process memory. The original budget remains failed, and no
+application/compiler performance acceptance follows. The native workflow VM and
+whole-file migrations remain incomplete; all 94 tracked files are retained.
+Publication fields in dated evidence describe the execution checkpoint, not
+subsequent Git pushes. Release acceptance remains false. See
+[evidence](../evidence/native-arguments-2026-11-01.json).
+
 The new [native trusted byte-worker runner](NATIVE_PROCESS_RUNNER.md) passes 93
 scoped cases and a separate supervisor-only cancellation drill. A verified native
 transaction adds sampled CPU enforcement after an executed job-limit failure;

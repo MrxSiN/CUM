@@ -129,3 +129,23 @@ environments, large file streaming, reparse-safe storage and isolation adapters
 are not ported. No untrusted build or production job uses the new runner. All 94
 tracked foreign sources remain pending whole-file parity; native VM, providers,
 complete CLI/test drivers and acceptance integrations remain outstanding.
+
+## BF argument serialization and native integration
+
+`src/windows_args.bf` now owns Windows UTF-16 argument escaping. The runner's
+NRQ2 extension transports the accepted serialized segment and invokes the separate
+application path without a shell. Thirty-two BF vectors and 19 independent
+wide-CRT roundtrips passed, including quotes, Unicode and long backslash runs.
+All 93 NRQ1 regressions, seven new rejection cases, command-capacity boundary and
+supervisor cancellation passed. The current runner rebuilt byte-identically;
+four helper identities were retained by a native exact-root transaction.
+
+Pinned compiler verification and OpenSSL version invocation executed with BF
+arguments. The compiler's 2 GiB failure remains recorded alongside its successful
+4 GiB capacity probe. Neither is an application-performance acceptance. See
+[argument scope](NATIVE_ARGUMENTS.md) and
+[evidence](../evidence/native-arguments-2026-11-01.json).
+
+These components still do not retire process.py or any of the 94 tracked files.
+The native workflow VM, tool/path identity service, environment policy, storage,
+full CLI/test drivers and crypto/isolation integrations remain needed for parity.
