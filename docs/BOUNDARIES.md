@@ -1,5 +1,24 @@
 # BF and generic host ownership
 
+The owner's BF/XAX-only instruction supersedes the former Python-host exception.
+The table below describes service ownership, not permission for a foreign runtime.
+Existing Python/Java/scripts remain legacy migration debt. New implementation and
+tests must be BF first, with canonical XAX for unavailable BF capabilities. See
+[migration scope](LANGUAGE_MIGRATION.md).
+
+`host/native/byte_framer.xax` and `worker_response.xax` are the first verified
+native transport replacements. Prefixes, suffixes, state bytes and statuses are
+opaque; neither recognizes source commands nor selects a transformation. They
+are not the native workflow VM or process-isolation boundary. See
+[contracts and scoped proof](NATIVE_BYTE_HOST.md).
+
+`host/native/trusted_byte_runner.xax` launches only a caller-approved no-argument
+worker and reports opaque bytes/resources. It does not validate worker semantics,
+interpret BF status or grant isolation to untrusted code. Its filesystem operands
+require independently approved private non-reparse paths and executable pinning.
+Those preconditions are not implemented by a source-language parser. See
+[process contract](NATIVE_PROCESS_RUNNER.md).
+
 | Decision/service | Owner |
 |---|---|
 | Command plan and release ordering | `src/cum.bf` |

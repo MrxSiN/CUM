@@ -1,0 +1,915 @@
+{
+  "format": "BF-XAX-MIGRATION-INVENTORY",
+  "date": "2026-11-01",
+  "status": "PARTIAL",
+  "policy": "Brainfuck first; canonical XAX for unavailable BF capabilities",
+  "scope": "All tracked owned implementation, providers, tests, fixtures and executable scripts",
+  "foreign_file_count": 94,
+  "entries": [
+    {
+      "path": "host/__init__.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/__init__.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/__main__.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/archive.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/assembly.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/build.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/bundle.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/cache.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/crypto.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/discovery.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/dispatch.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/errors.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/git_transport.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/guards.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/machine.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/metadata.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/metrics.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/process.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false,
+      "partial_replacement": "host/native/trusted_byte_runner.xax; no whole-file parity/retirement"
+    },
+    {
+      "path": "host/bytehost/projection.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/qemu_isolation.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/resources.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/scope.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/securestore.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/storage.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/transport.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/trusted.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/trusted_recovery.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/vm.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/bytehost/worker.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/providers/__init__.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/providers/bytevm_agent.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/providers/bytevm_seed.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/providers/cgroup_run.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/providers/xax_query.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/runtime_entry.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/tools/StandardCms.java",
+      "language": ".java",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "host/verify_bundle.ps1",
+      "language": ".ps1",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/graph_checks.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/language_checks.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/machine_checks.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/machine_reference.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/native_checks.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/prepare_authority.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/prepare_checks.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/prepare_recovery.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/projects/Runner.java",
+      "language": ".java",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/projects/java/Arithmetic.java",
+      "language": ".java",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/projects/kotlin/Arithmetic.kt",
+      "language": ".kt",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/public_release_check.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/reference.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/runtime_checks.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_annotations.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_build.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_cache.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_core.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_crypto.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_draft_adapters.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_git_transport.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_graph_recipe.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_host.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_isolated_recovery.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_machine_host.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_native_commands.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_native_graph.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_offline_bootstrap.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_policies.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_pq_cms.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_pq_interop.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_pq_project.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_prepare_scope.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_presentation.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_process.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_project_identity.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_qemu_isolation.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_qemu_native.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_resistance.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_runtime_bundle.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_service_output.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_shared_state.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_signed_recovery.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_storage.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_symbolic_analysis.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_transport.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_trusted_inputs.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/test_workflow_draft.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/tools/__init__.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/tools/cms_fixture.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/tools/crypto_probe.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/tools/normalize.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/tools/symbolic.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/vm_native_check.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/vm_project_recovery.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    },
+    {
+      "path": "tests/vm_signed_recovery.py",
+      "language": ".py",
+      "source_written": false,
+      "compiled": false,
+      "executed": false,
+      "tested": false,
+      "retired": false
+    }
+  ],
+  "replacement_units": [
+    {
+      "source": "src/hex_codec.bf",
+      "source_written": true,
+      "compiled": "O1",
+      "native_cases_passed": 24,
+      "legacy_integration": false
+    },
+    {
+      "source": "host/native/byte_framer.xax",
+      "source_written": true,
+      "native_verified": true,
+      "compiled": true,
+      "executed": true,
+      "native_cases_passed": 22,
+      "legacy_integration": false,
+      "scope": "Partial bytehost transport replacement only"
+    },
+    {
+      "source": "host/native/worker_response.xax",
+      "source_written": true,
+      "native_verified": true,
+      "compiled": true,
+      "executed": true,
+      "native_cases_passed": 21,
+      "legacy_integration": false,
+      "scope": "Partial response acceptance replacement only"
+    },
+    {
+      "source": "src/machines/bf_share_tape.bf",
+      "source_written": true,
+      "compiled": "O1",
+      "native_cases_passed": 24,
+      "legacy_integration": false,
+      "scope": "Protocol only; complete transformation unverified"
+    },
+    {
+      "source": "host/native/trusted_byte_runner.xax",
+      "source_written": true,
+      "native_verified": true,
+      "compiled": true,
+      "executed": true,
+      "native_cases_passed": 93,
+      "supervisor_cancel_drill": "PASS",
+      "byte_identical_rebuild": true,
+      "legacy_integration": false,
+      "scope": "Partial process.py interface; trusted no-argument workers only; no untrusted sandbox"
+    }
+  ],
+  "ignored_foreign_audit": {
+    "inventoried": 980,
+    "owned_legacy_copies": 265,
+    "external_exact_matches": 260,
+    "unclassified": 455,
+    "one_time_authoring_generator_retired": 1,
+    "unclassified_unretired": 454,
+    "details": "Private; no blanket owner/external classification"
+  }
+}

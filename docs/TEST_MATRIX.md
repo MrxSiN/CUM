@@ -4,6 +4,17 @@ This matrix lists acceptance areas, not blanket passing coverage. Test source
 existence is not execution. [Status](STATUS.md) and dated evidence distinguish
 reference, native, isolated, recovered, signed, measured and accepted states.
 
+The [native transport checkpoint](NATIVE_BYTE_HOST.md) executed 22 framer cases,
+21 response cases, 20 BF codec compositions, one historical transform composition
+and 24 controller protocol cases. Fixtures are JSON data, not foreign test code.
+The [source package](SOURCE_DELIVERY.md) separately checks archive/source identity
+and privacy; it does not establish full application rebuild or licensing acceptance.
+
+The [native trusted runner](NATIVE_PROCESS_RUNNER.md) separately passed 93 scoped
+cases and a supervisor-only cancellation drill. Its CPU-limit correction, initial
+probe/build failures and limited-versus-generous memory observations are retained.
+No complete host, sandbox or application performance acceptance follows from it.
+
 | Area | Authored checks / required runs |
 |---|---|
 | BF source | Eight-command-only bytes, exact bracket acceptance, native O0/O1 builds |

@@ -161,3 +161,23 @@ repeated fresh model sessions, grades extraction and functional reconstruction,
 and includes compiler normalization and trace/devirtualization attacks. Complete
 all application budgets and exact recovery before any promotion. No universal
 AI failure, secrecy or copy-prevention claim is made.
+
+## Multi-cell controller checkpoint — 2026-11-01
+
+`src/machines/bf_share_tape.bf` extends the drafted controller domain to a
+nonnegative logical pointer with six physical cells per logical cell. Integer
+register zero tracks the logical pointer; stack zero records loop-entry pointers.
+Loop bodies must return statically to their entry pointer. Pointer-underflow,
+capacity, unbalanced loops, drift and malformed lifecycle reject. It reuses BF
+helpers 201–206; each cell's live value is represented by its two shares modulo
+256. Finishing materializes the current cell only; interpreting other final tape
+cells requires the share relation. This is an explicit semantics limitation.
+
+The controller compiled natively at O1 and passed 24 protocol fixtures. No complete
+helper-chain, representative policy, transformed final-state or new AI comparison
+has executed for this controller. `config/tape-share-flow.example.json` remains
+an unbound example; the old Python flow runner is migration debt. Native transport
+components do not themselves provide that VM. The retired ignored one-time
+authoring generator is not needed to execute or modify the authoritative BF.
+See [migration](LANGUAGE_MIGRATION.md) and
+[scoped evidence](../evidence/native-byte-host-2026-11-01.json).

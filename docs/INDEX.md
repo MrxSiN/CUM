@@ -2,7 +2,8 @@
 
 CUM is a Brainfuck-authored source-camouflage and authenticated exact-recovery
 project. All application decisions and transformations belong in genuine BF under
-`src/`; Python under `host/` provides separately identifiable generic services.
+`src/`. The owner now requires BF/XAX-only implementation, including generic
+services and tests; existing Python under `host/` is legacy migration debt.
 The dependency pipeline includes Python, BBC/XAX, OpenSSL and isolation tooling.
 
 **Partial implementation with scoped evidence; production is not accepted.** One
@@ -12,6 +13,10 @@ fixture never promotes a broader language, platform or release claim.
 
 ## Start here
 
+- [BF/XAX-only migration](LANGUAGE_MIGRATION.md): whole migration draft, source inventory and native codec contract.
+- [Native byte host](NATIVE_BYTE_HOST.md): canonical XAX transport, native edit replay and scoped BF/XAX composition proof.
+- [Native process runner](NATIVE_PROCESS_RUNNER.md): trusted no-argument service, resource observations, CPU correction and cancellation proof.
+- [Private source delivery](SOURCE_DELIVERY.md): owner-selected source review draft and remaining rebuild/notice/relinking gates.
 - [PQ interoperability and identity](PQ_INTEROPERABILITY.md): independent CMS exchange and explicit project-scoped PQ foundation.
 - [Prepare/PQ integration](PREPARE_INTEGRATION.md): scoped prepare adoption, experimental standard CMS backend and outstanding acceptance.
 - [Current status](STATUS.md): latest evidence, exclusions and dependency identities.

@@ -1,0 +1,218 @@
+{
+  "format": "xax-construct-v1",
+  "platform": "windows-x86_64",
+  "types": {
+    "proc": "win32.process_effect",
+    "fs": "win32.filesystem_effect",
+    "mem": "win32.memory_effect",
+    "ptr": "win32.bytes_rw",
+    "v": {
+      "view": 134217728
+    }
+  },
+  "functions": [
+    {
+      "name": "main",
+      "params": [
+        "proc",
+        "fs",
+        "mem"
+      ],
+      "returns": [
+        "b32",
+        "proc",
+        "fs",
+        "mem"
+      ],
+      "blocks": [
+        {
+          "params": [
+            "proc",
+            "fs",
+            "mem"
+          ],
+          "nodes": [
+            [
+              "call.foreign",
+              [
+                [
+                  "b64",
+                  0
+                ],
+                [
+                  "b64",
+                  134217728
+                ],
+                [
+                  "b32",
+                  12288
+                ],
+                [
+                  "b32",
+                  4
+                ],
+                "p2"
+              ],
+              [
+                "win32.heap_ptr_rw",
+                "win32.heap_resource",
+                "mem"
+              ],
+              {
+                "entity": "win32.virtual_alloc"
+              }
+            ],
+            [
+              "heap.view",
+              [
+                "n0",
+                "n0.r1",
+                "n0.r2"
+              ],
+              [
+                "ptr",
+                "v",
+                "mem"
+              ],
+              {
+                "attrs": [
+                  134217728,
+                  1
+                ]
+              }
+            ],
+            [
+              "pointer.address",
+              [
+                "n1"
+              ],
+              [
+                "b64"
+              ],
+              {
+                "attrs": [
+                  1
+                ]
+              }
+            ],
+            [
+              "int.compare",
+              [
+                "n2",
+                [
+                  "b64",
+                  0
+                ]
+              ],
+              [
+                "b1"
+              ],
+              {
+                "attrs": [
+                  "eq"
+                ]
+              }
+            ]
+          ],
+          "end": [
+            "cbr",
+            "n3",
+            1,
+            [
+              "p0",
+              "p1",
+              "n1",
+              "n1.r1",
+              "n1.r2",
+              [
+                "b32",
+                23
+              ]
+            ],
+            1,
+            [
+              "p0",
+              "p1",
+              "n1",
+              "n1.r1",
+              "n1.r2",
+              [
+                "b32",
+                99
+              ]
+            ]
+          ]
+        },
+        {
+          "params": [
+            "proc",
+            "fs",
+            "ptr",
+            "v",
+            "mem",
+            "b32"
+          ],
+          "nodes": [
+            [
+              "call.foreign",
+              [
+                "p2",
+                [
+                  "b64",
+                  0
+                ],
+                [
+                  "b32",
+                  32768
+                ],
+                "p3",
+                "p4"
+              ],
+              [
+                "b32",
+                "mem"
+              ],
+              {
+                "entity": {
+                  "win32.virtual_free_view": [
+                    "ptr",
+                    134217728
+                  ]
+                }
+              }
+            ],
+            [
+              "call.foreign",
+              [
+                "p5",
+                "p0"
+              ],
+              [
+                "proc"
+              ],
+              {
+                "entity": "win32.exit_process"
+              }
+            ]
+          ],
+          "end": [
+            "ret",
+            [
+              "p5",
+              "n1",
+              "p1",
+              "n0.r1"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "package": {
+    "name": "runner_memory_probe",
+    "entries": {
+      "app": "main"
+    },
+    "release": "app"
+  }
+}

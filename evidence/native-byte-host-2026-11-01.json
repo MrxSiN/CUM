@@ -1,0 +1,652 @@
+{
+  "format": "NATIVE-BYTE-HOST-CHECKPOINT",
+  "date": "2026-11-01",
+  "status": "PARTIAL",
+  "source_written": "PASS",
+  "native_verified": "PASS for two XAX components",
+  "compiled": "PASS",
+  "executed": "PASS",
+  "scoped_tested": "PASS",
+  "source_sha256": {
+    "host/native/byte_framer.xax": "e1cdfde70282ed7b4eb765b83dc4cb3e0a0fae885a469563740b953bc5d66ffc",
+    "host/native/worker_response.xax": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+    "host/native/construction/byte-framer.json": "2d73c727ab879ae6e61e0034c8e31f76be475460e75536aa3d75d3a7a8841207",
+    "host/native/construction/worker-response.json": "bf881eacb98ee77952965b500d6341f5195e14f549f18edb889521536c6f97f9",
+    "host/native/transactions/byte-framer-base.xax": "c8e478644596c29464d76088878df607c9e2fe61334aa5d9404533f13de99c57",
+    "host/native/transactions/byte-framer-abi.edit": "abe7729307c804f754f70413767a0294cd98e18a6b22e556f14b30802477cb27",
+    "src/machines/bf_share_tape.bf": "949512caca6e3fbcdebf88d68227d13170b5dbf649ed80c84947d4127fff21f6",
+    "tests/fixtures/native-byte-framer.json": "e9c70a9187a32be6917a8057d45beb38c54aba636d496b83f9f28a43bf353e54",
+    "tests/fixtures/native-worker-response.json": "3ab1ce3f36a64174a8e3ff7f4dfa2fb0017935951429316beebff53967b2d3e9",
+    "tests/fixtures/tape-share-controller.json": "c83b635f15f53cd2b134005ee67e491071970dce87e74966bbc75beb9e77f9c7"
+  },
+  "toolchain": {
+    "initial_authoring": "Existing external XAX SDK official construction API; Python development dependency, no CUM Python helper written",
+    "bbc_sha256": "de9a2c5f65312a493f615f5c06f90761a5d3bf1971f460fe37113c8a6a71e405",
+    "compiler_modified": false,
+    "test_orchestration": "Ephemeral standard operator commands; fixtures are data; no new foreign test source stored",
+    "later_framer_edit": "Native exact-root transaction, verify, resolve and build",
+    "composed_runtime": "BF and native XAX executables",
+    "xax_seed_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79"
+  },
+  "runs": {
+    "framer": {
+      "status": "PASS",
+      "cases": 22,
+      "results": [
+        {
+          "name": "empty-zero-budget",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "all-bytes-legacy",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "all-bytes-hex",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "max-prefix-suffix",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "binary-zero-markers",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "u64-budget-not-u32",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "u64-maximum",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "65536-byte-budget",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-0",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-1",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-2",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-3",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-4",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-5",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-6",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-7",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-8",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-header-9",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-prefix",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-suffix",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "budget-zero-rejects-data",
+          "status": "PASS",
+          "exit": 4,
+          "response_status": null
+        },
+        {
+          "name": "budget-exhaustion",
+          "status": "PASS",
+          "exit": 4,
+          "response_status": null
+        }
+      ]
+    },
+    "response_acceptance": {
+      "status": "PASS",
+      "cases": 21,
+      "results": [
+        {
+          "name": "empty-codec-result",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "binary-codec-result",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "worker-state-before-payload",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "empty-worker-payload",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "payload-zero-not-eof",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "worker-reject-1",
+          "status": "PASS",
+          "exit": 257,
+          "response_status": null
+        },
+        {
+          "name": "worker-reject-2",
+          "status": "PASS",
+          "exit": 258,
+          "response_status": null
+        },
+        {
+          "name": "worker-reject-255",
+          "status": "PASS",
+          "exit": 511,
+          "response_status": null
+        },
+        {
+          "name": "missing-response",
+          "status": "PASS",
+          "exit": 8,
+          "response_status": null
+        },
+        {
+          "name": "short-worker-trailer",
+          "status": "PASS",
+          "exit": 8,
+          "response_status": null
+        },
+        {
+          "name": "zero-trailer",
+          "status": "PASS",
+          "exit": 4,
+          "response_status": null
+        },
+        {
+          "name": "zero-bound",
+          "status": "PASS",
+          "exit": 4,
+          "response_status": null
+        },
+        {
+          "name": "unavailable-bound",
+          "status": "PASS",
+          "exit": 4,
+          "response_status": null
+        },
+        {
+          "name": "bound-exceeded",
+          "status": "PASS",
+          "exit": 4,
+          "response_status": null
+        },
+        {
+          "name": "maximum-trailer",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "64KiB-payload",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "truncated-control-0",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-control-1",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-control-2",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-control-3",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        },
+        {
+          "name": "truncated-control-4",
+          "status": "PASS",
+          "exit": 3,
+          "response_status": null
+        }
+      ]
+    },
+    "codec_composition": {
+      "status": "PASS",
+      "cases": 20,
+      "results": [
+        {
+          "name": "encode-empty",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "encode-all-bytes",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "encode-4096-bytes",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "decode-empty",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "decode-all-lower",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "decode-all-upper",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "decode-whitespace",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "decode-mixed-case",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"a\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"abc\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"a b\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"0\\n0\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"gg\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"-1\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"0x12\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-\"12g4\"",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-NUL",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-nonascii",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "reject-mode",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        },
+        {
+          "name": "bad-magic",
+          "status": "PASS",
+          "exit": null,
+          "response_status": null
+        }
+      ]
+    },
+    "tape_controller_protocol": {
+      "status": "PASS",
+      "cases": 24,
+      "results": [
+        {
+          "name": "start",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "increment",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "decrement",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "right",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "left",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "left-underflow",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "right-budget",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "input-handoff",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "output-handoff",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "open",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "close",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "close-drift",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "close-without-open",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "finish",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "finish-open-stack",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "not-started-data",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "already-finished-data",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "reserved-opaque",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "pending-handoff",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "wrong-profile",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "negative-register",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "wrong-magic",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "ignored-NUL",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        },
+        {
+          "name": "ignored-text",
+          "status": "PASS",
+          "exit": 0,
+          "response_status": null
+        }
+      ]
+    }
+  },
+  "legacy_transform_composition": {
+    "format": "NATIVE-BF-WORKER-COMPOSITION",
+    "status": "PASS",
+    "raw_input_hex": "2b2e",
+    "opaque_state_hex": "0200",
+    "transformation": "Historical exposed single-cell pass, no resistance acceptance",
+    "output_hex": "01",
+    "framer_exit": 0,
+    "worker_exit": 0,
+    "validator_exit": 0,
+    "compiled_protected_program": true,
+    "executed_protected_program": true,
+    "source_sha256": "3c9ec7111b551fda7170cfb39cd09cfcd3ea1ed16113e46fb25f10788cf825f7",
+    "production_release_accepted": false
+  },
+  "scoped_checks": 88,
+  "byte_identical_native_rebuilds": [
+    {
+      "component": "byte_framer",
+      "status": "PASS",
+      "native_verify": true,
+      "native_build": true,
+      "byte_identical": true,
+      "artifact_sha256": "b1e48d367cd47c1e8280fb1679a074b805c89a308fc8a832e021a86710bafe85",
+      "source_sha256": "e1cdfde70282ed7b4eb765b83dc4cb3e0a0fae885a469563740b953bc5d66ffc"
+    },
+    {
+      "component": "worker_response",
+      "status": "PASS",
+      "native_verify": true,
+      "native_build": true,
+      "byte_identical": true,
+      "artifact_sha256": "4e12dce73f9f33d46dfe000ca44b37332b122adc5d246edc0f9cf4f735d6b4c1",
+      "source_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854"
+    }
+  ],
+  "observed_failures": [
+    {
+      "native_build_exit": 1,
+      "stage": "first framer build",
+      "diagnostic": "XAX.NATIVE.ABI / NATIVE-ABI-ARITY",
+      "resolution": "One scalar count return; load byte through borrowed view",
+      "native_verify_exit": 0,
+      "status": "FAIL"
+    },
+    {
+      "resolution": "Also replace package build entry reference; unchanged write helper retained",
+      "status": "FAIL",
+      "stage": "module-only native edit",
+      "native_build_exit": 1,
+      "native_verify_exit": 0
+    }
+  ],
+  "ignored_audit": {
+    "foreign_extension_files": 980,
+    "detail": "Private; no general deletion or captured-source/key cleanup",
+    "one_time_authoring_helpers_retired_after_native_proof": 1,
+    "exact_external_checkout_matches": 260,
+    "unclassified_review_required": 455,
+    "exact_owned_legacy_copies": 265,
+    "remaining_unclassified_unretired": 454
+  },
+  "tracked_foreign_files_remaining": 94,
+  "tracked_foreign_files_retired": 0,
+  "legacy_host_replaced": false,
+  "new_recovery": false,
+  "signed": false,
+  "application_performance_accepted": false,
+  "ai_resistance_accepted": false,
+  "protected_apk_accepted": false,
+  "full_prepare_accepted": false,
+  "production_release_accepted": false,
+  "published": false
+}

@@ -1,5 +1,10 @@
 # Generic workflow instruction contract
 
+The implementation of this complete instruction set is still legacy Python.
+The new [native trusted runner](NATIVE_PROCESS_RUNNER.md) is a component service;
+it does not execute these plans, authorize bindings or replace the VM. BF/XAX-only
+full prepare remains blocked on the remaining host/services migration.
+
 The native BF planner receives exactly two physically supplied request bytes:
 command and mode. Output is zero or more `(opcode, operand-id)` byte pairs followed
 by one status byte. Nonzero status rejects the entire plan before side effects.
