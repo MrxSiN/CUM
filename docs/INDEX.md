@@ -16,6 +16,7 @@ fixture never promotes a broader language, platform or release claim.
 - [BF/XAX-only migration](LANGUAGE_MIGRATION.md): whole migration draft, source inventory and native codec contract.
 - [Native byte host](NATIVE_BYTE_HOST.md): canonical XAX transport, native edit replay and scoped BF/XAX composition proof.
 - [Native process runner](NATIVE_PROCESS_RUNNER.md): trusted no-argument service, resource observations, CPU correction and cancellation proof.
+- [Native arguments](NATIVE_ARGUMENTS.md): BF Windows quoting, independent CRT roundtrips, compatible runner extension and bounded compiler/tool invocations.
 - [Private source delivery](SOURCE_DELIVERY.md): owner-selected source review draft and remaining rebuild/notice/relinking gates.
 - [PQ interoperability and identity](PQ_INTEROPERABILITY.md): independent CMS exchange and explicit project-scoped PQ foundation.
 - [Prepare/PQ integration](PREPARE_INTEGRATION.md): scoped prepare adoption, experimental standard CMS backend and outstanding acceptance.

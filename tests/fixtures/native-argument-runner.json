@@ -1,0 +1,45 @@
+{
+  "format": "NATIVE-ARGUMENT-RUNNER-VECTORS",
+  "status": "DRAFT",
+  "request_format": "NRQ2",
+  "serializer_vectors": "tests/fixtures/windows-args.json",
+  "roundtrip": "Every successful serializer vector must roundtrip through the independent native CRT probe, including argv[0] and exact lengths",
+  "command_boundary": "At exactly 4097 total UTF-16 command units, serialize and roundtrip one argument through the CRT probe; reject one unit over",
+  "regression": "All 93 NRQ1 cases and supervisor-only cancellation remain required",
+  "negative_cases": [
+    "nrq1-nonzero-argument-field",
+    "nrq2-reserved-byte",
+    "nrq2-trailing-byte",
+    "nrq2-missing-segment",
+    "nrq2-embedded-null",
+    "nrq2-unit-count-overflow",
+    "nrq2-combined-command-overflow"
+  ],
+  "integration": [
+    {
+      "name": "pinned-native-xax-verify",
+      "compiler_sha256": "aa72234d6dd8a111efde62b47ced8449a482c4c5506d876714ff7fbe0968ab79",
+      "argument_roles": [
+        "verify",
+        "synthetic-owned-canonical-input",
+        "private-new-diagnostic-output"
+      ],
+      "required_child_exit": 0,
+      "production_acceptance": false
+    },
+    {
+      "name": "pinned-openssl-version",
+      "tool_sha256": "293276fdf436b889044ff167eb6dbd9d7629910864fb5e32f22dd1892435422a",
+      "arguments": [
+        "version"
+      ],
+      "required_child_exit": 0,
+      "production_acceptance": false
+    }
+  ],
+  "supplemental_compiler_probe": {
+    "name": "pinned-native-xax-verify-4gib",
+    "memory_bytes": 4294967296,
+    "reason": "Original 2 GiB invocation traps at allocation; original failure retained. Separate capacity probe only, no application/compiler performance acceptance."
+  }
+}

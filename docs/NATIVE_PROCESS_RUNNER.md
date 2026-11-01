@@ -1,7 +1,12 @@
 # Native trusted byte-worker runner
 
+The current [argument increment](NATIVE_ARGUMENTS.md) adds BF serialization and
+NRQ2 while preserving NRQ1. The 93-case no-argument checkpoint below retains its
+original source/tool scope; the exact historical source is now the arguments
+transaction base. Current argument evidence is recorded separately.
+
 PARTIAL. The source is natively verified, built and scoped-tested. This is a
-generic Windows platform service for an explicitly pinned, trusted no-argument
+generic Windows platform service whose original contract serves a trusted no-argument
 byte worker. It is not the workflow VM or a sandbox for untrusted project builds.
 BF cannot create OS processes or inspect physical file handles; canonical XAX
 owns those capabilities. CUM language recognition and policy remain in BF.

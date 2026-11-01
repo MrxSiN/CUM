@@ -167,7 +167,7 @@
       "executed": false,
       "tested": false,
       "retired": false,
-      "partial_replacement": "host/native/trusted_byte_runner.xax; no whole-file parity/retirement"
+      "partial_replacement": "host/native/trusted_byte_runner.xax plus src/windows_args.bf; NRQ1/NRQ2 scopes tested, no whole-file parity/retirement"
     },
     {
       "path": "host/bytehost/projection.py",
@@ -900,7 +900,19 @@
       "supervisor_cancel_drill": "PASS",
       "byte_identical_rebuild": true,
       "legacy_integration": false,
-      "scope": "Partial process.py interface; trusted no-argument workers only; no untrusted sandbox"
+      "scope": "Partial process.py interface; NRQ1 compatibility plus trusted BF-serialized NRQ2 argument segments; no untrusted sandbox",
+      "argument_roundtrips": 19,
+      "argument_evidence": "evidence/native-arguments-2026-11-01.json"
+    },
+    {
+      "source": "src/windows_args.bf",
+      "source_written": true,
+      "compiled": "O1",
+      "executed": true,
+      "native_cases_passed": 32,
+      "independent_crt_roundtrips": 19,
+      "legacy_integration": false,
+      "scope": "Generic UTF-16 argument serialization; not whole-file process.py parity"
     }
   ],
   "ignored_foreign_audit": {

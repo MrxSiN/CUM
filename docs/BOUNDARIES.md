@@ -19,6 +19,13 @@ require independently approved private non-reparse paths and executable pinning.
 Those preconditions are not implemented by a source-language parser. See
 [process contract](NATIVE_PROCESS_RUNNER.md).
 
+`src/windows_args.bf` serializes UTF-16 argument data. NRQ2 in the native runner
+appends the already accepted segment to the separate approved executable path.
+The host does not parse a source language or choose a transformation. Serialized
+argument input is trusted caller data, not a new unrestricted tool-launch right;
+pinning, private-path approval and untrusted isolation remain caller obligations.
+See [argument contract](NATIVE_ARGUMENTS.md).
+
 | Decision/service | Owner |
 |---|---|
 | Command plan and release ordering | `src/cum.bf` |

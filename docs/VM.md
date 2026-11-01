@@ -5,6 +5,10 @@ The new [native trusted runner](NATIVE_PROCESS_RUNNER.md) is a component service
 it does not execute these plans, authorize bindings or replace the VM. BF/XAX-only
 full prepare remains blocked on the remaining host/services migration.
 
+The [argument extension](NATIVE_ARGUMENTS.md) permits bounded standard-tool
+invocations through BF-serialized arguments. It does not supply these workflow
+instructions, authenticated bindings, native storage or complete prepare ordering.
+
 The native BF planner receives exactly two physically supplied request bytes:
 command and mode. Output is zero or more `(opcode, operand-id)` byte pairs followed
 by one status byte. Nonzero status rejects the entire plan before side effects.
