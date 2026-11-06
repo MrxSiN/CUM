@@ -28,5 +28,6 @@
 
 ## Documentation
 
-- Update the affected `docs/` pages and `docs/STATUS.md` in the same change.
+- Update the affected `docs/` pages and `docs/STATUS.md` in the same change. Add dated
+  results to `docs/HISTORY.md` (newest first); never rewrite earlier entries.
 - Keep files UTF-8. Check for mojibake such as `â€”` before committing.

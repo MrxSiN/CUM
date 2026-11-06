@@ -20,7 +20,8 @@ fixture never promotes a broader language, platform or release claim.
 - [Private source delivery](SOURCE_DELIVERY.md): owner-selected source review draft and remaining rebuild/notice/relinking gates.
 - [PQ interoperability and identity](PQ_INTEROPERABILITY.md): independent CMS exchange and explicit project-scoped PQ foundation.
 - [Prepare/PQ integration](PREPARE_INTEGRATION.md): scoped prepare adoption, experimental standard CMS backend and outstanding acceptance.
-- [Current status](STATUS.md): latest evidence, exclusions and dependency identities.
+- [Current status](STATUS.md): current state per area and exclusions.
+- [Validation history](HISTORY.md): dated results, compiler identities and earlier checkpoints.
 - [Project-scoped recovery](PROJECT_RECOVERY.md): updated-plan Stage 1 increment and moved Experiment workspace.
 - [Resistance/readiness follow-up](READINESS_AUDIT.md): independent data-flow attack and real-target compatibility.
 - [Operations](OPERATIONS.md): tool binding, capture, prepare, verification and recovery.
