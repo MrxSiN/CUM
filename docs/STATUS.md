@@ -114,9 +114,9 @@ two VM opt-ins were skipped. [Dated evidence](../evidence/amendment-2026-10-31.j
 keeps these checks separate from a full amended prepare/release transaction.
 The old synthetic release is historical evidence; it has not passed the amended
 AI-evaluation requirement. CAMOUFLAGE/MAXIMUM acceptance remains BLOCKED.
-New implementation work stays local pending fresh publication approval.
+These increments were later merged to `main` with owner approval (pull requests 1–3, 2026-10-31 to 2026-11-01). Each new push still needs fresh approval.
 
-**PARTIAL â€” one complete synthetic BF release passed the actual prepare workflow.
+**PARTIAL — one complete synthetic BF release passed the actual prepare workflow.
 CUM is not complete or production accepted.**
 
 Use the [engineering index](INDEX.md) to navigate contracts and dated checkpoints.
@@ -125,27 +125,27 @@ evidence remain explicit here; README wording grants no additional acceptance.
 
 | Evidence | Observed result |
 |---|---|
-| Source coverage | PARTIAL â€” whole workflow drafted; restricted adapters |
-| Latest broad regression | PASS within executed scope â€” 93 tests, 91 passed, two VM opt-ins not rerun; native/crypto/graph enabled |
+| Source coverage | PARTIAL — whole workflow drafted; restricted adapters |
+| Latest broad regression | PASS within executed scope — 93 tests, 91 passed, two VM opt-ins not rerun; native/crypto/graph enabled |
 | Audit remediation | Seven host findings fixed sequentially with regression checks; separate Linux VM run passed 25 tests with zero skips |
-| Final annotation regression | PASS â€” five tests including the added native record-boundary and rejected-output case |
-| Prior all-enabled checkpoint | PASS â€” 74 tests with zero skips before the generic CLI repair; historical evidence retained |
-| Retained native inventory | 44 matched components at O1 from the annotation checkpoint â€” three fresh then, 41 matching prior identities; audit fixes changed no BF sources |
+| Final annotation regression | PASS — five tests including the added native record-boundary and rejected-output case |
+| Prior all-enabled checkpoint | PASS — 74 tests with zero skips before the generic CLI repair; historical evidence retained |
+| Retained native inventory | 44 matched components at O1 from the annotation checkpoint — three fresh then, 41 matching prior identities; audit fixes changed no BF sources |
 | Audit native smoke | Two fresh Windows builds, all 256 echo bytes, five native BF layout events and four protected-native behavior cases passed |
-| Annotated BF | Scoped PASS â€” full-line precedence, split records, binary comment bytes, explicit BF workflow and nine real sources |
-| Native human command parser | PASS â€” all eight commands, rejection cases and host-to-BF planner bridge |
-| Native XAX edit | PASS â€” four single-mutation edit/verify stages, native resolve/build, changed code, four behavior inputs, stale replay rejection |
-| VM isolation boundary | PASS â€” 256 KiB binary roundtrip, readonly inputs, UID 1000, no NIC/host shares, unsafe output rejection |
-| Isolated BF fixtures | PASS â€” eight Windows builds under Wine, 32 behavior runs, two normalization comparisons, eleven worker-boundary cases |
-| Synthetic signed clone recovery | PASS â€” direct Windows and isolated VM; exact captured scope restored after original trees were removed; signature/capsule/extra-file mutations rejected |
-| Earlier native BF/JVM fixtures | PASS within recorded scope â€” unchanged native artifacts retain their prior evidence |
-| Complete prepare workflow | PASS for one corrected synthetic BF fixture â€” 71 native instructions, 55 service receipts, sixteen evidence selections, native acceptance and atomic finalization |
-| Retained offline runtime and relocated cold restore | PASS within same-host scope â€” synthetic release and 91-file real-project source snapshot; exact BF recovery and restored native XAX verification |
-| Independent-media backup and different-host cold restore | NOT ESTABLISHED â€” owner deferred the different-host drill |
-| Repeated measurements and scale | Scoped PASS â€” 15 paired samples per O0/O1 arm, 15 BF transformations, binary-text mapping through 1,049,600 bytes, exact 1,024-file archive roundtrip |
-| Latest ADB Android execution | Scoped PASS â€” 196 existing-JNI comparisons, 394 standalone cases across 18 fresh O1 executables, nine current BFX differences and eleven baseline startup checks |
-| Isolated unsigned baseline APK | NOT ESTABLISHED â€” source verification passed; unsigned lowering exceeded controlled 900/600-second budgets |
-| Protected Android shared libraries / APK | UNACCEPTED â€” fresh shared-adapter probe rejected the current BBC bind; tape/budget compatibility and integrated protected APK remain closed |
+| Annotated BF | Scoped PASS — full-line precedence, split records, binary comment bytes, explicit BF workflow and nine real sources |
+| Native human command parser | PASS — all eight commands, rejection cases and host-to-BF planner bridge |
+| Native XAX edit | PASS — four single-mutation edit/verify stages, native resolve/build, changed code, four behavior inputs, stale replay rejection |
+| VM isolation boundary | PASS — 256 KiB binary roundtrip, readonly inputs, UID 1000, no NIC/host shares, unsafe output rejection |
+| Isolated BF fixtures | PASS — eight Windows builds under Wine, 32 behavior runs, two normalization comparisons, eleven worker-boundary cases |
+| Synthetic signed clone recovery | PASS — direct Windows and isolated VM; exact captured scope restored after original trees were removed; signature/capsule/extra-file mutations rejected |
+| Earlier native BF/JVM fixtures | PASS within recorded scope — unchanged native artifacts retain their prior evidence |
+| Complete prepare workflow | PASS for one corrected synthetic BF fixture — 71 native instructions, 55 service receipts, sixteen evidence selections, native acceptance and atomic finalization |
+| Retained offline runtime and relocated cold restore | PASS within same-host scope — synthetic release and 91-file real-project source snapshot; exact BF recovery and restored native XAX verification |
+| Independent-media backup and different-host cold restore | NOT ESTABLISHED — owner deferred the different-host drill |
+| Repeated measurements and scale | Scoped PASS — 15 paired samples per O0/O1 arm, 15 BF transformations, binary-text mapping through 1,049,600 bytes, exact 1,024-file archive roundtrip |
+| Latest ADB Android execution | Scoped PASS — 196 existing-JNI comparisons, 394 standalone cases across 18 fresh O1 executables, nine current BFX differences and eleven baseline startup checks |
+| Isolated unsigned baseline APK | NOT ESTABLISHED — source verification passed; unsigned lowering exceeded controlled 900/600-second budgets |
+| Protected Android shared libraries / APK | UNACCEPTED — fresh shared-adapter probe rejected the current BBC bind; tape/budget compatibility and integrated protected APK remain closed |
 | Advanced resistance | UNACCEPTED |
 | Production release acceptance | NOT ACCEPTED |
 
