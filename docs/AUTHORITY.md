@@ -46,7 +46,7 @@ Read sources:
 No CUM product numbering is introduced. Named artifact identifiers disambiguate
 wire/archive/signature contracts. This implementation did not modify BBC or XAX.
 Their checkouts advanced externally during verification; observed commits and
-unchanged tested executable hashes are recorded in [status](STATUS.md).
+unchanged tested executable hashes are recorded in [history](HISTORY.md).
 At the original inspection point no Git remote or source publication was configured.
 The owner previously authorized pushing implementation source. The subsequently
 adopted amendment, Section 3, supersedes that standing permission: new pushes,
