@@ -52,7 +52,8 @@ The owner previously authorized pushing implementation source. The subsequently
 adopted amendment, Section 3, supersedes that standing permission: new pushes,
 publication or visibility changes require fresh explicit approval. GitHub reported
 the repository PUBLIC on 2026-10-31; earlier source/history is already disclosed.
-The amendment is being implemented locally. Credentials, private recovery data
+With owner approval, the amendment work was merged to `main` through pull requests
+1–3 (2026-10-31 to 2026-11-01). Credentials, private recovery data
 and captured originals remain excluded. External AI access to private material
 requires explicit scoped authorization.
 
