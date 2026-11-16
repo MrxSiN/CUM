@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/git_attributes.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/git-attributes.batch",
+  "record_sha256": "084a1eb7d08b97155845ad39ac3409b2337da79daab4d6533affe53e3929d5ca",
+  "result": "host/native/git_attributes.xax",
+  "result_sha256": "8a664d811d24eb3f4bd366cff174ebc09efb9d82510de12d35fd374a90f8675b",
+  "result_root": "6ddab2c6b6568e9252afbe8a2e35063bacbb82af0aa029ab5e5961a48b5aaf3f",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "213616fbeb867d893b640fadf91a84bceca8ff92408fa0ecfe75167103730ff7",
+  "contract": "No input; writes the fixed DIRBLOB descriptor for a .gitattributes line disabling text, filter, ident and export attributes",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
