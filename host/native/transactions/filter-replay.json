@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/filter.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/filter.batch",
+  "record_sha256": "7c2e5ac6ba0947ecee18f4e0b307cb84a38d70c4de03067b0339e42f75a24baf",
+  "result": "host/native/filter.xax",
+  "result_sha256": "e57d6ff2695d9d30e9ac80d38de6c3127493d58bb584617dbf051d8e6a7cfc29",
+  "result_root": "0f95ae0a07de5defec8d15613d772e0ee6694428613d657659f63b6854ba4b14",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "9302c0946782e87a7ffb858b8e7afb7f8696783b12e63832d44b684eb4b59fd7",
+  "contract": "Worker record -> only the eight BF command bytes, then A, B, status 0; truncation or an unknown marker gives status 1",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
