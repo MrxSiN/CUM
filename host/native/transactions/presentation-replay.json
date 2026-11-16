@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/presentation.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/presentation.batch",
+  "record_sha256": "f158e9e028c79336da6896c57d25c39f93e694899bda5c0fca216c1f78c8f845",
+  "result": "host/native/presentation.xax",
+  "result_sha256": "9d3675c0d422a7a1d6653c72c00f8029946f7cc5303a016f680300cdc5b4ce90",
+  "result_root": "0876366cece75349731df685343f3d53f64938299f75923a7dc2067254f53fb7",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "c509431f69c3fa1fbb4f7a63042c6a47905ca3cf3bb8368f7bb5efa289668191",
+  "contract": "Worker record. Mode 1: three-line # header when state 0, then copy, state 1. Mode 2: text bytes to &#xHH; outside <...> markup, whitespace kept; & in text or bytes >= 0x80 -> status 1. Unknown mode/state -> A B 02 (no payload)",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
