@@ -8,7 +8,7 @@ remains false. Dated results, including failures, are in [history](HISTORY.md).
 | Production release | NOT ACCEPTED | No complete amended prepare/release transaction has passed |
 | Reconstruction resistance | UNACCEPTED | CAMOUFLAGE/MAXIMUM BLOCKED; an independent attack recovered the tested shared-state variants ([follow-up](READINESS_AUDIT.md), [pilot](RECONSTRUCTION_PILOT.md)) |
 | Profile resistance gate | PARTIAL | Implemented across BF, transport and prepare bindings; full amended transaction outstanding ([resistance](RESISTANCE.md)) |
-| BF/XAX-only migration | PARTIAL | 94 tracked foreign-language files remain; none retired; language compliance closed ([migration](LANGUAGE_MIGRATION.md), [whole-project draft](migration/PLAN.md)) |
+| XAX-only migration | PARTIAL | 94 tracked foreign-language files and 59 CUM-owned BF programs remain; none retired; language compliance closed ([migration](LANGUAGE_MIGRATION.md), [whole-project draft](migration/PLAN.md)) |
 | Native byte host | Scoped PASS | Two XAX transport components pass 43 direct cases and rebuild byte-identically ([native host](NATIVE_BYTE_HOST.md)) |
 | Native worker runner | Scoped PASS | 93 cases and cancellation drill; memory-denial probe traps, so graceful failure is unaccepted; not a sandbox ([runner](NATIVE_PROCESS_RUNNER.md)) |
 | Native arguments | Scoped PASS | 32 BF vectors and 19 CRT roundtrips; XAX verifier failed the 2 GiB budget ([arguments](NATIVE_ARGUMENTS.md)) |

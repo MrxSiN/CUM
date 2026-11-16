@@ -1,8 +1,9 @@
 # CUM engineering documentation
 
-CUM is a Brainfuck-authored source-camouflage and authenticated exact-recovery
-project. All application decisions and transformations belong in genuine BF under
-`src/`. The owner now requires BF/XAX-only implementation, including generic
+CUM is a source-camouflage and authenticated exact-recovery project. Since
+2026-11-16 all CUM-owned executables must be canonical XAX ([draft](migration/PLAN.md));
+the BF-authored code described below is migration debt. Earlier wording follows:
+the owner had required BF/XAX-only implementation, including generic
 services and tests; existing Python under `host/` is legacy migration debt.
 The dependency pipeline includes Python, BBC/XAX, OpenSSL and isolation tooling.
 
