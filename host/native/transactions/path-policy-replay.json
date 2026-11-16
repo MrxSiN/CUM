@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/path_policy.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/path-policy.batch",
+  "record_sha256": "897d229aea376bd914842396d248a3f5c4ec4d7503df0779cd9b1839360ccb9f",
+  "result": "host/native/path_policy.xax",
+  "result_sha256": "bf3adcd195c79d6de0a5793770280ad249d5aba92d01b9c8c92cc4cbb1ed7123",
+  "result_root": "a2ef31c2172f2032fdc6a4202c62db3fcf3ee77ea73900fab0c7fd16e158d8b2",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "19ccd9a4e2b9b742cdf58209cea37a03d4c21228c4a147758c0e982abbec43ed",
+  "contract": "Worker record with a path: A, B, then 01 when the path contains .pem, .key, .pfx, originals.tar, private/ or .env (case-insensitive), else 00; unknown marker or truncation -> 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
