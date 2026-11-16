@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/gates.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/gates.batch",
+  "record_sha256": "0330ef253e97b1d3d8f1d2aa718059f6f472a7d697bfb66764309350bfcfe0c2",
+  "result": "host/native/gates.xax",
+  "result_sha256": "20dac9d32517884a483c9aa5db1ea2e5b204eee9511db0bcf16138270e052ccc",
+  "result_root": "1ac480d5503bc15ce8ff44de7f22232d3ed625d7e461bc2319ff51aa69ee4763",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "a3690aaad58f3924fd8015675a09901e05528cacf9c83c57bbc3d8fe78feaebd",
+  "contract": "Sixteen gate bytes: 01 only when all sixteen are 01, else 00; extra bytes ignored",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

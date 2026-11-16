@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/maintenance.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/maintenance.batch",
+  "record_sha256": "c7a30cf0922c9b03526a2fa4e2ccfdbcc50d38d97df2ecb6a32a7c861496abe0",
+  "result": "host/native/maintenance.xax",
+  "result_sha256": "d632f8a9dc260e2e212d0eea4e30260693a4d0a126e07e24c053cbf71b13154e",
+  "result_root": "291e092d3aeb63a5a355b44b6cc792129ff69fa74de9d8a3cbf04ce4b5c1bc5e",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "86515e1de68b2e40d308adb1e04c04c2e0f013b5207e1a356d1479f3a0dd4245",
+  "contract": "First of two bytes: 1..4 select a maintenance plan, else 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
