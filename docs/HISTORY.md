@@ -6,6 +6,15 @@ For the current summary, read [status](STATUS.md).
 
 ## Increments, newest first
 
+### 2026-11-16: Whole-project draft for the revised master prompt
+
+Drafted, not executed. The [whole-project draft](migration/PLAN.md) maps each of
+the 94 tracked foreign files to a BF or XAX replacement with a parity check,
+reports gaps against the owner's revised master prompt and orders the next
+increments. The owner directed that `AGENTS.md` (BF first, XAX where BF cannot)
+stays in force; the prompt's XAX-only wording is recorded as an open owner
+decision. No test was rerun, no file retired, release acceptance remains false.
+
 ### 2026-11-01: Native arguments
 
 The [native argument increment](NATIVE_ARGUMENTS.md) passed 32 BF vectors,
