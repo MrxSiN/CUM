@@ -6,6 +6,17 @@ For the current summary, read [status](STATUS.md).
 
 ## Increments, newest first
 
+### 2026-11-16: Every non-kernel BF program rewritten in XAX (compiled, not tested)
+
+All 33 BF programs under `src/` outside `src/machines/`, and both BF workers under
+`tests/workers/`, now have native XAX replacements under `host/native/` (35 units).
+Native edit, verify and build passed for each; each has a replay record in
+`host/native/transactions/`. Behaviour was taken from the documented contracts
+and from the BBC O1 builds of the legacy programs (exhaustive class tables for the
+small policies). Where the BF read end of input as a zero byte, the XAX versions
+fail closed; complete records behave the same. Parity tests are NOT RUN. The 24
+machine kernels and the 94 foreign-language files remain. No legacy file retired.
+
 ### 2026-11-16: First native XAX rewrites (compiled, not tested)
 
 Ten BF programs were rewritten: `src/hex_codec.bf`, `src/windows_args.bf` and eight
