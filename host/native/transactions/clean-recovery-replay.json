@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/clean_recovery.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/clean-recovery.batch",
+  "record_sha256": "02eff4588cde324c930f17501600843e0899367fb6fae1361ca136738d58260a",
+  "result": "host/native/clean_recovery.xax",
+  "result_sha256": "0846096e82ed2a57fe15a50b9a57873420f2e3b71903034662ec81216c9d52c3",
+  "result_root": "1fdeaafbf9bbe09d1c26ddf3579ff275416158893606ec00fdf928225907f457",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "efd3f6c1a167a120f5931343d8fffe4481d33bfb038cd4610fb0a7bc4b3e8e23",
+  "contract": "Reads two bytes; always writes the fixed plan",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete; reference outputs were read from the BBC O1 build of the legacy program"
+}

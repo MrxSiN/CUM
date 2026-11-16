@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/presentation_flow.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/presentation-flow.batch",
+  "record_sha256": "dceaf6ed91d1e90e71d2850ab49880527610495ac7a888513a921ac67e26627e",
+  "result": "host/native/presentation_flow.xax",
+  "result_sha256": "76c86fe76e336d841f275cb2443fcbfac3e0af8c9e41a725e904f94dd471eabc",
+  "result_root": "ee7cda0466a6f49278899e2da57f40bf24298391f8a2d4dc6cefe936875e26c8",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "2fcc5c7e5a7188a56aa5ebe287ea93fbe66b53108bb80f03c08d841fd4fdd007",
+  "contract": "Plans for (0,2) and (1,2), else byte 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete; reference outputs were read from the BBC O1 build of the legacy program"
+}
