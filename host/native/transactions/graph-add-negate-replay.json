@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/graphs/add_negate.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/graph-add-negate.batch",
+  "record_sha256": "201ee4606116c956d384925a8b1591b38aa61e45d3807e4d2e153cc1b38741da",
+  "result": "host/native/graph_add_negate.xax",
+  "result_sha256": "c6cebf9141c312b8f0e13bc978904ab42f1826d12fa13a782c586cb2c84a5f61",
+  "result_root": "d669f68eb7f122c5d9a60f87f1815474c99b3851b829489715596acd334eca6e",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "73a9f4a25734402b38297ba3ba382c82c983470792b623c35ab71216924d0e06",
+  "contract": "Four bytes [1..4, op, 7, stage 0..3], op 1 (2 at stage 3) -> that stage's edit recipe; else 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
