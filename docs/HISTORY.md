@@ -6,6 +6,15 @@ For the current summary, read [status](STATUS.md).
 
 ## Increments, newest first
 
+### 2026-11-16: First native XAX rewrites (compiled, not tested)
+
+`src/hex_codec.bf` and `src/windows_args.bf` were rewritten as native XAX
+programs through `xaxc edit` batches on `host/native/worker_response.xax`, with no
+Python. Native edit, verify and build passed for both (Windows seed `ae43e32f`).
+Their vectors are NOT RUN: tests wait until the whole XAX draft is complete. The
+quoter drops the BF two-byte backslash-counter limit. No legacy file is retired.
+See `host/native/transactions/hex-codec-replay.json` and `windows-args-replay.json`.
+
 ### 2026-11-16: Whole-project draft for the revised master prompt
 
 Drafted, not executed. The [whole-project draft](migration/PLAN.md) maps each of
