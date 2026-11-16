@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "tests/workers/fixed.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/fixed-worker.batch",
+  "record_sha256": "2eb11b9aca48ed7fb52a431240664f5c7cc480771c347423c39b7a0378ff9ec5",
+  "result": "host/native/fixed_worker.xax",
+  "result_sha256": "04f545fb9aa4a8a02fe467c0ace5216fb4e22796be6e63fdadc9bff2a447cdb7",
+  "result_root": "0a87ff894b9c8537b57f0f97e5300a55e0be5417ecd077aa35ba20027ccfb876",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "d9701b48cb8baa15511a67a89103ded7fb16c95e9f8ab96f7c8d447f69e2be0e",
+  "contract": "Host-compliance fixed worker: consumes a worker record and writes FIXED, A, B, 00; truncation or unknown marker -> status 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

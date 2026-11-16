@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "tests/workers/fixed_machine.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/fixed-machine.batch",
+  "record_sha256": "1d8744dbb290fcfc4d0e25a1a84684de0871b353f38d4bc795db8ba6f68479bc",
+  "result": "host/native/fixed_machine.xax",
+  "result_sha256": "7e0655b22521770823e6b55942eda0c45b691433369b4d25767939fe1a98540b",
+  "result_root": "2ca0dd144a60dd9ec7c4a01f68a2df5e334e4a30b3a2edf6f7215b5213bac72b",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "45085b705d38fe80266e49c2cf4488c12cab78c68ec11ff51f3ebb667f2760ac",
+  "contract": "Host-compliance fixed machine: reads 22 bytes; writes b2 01 F 01 I 01 X 01 E 01 D, bytes 10..21, four zeros, then 00 when byte 0 is b1 (and no truncation), else fa",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
