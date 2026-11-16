@@ -5,6 +5,7 @@
   "policy": "Brainfuck first; canonical XAX for unavailable BF capabilities",
   "scope": "All tracked owned implementation, providers, tests, fixtures and executable scripts",
   "foreign_file_count": 94,
+  "replacement_draft": "docs/migration/PLAN.md",
   "entries": [
     {
       "path": "host/__init__.py",

@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/cum.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/cum.batch",
+  "record_sha256": "87d6aa90d294a9ff5c1224bcd110d551363d705bf382aa33ed8502a65da45de0",
+  "result": "host/native/cum.xax",
+  "result_sha256": "438edc363e326769263152f625e6b16e0649af2fd7f4675b8a56c142c96ff9be",
+  "result_root": "fd60069c68f14d2c3096efe723017a0993169c1765e4ddb91f34d64699b5ed0c",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "f6ac1652f76e340c2406f9817665470ad2c89f945db584ed572afacacd65157e",
+  "contract": "Two bytes: first 1,2,4..8 select a top-level plan for any second byte; (3,1) and (3,2) select the two release plans; else 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

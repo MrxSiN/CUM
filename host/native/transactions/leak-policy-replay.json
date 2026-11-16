@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/leak_policy.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/leak-policy.batch",
+  "record_sha256": "0a54be3b108cc5a7288456d3dfb004db37da98b0c8a5eb058c158adaac3e8024",
+  "result": "host/native/leak_policy.xax",
+  "result_sha256": "5f601eac01f1b0554bd2fc2e9d951ad8347c3823bd0b1065132209e1bf88553b",
+  "result_root": "8dc89a807678ce3e5972ee809e63d95e56d6c170025a1fba16f82e6d316534f0",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "3306d3d31efa997bbd7d928f7bd2a4e1b67f1f645c6a17c4f805b0bd7e331a45",
+  "contract": "(01 d)*|00 -> 01 when every d is zero, else 00; truncation or an unknown marker gives 00 (BF accepted EOF as a terminator)",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

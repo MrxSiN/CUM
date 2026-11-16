@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/transform.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/transform.batch",
+  "record_sha256": "49f2ea5c9c4cda39f80f48b4449628dd9298c1fa037056eecf88c4c8fb17a588",
+  "result": "host/native/transform.xax",
+  "result_sha256": "9b4628de28f4ee9995b106c035a83e1b246e1199c95fcd5e0f7b5a0bc1065c3b",
+  "result_root": "11012af7081ab0b8e19c10af3e0d659975e8bea781e98daefabb12856a505280",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "5881cc2af6c9d6f0c13fc7a7f15c572b5f78b933aa4578f64c409f513af50d5e",
+  "contract": "Worker record, A = profile 1..4, B = selector: +/- become the profile's transfer pattern, . , [ ] pass, other bytes dropped, < or > -> status 1, unknown profile -> A B 02",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

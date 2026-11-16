@@ -10,11 +10,16 @@ Keep operational identities and original-source records outside both trees.
 The owner's direct instruction is to draft the whole project before running tests,
 fixing failures, or optimizing. Do not report drafted checks as executed evidence.
 
-All CUM-owned executable implementation, tests and development scripts must be
-genuine eight-command Brainfuck by default. Use canonical XAX semantic graphs
-only where BF cannot provide the required capability. This replaces the former
-Python generic-host exception and applies to existing Python, Java and shell
-sources too. Do not hide foreign code in binaries, generated wrappers, data
+The owner's revised master prompt (kept local and untracked,
+`CUM_Master_Engineering_Development_Prompt_XAX_Only_Revised.md`) is the
+engineering contract. On 2026-11-16 the owner directed that it overrides the
+former Brainfuck-first language rule. All CUM-owned executable implementation,
+tests, benchmarks and development scripts must be canonical XAX semantic graphs,
+authored only through official XAX transactions. Brainfuck is a protected input
+language and fixture data, never CUM implementation; existing CUM-owned `.bf`
+programs are legacy migration debt like Python, Java and shell sources. If a
+needed capability is unavailable in the verified installed XAX, mark it BLOCKED;
+never fall back to BF or another language. Do not hide foreign code in binaries, generated wrappers, data
 files or renamed extensions and call that conversion. Configurations, protocols,
 fixtures containing data and engineering documentation are not executable code.
 

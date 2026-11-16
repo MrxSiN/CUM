@@ -1,8 +1,9 @@
 # CUM engineering documentation
 
-CUM is a Brainfuck-authored source-camouflage and authenticated exact-recovery
-project. All application decisions and transformations belong in genuine BF under
-`src/`. The owner now requires BF/XAX-only implementation, including generic
+CUM is a source-camouflage and authenticated exact-recovery project. Since
+2026-11-16 all CUM-owned executables must be canonical XAX ([draft](migration/PLAN.md));
+the BF-authored code described below is migration debt. Earlier wording follows:
+the owner had required BF/XAX-only implementation, including generic
 services and tests; existing Python under `host/` is legacy migration debt.
 The dependency pipeline includes Python, BBC/XAX, OpenSSL and isolation tooling.
 
@@ -14,6 +15,7 @@ fixture never promotes a broader language, platform or release claim.
 ## Start here
 
 - [BF/XAX-only migration](LANGUAGE_MIGRATION.md): whole migration draft, source inventory and native codec contract.
+- [Whole-project draft](migration/PLAN.md): 2026-11-16 replacement map for every foreign file, gap report against the revised master prompt and increment order.
 - [Native byte host](NATIVE_BYTE_HOST.md): canonical XAX transport, native edit replay and scoped BF/XAX composition proof.
 - [Native process runner](NATIVE_PROCESS_RUNNER.md): trusted no-argument service, resource observations, CPU correction and cancellation proof.
 - [Native arguments](NATIVE_ARGUMENTS.md): BF Windows quoting, independent CRT roundtrips, compatible runner extension and bounded compiler/tool invocations.

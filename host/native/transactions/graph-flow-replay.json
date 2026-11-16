@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/graphs/flow.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/graph-flow.batch",
+  "record_sha256": "b9c55a3de6c2c0856a1aca5f54f313031b11c93096dc385d93596a02af7b2d17",
+  "result": "host/native/graph_flow.xax",
+  "result_sha256": "7f40031eb219e380ddee4544c851f44d96180f6e551b7816a572039aa323a6e1",
+  "result_root": "5f430fe8e9cd4a3449e7a0ee379658b62b48074e2d0d3a322b9c434a3d1528d8",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "231cc95a39a71f35832acae46ac7149c70d5c84da571985a882a85fd0061cdfd",
+  "contract": "Reads two bytes; always writes the fixed plan",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete; reference outputs were read from the BBC O1 build of the legacy program"
+}

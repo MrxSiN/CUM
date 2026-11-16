@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/pq_identity_flow.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/pq-identity-flow.batch",
+  "record_sha256": "db4b2e0c31a614cd627790bada80d632daa001087662628842fffe712d31c8db",
+  "result": "host/native/pq_identity_flow.xax",
+  "result_sha256": "348d2738cc928cc253a808f273cc6867196481522ecb08a966096ed45f8dfed0",
+  "result_root": "9f1840cc06a1470ef1cacf111975738eb2f3b9e9a368065991a951454722e995",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "d083eef9bf9f1e747a43229a5bc7215cf2b52ee4aef6bba86705f144cfdae8e3",
+  "contract": "Plan only for command 1 mode 1, else no output",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete; reference outputs were read from the BBC O1 build of the legacy program"
+}

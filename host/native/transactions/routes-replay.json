@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/routes.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/routes.batch",
+  "record_sha256": "fcbca5239abfdf98fa1bc9b5bc8da1f4da7b4d628ece1b7e7cc233296166444a",
+  "result": "host/native/routes.xax",
+  "result_sha256": "294e8495f1311a6cd55f15c47855765f4fcb00b6cf9c3d6b1497050d28127439",
+  "result_root": "1d3a5763d1ec5e4033f5b4951ca3d0ac9b3fd53efb504804443e805ef05ac32d",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "edc722728928b7a05a0be38ff4081b65e8ffe7693edd214213f46abbf482b96d",
+  "contract": "First of two bytes: 1..5 select a route pair then 00, else 02; second byte ignored",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

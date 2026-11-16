@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/hex_codec.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/hex-codec.batch",
+  "record_sha256": "b6ec18e162d7ec308e7896a83f9215531357c80d8fa7f0b13ea462908cd21c41",
+  "result": "host/native/hex_codec.xax",
+  "result_sha256": "9ba19469fab95b90742acd47e997bc5569b1d5c1366eea95bf5bf68c6ca14ce2",
+  "result_root": "d7028d57cf09897d4330e6592bf45ed514322fbe3b9b422fcbe2b0684a2f9035",
+  "kept_functions": ["5472b6f1d83595b6caed1b49cf773931e811ab05743343ad0025f9f949202274", "fc5cc85d4dbd03ae27bce88f592e3ea7e760e15e35d7bc1056ec86bd08bd9e69"],
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "7db0ddf5f67e265fce4a2d14ad430100df79a848342d3cd26ef7b1caa8ad0c60",
+  "vectors": "tests/fixtures/hex-codec.json (24 cases, NOT RUN: deferred until the whole XAX draft is complete)"
+}

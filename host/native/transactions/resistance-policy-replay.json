@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/resistance_policy.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/resistance-policy.batch",
+  "record_sha256": "06a8192ae2655b63e2a4de455779ea197bcb4f149204dd5e22d0a332645841dd",
+  "result": "host/native/resistance_policy.xax",
+  "result_sha256": "9879760973529dea8bacdaa0eb149ea9ddee5f2fa08719fe23936a421e6075c9",
+  "result_root": "03099ec286fee1b86edbb9bd78c91bd13f6461f2911197670baa7369db3b77fd",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "29a495390fd0e0bc7b36ba0d224f4016e03cc4cc8f56db94860dec74f46f0e04",
+  "contract": "Twelve bytes per docs/RESISTANCE.md: invalid metadata or evidence or a required FAIL -> 02; all required PASS -> 01; else 03",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

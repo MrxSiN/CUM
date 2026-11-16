@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/project.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/project.batch",
+  "record_sha256": "fedafc469b5430b5476f0878a8764d4d039752cc308241fb52339e5c97e85fe2",
+  "result": "host/native/project.xax",
+  "result_sha256": "7627e440f88f266da3201abff8a9576eedfbbb3d3f721fd330c9e8863c4512bb",
+  "result_root": "baf11b3b0feca03e66c72fd3ae8239d2f4451a349beca178dc4e13007894a7a1",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "889161639c808e1be272a8a3f70f93915c731d82f77dad6b593c2b449e3cf2ad",
+  "contract": "Two bytes: (1,1),(1,2),(1,3) -> 01 00; (1,4) -> 00 00; else 00 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

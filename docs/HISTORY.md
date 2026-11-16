@@ -6,6 +6,40 @@ For the current summary, read [status](STATUS.md).
 
 ## Increments, newest first
 
+### 2026-11-16: Every non-kernel BF program rewritten in XAX (compiled, not tested)
+
+All 33 BF programs under `src/` outside `src/machines/`, and both BF workers under
+`tests/workers/`, now have native XAX replacements under `host/native/` (35 units).
+Native edit, verify and build passed for each; each has a replay record in
+`host/native/transactions/`. Behaviour was taken from the documented contracts
+and from the BBC O1 builds of the legacy programs (exhaustive class tables for the
+small policies). Where the BF read end of input as a zero byte, the XAX versions
+fail closed; complete records behave the same. Parity tests are NOT RUN. The 24
+machine kernels and the 94 foreign-language files remain. No legacy file retired.
+
+### 2026-11-16: First native XAX rewrites (compiled, not tested)
+
+Ten BF programs were rewritten: `src/hex_codec.bf`, `src/windows_args.bf` and eight
+fixed workflow planners (`clean_recovery`, `scoped_clean_recovery`, `identity_flow`,
+`pq_identity_flow`, `project_recovery`, `presentation_flow`, `annotated_flow`,
+`graphs/flow`). Planner outputs were read from the BBC O1 builds of the legacy BF.
+All were rewritten as native XAX
+programs through `xaxc edit` batches on `host/native/worker_response.xax`, with no
+Python. Native edit, verify and build passed for all ten (Windows seed `ae43e32f`).
+Their vectors are NOT RUN: tests wait until the whole XAX draft is complete. The
+quoter drops the BF two-byte backslash-counter limit. No legacy file is retired.
+See `host/native/transactions/hex-codec-replay.json` and `windows-args-replay.json`.
+
+### 2026-11-16: Whole-project draft for the revised master prompt
+
+Drafted, not executed. The [whole-project draft](migration/PLAN.md) maps each of
+all 153 CUM-owned non-XAX files to an XAX replacement with a parity check,
+reports gaps against the owner's revised master prompt and orders the next
+increments. The owner directed that the prompt overrides the former BF-first
+rule; `AGENTS.md` now requires canonical XAX for all CUM-owned executables, so
+the 59 CUM-owned BF programs join the migration debt (153 files).
+No test was rerun, no file retired, release acceptance remains false.
+
 ### 2026-11-01: Native arguments
 
 The [native argument increment](NATIVE_ARGUMENTS.md) passed 32 BF vectors,

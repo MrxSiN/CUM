@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/adapters.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/adapters.batch",
+  "record_sha256": "cc6fdde32451b4bb853b15312134a7a0da2d7e39f79ef77c6a2ee5ce2aaebdd6",
+  "result": "host/native/adapters.xax",
+  "result_sha256": "a02ffe0ed04f7b454888266f2d4fdf714499b131d659a04fca9da06d2b92a60f",
+  "result_root": "01fb340374d912e84c068695cd1556422f55bc3f212f0b604197fe87d442f781",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "97d09f842d3b476d476da3860aca21311b40aabda4c2af42ec2574c9a6a707f4",
+  "contract": "One byte: adapters 1..5 -> 00 (admitted), else 02",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

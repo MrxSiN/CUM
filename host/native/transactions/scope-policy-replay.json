@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/scope_policy.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/scope-policy.batch",
+  "record_sha256": "6d1c647605b4a4ea99d23b7b6979b2d253e87616926eb3974a4b9792cd5bfcfd",
+  "result": "host/native/scope_policy.xax",
+  "result_sha256": "9c8c9582159f9a523ec9f090650ff697358dfe04efa79147001624cc5c325afa",
+  "result_root": "02757df8e4c3d0f059a983a1640194418596965a0dce0b6d41370851a6611a6c",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "72564e0ba768014c5189dbdf42cf30e05b43bca5da4c86d574eb69a0f0ad1839",
+  "contract": "Four bytes (classification, disposition, review, type) -> 01 for the 26 approved combinations (derived from an exhaustive class table of the legacy program), else 00",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}

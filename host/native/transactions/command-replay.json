@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/command.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/command.batch",
+  "record_sha256": "6e78054401cc8837e6850dd6e1b7bf41d5a97dd5d04c63e1b86ff30118796a1b",
+  "result": "host/native/command.xax",
+  "result_sha256": "99f61f59d8a105b7172a507180abccfeb85ac0cb0cc41657783b4c17af6cd4b4",
+  "result_root": "2f662fa6fd6d8d5bf0e73d3b75dbcb701bcd469e8f987212f33aabb7a3cf75fc",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "6cfb2f824c0d80227d3731218da4fbe0ee2cd4b085eedc3c954a6433dc3bd44d",
+  "contract": "Worker record with the command text: exact doctor, toolchain inspect, prepare, verify, recover, test-recovery, benchmark, audit -> id 1..8, A, A, B, 00; anything else (including over 17 bytes) -> A, B, 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
