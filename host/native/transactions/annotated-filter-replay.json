@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/annotated_filter.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/annotated-filter.batch",
+  "record_sha256": "2db9f67cf89e6ba0bda3a54f9036c9af6b81183cd70f451af602df9f0cd963c2",
+  "result": "host/native/annotated_filter.xax",
+  "result_sha256": "cb8a3e55a5846fc5783ba936923ee1ab39ca1d72babcb032421b24766d9a80a8",
+  "result_root": "7930852b27896affe9e5ec27330769a843e48a13a5565e980160b82e86337e32",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "5fd0d17812cb67c705e14fc207f74340ad224cc1ed06ccbaa020fcb170de7827",
+  "contract": "Worker record, mode 1, line state 0/1/2: emits BF commands, drops whole-line # comments; reject -> A, state, 01; unknown mode/state -> A, B, 02 (no payload); unknown marker or truncation -> status 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
