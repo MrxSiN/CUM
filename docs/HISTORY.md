@@ -8,9 +8,13 @@ For the current summary, read [status](STATUS.md).
 
 ### 2026-11-16: First native XAX rewrites (compiled, not tested)
 
-`src/hex_codec.bf` and `src/windows_args.bf` were rewritten as native XAX
+Ten BF programs were rewritten: `src/hex_codec.bf`, `src/windows_args.bf` and eight
+fixed workflow planners (`clean_recovery`, `scoped_clean_recovery`, `identity_flow`,
+`pq_identity_flow`, `project_recovery`, `presentation_flow`, `annotated_flow`,
+`graphs/flow`). Planner outputs were read from the BBC O1 builds of the legacy BF.
+All were rewritten as native XAX
 programs through `xaxc edit` batches on `host/native/worker_response.xax`, with no
-Python. Native edit, verify and build passed for both (Windows seed `ae43e32f`).
+Python. Native edit, verify and build passed for all ten (Windows seed `ae43e32f`).
 Their vectors are NOT RUN: tests wait until the whole XAX draft is complete. The
 quoter drops the BF two-byte backslash-counter limit. No legacy file is retired.
 See `host/native/transactions/hex-codec-replay.json` and `windows-args-replay.json`.
