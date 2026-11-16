@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/discovery.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/discovery.batch",
+  "record_sha256": "f4caff56f76ddb15581c2881c2b02fe28810fa4d3891e9ee23d1c77525bcbe7f",
+  "result": "host/native/discovery.xax",
+  "result_sha256": "83d26de311081877e430b8a7a6e890eb725c0e79e72fc8f50a2f532f6b6d4ed5",
+  "result_root": "506753d3ae44f39cc7c34202758239171c8cea495b5ad665239b3908e6575888",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "96cb945683ce7709bdc12461a3ed70ab0e8a87f303338d04cf03132ea5ef9e32",
+  "contract": "Worker record with a path: case-insensitive final suffix .bf -> 1, .xax -> 2, .java -> 3, .kt -> 4, else 0; then A, B, 00; unknown marker or truncation -> A, B, 01",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
