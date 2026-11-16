@@ -1,0 +1,22 @@
+{
+  "format": "NATIVE-XAX-TRANSACTION-REPLAY",
+  "status": "COMPILED",
+  "tested": false,
+  "date": "2026-11-16",
+  "replaces": "src/budget_flow.bf",
+  "compiler": "XAX Windows seed (ledger 0035)",
+  "compiler_sha256": "ae43e32f21ccd2d7e333ebf30a114d329ca5b5912c388ae167c24d12d2e9f665",
+  "base": "host/native/worker_response.xax",
+  "base_sha256": "e262e403ae40b2f4813a30fc92109e1da27c4c5a17c57ee411177362e4620854",
+  "expected_root": "48b4ee0bac11beabdf183b746e1a71b7e29d158ed788d9b4b24785f6b600dca6",
+  "record": "host/native/transactions/budget-flow.batch",
+  "record_sha256": "0eb9b1970dd6d825e2ac0dde85931548197f6529f9f6d5ad1b357f4e2b5f0326",
+  "result": "host/native/budget_flow.xax",
+  "result_sha256": "47ffe81a60bb618d670f2c2de6b5ef99fab8ad4f7a522581e18f4e68c749ec8e",
+  "result_root": "3e9232c427c8b33908990081f23d8f1478785a581632c878dfeb042effd9463a",
+  "native_steps": ["edit base record candidate", "verify candidate diagnostic", "build candidate executable provenance"],
+  "successful_exit_codes": [0, 0, 0],
+  "result_executable_sha256": "07cac2b73cdf3a1088d44995b800d5b5216fe6555b1a83b76b6165e3a2972c69",
+  "contract": "Worker record, state ignored: any data byte other than 1 or 2, an empty record, an unknown marker or truncation -> 01; a 2 anywhere -> 28 02 1e 03 00; all 1 -> 1e 01 00",
+  "parity": "NOT RUN: deferred until the whole XAX draft is complete"
+}
